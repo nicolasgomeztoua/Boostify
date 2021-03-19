@@ -39,7 +39,7 @@ const Register = ({ history }) => {
         config
       );
       localStorage.setItem("authToken", data.token);
-      history.push("/");
+      history.push("/login");
     } catch (err) {
       setError(error.response.data.error);
       setTimeout(() => {
