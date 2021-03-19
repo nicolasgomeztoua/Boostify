@@ -19,6 +19,7 @@ const Login = ({ history }) => {
 
     const config = {
       header: {
+        Access-Control-Allow-Origin: "https://nervous-benz-6e1283.netlify.app/login",
         "Content-Type": "application/json",
       },
     };
@@ -61,7 +62,7 @@ const Login = ({ history }) => {
         <div className="form-group">
           <label htmlFor="password">
             Password:
-            <Link to="/" className="login-screen__forgotpassword">
+            <Link to="/forgotpassword" className="login-screen__forgotpassword">
               Forgot Password?
             </Link>
           </label>
