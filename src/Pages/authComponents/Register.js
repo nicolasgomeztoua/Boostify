@@ -34,7 +34,7 @@ const Register = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "https://secret-cove-64633.herokuapp.com/api/auth/api/auth/register",
+        "https://secret-cove-64633.herokuapp.com/api/auth/register",
         { username, email, password },
         config
       );
