@@ -19,7 +19,10 @@ const Checkout = ({ history }) => {
       };
 
       try {
-        const { data } = await axios.get("/api/private", config);
+        const { data } = await axios.get(
+          "https://secret-cove-64633.herokuapp.com/api/private",
+          config
+        );
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");

@@ -18,7 +18,7 @@ const ForgotPassword = () => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/forgotpassword",
+        "https://secret-cove-64633.herokuapp.com/api/auth/forgotpassword",
         { email },
         config
       );

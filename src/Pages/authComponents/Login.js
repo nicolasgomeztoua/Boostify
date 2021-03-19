@@ -25,7 +25,7 @@ const Login = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/login",
+        "https://secret-cove-64633.herokuapp.com/api/auth/login",
         { email, password },
         config
       );
