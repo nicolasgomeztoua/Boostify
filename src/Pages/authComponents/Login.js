@@ -19,7 +19,6 @@ const Login = ({ history }) => {
 
     const config = {
       header: {
-        Access-Control-Allow-Origin: "https://nervous-benz-6e1283.netlify.app/login",
         "Content-Type": "application/json",
       },
     };
