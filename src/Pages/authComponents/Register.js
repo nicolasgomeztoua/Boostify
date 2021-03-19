@@ -49,7 +49,7 @@ const Register = ({ history }) => {
   };
 
   return (
-    <div>
+    
       <div className="register-screen">
         <form onSubmit={registerHandler} className="register-screen__form">
           <h3 className="register-screen__title">Register</h3>
@@ -109,7 +109,7 @@ const Register = ({ history }) => {
           </span>
         </form>
       </div>
-    </div>
+    
   );
 };
 
