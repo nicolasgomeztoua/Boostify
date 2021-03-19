@@ -12,7 +12,7 @@ const Register = ({ history }) => {
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push("/log-in");
+      history.push("/login");
     }
   }, [history]);
 
