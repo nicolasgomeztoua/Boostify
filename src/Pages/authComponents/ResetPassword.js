@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./AuthComponents.css";
 
-const ResetPassword = ({ match }) => {
+const ResetPassword = ({ history, match }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
