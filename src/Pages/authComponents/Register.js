@@ -19,7 +19,7 @@ const Register = ({ history }) => {
   const registerHandler = async (e) => {
     e.preventDeafult();
     const config = {
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
     };
