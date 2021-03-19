@@ -12,14 +12,14 @@ const Register = ({ history }) => {
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push("/log-in");
+      history.push("/login");
     }
   }, [history]);
 
   const registerHandler = async (e) => {
     e.preventDeafult();
     const config = {
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
     };
@@ -39,7 +39,7 @@ const Register = ({ history }) => {
         config
       );
       localStorage.setItem("authToken", data.token);
-      history.push("/");
+      history.push("/login");
     } catch (err) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -49,7 +49,7 @@ const Register = ({ history }) => {
   };
 
   return (
-    <div>
+    
       <div className="register-screen">
         <form onSubmit={registerHandler} className="register-screen__form">
           <h3 className="register-screen__title">Register</h3>
@@ -109,7 +109,7 @@ const Register = ({ history }) => {
           </span>
         </form>
       </div>
-    </div>
+    
   );
 };
 
