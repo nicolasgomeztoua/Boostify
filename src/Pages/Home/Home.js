@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Home.css";
 import styled from "styled-components";
 import { Safe } from "@styled-icons/crypto/Safe";
@@ -32,6 +33,7 @@ const Home = () => {
       sethorizonImg(HorizonMobile);
     }
   }, [windowInnerWidth]);
+
   const Verified = styled(VerifiedUser)`
     height: 50px;
   `;

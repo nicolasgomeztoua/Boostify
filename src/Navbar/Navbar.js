@@ -1,15 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "../Dropdown/Dropdown";
+import { ExtraCheckBox } from "../Pages/RankBoost/RankedBoostProductElements";
+import { useHistory } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
+  let history = useHistory();
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [loggedIn, setLoggedIn] = useState("");
+
+  const [privateData, setPrivateData] = useState("");
+  const [displayCheckBox, setDisplayCheckBox] = useState("none");
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("authToken")) {
+      setLoggedIn(false);
+    }
+    if (localStorage.getItem("authToken")) {
+      setLoggedIn(true);
+    }
+    const fetchPrivateData = async () => {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      };
+
+      try {
+        const { data } = await axios.get(
+          "https://secret-cove-64633.herokuapp.com/api/private",
+          config
+        );
+        setPrivateData(data.data);
+      } catch (error) {
+        localStorage.removeItem("authToken");
+      }
+    };
+
+    fetchPrivateData();
+  }, [history, loggedIn]);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -27,6 +64,21 @@ function Navbar() {
     }
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    history.push("/login");
+    setLoggedIn(false);
+  };
+
+  useEffect(() => {
+    if (loggedIn === true) {
+      setDisplayCheckBox("flex");
+    }
+    if (loggedIn === false) {
+      setDisplayCheckBox("none");
+    }
+    console.log(loggedIn);
+  }, [loggedIn]);
   return (
     <>
       <nav className="navbar">
@@ -69,9 +121,10 @@ function Navbar() {
           </li>
         </ul>
         <Button />
+        <ExtraCheckBox onChange={logoutHandler} display={displayCheckBox} />
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

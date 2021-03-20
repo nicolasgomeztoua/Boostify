@@ -10,7 +10,7 @@ const Checkout = ({ history }) => {
     if (!localStorage.getItem("authToken")) {
       history.push("/");
     }
-    const fetchPrivateDate = async () => {
+    const fetchPrivateData = async () => {
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const Checkout = ({ history }) => {
       }
     };
 
-    fetchPrivateDate();
+    fetchPrivateData();
   }, [history]);
 
   const logoutHandler = () => {
@@ -43,7 +43,7 @@ const Checkout = ({ history }) => {
   ) : (
     <>
       <div> {privateData}</div>
-      <button onCLick={logoutHandler}>Logout hello</button>
+      <input type="checkbox" onChange={logoutHandler}></input>Logout
     </>
   );
 };
