@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AuthComponents.css";
-
+import Navbar from "../../Navbar/Navbar";
 const Checkout = ({ history }) => {
   const [error, setError] = useState("");
   const [privateData, setPrivateData] = useState("");
@@ -26,7 +26,7 @@ const Checkout = ({ history }) => {
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");
-        setError("You are not authorized please login");
+        setError("Please LogIn to checkout");
       }
     };
 
@@ -39,11 +39,13 @@ const Checkout = ({ history }) => {
   };
 
   return error ? (
-    <span className="error-message">{error}</span>
+    <>
+      <Navbar></Navbar>
+      <span className="error-message">{error}</span>
+    </>
   ) : (
     <>
-      <div> {privateData}</div>
-      <input type="checkbox" onChange={logoutHandler}></input>Logout
+      <Navbar></Navbar>
     </>
   );
 };

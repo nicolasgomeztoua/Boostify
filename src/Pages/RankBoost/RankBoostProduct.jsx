@@ -37,6 +37,8 @@ import {
   DiscountContainer,
   TotalMoney,
 } from "./RankedBoostProductElements";
+
+import { Link } from "react-router-dom";
 import masters from "../Images/Ranked_Tier6_Master.png";
 import diamond from "../Images/Ranked_Tier5_Diamond.png";
 import plat from "../Images/Ranked_Tier4_Platinum.png";
@@ -526,16 +528,18 @@ const RankBoostProduct = () => {
                   </ul>
                 </label>
               </TotalMoney>
-              <div class="button_cont" align="center">
-                <a
-                  class="example_d"
-                  href="add-website-here"
-                  target="_blank"
-                  rel="nofollow noopener"
-                >
-                  Checkout
-                </a>
-              </div>
+              <Link to="./checkout">
+                <div class="button_cont" align="center">
+                  <a
+                    class="example_d"
+                    href="add-website-here"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    Checkout
+                  </a>
+                </div>
+              </Link>
             </TotalMoneyCard>
           </TotalContainer>
         </ProductWrap>

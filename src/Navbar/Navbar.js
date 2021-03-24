@@ -6,47 +6,24 @@ import "./Navbar.css";
 import Dropdown from "../Dropdown/Dropdown";
 import { ExtraCheckBox } from "../Pages/RankBoost/RankedBoostProductElements";
 import { useHistory } from "react-router-dom";
-
+import ShoppingCart from "@styled-icons/remix-fill/ShoppingCart";
 const Navbar = () => {
   let history = useHistory();
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const [loggedIn, setLoggedIn] = useState("");
-
-  const [privateData, setPrivateData] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
   const [displayCheckBox, setDisplayCheckBox] = useState("none");
-
+  const [displayButton, setDisplayButton] = useState(true);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("authToken")) {
-      setLoggedIn(false);
-    }
     if (localStorage.getItem("authToken")) {
       setLoggedIn(true);
+    } else if (!localStorage.getItem("authToken")) {
+      setLoggedIn(false);
     }
-    const fetchPrivateData = async () => {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-        },
-      };
-
-      try {
-        const { data } = await axios.get(
-          "https://secret-cove-64633.herokuapp.com/api/private",
-          config
-        );
-        setPrivateData(data.data);
-      } catch (error) {
-        localStorage.removeItem("authToken");
-      }
-    };
-
-    fetchPrivateData();
-  }, [history, loggedIn]);
+  }, []);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -79,6 +56,17 @@ const Navbar = () => {
     }
     console.log(loggedIn);
   }, [loggedIn]);
+
+  useEffect(() => {
+    if (loggedIn === true) {
+      setDisplayButton("none");
+    }
+    if (loggedIn === false) {
+      setDisplayButton("flex");
+    }
+    console.log(loggedIn);
+  }, [loggedIn]);
+
   return (
     <>
       <nav className="navbar">
@@ -119,9 +107,28 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
+
+          <div className="nav-item">
+            <Button className="nav-links" display={displayButton} />
+          </div>
+          <div
+            className="nav-item"
+            style={{
+              display: displayCheckBox,
+              flexDirection: "column",
+              justifyContent: "flex-center",
+              textAlign: "center",
+            }}
+          >
+            <ExtraCheckBox
+              onChange={logoutHandler}
+              style={{ marginLeft: "10px" }}
+            />
+            <p id="logout">logout</p>
+          </div>
+
+          <li className="nav-item"></li>
         </ul>
-        <Button />
-        <ExtraCheckBox onChange={logoutHandler} display={displayCheckBox} />
       </nav>
     </>
   );

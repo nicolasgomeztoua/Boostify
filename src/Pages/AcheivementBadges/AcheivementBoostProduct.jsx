@@ -19,7 +19,7 @@ import {
   StepTwoWarningContainer,
   StepTwoWarning,
 } from "./BadgesElements";
-
+import { Link } from "react-router-dom";
 import { extraBadgesObj, LegendsObj, PopularBadgesObj } from "./BadgesObj";
 import "./Acheivementbadges.css";
 
@@ -286,16 +286,18 @@ const AcheivementBoostProduct = () => {
           </div>
           <DiscountContainer>Total</DiscountContainer>
           <TotalMoney>{acheivementTotalMoney}$</TotalMoney>
-          <div class="button_cont" align="center">
-            <a
-              class="example_d"
-              href="add-website-here"
-              target="_blank"
-              rel="nofollow noopener"
-            >
-              Checkout
-            </a>
-          </div>
+          <Link to="/checkout">
+            <div class="button_cont" align="center">
+              <a
+                class="example_d"
+                href="add-website-here"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                Checkout
+              </a>
+            </div>
+          </Link>
         </TotalMoneyCard>
       </TotalContainer>
     </>

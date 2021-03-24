@@ -15,7 +15,7 @@ import Bloodhound from "../Images/FAQ.png";
 import Testimonials from "../../Testimonials/Testimonials";
 import { World } from "@styled-icons/boxicons-regular/World";
 import Footer from "../../Footer/Footer";
-
+import Navbar from "../../Navbar/Navbar";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -57,6 +57,7 @@ const Home = () => {
   `;
   return (
     <div>
+      <Navbar />
       <Parallax
         strength={-300}
         bgImage={horizonImg}

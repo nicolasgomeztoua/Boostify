@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./AuthComponents.css";
-
+import Navbar from "../../Navbar/Navbar";
 const Register = ({ history }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -51,65 +51,68 @@ const Register = ({ history }) => {
   };
 
   return (
-    <div className="register-screen">
-      <form onSubmit={registerHandler} className="register-screen__form">
-        <h3 className="register-screen__title">Register</h3>
-        {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
-          <label htmlFor="name">Username:</label>
-          <input
-            type="text"
-            required
-            id="name"
-            placeholder="Enter username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            required
-            id="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            required
-            id="password"
-            autoComplete="true"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Confirm Password:</label>
-          <input
-            type="password"
-            required
-            id="confirmpassword"
-            autoComplete="true"
-            placeholder="Confirm password"
-            value={confirmpassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="form-btn form-btn-primary">
-          Register
-        </button>
+    <>
+      <Navbar></Navbar>
+      <div className="register-screen">
+        <form onSubmit={registerHandler} className="register-screen__form">
+          <h3 className="register-screen__title">Register</h3>
+          {error && <span className="error-message">{error}</span>}
+          <div className="form-group">
+            <label htmlFor="name">Username:</label>
+            <input
+              type="text"
+              required
+              id="name"
+              placeholder="Enter username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              required
+              id="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              required
+              id="password"
+              autoComplete="true"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmpassword">Confirm Password:</label>
+            <input
+              type="password"
+              required
+              id="confirmpassword"
+              autoComplete="true"
+              placeholder="Confirm password"
+              value={confirmpassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="form-btn form-btn-primary">
+            Register
+          </button>
 
-        <span className="register-screen__subtext">
-          Already have an account? <Link to="/login">Login</Link>
-        </span>
-      </form>
-    </div>
+          <span className="register-screen__subtext">
+            Already have an account? <Link to="/login">Login</Link>
+          </span>
+        </form>
+      </div>
+    </>
   );
 };
 

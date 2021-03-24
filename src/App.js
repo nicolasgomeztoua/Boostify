@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
-import Navbar from "./Navbar/Navbar";
+
 import KillBoost from "./Pages/KillBoost";
 //routing
 import PrivateRoute from "./Pages/authComponents/PrivateRoute";
@@ -21,7 +21,6 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar />
         <Switch>
           <PrivateRoute
             exact
