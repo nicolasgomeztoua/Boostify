@@ -46,6 +46,7 @@ import gold from "../Images/Ranked_Tier3_Gold.png";
 import silver from "../Images/Ranked_Tier2_Silver.png";
 import bronze from "../Images/Ranked_Tier1_Bronze.jpeg";
 
+import { useDispatchCart } from "../Cart/CartHandler";
 /*  const [psSelected, setPSSelected] = useState(false);
   const [xboxSelected, setXboxSelected] = useState(false);
   const PSclick = () => {
@@ -363,6 +364,10 @@ const RankBoostProduct = () => {
     }
   }, [secondValue]);
 
+  const dispatch = useDispatchCart();
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
   return (
     <>
       <ProductContainer>
@@ -528,18 +533,30 @@ const RankBoostProduct = () => {
                   </ul>
                 </label>
               </TotalMoney>
-              <Link to="./checkout">
-                <div class="button_cont" align="center">
-                  <a
-                    class="example_d"
-                    href="add-website-here"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    Checkout
-                  </a>
-                </div>
-              </Link>
+
+              <div class="button_cont" align="center">
+                <button
+                  onClick={() =>
+                    addToCart({
+                      Title: "Rank Boost",
+                      price: (
+                        totalMoney +
+                        moneyMultiplierDuo +
+                        moneyMultiplierStream +
+                        moneyMultiplierPriority
+                      ).toFixed(2),
+                      firstValue: firstValue,
+                      secondValue: secondValue,
+                    })
+                  }
+                  class="example_d"
+                  href="add-website-here"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  Add to cart
+                </button>
+              </div>
             </TotalMoneyCard>
           </TotalContainer>
         </ProductWrap>

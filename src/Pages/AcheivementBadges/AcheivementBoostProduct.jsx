@@ -22,6 +22,7 @@ import {
 import { Link } from "react-router-dom";
 import { extraBadgesObj, LegendsObj, PopularBadgesObj } from "./BadgesObj";
 import "./Acheivementbadges.css";
+import { useDispatchCart } from "../Cart/CartHandler";
 
 const AcheivementBoostProduct = () => {
   const [checkedPopBadges, setPopBadges] = useState({});
@@ -31,6 +32,12 @@ const AcheivementBoostProduct = () => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");
   const [acheivementTotalMoney, setAcheivementTotalMoney] = useState(0);
   const [valid, setValid] = useState("flex");
+
+  const dispatch = useDispatchCart();
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
+
   const handleChangePop = (e) => {
     setPopBadges(
       {
@@ -93,20 +100,22 @@ const AcheivementBoostProduct = () => {
       }
     }
   }, [checkedPopBadges]);
+
   useEffect(() => {
     for (let i = 0; i < extraBadgesObj.length; i++) {
-      if (checkedPopBadges[extraBadgesObj[i].name] === true) {
+      if (checkedExtraBadges[extraBadgesObj[i].name] === true) {
         setAcheivementTotalMoney(
           acheivementTotalMoney + extraBadgesObj[i].price
         );
       }
-      if (checkedPopBadges[extraBadgesObj[i].name] === false) {
+      if (checkedExtraBadges[extraBadgesObj[i].name] === false) {
         setAcheivementTotalMoney(
           acheivementTotalMoney - extraBadgesObj[i].price
         );
       }
     }
-  }, [checkedPopBadges]);
+  }, [checkedExtraBadges]);
+
   useEffect(() => {
     if (Object.values(checkedLegend)[0] === false) {
       setValid("flex");
@@ -286,18 +295,25 @@ const AcheivementBoostProduct = () => {
           </div>
           <DiscountContainer>Total</DiscountContainer>
           <TotalMoney>{acheivementTotalMoney}$</TotalMoney>
-          <Link to="/checkout">
-            <div class="button_cont" align="center">
-              <a
-                class="example_d"
-                href="add-website-here"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                Checkout
-              </a>
-            </div>
-          </Link>
+
+          <div class="button_cont" align="center">
+            <button
+              onClick={() => {
+                addToCart({
+                  Title: "Acheivement Boost",
+                  price: acheivementTotalMoney,
+                  selectedBadges: [filteredPopBadges, filteredExtraBadges],
+                  selectedLegend: Object.keys(checkedLegend),
+                });
+              }}
+              class="example_d"
+              href="add-website-here"
+              target="_blank"
+              rel="nofollow noopener"
+            >
+              Add to cart
+            </button>
+          </div>
         </TotalMoneyCard>
       </TotalContainer>
     </>

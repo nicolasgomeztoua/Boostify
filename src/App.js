@@ -49,6 +49,7 @@ function App() {
             exact
             component={ResetPassword}
           ></Route>
+          <Route path="/cart" exact></Route>
         </Switch>
       </div>
     </Router>

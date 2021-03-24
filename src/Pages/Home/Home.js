@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+
 import "./Home.css";
 import styled from "styled-components";
 import { Safe } from "@styled-icons/crypto/Safe";
@@ -16,6 +16,7 @@ import Testimonials from "../../Testimonials/Testimonials";
 import { World } from "@styled-icons/boxicons-regular/World";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
+
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -69,7 +70,7 @@ const Home = () => {
       >
         <div className="Home-showcase">
           <div className="Home-container">
-            <h1 id="Home-title">Welcome to Boostify.</h1>
+            <h1 id="Home-title">Welcome to Boostify. </h1>
             <h2 id="Home-subtitle"> Your hive for Apex boosting</h2>
 
             <div>

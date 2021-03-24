@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "../Dropdown/Dropdown";
 import { ExtraCheckBox } from "../Pages/RankBoost/RankedBoostProductElements";
 import { useHistory } from "react-router-dom";
-import ShoppingCart from "@styled-icons/remix-fill/ShoppingCart";
+import { ShoppingCart } from "@styled-icons/remix-fill/ShoppingCart";
+import { useCart } from "../Pages/Cart/CartHandler";
+
 const Navbar = () => {
   let history = useHistory();
+  const cartItems = useCart();
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -127,7 +130,12 @@ const Navbar = () => {
             <p id="logout">logout</p>
           </div>
 
-          <li className="nav-item"></li>
+          <li className="nav-item">
+            <Link to="/cart">
+              <ShoppingCart id="cart-icon"></ShoppingCart>{" "}
+              <span id="cart-icon-number">{cartItems.length}</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </>
