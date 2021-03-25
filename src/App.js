@@ -16,6 +16,7 @@ import Register from "./Pages/authComponents/Register";
 import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
 import Checkout from "./Pages/authComponents/Checkout";
+import Cart from "./Pages/Cart/Cart.jsx";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
             exact
             component={ResetPassword}
           ></Route>
-          <Route path="/cart" exact></Route>
+          <Route path="/cart" exact component={Cart}></Route>
         </Switch>
       </div>
     </Router>

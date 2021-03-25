@@ -538,15 +538,16 @@ const RankBoostProduct = () => {
                 <button
                   onClick={() =>
                     addToCart({
-                      Title: "Rank Boost",
-                      price: (
+                      title: "Rank Boost",
+                      price: Number(
                         totalMoney +
-                        moneyMultiplierDuo +
-                        moneyMultiplierStream +
-                        moneyMultiplierPriority
-                      ).toFixed(2),
+                          moneyMultiplierDuo +
+                          moneyMultiplierStream +
+                          moneyMultiplierPriority
+                      ).toFixed(0),
                       firstValue: firstValue,
                       secondValue: secondValue,
+                      secondRankImg: secondRankImg,
                     })
                   }
                   class="example_d"

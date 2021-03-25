@@ -23,6 +23,7 @@ import { Link } from "react-router-dom";
 import { extraBadgesObj, LegendsObj, PopularBadgesObj } from "./BadgesObj";
 import "./Acheivementbadges.css";
 import { useDispatchCart } from "../Cart/CartHandler";
+import TwentyBomb from "../Images/20Bomb.png";
 
 const AcheivementBoostProduct = () => {
   const [checkedPopBadges, setPopBadges] = useState({});
@@ -90,12 +91,12 @@ const AcheivementBoostProduct = () => {
     for (let i = 0; i < PopularBadgesObj.length; i++) {
       if (checkedPopBadges[PopularBadgesObj[i].name] === true) {
         setAcheivementTotalMoney(
-          acheivementTotalMoney + PopularBadgesObj[i].price
+          Number(acheivementTotalMoney + PopularBadgesObj[i].price)
         );
       }
       if (checkedPopBadges[PopularBadgesObj[i].name] === false) {
         setAcheivementTotalMoney(
-          acheivementTotalMoney - PopularBadgesObj[i].price
+          Number(acheivementTotalMoney - PopularBadgesObj[i].price)
         );
       }
     }
@@ -105,12 +106,12 @@ const AcheivementBoostProduct = () => {
     for (let i = 0; i < extraBadgesObj.length; i++) {
       if (checkedExtraBadges[extraBadgesObj[i].name] === true) {
         setAcheivementTotalMoney(
-          acheivementTotalMoney + extraBadgesObj[i].price
+          Number(acheivementTotalMoney + extraBadgesObj[i].price)
         );
       }
       if (checkedExtraBadges[extraBadgesObj[i].name] === false) {
         setAcheivementTotalMoney(
-          acheivementTotalMoney - extraBadgesObj[i].price
+          Number(acheivementTotalMoney - extraBadgesObj[i].price)
         );
       }
     }
@@ -295,15 +296,17 @@ const AcheivementBoostProduct = () => {
           </div>
           <DiscountContainer>Total</DiscountContainer>
           <TotalMoney>{acheivementTotalMoney}$</TotalMoney>
-
+          {console.log(acheivementTotalMoney)}
           <div class="button_cont" align="center">
             <button
               onClick={() => {
                 addToCart({
-                  Title: "Acheivement Boost",
+                  Rtitle: "Acheivement Boost",
                   price: acheivementTotalMoney,
-                  selectedBadges: [filteredPopBadges, filteredExtraBadges],
+                  selectedPopBadges: filteredPopBadges,
+                  selectedExtraBadges: filteredExtraBadges,
                   selectedLegend: Object.keys(checkedLegend),
+                  icon: TwentyBomb,
                 });
               }}
               class="example_d"
