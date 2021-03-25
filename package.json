@@ -2,7 +2,6 @@
   "name": "boostify",
   "version": "0.1.0",
   "private": true,
-  
   "description": "",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -15,6 +14,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "sass": "^1.32.8",
+    "stripe": "^8.140.0",
     "styled": "^1.0.0",
     "styled-components": "^5.2.1",
     "styled-icons": "^10.28.0",
@@ -23,7 +23,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -46,7 +46,8 @@
 .item {
   padding: 20px 30px;
   height: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr;
 }
 
 .item:nth-child(3) {
@@ -95,4 +96,25 @@
 .image {
   height: 125px;
   margin-right: 20px;
+}
+
+.checkout-btn-total {
+  border-top: 1px solid #e43403;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+#Total {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  align-items: center;
+}
+#totalPrice {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0;
+  margin-right: 50px;
+  font-size: 25.5px;
+  align-items: center;
 }

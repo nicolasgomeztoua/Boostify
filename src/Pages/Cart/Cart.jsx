@@ -52,9 +52,10 @@ const Cart = () => {
                   {entries.selectedLegend || `From: ${entries.firstValue}`}
                 </span>
                 <span>
-                  {entries.selectedPopBadges || `To: ${entries.secondValue}`}
+                  {`  ${entries.selectedPopBadges}` ||
+                    `To: ${entries.secondValue}`}
                 </span>
-                <span>{entries.selectedExtraBadges}</span>
+                <span>{`${entries.selectedExtraBadges}`}</span>
               </div>
 
               <div className="total-price">
@@ -64,8 +65,12 @@ const Cart = () => {
           );
         })}
 
-        <div>
-          <p>Total</p> <span className="total-price"> $ {totalPrice}</span>
+        <div className="checkout-btn-total">
+          <p id="Total">Total:</p>{" "}
+          <span className="total-price" id="totalPrice">
+            {" "}
+            $ {totalPrice}
+          </span>
         </div>
       </div>
     </>

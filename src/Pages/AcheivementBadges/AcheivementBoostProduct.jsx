@@ -296,26 +296,28 @@ const AcheivementBoostProduct = () => {
           </div>
           <DiscountContainer>Total</DiscountContainer>
           <TotalMoney>{acheivementTotalMoney}$</TotalMoney>
-          {console.log(acheivementTotalMoney)}
+
           <div class="button_cont" align="center">
-            <button
-              onClick={() => {
-                addToCart({
-                  Rtitle: "Acheivement Boost",
-                  price: acheivementTotalMoney,
-                  selectedPopBadges: filteredPopBadges,
-                  selectedExtraBadges: filteredExtraBadges,
-                  selectedLegend: Object.keys(checkedLegend),
-                  icon: TwentyBomb,
-                });
-              }}
-              class="example_d"
-              href="add-website-here"
-              target="_blank"
-              rel="nofollow noopener"
-            >
-              Add to cart
-            </button>
+            <Link to="./cart">
+              <button
+                onClick={() => {
+                  addToCart({
+                    Rtitle: "Acheivement Boost",
+                    price: acheivementTotalMoney,
+                    selectedPopBadges: filteredPopBadges,
+                    selectedExtraBadges: filteredExtraBadges,
+                    selectedLegend: Object.keys(checkedLegend),
+                    icon: TwentyBomb,
+                  });
+                }}
+                class="example_d"
+                href="add-website-here"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                Add to cart
+              </button>
+            </Link>
           </div>
         </TotalMoneyCard>
       </TotalContainer>

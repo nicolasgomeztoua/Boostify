@@ -535,28 +535,31 @@ const RankBoostProduct = () => {
               </TotalMoney>
 
               <div class="button_cont" align="center">
-                <button
-                  onClick={() =>
-                    addToCart({
-                      title: "Rank Boost",
-                      price: Number(
-                        totalMoney +
-                          moneyMultiplierDuo +
-                          moneyMultiplierStream +
-                          moneyMultiplierPriority
-                      ).toFixed(0),
-                      firstValue: firstValue,
-                      secondValue: secondValue,
-                      secondRankImg: secondRankImg,
-                    })
-                  }
-                  class="example_d"
-                  href="add-website-here"
-                  target="_blank"
-                  rel="nofollow noopener"
-                >
-                  Add to cart
-                </button>
+                ´
+                <Link to="./cart">
+                  <button
+                    onClick={() =>
+                      addToCart({
+                        title: "Rank Boost",
+                        price: Number(
+                          totalMoney +
+                            moneyMultiplierDuo +
+                            moneyMultiplierStream +
+                            moneyMultiplierPriority
+                        ).toFixed(0),
+                        firstValue: firstValue,
+                        secondValue: secondValue,
+                        secondRankImg: secondRankImg,
+                      })
+                    }
+                    class="example_d"
+                    href="add-website-here"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    Add to cart
+                  </button>
+                </Link>
               </div>
             </TotalMoneyCard>
           </TotalContainer>
