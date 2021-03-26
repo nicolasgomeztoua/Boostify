@@ -535,7 +535,6 @@ const RankBoostProduct = () => {
               </TotalMoney>
 
               <div class="button_cont" align="center">
-                ´
                 <Link to="./cart">
                   <button
                     onClick={() =>

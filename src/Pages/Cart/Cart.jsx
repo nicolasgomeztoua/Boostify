@@ -52,10 +52,9 @@ const Cart = () => {
                   {entries.selectedLegend || `From: ${entries.firstValue}`}
                 </span>
                 <span>
-                  {`  ${entries.selectedPopBadges}` ||
-                    `To: ${entries.secondValue}`}
+                  {entries.selectedPopBadges || `To: ${entries.secondValue}`}
                 </span>
-                <span>{`${entries.selectedExtraBadges}`}</span>
+                <span>{entries.selectedExtraBadges}</span>
               </div>
 
               <div className="total-price">
