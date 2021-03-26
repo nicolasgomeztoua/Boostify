@@ -3,7 +3,10 @@ import { useCart, useDispatchCart } from "./CartHandler";
 import Navbar from "../../Navbar/Navbar";
 import { SquaredCross } from "@styled-icons/entypo/SquaredCross";
 import "./Cart.css";
-
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(
+  "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
+);
 const Cart = () => {
   const items = useCart();
   const dispatch = useDispatchCart();
@@ -70,6 +73,7 @@ const Cart = () => {
             {" "}
             $ {totalPrice}
           </span>
+          <button role="link">Checkout</button>
         </div>
       </div>
     </>
