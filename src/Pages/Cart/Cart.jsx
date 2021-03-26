@@ -3,10 +3,13 @@ import { useCart, useDispatchCart } from "./CartHandler";
 import Navbar from "../../Navbar/Navbar";
 import { SquaredCross } from "@styled-icons/entypo/SquaredCross";
 import "./Cart.css";
+
 import { loadStripe } from "@stripe/stripe-js";
+
 const stripePromise = loadStripe(
   "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
 );
+
 const Cart = () => {
   const items = useCart();
   const dispatch = useDispatchCart();
@@ -20,17 +23,19 @@ const Cart = () => {
   };
 
   const handleClick = async (event) => {
-    // Get Stripe.js instance
     const stripe = await stripePromise;
 
-    // Call your backend to create the Checkout Session
-    const response = await fetch("/create-checkout-session", {
-      method: "POST",
-    });
+    const response = await fetch(
+      "https://secret-cove-64633.herokuapp.com/create-checkout-session",
+      {
+        method: "POST",
+      }
+    );
 
     const session = await response.json();
 
     // When the customer clicks on the button, redirect them to Checkout.
+
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
@@ -65,15 +70,11 @@ const Cart = () => {
               </div>
 
               <div>
-                <img
-                  className="image"
-                  src={entries.icon || entries.secondRankImg}
-                  alt=""
-                />
+                <img className="image" src={entries.icon} alt="" />
               </div>
 
               <div className="description">
-                <span id="title">{entries.title || entries.Rtitle}</span>
+                <span id="title">{entries.title}</span>
                 <span>
                   {entries.selectedLegend || `From: ${entries.firstValue}`}
                 </span>
@@ -83,9 +84,7 @@ const Cart = () => {
                 <span>{entries.selectedExtraBadges}</span>
               </div>
 
-              <div className="total-price">
-                ${entries.price || entries.Rprice}
-              </div>
+              <div className="total-price">${entries.price}</div>
             </div>
           );
         })}
@@ -96,7 +95,12 @@ const Cart = () => {
             {" "}
             $ {totalPrice}
           </span>
-          <button role="link" onClick={handleClick}>
+          <button
+            type="button"
+            id="checkout-button"
+            role="link"
+            onClick={handleClick}
+          >
             Checkout
           </button>
         </div>

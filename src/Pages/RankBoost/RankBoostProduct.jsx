@@ -548,7 +548,7 @@ const RankBoostProduct = () => {
                         ).toFixed(0),
                         firstValue: firstValue,
                         secondValue: secondValue,
-                        secondRankImg: secondRankImg,
+                        icon: secondRankImg,
                       })
                     }
                     class="example_d"
