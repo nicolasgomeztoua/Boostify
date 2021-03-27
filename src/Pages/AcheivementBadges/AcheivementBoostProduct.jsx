@@ -33,7 +33,8 @@ const AcheivementBoostProduct = () => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");
   const [acheivementTotalMoney, setAcheivementTotalMoney] = useState(0);
   const [valid, setValid] = useState("flex");
-
+  const [totalExtraBadges, setTotalExtraBadges] = useState(0);
+  const [totalPopBadges, setTotalPopBadges] = useState(0);
   const dispatch = useDispatchCart();
   const addToCart = (item) => {
     dispatch({ type: "ADD", item });
@@ -86,36 +87,28 @@ const AcheivementBoostProduct = () => {
   ) {
     return checkedExtraBadges[x] !== false;
   });
-
+  let totalPop = 0;
   useEffect(() => {
     for (let i = 0; i < PopularBadgesObj.length; i++) {
       if (checkedPopBadges[PopularBadgesObj[i].name] === true) {
-        setAcheivementTotalMoney(
-          Number(acheivementTotalMoney + PopularBadgesObj[i].price)
-        );
-      }
-      if (checkedPopBadges[PopularBadgesObj[i].name] === false) {
-        setAcheivementTotalMoney(
-          Number(acheivementTotalMoney - PopularBadgesObj[i].price)
-        );
+        totalPop = PopularBadgesObj[i].price + totalPop;
+        setTotalPopBadges(totalPop);
       }
     }
   }, [checkedPopBadges]);
-
+  let totalExtra = 0;
   useEffect(() => {
     for (let i = 0; i < extraBadgesObj.length; i++) {
       if (checkedExtraBadges[extraBadgesObj[i].name] === true) {
-        setAcheivementTotalMoney(
-          Number(acheivementTotalMoney + extraBadgesObj[i].price)
-        );
-      }
-      if (checkedExtraBadges[extraBadgesObj[i].name] === false) {
-        setAcheivementTotalMoney(
-          Number(acheivementTotalMoney - extraBadgesObj[i].price)
-        );
+        totalExtra = extraBadgesObj[i].price + totalExtra;
+        setTotalExtraBadges(totalExtra);
       }
     }
   }, [checkedExtraBadges]);
+
+  useEffect(() => {
+    setAcheivementTotalMoney(totalExtraBadges + totalPopBadges);
+  });
 
   useEffect(() => {
     if (Object.values(checkedLegend)[0] === false) {
@@ -302,7 +295,7 @@ const AcheivementBoostProduct = () => {
               <button
                 onClick={() => {
                   addToCart({
-                    Rtitle: "Acheivement Boost",
+                    title: "Acheivement Boost",
                     price: acheivementTotalMoney,
                     selectedPopBadges: filteredPopBadges,
                     selectedExtraBadges: filteredExtraBadges,

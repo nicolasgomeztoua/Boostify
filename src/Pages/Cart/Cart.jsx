@@ -1,13 +1,14 @@
 import React from "react";
 import { useCart, useDispatchCart } from "./CartHandler";
 import Navbar from "../../Navbar/Navbar";
-import { SquaredCross } from "@styled-icons/entypo/SquaredCross";
+import Footer from "../../Footer/Footer";
 import "./Cart.css";
-import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./CheckoutForm";
+import { CircleWithCross } from "@styled-icons/entypo/CircleWithCross";
 
-const stripePromise = loadStripe(
-  "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
-);
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
 const Cart = () => {
   const items = useCart();
   const dispatch = useDispatchCart();
@@ -19,89 +20,95 @@ const Cart = () => {
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
-
-  const handleClick = async (event) => {
-    const stripe = await stripePromise;
-
-    const response = await fetch(
-      "https://secret-cove-64633.herokuapp.com/create-checkout-session",
-      {
-        method: "POST",
-      }
-    );
-
-    const session = await response.json();
-
-    // When the customer clicks on the button, redirect them to Checkout.
-
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-
-    if (result.error) {
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
+  items.forEach((element, index) => {
+    if (element.price === 0) {
+      handleRemove(index);
     }
-  };
+  });
+  console.log(items);
+  if (totalPrice === 0) {
+    return (
+      <>
+        <Navbar></Navbar>
+        <div className="failed-cart-contaier">
+          <h1>Your cart is empty </h1>
+          <button className="example_d"> Go Back Home?</button>
+        </div>
+        <Footer footerColor="turquoise"></Footer>
+      </>
+    );
+  }
   return (
     <>
       <Navbar></Navbar>
-      <div className="shopping-cart">
-        <div className="title">Shopping Bag</div>
-        {items.map((entries, index) => {
-          return (
-            <div className="item">
-              <div className="buttons">
-                <SquaredCross
-                  onClick={() => handleRemove(index)}
-                  style={{
-                    display: "flex",
-                    width: "30px",
-                    height: "50px",
-                    color: "turquoise",
-                    cursor: "pointer",
-                    alignSelf: "center",
-                  }}
-                ></SquaredCross>
-              </div>
+      <div className="container">
+        <div className="window">
+          <div className="order-info">
+            <div className="order-info-content">
+              <h2 id="order-summary">Order Summary</h2>
+              <div className="line"></div>
+              {items.map((elements, index) => {
+                return (
+                  <table className="order-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <img
+                            src={elements.icon}
+                            className="full-width"
+                            alt="product"
+                          ></img>
+                        </td>
+                        <td>
+                          <br /> <span className="thin">{elements.title}</span>
+                          <br />{" "}
+                          {elements.selectedLegend ||
+                            `From: ${elements.firstValue}`}
+                          <br />{" "}
+                          <span className="thin small">
+                            {" "}
+                            {elements.selectedPopBadges ||
+                              `To: ${elements.secondValue}`}
+                            <br />
+                            {elements.selectedExtraBadges}
+                            <br />
+                            <CircleWithCross
+                              onClick={() => handleRemove(index)}
+                              style={{ height: "20px", color: "#e43403" }}
+                            ></CircleWithCross>
+                            <br />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="price">${elements.price}</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                );
+              })}
 
-              <div>
-                <img className="image" src={entries.icon} alt="" />
-              </div>
-
-              <div className="description">
-                <span id="title">{entries.title}</span>
-                <span>
-                  {entries.selectedLegend || `From: ${entries.firstValue}`}
+              <div className="line"></div>
+              <div className="total">
+                <span style={{ float: "left" }}>TOTAL</span>
+                <span style={{ float: "right", textAlign: "right" }}>
+                  ${totalPrice.toFixed(2)}
                 </span>
-                <span>
-                  {entries.selectedPopBadges || `To: ${entries.secondValue}`}
-                </span>
-                <span>{entries.selectedExtraBadges}</span>
               </div>
-
-              <div className="total-price">${entries.price}</div>
             </div>
-          );
-        })}
-
-        <div className="checkout-btn-total">
-          <p id="Total">Total:</p>{" "}
-          <span className="total-price" id="totalPrice">
-            {" "}
-            $ {totalPrice}
-          </span>
-          <button
-            type="button"
-            id="checkout-button"
-            role="link"
-            onClick={handleClick}
+          </div>
+          <Elements
+            stripe={loadStripe(
+              "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
+            )}
           >
-            Checkout
-          </button>
+            <CheckoutForm></CheckoutForm>
+          </Elements>
         </div>
       </div>
+      <Footer footerColor="turquoise"></Footer>
     </>
   );
 };

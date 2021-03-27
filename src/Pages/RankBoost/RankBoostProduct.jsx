@@ -545,7 +545,7 @@ const RankBoostProduct = () => {
                             moneyMultiplierDuo +
                             moneyMultiplierStream +
                             moneyMultiplierPriority
-                        ).toFixed(0),
+                        ).toFixed(2),
                         firstValue: firstValue,
                         secondValue: secondValue,
                         icon: secondRankImg,
