@@ -15,7 +15,7 @@ import Login from "./Pages/authComponents/Login";
 import Register from "./Pages/authComponents/Register";
 import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
-import Checkout from "./Pages/authComponents/Checkout";
+
 import Cart from "./Pages/Cart/Cart.jsx";
 
 function App() {
@@ -23,11 +23,7 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <PrivateRoute
-            exact
-            path="/checkout"
-            component={Checkout}
-          ></PrivateRoute>
+          <PrivateRoute exact path="/cart" component={Cart}></PrivateRoute>
           <Route exact path="/" component={Home}></Route>
           <Route path="/rank-boosting" exact component={RankBoost}></Route>
           <Route path="/contact-us" exact component={ContactUs}></Route>
@@ -50,7 +46,6 @@ function App() {
             exact
             component={ResetPassword}
           ></Route>
-          <Route path="/cart" exact component={Cart}></Route>
         </Switch>
       </div>
     </Router>

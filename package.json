@@ -16,6 +16,7 @@
     "react-parallax": "^3.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-stripe-checkout": "^2.6.3",
     "sass": "^1.32.8",
     "stripe": "^8.140.0",
     "styled": "^1.0.0",
