@@ -416,7 +416,7 @@ const RankBoostProduct = () => {
             </StepOneTitle>
             <StepOneSLidersWrap>
               <InitialRank>
-                <h2 id="current-rank">Set Your current RP</h2>
+                <h2 id="current-rank">Set your current RP</h2>
                 <img src={firstRankImg} className="rank" alt="rank"></img>
 
                 <p id="tier">{firstTier}</p>
