@@ -376,12 +376,18 @@ const RankBoostProduct = () => {
     priority: activePriority,
   };
   useEffect(() => {
+    let extrasArr2 = {
+      DuoQueue: activeDuo,
+      Offline: activeOffline,
+      Stream: activeStream,
+      priority: activePriority,
+    };
     setFilteredExtras(
       Object.fromEntries(
-        Object.entries(extrasArr).filter(([key, value]) => value === true)
+        Object.entries(extrasArr2).filter(([key, value]) => value === true)
       )
     );
-  }, [extrasArr]);
+  }, [activeDuo, activeOffline, activePriority, activeStream]);
   return (
     <>
       <ProductContainer>
