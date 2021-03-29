@@ -72,7 +72,7 @@ const RankBoostProduct = () => {
   const [activeStream, setActiveStream] = useState(false);
   const [activePriority, setPriority] = useState(false);
   const [activeOffline, setActiveOffline] = useState(false);
-
+  const [filteredExtras, setFilteredExtras] = useState("");
   const [rankmultiplier, setRankMultiplier] = useState(0);
   const [totalpoints, setTotalPoints] = useState(0);
   const [totalMoney, setTotalMoney] = useState(0);
@@ -368,6 +368,20 @@ const RankBoostProduct = () => {
   const addToCart = (item) => {
     dispatch({ type: "ADD", item });
   };
+
+  let extrasArr = {
+    DuoQueue: activeDuo,
+    Offline: activeOffline,
+    Stream: activeStream,
+    priority: activePriority,
+  };
+  useEffect(() => {
+    setFilteredExtras(
+      Object.fromEntries(
+        Object.entries(extrasArr).filter(([key, value]) => value === true)
+      )
+    );
+  }, [extrasArr]);
   return (
     <>
       <ProductContainer>
@@ -539,6 +553,8 @@ const RankBoostProduct = () => {
                         firstValue: firstValue,
                         secondValue: secondValue,
                         icon: secondRankImg,
+                        extrasArr: Object.entries(extrasArr),
+                        filteredExtras: Object.keys(filteredExtras),
                       })
                     }
                     class="example_d"

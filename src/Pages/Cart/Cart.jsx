@@ -8,6 +8,11 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Select from "react-select";
+import {
+  StepTwoWarningContainer,
+  StepTwoWarning,
+} from "../RankBoost/RankedBoostProductElements";
+
 const stripePromise = loadStripe(
   "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
 );
@@ -25,6 +30,8 @@ const Cart = () => {
   const [region, setRegion] = useState(null);
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const [invalid, setInvalid] = useState("flex");
+  const [extrasArr, setExtrasArr] = useState([]);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -69,6 +76,11 @@ const Cart = () => {
       })
     );
     setDatecreated(new Date());
+    setExtrasArr(
+      items.flatMap((element) => {
+        return element.extrasArr;
+      })
+    );
   }, [items]);
 
   const handleRemove = (index) => {
@@ -89,7 +101,7 @@ const Cart = () => {
 
     try {
       const { data } = axios.post(
-        "https://secret-cove-64633.herokuapp.com/auth/createorder",
+        "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         {
           titles,
           prices,
@@ -102,6 +114,7 @@ const Cart = () => {
           PSNPass,
           region,
           dateCreated,
+          extrasArr,
         },
         config
       );
@@ -173,10 +186,13 @@ const Cart = () => {
   useEffect(() => {
     if (region === null || PSNPass === null || PSNemail === null) {
       setDisabled(true);
+      setInvalid("flex");
     } else {
       setDisabled(false);
+      setInvalid("none");
     }
   }, [region, PSNPass, PSNemail]);
+
   if (totalPrice === 0) {
     return (
       <>
@@ -226,6 +242,10 @@ const Cart = () => {
                             <br />
                             <span className="thin small">
                               {element.selectedExtraBadges}
+                            </span>
+
+                            <span className="thin small">
+                              {`${element.filteredExtras}`}
                             </span>
                             <br />
                             <CircleWithCross
@@ -277,18 +297,44 @@ const Cart = () => {
                 styles={customStyles}
                 onChange={(value) => setRegion(value.label)}
               />
-              <div id="pay-btn-wrap">
-                <button
-                  type="button"
-                  id="checkout-button"
-                  role="link"
-                  onClick={potentialOrder}
-                  className="pay-btn"
-                  disabled={disabled}
-                >
-                  Checkout with Stripe
-                </button>
-              </div>
+              <StepTwoWarningContainer
+                style={{
+                  display: invalid,
+
+                  marginTop: "10px",
+                }}
+              >
+                Fill out all fields
+                <StepTwoWarning>
+                  <i
+                    className="fa fa-times"
+                    onClick={() => setInvalid("none")}
+                    style={{ padding: "20px" }}
+                  ></i>
+                </StepTwoWarning>
+              </StepTwoWarningContainer>
+              <StepTwoWarningContainer
+                id="secondWarning"
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  padding: "5px",
+                }}
+              >
+                If 2-step-auth is enabled in your PSN account make sure to
+                disable to it to prevent access problems
+              </StepTwoWarningContainer>
+
+              <button
+                type="button"
+                id="checkout-button"
+                role="link"
+                onClick={handleClick}
+                className="pay-btn"
+                disabled={disabled}
+              >
+                Checkout with Stripe
+              </button>
             </div>
           </div>
         </div>
