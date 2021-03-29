@@ -230,7 +230,7 @@
 .FAQ-parallax {
   min-width: 100vw;
 
-  height: 500px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -270,11 +270,11 @@
     align-items: stretch;
   }
   .FAQ-parallax {
-    height: 200vh;
+    height: auto;
   }
   .FAQ {
     width: 100vw;
-    height: 400px;
+    height: auto;
   }
   .FAQ p {
     max-width: 80vw;

@@ -6,17 +6,36 @@ import "./Cart.css";
 import { CircleWithCross } from "@styled-icons/entypo/CircleWithCross";
 import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const stripePromise = loadStripe(
   "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
 );
 const Cart = () => {
   const [message, setMessage] = useState("");
+  const [titles, setTitles] = useState([""]);
+  const [prices, setPrices] = useState([0]);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
     (total, b) => Number(total) + Number(b.price),
     0
   );
+
+  useEffect(() => {
+    setTitles([
+      items.map((element) => {
+        return element.title;
+      }),
+    ]);
+  }, [items]);
+
+  useEffect(() => {
+    setPrices([
+      items.map((element) => {
+        return element.price;
+      }),
+    ]);
+  }, [items]);
 
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
@@ -26,6 +45,24 @@ const Cart = () => {
       handleRemove(index);
     }
   });
+
+  const sucessfulOrder = async (e) => {
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const { data } = await axios.post(
+        "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
+        { titles, prices },
+        config
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleClick = async (event) => {
     const stripe = await stripePromise;
@@ -65,7 +102,6 @@ const Cart = () => {
 
     if (query.get("success")) {
       setMessage("Order placed! You will receive an email confirmation.");
-      console.log(items);
     }
 
     if (query.get("canceled")) {
@@ -117,8 +153,7 @@ const Cart = () => {
                             `From ${element.firstValue}`}
                           <br />
                           <span className="thin small">
-                            {" "}
-                            {`${element.selectedPopBadges} ` ||
+                            {element.selectedPopBadges ||
                               `To: ${element.secondValue}`}
                             <br />
                             <span className="thin small">
