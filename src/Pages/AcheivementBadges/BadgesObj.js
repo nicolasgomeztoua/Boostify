@@ -33,7 +33,7 @@ import Octane from "../Images/Octane.jpg";
 import Crypto from "../Images/Crypto.jpg";
 import Gibby from "../Images/Gibby.jpg";
 import Mirage from "../Images/Mirage.jpg";
-import Loba from "../Images/Loba.jpg";
+import Loba from "../Images/Loba.png";
 import Lifeline from "../Images/Lifeline.jpg";
 import Rampart from "../Images/Rampart.jpg";
 import Wattson from "../Images/Wattson.jpg";
