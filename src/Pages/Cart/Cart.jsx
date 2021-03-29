@@ -22,19 +22,19 @@ const Cart = () => {
   );
 
   useEffect(() => {
-    setTitles([
+    setTitles(
       items.map((element) => {
         return element.title;
-      }),
-    ]);
+      })
+    );
   }, [items]);
 
   useEffect(() => {
-    setPrices([
+    setPrices(
       items.map((element) => {
         return element.price;
-      }),
-    ]);
+      })
+    );
   }, [items]);
 
   const handleRemove = (index) => {
@@ -46,7 +46,7 @@ const Cart = () => {
     }
   });
 
-  const sucessfulOrder = async (e) => {
+  const potentialOrder = (e) => {
     const config = {
       header: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Cart = () => {
     };
 
     try {
-      const { data } = await axios.post(
+      const { data } = axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         { titles, prices },
         config
@@ -63,8 +63,8 @@ const Cart = () => {
       console.log(error);
     }
   };
-
   const handleClick = async (event) => {
+    potentialOrder();
     const stripe = await stripePromise;
 
     const response = await fetch(
