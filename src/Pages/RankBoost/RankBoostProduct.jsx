@@ -522,16 +522,6 @@ const RankBoostProduct = () => {
                   ).toFixed(2)}
                   {"$"}
                 </span>
-                <label class="dropdown">
-                  <div class="dd-button">Dropdown</div>
-                  <input type="checkbox" class="dd-input" id="test"></input>
-                  <ul class="dd-menu">
-                    <li>USD</li>
-                    <li>EUR</li>
-                    <li>RUPEES</li>
-                    <li class="divider"></li>
-                  </ul>
-                </label>
               </TotalMoney>
 
               <div class="button_cont" align="center">

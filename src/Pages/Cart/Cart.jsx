@@ -7,6 +7,7 @@ import { CircleWithCross } from "@styled-icons/entypo/CircleWithCross";
 import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Select from "react-select";
 const stripePromise = loadStripe(
   "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
 );
@@ -14,6 +15,16 @@ const Cart = () => {
   const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
   const [prices, setPrices] = useState([0]);
+  const [selectedPopBadges, setSelectedPopBadges] = useState([""]);
+  const [selectedExtraBadges, setSelectedExtraBadges] = useState([""]);
+  const [firstValue, setFirstValue] = useState(0);
+  const [secondValue, setSecondValue] = useState(0);
+  const [selectedLegend, setSelectedLegend] = useState("");
+  const [PSNemail, setPSN] = useState(null);
+  const [PSNPass, setPSNPass] = useState(null);
+  const [region, setRegion] = useState(null);
+  const [dateCreated, setDatecreated] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -27,14 +38,37 @@ const Cart = () => {
         return element.title;
       })
     );
-  }, [items]);
-
-  useEffect(() => {
     setPrices(
       items.map((element) => {
         return element.price;
       })
     );
+    setSelectedPopBadges(
+      items.flatMap((element) => {
+        return element.selectedPopBadges;
+      })
+    );
+    setSelectedExtraBadges(
+      items.flatMap((element) => {
+        return element.selectedExtraBadges;
+      })
+    );
+    setFirstValue(
+      items.flatMap((element) => {
+        return element.firstValue;
+      })
+    );
+    setSecondValue(
+      items.flatMap((element) => {
+        return element.secondValue;
+      })
+    );
+    setSelectedLegend(
+      items.flatMap((element) => {
+        return element.selectedLegend;
+      })
+    );
+    setDatecreated(new Date());
   }, [items]);
 
   const handleRemove = (index) => {
@@ -55,8 +89,20 @@ const Cart = () => {
 
     try {
       const { data } = axios.post(
-        "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
-        { titles, prices },
+        "https://secret-cove-64633.herokuapp.com/auth/createorder",
+        {
+          titles,
+          prices,
+          selectedLegend,
+          selectedPopBadges,
+          selectedExtraBadges,
+          firstValue,
+          secondValue,
+          PSNemail,
+          PSNPass,
+          region,
+          dateCreated,
+        },
         config
       );
     } catch (error) {
@@ -110,6 +156,27 @@ const Cart = () => {
       );
     }
   }, []);
+
+  const options = [
+    { value: "EU", label: "EU" },
+    { value: "NA", label: "NA" },
+    { value: "Asia", label: "Asia" },
+  ];
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+
+      color: "black",
+      padding: 20,
+    }),
+  };
+  useEffect(() => {
+    if (region === null || PSNPass === null || PSNemail === null) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [region, PSNPass, PSNemail]);
   if (totalPrice === 0) {
     return (
       <>
@@ -125,6 +192,7 @@ const Cart = () => {
       </>
     );
   }
+
   return (
     <>
       <Navbar></Navbar>
@@ -191,15 +259,36 @@ const Cart = () => {
           </div>
           <div className="credit-info">
             <div className="credit-info-content">
-              <button
-                type="button"
-                id="checkout-button"
-                role="link"
-                onClick={handleClick}
-                className="pay-btn"
-              >
-                Checkout
-              </button>
+              <h2 id="order-summary">PSN Email</h2>
+              <input
+                type="email"
+                class="input-field"
+                onChange={(e) => setPSN(e.target.value)}
+              ></input>
+              <h2 id="order-summary">PSN Password</h2>
+              <input
+                type="password"
+                class="input-field"
+                onChange={(e) => setPSNPass(e.target.value)}
+              ></input>
+              <h2 id="order-summary">Select Your region</h2>
+              <Select
+                options={options}
+                styles={customStyles}
+                onChange={(value) => setRegion(value.label)}
+              />
+              <div id="pay-btn-wrap">
+                <button
+                  type="button"
+                  id="checkout-button"
+                  role="link"
+                  onClick={potentialOrder}
+                  className="pay-btn"
+                  disabled={disabled}
+                >
+                  Checkout with Stripe
+                </button>
+              </div>
             </div>
           </div>
         </div>

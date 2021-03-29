@@ -99,18 +99,24 @@
 }
 .pay-btn {
   border: none;
-  background: #22b877;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
   line-height: 2em;
   border-radius: 10px;
   font-size: 19px;
   font-size: 1.2rem;
   color: #fff;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   bottom: 25px;
   width: calc(100% - 50px);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  min-width: 195px;
+  background-color: #3232d5;
+  padding: 12px 30px;
+  border-radius: 50px;
 }
 .pay-btn:hover {
   background: #22a877;
@@ -232,12 +238,6 @@
     padding-bottom: 100px;
     border-radius: 0px;
   }
-  .pay-btn {
-    border-radius: 0px;
-    position: relative;
-    top: 50%;
-    left: 9%;
-  }
 }
 .failed-cart-contaier {
   width: 100vw;
@@ -250,4 +250,20 @@
 }
 #empty {
   font-size: 45.23px;
+}
+
+#radio-wrap {
+  display: flex;
+  justify-content: center;
+}
+#pay-btn-wrap {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  align-self: flex-end;
+  min-width: 300px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
