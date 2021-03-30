@@ -56,7 +56,7 @@ const ResetPassword = ({ history, match }) => {
         {error && <span className="error-message">{error} </span>}
         {success && (
           <span className="success-message">
-            {success} <Link to="/login">Login</Link>
+            {success} <a href="https://www.boostify.es">Login</a>
           </span>
         )}
         <div className="form-group">
