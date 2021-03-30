@@ -79,6 +79,7 @@ const RankBoostProduct = () => {
   const [moneyMultiplierDuo, setMoneyMultiplierDuo] = useState(0);
   const [moneyMultiplierStream, setMoneyMultiplierStream] = useState(0);
   const [moneyMultiplierPriority, setMoneyMultipliePriority] = useState(0);
+  const [completionTime, setCompletionTime] = useState("");
 
   const psCLick = () => {
     setColor({
@@ -364,6 +365,15 @@ const RankBoostProduct = () => {
     }
   }, [secondValue]);
 
+  useEffect(() => {
+    if (firstValue) {
+      setCompletionTime("48 hours");
+    }
+    if (secondValue > 11000) {
+      setCompletionTime("15 days");
+    }
+  }, [firstValue, secondValue]);
+
   const dispatch = useDispatchCart();
   const addToCart = (item) => {
     dispatch({ type: "ADD", item });
@@ -388,6 +398,7 @@ const RankBoostProduct = () => {
       )
     );
   }, [activeDuo, activeOffline, activePriority, activeStream]);
+
   return (
     <>
       <ProductContainer>
@@ -519,7 +530,7 @@ const RankBoostProduct = () => {
                   {firstValue}RP to {secondValue}RP
                 </span>
                 <br></br> Average Completion Time: <br></br>
-                <span>COMPLETION</span>
+                <span>{completionTime}</span>
               </TotalMoneyHeader>
               <DiscountContainer>PromoCode</DiscountContainer>
               <InputTyped

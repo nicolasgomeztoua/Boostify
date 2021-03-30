@@ -99,8 +99,8 @@ const Home = () => {
         <div className="icons">
           <li className="icon-section">
             <span className="desc">
-              We have a strong link with the pred community. And we are their
-              preffered platform as known members of the ecosystem. We can
+              We have a strong link with the pred community, so we are their
+              preferred platform as known members of the ecosystem. We can
               ensure service from the best.
             </span>
             <div className="title-icon">
@@ -143,7 +143,7 @@ const Home = () => {
         </div>
         <h2 className="Home-intro" id="outro">
           {" "}
-          The preffered platform of the top 500 in the EU{" "}
+          The preferred platform of the top 500 in the EU{" "}
           <Verified id="verified" />{" "}
         </h2>
       </div>
@@ -180,16 +180,17 @@ const Home = () => {
               <p>
                 Yes, we offer legend choice in any of our orders. Our
                 professional boosters will carry out your order playing on your
-                legend of choice
+                legend of choice.
               </p>
             </div>
 
             <div className="FAQ">
               <h3>
-                <FAQ /> <br></br> Can the booster appear offline while he plays?
+                <FAQ /> <br></br> Can the professional appear offline while he
+                plays?
               </h3>
               <p>
-                Yes, at no extra cost you can ask our proffesional players to
+                Yes, at no extra cost you can ask our professional players to
                 appear offline on your account while he plays on your account.
                 Ensuring your privacy during the process.
               </p>
