@@ -35,10 +35,11 @@
 
 .container {
   width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  flex-direction: column;
 }
 .col-4 {
-  width: 25%;
-  float: left;
 }
 
 .coming-soon-title {
@@ -53,5 +54,10 @@
   }
   .coming-soon-title {
     font-size: 58px;
+  }
+}
+@media screen and (max-width: 1111px) {
+  .coming-soon-wrap {
+    background-image: url(../Images//fusyMobile.jpg);
   }
 }

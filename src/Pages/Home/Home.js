@@ -92,7 +92,10 @@ const Home = () => {
       {/* ///////////////////////////////////// */}
 
       <div className="Home-intro">
-        <h2> Looking to boost your account to the next echelon? </h2>
+        <h2 id="Home-subtitle" style={{ color: "black", textShadow: "none" }}>
+          {" "}
+          Looking to boost your account to the next echelon?{" "}
+        </h2>
         <div className="icons">
           <li className="icon-section">
             <span className="desc">

@@ -16,11 +16,17 @@
   color: white;
   text-align: center;
   font-size: 90.44px;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black,
+    -0.07em -0.07em black, -0.07em 0.07em black, 0.07em -0.07em black,
+    0.07em 0.07em black;
 }
 #Rank-boost-subtitle {
   font-size: 63.96px;
-  color: turquoise;
+  color: black;
   text-align: center;
+  text-shadow: 0.07em 0 white, 0 0.07em white, -0.07em 0 white, 0 -0.07em white,
+    -0.07em -0.07em white, -0.07em 0.07em white, 0.07em -0.07em white,
+    0.07em 0.07em white;
 }
 #btn {
   display: flex;

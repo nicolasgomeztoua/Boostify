@@ -18,11 +18,17 @@
   font-size: 90.44px;
   color: #000;
   text-align: center;
+  text-shadow: 0.07em 0 white, 0 0.07em white, -0.07em 0 white, 0 -0.07em white,
+    -0.07em -0.07em white, -0.07em 0.07em white, 0.07em -0.07em white,
+    0.07em 0.07em white;
 }
 #Home-subtitle {
   font-size: 63.96px;
-  color: #df001b;
+  color: white;
   text-align: center;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black,
+    -0.07em -0.07em black, -0.07em 0.07em black, 0.07em -0.07em black,
+    0.07em 0.07em black;
 }
 
 @media screen and (max-width: 930px) {
@@ -218,6 +224,14 @@
   .icons {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .desc {
+    font-size: 18px;
+  }
+  .Home-intro {
   }
 }
 /* ........................................................*/

@@ -19,7 +19,7 @@ class CountDown extends Component {
   count() {
     var now = new Date().getTime();
     var t = this.deadline - now;
-    var dd = Math.floor(t / (100000 * 60 * 60 * 24));
+    var dd = Math.floor(t / (150000 * 6 * 60 * 24));
     var hh = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var mm = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
     var ss = Math.floor((t % (1000 * 60)) / 1000);
