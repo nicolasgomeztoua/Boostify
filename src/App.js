@@ -17,6 +17,7 @@ import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
 
 import Cart from "./Pages/Cart/Cart.jsx";
+import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 
 function App() {
   return (
@@ -27,13 +28,13 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/rank-boosting" exact component={RankBoost}></Route>
           <Route path="/contact-us" exact component={ContactUs}></Route>
-          <Route path="/kills-boosting" exact component={KillBoost}></Route>
+          <Route path="/kills-boosting" exact component={ComingSoon}></Route>
           <Route
             path="/acheivement-badges"
             exact
             component={AcheivementBadges}
           ></Route>
-          <Route path="/wins-boosting" exact component={WinBoost}></Route>
+          <Route path="/wins-boosting" exact component={ComingSoon}></Route>
           <Route path="/login" exact component={Login}></Route>
           <Route path="/register" exact component={Register}></Route>
           <Route

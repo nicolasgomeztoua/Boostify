@@ -321,7 +321,7 @@ const Cart = () => {
                   padding: "5px",
                 }}
               >
-                If 2-step-auth is enabled in your PSN account make sure to
+                If 2-step-auth is enabled on your PSN account make sure to
                 disable to it to prevent access problems
               </StepTwoWarningContainer>
 
