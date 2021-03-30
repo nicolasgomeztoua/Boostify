@@ -53,7 +53,7 @@ const Footer = ({ footerColor }) => {
               <FooterLinkItems>
                 <FooterLinkTitle>Socials</FooterLinkTitle>
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/boostifyofficial/"
                   target="_blank"
                   rel="noreferrer"
                 >
