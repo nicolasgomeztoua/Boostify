@@ -174,11 +174,11 @@ const Home = () => {
 
             <div className="FAQ">
               <h3>
-                <FAQ /> <br></br>Can i have the proffesional play with my
+                <FAQ /> <br></br>Can i have the professional play with my
                 favourite legend?
               </h3>
               <p>
-                Yes, we offer legend choice in any of our orders. Our
+                Yes, we offer legend choice Acheivement Boost orders. Our
                 professional boosters will carry out your order playing on your
                 legend of choice.
               </p>

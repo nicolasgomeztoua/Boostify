@@ -324,7 +324,7 @@ const Cart = () => {
                 }}
               >
                 If 2-step-auth is enabled on your PSN account make sure to
-                disable to it to prevent access problems
+                disable it to prevent access problems
               </StepTwoWarningContainer>
 
               <button
