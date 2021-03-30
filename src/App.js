@@ -25,8 +25,8 @@ function App() {
   ReactGA.initialize(TRACKING_ID);
   return (
     <>
-      <RouteChangeTracker></RouteChangeTracker>
       <Router>
+        <RouteChangeTracker></RouteChangeTracker>
         <div className="app">
           <Switch>
             <PrivateRoute exact path="/cart" component={Cart}></PrivateRoute>
@@ -53,7 +53,7 @@ function App() {
               component={ResetPassword}
             ></Route>
           </Switch>
-        </div>
+        </div>{" "}
       </Router>
     </>
   );
