@@ -7,7 +7,7 @@ import KillBoost from "./Pages/KillBoost";
 //routing
 import PrivateRoute from "./Pages/authComponents/PrivateRoute";
 ///////////////////////////////////////////////////////////////
-import ContactUs from "./Pages/ContactUs";
+import ContactUs from "./Pages/ContactUs/ContactUs";
 import RankBoost from "./Pages/RankBoost/RankBoost";
 import AcheivementBadges from "./Pages/AcheivementBadges/AcheivementBadges.jsx";
 import WinBoost from "./Pages/WinBoost";

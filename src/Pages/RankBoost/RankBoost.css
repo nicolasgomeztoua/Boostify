@@ -27,6 +27,7 @@
   text-shadow: 0.07em 0 white, 0 0.07em white, -0.07em 0 white, 0 -0.07em white,
     -0.07em -0.07em white, -0.07em 0.07em white, 0.07em -0.07em white,
     0.07em 0.07em white;
+  margin-bottom: 50px;
 }
 #btn {
   display: flex;
