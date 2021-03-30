@@ -245,7 +245,7 @@ const Cart = () => {
                             </span>
 
                             <span className="thin small">
-                              {`${element.filteredExtras}`}
+                              {`${element.filteredExtras}` || "no extras"}
                             </span>
                             <br />
                             <CircleWithCross
