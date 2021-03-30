@@ -98,11 +98,7 @@ return(
                                 <div className='card'>
                                   <div className='layer'> </div>
                                   <div className='content'>
-                                    <p>"Lorem ipsum dolor sit amet consectetur 
-                                      adipisicing elit. Maiores nobis saepe eum 
-                                      exercitationem consectetur mollitia sint, et asperiores,
-                                       autem voluptatum perferendis, 
-                                      esse quis accusamus qui quae! Tempore adipisci ipsa tenetur!"</p>
+                                    <p>" Saw their ad on instagram and decided to give it a go for that coveted 4000 damage. I was worried about possible ban but i made sure to not log in during the boost and the service was extremly professional. Im super happy with the result so thanks guys. "</p>
                                       <div className='imgBx'>
                                         <img src={User4} alt='testimonial-user'></img>
                                       </div>
