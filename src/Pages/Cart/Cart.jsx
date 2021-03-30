@@ -15,7 +15,9 @@ import {
   StepTwoWarning,
 } from "../RankBoost/RankedBoostProductElements";
 
-const stripePromise = loadStripe(process.env.SK);
+const stripePromise = loadStripe(
+  "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
+);
 const Cart = () => {
   const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
@@ -38,7 +40,7 @@ const Cart = () => {
     (total, b) => Number(total) + Number(b.price),
     0
   );
-
+  console.log(process.env.SK);
   useEffect(() => {
     setTitles(
       items.map((element) => {
