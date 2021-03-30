@@ -107,7 +107,7 @@ const RankBoostProduct = () => {
     }
 
     if (firstValue >= 10000) {
-      setTotalMoney((totalpoints * rankmultiplier * 0.9) / 100);
+      setTotalMoney((totalpoints * rankmultiplier * 0.8) / 100);
     }
   }, [totalpoints, rankmultiplier, secondValue, firstValue]);
 
