@@ -36,8 +36,8 @@ const Footer = ({ footerColor }) => {
               <FooterLinkItems>
                 <FooterLinkTitle>Explore</FooterLinkTitle>
                 <FooterLink to="/">Home</FooterLink>
-                <FooterLink to="/sign-up">Sign Up</FooterLink>
-                <FooterLink to="/log-in">Log-in</FooterLink>
+                <FooterLink to="/register">Sign Up</FooterLink>
+                <FooterLink to="/login">Log-in</FooterLink>
               </FooterLinkItems>
             </FooterLinksWrapper>
 
