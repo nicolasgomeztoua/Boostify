@@ -40,7 +40,7 @@ const Login = ({ history }) => {
 
       localStorage.setItem("authToken", data.token);
 
-      history.push("/");
+      history.push("/cart");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {

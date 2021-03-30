@@ -212,7 +212,7 @@ const Cart = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="container">
+      <div className="container-cart">
         <div className="window">
           <div className="order-info">
             <div className="order-info-content">
