@@ -8,14 +8,13 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Select from "react-select";
+
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
 } from "../RankBoost/RankedBoostProductElements";
 
-const stripePromise = loadStripe(
-  "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
-);
+const stripePromise = loadStripe(process.env.SK);
 const Cart = () => {
   const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
