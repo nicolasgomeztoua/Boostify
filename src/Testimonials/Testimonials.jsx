@@ -44,11 +44,10 @@ return(
                                 <div className='card'>
                                   <div className='layer'> </div>
                                   <div className='content'>
-                                    <p>"Lorem ipsum dolor sit amet consectetur 
-                                      adipisicing elit. Maiores nobis saepe eum 
-                                      exercitationem consectetur mollitia sint, et asperiores,
-                                       autem voluptatum perferendis, 
-                                      esse quis accusamus qui quae! Tempore adipisci ipsa tenetur!"</p>
+                                    <p>"At first I found prices to be fairly expensive, so I scouted boosting on fiverr and inevitably got scammed :P. 
+                                      Teachy was my booster and 
+                                      my order was 
+                                      completed way before the estimated completion time. The difference between a premium service like this is incomparable."</p>
                                       <div className='imgBx'>
                                         <img src={User1} alt='testimonial user'></img>
                                       </div>
@@ -66,11 +65,8 @@ return(
                                 <div className='card'>
                                   <div className='layer'> </div>
                                   <div className='content'>
-                                    <p>"Lorem ipsum dolor sit amet consectetur 
-                                      adipisicing elit. Maiores nobis saepe eum 
-                                      exercitationem consectetur mollitia sint, et asperiores,
-                                       autem voluptatum perferendis, 
-                                      esse quis accusamus qui quae! Tempore adipisci ipsa tenetur!"</p>
+                                    <p>"
+                                      Shoutout to wolfgangz for the good service. The split grind was killing me. Im glad i can finally play on the servers I belong on without the reset."</p>
                                       <div className='imgBx'>
                                         <img src={User2} alt='testimonial-user'></img>
                                       </div>
@@ -86,11 +82,7 @@ return(
                                 <div className='card'>
                                   <div className='layer'> </div>
                                   <div className='content'>
-                                    <p>"Lorem ipsum dolor sit amet consectetur 
-                                      adipisicing elit. Maiores nobis saepe eum 
-                                      exercitationem consectetur mollitia sint, et asperiores,
-                                       autem voluptatum perferendis, 
-                                      esse quis accusamus qui quae! Tempore adipisci ipsa tenetur!" </p>
+                                    <p>"My girlfriend is a bit of a bot. So i wanted to get her some special badges for her bday because she still loves Apex. ProxyH came in clutch witht the 20bomb 4k in a couple hours. She was really happy with how her banner looked and got tons of reactions from her gamer friends. let's just say I put on my birthday suit that day." </p>
                                      <div className='imgBx'>
                                         <img src={User3} alt='testimonial-user'></img>
                                       </div>
