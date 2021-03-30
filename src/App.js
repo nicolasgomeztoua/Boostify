@@ -19,9 +19,10 @@ import RouteChangeTracker from "./GA/GA";
 import Cart from "./Pages/Cart/Cart.jsx";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import ReactGA from "react-ga";
-const TRACKING_ID = "G-LGN3TB768L";
-ReactGA.initialize(TRACKING_ID);
+
 function App() {
+  const TRACKING_ID = "G-LGN3TB768L";
+  ReactGA.initialize(TRACKING_ID);
   return (
     <>
       <RouteChangeTracker></RouteChangeTracker>
