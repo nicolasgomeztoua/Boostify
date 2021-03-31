@@ -124,11 +124,11 @@ const Cart = () => {
       console.log(error);
     }
   };
-  const handleClick = async (event) => {
+  const handleClick = (event) => {
     potentialOrder();
-    const stripe = await stripePromise;
+    const stripe = stripePromise;
 
-    const response = await fetch(
+    const response = fetch(
       "https://secret-cove-64633.herokuapp.com/create-checkout-session",
       {
         method: "POST",
@@ -142,11 +142,11 @@ const Cart = () => {
       }
     );
 
-    const session = await response.json();
+    const session = response.json();
 
     // When the customer clicks on the button, redirect them to Checkout.
 
-    const result = await stripe.redirectToCheckout({
+    const result = stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
