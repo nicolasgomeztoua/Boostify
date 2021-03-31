@@ -103,7 +103,7 @@ const RankBoostProduct = () => {
   }, [secondValue]);
   useEffect(() => {
     if (firstValue < 10000) {
-      setTotalMoney((totalpoints * rankmultiplier * 0.5) / 100);
+      setTotalMoney((totalpoints * rankmultiplier * 0.33) / 100);
     }
 
     if (firstValue >= 10000) {
