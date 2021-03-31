@@ -238,11 +238,11 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 900) {
       setSecondTier("I");
-      setRankMultiplier(2.325);
+      setRankMultiplier(2.1);
     }
     if (secondValue >= 1200) {
       setSecondTier("IV");
-      setRankMultiplier(2.3625);
+      setRankMultiplier(2.1);
     }
     if (secondValue >= 1500) {
     }
@@ -254,10 +254,10 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 2400) {
       setSecondTier("I");
-      setRankMultiplier(2.533333333);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 2700) {
-      setRankMultiplier(2.735714286);
+      setRankMultiplier(2.1);
     }
     if (secondValue >= 2800) {
       setSecondTier("IV");
@@ -269,13 +269,13 @@ const RankBoostProduct = () => {
       setSecondTier("II");
     }
     if (secondValue > 4200) {
-      setRankMultiplier(2.987234043);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 4300) {
       setSecondTier("I");
     }
     if (secondValue > 4700) {
-      setRankMultiplier(3.355932203);
+      setRankMultiplier(2.1);
     }
     if (secondValue >= 4800) {
       setSecondTier("IV");
@@ -284,36 +284,36 @@ const RankBoostProduct = () => {
       setSecondTier("III");
     }
     if (secondValue > 5900) {
-      setRankMultiplier(3.655384615);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 6000) {
       setSecondTier("II");
     }
     if (secondValue > 6500) {
-      setRankMultiplier(3.9);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 6600) {
       setSecondTier("I");
     }
     if (secondValue >= 7200) {
       setSecondTier("IV");
-      setRankMultiplier(4.440506329);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 7900) {
       setSecondTier("III");
-      setRankMultiplier(4.974117647);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 8500) {
-      setRankMultiplier(5.889130435);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 8600) {
       setSecondTier("II");
     }
     if (secondValue > 9300) {
-      setRankMultiplier(10.53908046);
+      setRankMultiplier(2.1);
     }
     if (firstValue >= 7100) {
-      setRankMultiplier(14.53908046);
+      setRankMultiplier(2.1);
     }
     if (secondValue > 9300) {
       setSecondTier("I");
