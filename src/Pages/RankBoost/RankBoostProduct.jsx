@@ -102,14 +102,8 @@ const RankBoostProduct = () => {
     }
   }, [secondValue]);
   useEffect(() => {
-    if (firstValue < 10000) {
-      setTotalMoney((totalpoints * rankmultiplier * 0.33) / 100);
-    }
-
-    if (firstValue >= 10000) {
-      setTotalMoney((totalpoints * rankmultiplier * 0.8) / 100);
-    }
-  }, [totalpoints, rankmultiplier, firstValue, secondValue]);
+    setTotalMoney((totalpoints * rankmultiplier * 0.9) / 100);
+  }, [totalpoints, rankmultiplier, firstValue]);
 
   useEffect(() => {
     if (activeDuo) {
