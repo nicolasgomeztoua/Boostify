@@ -321,7 +321,7 @@ const RankBoostProduct = () => {
     if (secondValue >= 10000) {
       setSecondTier("GOAT");
     }
-    if (secondValue > 10000 && firstValue > 10000) {
+    if (secondValue > 10000 && firstValue >= 10000) {
       setRankMultiplier(26.56);
     }
   }, [secondValue, firstValue]);
