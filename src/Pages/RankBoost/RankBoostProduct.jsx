@@ -102,7 +102,7 @@ const RankBoostProduct = () => {
     }
   }, [secondValue]);
   useEffect(() => {
-    setTotalMoney((totalpoints * rankmultiplier * 0.9) / 100);
+    setTotalMoney((totalpoints * rankmultiplier * 0.32) / 100);
   }, [totalpoints, rankmultiplier, firstValue]);
 
   useEffect(() => {
@@ -297,29 +297,32 @@ const RankBoostProduct = () => {
     }
     if (secondValue >= 7200) {
       setSecondTier("IV");
-      setRankMultiplier(4.2);
+      setRankMultiplier(10.440506329);
     }
     if (secondValue > 7900) {
       setSecondTier("III");
-      setRankMultiplier(4.5);
+      setRankMultiplier(4.974117647);
     }
     if (secondValue > 8500) {
-      setRankMultiplier(4.6);
+      setRankMultiplier(5.889130435);
     }
     if (secondValue > 8600) {
       setSecondTier("II");
     }
     if (secondValue > 9300) {
-      setRankMultiplier(4.7);
+      setRankMultiplier(10.53908046);
     }
     if (firstValue >= 7100) {
-      setRankMultiplier(4.82758);
+      setRankMultiplier(14.53908046);
     }
     if (secondValue > 9300) {
       setSecondTier("I");
     }
     if (secondValue >= 10000) {
       setSecondTier("GOAT");
+    }
+    if (secondValue > 10000 && firstValue > 10000) {
+      setRankMultiplier(24.996);
     }
   }, [secondValue, firstValue]);
 
