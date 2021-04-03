@@ -49,7 +49,7 @@ function App() {
               exact
               component={ResetPassword}
             ></Route>
-            <Route component={XML} path={"../sitemap.xml"} />
+            <Route component={XML} path={"/sitemap.xml"} />
           </Switch>
         </div>{" "}
       </Router>
