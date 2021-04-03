@@ -39,11 +39,10 @@ export const Testimonials = () => {
                     <div className="layer"> </div>
                     <div className="content">
                       <p>
-                        "At first I found prices to be fairly expensive, so I
-                        scouted boosting on fiverr and inevitably got scammed
-                        :P. Teachy was my booster and my order was completed way
-                        before the estimated completion time. The difference
-                        between a premium service like this is incomparable."
+                        "prices were pretty nice, got a 20 bomb so i could
+                        complete my banner on octane. :P. Teachy was my booster
+                        and my order was completed way before the estimated
+                        completion time.
                       </p>
                       <div className="imgBx">
                         <img src={User1} alt="testimonial user"></img>
