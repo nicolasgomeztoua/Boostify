@@ -16,7 +16,7 @@ import Register from "./Pages/authComponents/Register";
 import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
 import Cart from "./Pages/Cart/Cart.jsx";
-import XML from "../sitemap.xml";
+import XML from "./sitemap.xml";
 
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 
