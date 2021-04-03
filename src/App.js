@@ -15,18 +15,15 @@ import Login from "./Pages/authComponents/Login";
 import Register from "./Pages/authComponents/Register";
 import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
-import RouteChangeTracker from "./GA/GA";
+
 import Cart from "./Pages/Cart/Cart.jsx";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import ReactGA from "react-ga";
 
 function App() {
-  const TRACKING_ID = "G-LGN3TB768L";
-  ReactGA.initialize(TRACKING_ID);
   return (
     <>
       <Router>
-        <RouteChangeTracker></RouteChangeTracker>
         <div className="app">
           <Switch>
             <PrivateRoute exact path="/cart" component={Cart}></PrivateRoute>
