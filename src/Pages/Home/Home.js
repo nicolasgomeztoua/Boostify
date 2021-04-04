@@ -99,7 +99,7 @@ const Home = () => {
         <div className="icons">
           <li className="icon-section">
             <span className="desc">
-              We have a strong link with the pred community, so we are their
+              We have a strong link with the predator community, so we are their
               preferred platform as known members of the ecosystem. We can
               ensure service from the best.
             </span>
@@ -143,7 +143,7 @@ const Home = () => {
         </div>
         <h2 className="Home-intro" id="outro">
           {" "}
-          The preferred platform of the top 500 in the EU{" "}
+          The preferred platform of the top 750 in the EU{" "}
           <Verified id="verified" />{" "}
         </h2>
       </div>
