@@ -8,12 +8,16 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: #40e0d0;
   justify-self: flex-start;
   margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  font-family: castellar;
+  display: flex;
+  align-items: center;
+  font-size: 31.99px;
 }
 
 .fa-firstdraft {

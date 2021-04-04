@@ -8,7 +8,7 @@ import { ExtraCheckBox } from "../Pages/RankBoost/RankedBoostProductElements";
 import { useHistory } from "react-router-dom";
 import { ShoppingCart } from "@styled-icons/remix-fill/ShoppingCart";
 import { useCart } from "../Pages/Cart/CartHandler";
-
+import logo from "../Pages/Images/168412866_475515483641089_5330192756740066819_n.png";
 const Navbar = () => {
   let history = useHistory();
   const cartItems = useCart();
@@ -74,8 +74,12 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img
+            src={logo}
+            alt="logo"
+            style={{ height: "60px", width: "60px" }}
+          />
           Boostify
-          <i class="fab fa-firstdraft" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
