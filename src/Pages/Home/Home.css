@@ -58,10 +58,10 @@
   /* Clean style */
 
   --button-text-color: var(--background-color);
-  --button-text-color-hover: var(--button-background-color);
+  --button-text-color-hover: turquoise;
   --border-color: #7d8082;
   --button-background-color: #ece8e1;
-  --highlight-color: turquoise;
+  --highlight-color: black;
   --button-inner-border-color: transparent;
   --button-bits-color: var(--background-color);
   --button-bits-color-hover: var(--button-background-color);
@@ -165,9 +165,11 @@
   position: relative;
   width: auto;
 }
+.btn1__content:hover {
+}
 
 .btn1:hover {
-  color: var(--button-text-color-hover);
+  color: turquoise;
 }
 
 .btn1:hover .btn1__slide {
@@ -178,13 +180,6 @@
   background-color: var(--button-bits-color-hover);
 }
 
-.btn1--light {
-  --button-background-color: var(--background-color);
-  --button-text-color: var(--highlight-color);
-  --button-inner-border-color: var(--highlight-color);
-  --button-text-color-hover: #ece8e1;
-  --button-bits-color-hover: #ece8e1;
-}
 .Home-intro {
   padding: 2rem;
   margin: 2rem;
