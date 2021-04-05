@@ -119,7 +119,7 @@
 .btn1__inner {
   position: relative;
   display: block;
-  padding: 30px 40px;
+  padding: 25px 35px;
   background-color: var(--button-background-color);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
