@@ -57,11 +57,11 @@
   cursor: pointer;
   /* Clean style */
 
-  --button-text-color: var(--background-color);
-  --button-text-color-hover: turquoise;
+  --button-text-color: turquoise;
+  --button-text-color-hover: black;
   --border-color: #7d8082;
-  --button-background-color: #ece8e1;
-  --highlight-color: black;
+  --button-background-color: black;
+  --highlight-color: #ece8e1;
   --button-inner-border-color: transparent;
   --button-bits-color: var(--background-color);
   --button-bits-color-hover: var(--button-background-color);
@@ -165,11 +165,9 @@
   position: relative;
   width: auto;
 }
-.btn1__content:hover {
-}
 
 .btn1:hover {
-  color: turquoise;
+  color: var(--button-text-color-hover);
 }
 
 .btn1:hover .btn1__slide {
@@ -177,9 +175,11 @@
 }
 
 .btn1:hover .btn1__inner::after {
-  background-color: var(--button-bits-color-hover);
+  background-color: var(--highlight-color);
 }
-
+.btn1:hover .btn1__inner::before {
+  background-color: var(--highlight-color);
+}
 .Home-intro {
   padding: 2rem;
   margin: 2rem;
