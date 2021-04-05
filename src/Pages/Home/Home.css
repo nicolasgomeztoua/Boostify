@@ -162,6 +162,7 @@
 
 .btn1__content {
   position: relative;
+  width:auto;
 }
 
 .btn1:hover {
