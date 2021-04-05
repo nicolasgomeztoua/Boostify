@@ -71,9 +71,9 @@
   margin-bottom: 0px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 21px;
   transition: all 0.15s ease;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .btn1::before,
@@ -163,7 +163,7 @@
 
 .btn1__content {
   position: relative;
-  width:auto;
+  width: auto;
 }
 
 .btn1:hover {
