@@ -201,6 +201,8 @@ const Home = () => {
         </div>
       </Parallax>
 
+      <WhoAreWe></WhoAreWe>
+      <WhatIsBoosting></WhatIsBoosting>
       <div>
         <h2 className="Testimonials-intro">
           {" "}
@@ -212,8 +214,6 @@ const Home = () => {
         </h2>
       </div>
       <Testimonials />
-      <WhoAreWe></WhoAreWe>
-      <WhatIsBoosting></WhatIsBoosting>
       <Footer footerColor="turquoise"></Footer>
     </div>
   );
