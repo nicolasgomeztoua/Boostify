@@ -8,6 +8,7 @@ import { GameController } from "@styled-icons/entypo/GameController";
 import { Support } from "@styled-icons/boxicons-regular/Support";
 import { VerifiedUser } from "@styled-icons/material-twotone/VerifiedUser";
 import { QuestionAnswer } from "@styled-icons/material-twotone/QuestionAnswer";
+
 import { Parallax } from "react-parallax";
 import Horizon from "../Images/Horizon.jpg";
 import HorizonMobile from "../Images/Horizon2.jpg";
@@ -16,7 +17,8 @@ import Testimonials from "../../Testimonials/Testimonials";
 import { World } from "@styled-icons/boxicons-regular/World";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
-
+import WhoAreWe from "./WhoAreWe";
+import WhatIsBoosting from "./WhatIsBoosting";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -178,7 +180,7 @@ const Home = () => {
                 favourite legend?
               </h3>
               <p>
-                Yes, we offer legend choice Acheivement Boost orders. Our
+                Yes, we offer legend choice in Acheivement Boost orders. Our
                 professional boosters will carry out your order playing on your
                 legend of choice.
               </p>
@@ -210,6 +212,8 @@ const Home = () => {
         </h2>
       </div>
       <Testimonials />
+      <WhoAreWe></WhoAreWe>
+      <WhatIsBoosting></WhatIsBoosting>
       <Footer footerColor="turquoise"></Footer>
     </div>
   );
