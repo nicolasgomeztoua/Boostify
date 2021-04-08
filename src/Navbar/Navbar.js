@@ -6,7 +6,7 @@ import "./Navbar.css";
 import Dropdown from "../Dropdown/Dropdown";
 import { ExtraCheckBox } from "../Pages/RankBoost/RankedBoostProductElements";
 import { useHistory } from "react-router-dom";
-import { Cart } from "@styled-icons/fluentui-system-filled/Cart";
+import { ShoppingCart } from "@styled-icons/evaicons-solid/ShoppingCart";
 import { useCart } from "../Pages/Cart/CartHandler";
 import logo from "../Pages/Images/168412866_475515483641089_5330192756740066819_n.png";
 const Navbar = () => {
