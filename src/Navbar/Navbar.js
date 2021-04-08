@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import { ShoppingCart } from "@styled-icons/evaicons-solid/ShoppingCart";
 import { useCart } from "../Pages/Cart/CartHandler";
 import logo from "../Pages/Images/168412866_475515483641089_5330192756740066819_n.png";
+import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
 const Navbar = () => {
   let history = useHistory();
   const cartItems = useCart();
@@ -114,24 +115,23 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-
-          <div className="nav-item">
-            <Button className="nav-links" display={displayButton} />
-          </div>
-          <div
+          <li
+            onClick={logoutHandler}
             className="nav-item"
             style={{
               display: displayCheckBox,
               flexDirection: "column",
               justifyContent: "flex-center",
               textAlign: "center",
+              cursor: "pointer",
             }}
           >
-            <ExtraCheckBox
-              onChange={logoutHandler}
-              style={{ marginLeft: "10px" }}
-            />
-            <p id="logout">logout</p>
+            <p id="logout" className="nav-links">
+              Logout <LogOut style={{ height: "27px" }}></LogOut>
+            </p>
+          </li>
+          <div className="nav-item">
+            <Button className="nav-links" display={displayButton} />
           </div>
 
           <li className="nav-item">
