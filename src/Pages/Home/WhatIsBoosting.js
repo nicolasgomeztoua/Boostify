@@ -18,8 +18,8 @@ const WhatIsBoosting = () => {
 
           <p style={{ textAlign: "center" }} className="bullet-desc">
             From playing the game solo with misinterpreted and often downright
-            bad teamates. To tedious grinding for a sweet victory only to be
-            scraped away by RNG hotdrops, The ranked grind can just make the
+            bad teamates, to tedious grinding for a sweet victory only to be
+            scraped away by RNG hotdrops, the ranked grind can just make the
             game unenjoyable. That's where we come in.
           </p>
         </li>
@@ -30,10 +30,10 @@ const WhatIsBoosting = () => {
 
           <p style={{ textAlign: "center" }} className="bullet-desc">
             Rank Boost will help you get out of the boring grind and back to
-            competitiveness and fun. Simply select you current RP and your
+            competitiveness and fun. Simply select your current RP and your
             desired RP in our selection cards. Dont just boost your rp, but get
-            a valuable lesson with it with our DuoQueue! Squad up with our
-            professionals and learn from the best.
+            a valuable lesson with it with our DuoQueue feature! Squad up with
+            our professionals and learn from the best.
           </p>
         </li>
         <li className="WIB-bullet-dot">
@@ -45,8 +45,8 @@ const WhatIsBoosting = () => {
             Don't depend on SBMM to give you a lucky game for your favourite
             badges. Pick and choose the way you highlight your best character's
             banner with Acheivement Boost. Just select and search from our vast
-            vierty of badges. For any special character badges please drop us a
-            support ticket in the contact page
+            variety of badges. For any special character badges, please drop us
+            a support ticket in the contact page
           </p>
         </li>
       </ul>

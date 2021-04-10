@@ -17,9 +17,9 @@ const WhoAreWe = () => {
           direct contact from customer to professional without inessecary
           bureaucratic third parties, we could slash prices and pay our
           professionals more.<br></br> Meaning the best come to us. <br></br>
-          Humbly, all we wanted to do was fix a broken system that was afecting
+          Humbly, all we wanted to do was fix a broken system that was affecting
           people close to us and the game that we all love. Nonetheless we are
-          so happy to have the opportunity to do so and contunue to thank each
+          so happy to have the opportunity to do so and continue to thank each
           and every one of you that have shown support and love for the project.
           <br></br>
           <Handshake
