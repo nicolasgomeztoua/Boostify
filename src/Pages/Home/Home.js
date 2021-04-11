@@ -131,7 +131,7 @@ const Home = () => {
           <li className="icon-section">
             <span className="desc">
               We take the security of our customers very seriously. Ensuring we
-              precatiouisly preform the task for the quickest most hassle free
+              precatiouisly perform the task for the quickest most hassle free
               experience we can deliver; Trust is our asset.{" "}
             </span>
             <div className="title-icon">
