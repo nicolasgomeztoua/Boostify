@@ -7,9 +7,11 @@ import { CircleWithCross } from "@styled-icons/entypo/CircleWithCross";
 import { loadStripe } from "@stripe/stripe-js";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { Stripe } from "@styled-icons/fa-brands/Stripe";
+import { ApplePay } from "@styled-icons/fa-brands/ApplePay";
 import Select from "react-select";
-
+import { GooglePay } from "@styled-icons/fa-brands/GooglePay";
+import { CreditCardAlt } from "@styled-icons/boxicons-solid/CreditCardAlt";
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
@@ -341,6 +343,12 @@ const Cart = () => {
               >
                 Checkout with Stripe
               </button>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Stripe style={{ height: "50px" }}></Stripe>
+                <ApplePay style={{ height: "50px" }}></ApplePay>
+                <GooglePay style={{ height: "50px" }}></GooglePay>
+                <CreditCardAlt style={{ height: "50px" }}></CreditCardAlt>
+              </div>
             </div>
           </div>
         </div>

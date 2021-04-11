@@ -19,6 +19,7 @@ import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import WhoAreWe from "./WhoAreWe";
 import WhatIsBoosting from "./WhatIsBoosting";
+
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -203,6 +204,7 @@ const Home = () => {
 
       <WhoAreWe></WhoAreWe>
       <WhatIsBoosting></WhatIsBoosting>
+
       <div>
         <h2 className="Testimonials-intro">
           {" "}
