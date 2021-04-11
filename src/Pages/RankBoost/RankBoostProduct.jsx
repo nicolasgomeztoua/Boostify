@@ -85,8 +85,8 @@ const RankBoostProduct = () => {
   const [opacity, setOpacity] = useState(1);
 
   const handleDiscount = () => {
-    if (validPromo === "BOOSTIFY40") {
-      setTotalMoney(totalMoney / 1.2);
+    if (validPromo === "boostify40") {
+      setTotalMoney(totalMoney / 1.4);
       setDisabled(true);
       setOpacity(0.4);
     }
@@ -239,7 +239,7 @@ const RankBoostProduct = () => {
   useEffect(() => {
     if (secondValue >= 0) {
       setSecondTier("IV");
-      setRankMultiplier(2.5);
+      setRankMultiplier(3.5);
     }
     if (secondValue > 300) {
       setSecondTier("III");
@@ -249,11 +249,11 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 900) {
       setSecondTier("I");
-      setRankMultiplier(2.8);
+      setRankMultiplier(3.8);
     }
     if (secondValue >= 1200) {
       setSecondTier("IV");
-      setRankMultiplier(3);
+      setRankMultiplier(4);
     }
     if (secondValue >= 1500) {
     }
@@ -265,10 +265,10 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 2400) {
       setSecondTier("I");
-      setRankMultiplier(3);
+      setRankMultiplier(4);
     }
     if (secondValue > 2700) {
-      setRankMultiplier(3);
+      setRankMultiplier(4);
     }
     if (secondValue >= 2800) {
       setSecondTier("IV");
@@ -280,13 +280,13 @@ const RankBoostProduct = () => {
       setSecondTier("II");
     }
     if (secondValue > 4200) {
-      setRankMultiplier(3.5);
+      setRankMultiplier(4.5);
     }
     if (secondValue > 4300) {
       setSecondTier("I");
     }
     if (secondValue > 4700) {
-      setRankMultiplier(3.9);
+      setRankMultiplier(4.9);
     }
     if (secondValue >= 4800) {
       setSecondTier("IV");
@@ -295,33 +295,33 @@ const RankBoostProduct = () => {
       setSecondTier("III");
     }
     if (secondValue > 5900) {
-      setRankMultiplier(4);
+      setRankMultiplier(5.5);
     }
     if (secondValue > 6000) {
       setSecondTier("II");
     }
     if (secondValue > 6500) {
-      setRankMultiplier(5);
+      setRankMultiplier(6);
     }
     if (secondValue > 6600) {
       setSecondTier("I");
     }
     if (secondValue >= 7200) {
       setSecondTier("IV");
-      setRankMultiplier(11);
+      setRankMultiplier(12);
     }
     if (secondValue > 7900) {
       setSecondTier("III");
       setRankMultiplier(5.5);
     }
     if (secondValue > 8500) {
-      setRankMultiplier(6);
+      setRankMultiplier(13);
     }
     if (secondValue > 8600) {
       setSecondTier("II");
     }
     if (secondValue > 9300) {
-      setRankMultiplier(11);
+      setRankMultiplier(14);
     }
     if (firstValue >= 7100) {
       setRankMultiplier(15);
@@ -554,7 +554,7 @@ const RankBoostProduct = () => {
                 height="50px"
                 width="250px"
                 onChange={(e) => {
-                  setValidPromo(e.target.value);
+                  setValidPromo(e.target.value.toLowerCase());
                 }}
               ></InputTyped>
               <div class="button_cont" align="center">
