@@ -14,7 +14,7 @@ const WhoAreWe = () => {
           given small percentages of revenue by websites.<br></br> This is what
           an OG Predator with deep roots in the community and his web-dev best
           friend sought out to change. <br></br>We thought if we could provide
-          direct contact from customer to professional without inessecary
+          direct contact from customer to professional without unnessecary
           bureaucratic third parties, we could slash prices and pay our
           professionals more.<br></br> Meaning the best come to us. <br></br>
           Humbly, all we wanted to do was fix a broken system that was affecting
