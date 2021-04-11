@@ -131,7 +131,7 @@ const Home = () => {
           <li className="icon-section">
             <span className="desc">
               We take the security of our customers very seriously. Ensuring we
-              precatiouisly perform the task for the quickest most hassle free
+              precautiously perform the task for the quickest, most hassle-free
               experience we can deliver; Trust is our asset.{" "}
             </span>
             <div className="title-icon">
@@ -169,8 +169,8 @@ const Home = () => {
               <p>
                 It really depends on the order. But speaking in general terms we
                 start within an hour of purchase and complete orders within
-                those same 24hours. Our support team will be able to accuratley
-                asses the ETA of your particular order.
+                those same 24hours. Our support team will be able to accurately
+                assess the ETA of your particular order.
               </p>
             </div>
 
