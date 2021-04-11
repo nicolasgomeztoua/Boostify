@@ -47,6 +47,7 @@ import silver from "../Images/Ranked_Tier2_Silver.png";
 import bronze from "../Images/Ranked_Tier1_Bronze.jpeg";
 
 import { useDispatchCart } from "../Cart/CartHandler";
+import CountDown from "../../CountDown/CountDown";
 /*  const [psSelected, setPSSelected] = useState(false);
   const [xboxSelected, setXboxSelected] = useState(false);
   const PSclick = () => {
@@ -414,6 +415,7 @@ const RankBoostProduct = () => {
 
   return (
     <>
+      <CountDown></CountDown>
       <ProductContainer>
         <div></div>
         <ProductWrap>
