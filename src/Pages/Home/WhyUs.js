@@ -95,7 +95,7 @@ const WhyUs = () => {
                 order within those same 48h. We dont want players who love
                 playing the game to stop for any more than they need to.
               </p>
-              <img src={Gamer} alt="booster" style={{ width: "400px" }} />
+              <img src={Gamer} alt="booster" style={{ width: "250px" }} />
             </div>
           </section>
           <section className="whyUs-element">
