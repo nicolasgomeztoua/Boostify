@@ -19,7 +19,7 @@ import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import WhoAreWe from "./WhoAreWe";
 import WhatIsBoosting from "./WhatIsBoosting";
-
+import WhyUs from "./WhyUs";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -204,7 +204,7 @@ const Home = () => {
 
       <WhoAreWe></WhoAreWe>
       <WhatIsBoosting></WhatIsBoosting>
-
+      <WhyUs></WhyUs>
       <div>
         <h2 className="Testimonials-intro">
           {" "}
