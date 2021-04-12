@@ -8,8 +8,8 @@ class Preloader extends Component {
       preload.style.opacity = "0";
       setTimeout(() => {
         preload.style.display = "none";
-      }, 1000);
-    }, 3000);
+      }, 50);
+    }, 200);
   }
 
   componentDidMount() {
