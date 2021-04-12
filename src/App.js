@@ -14,7 +14,7 @@ import Register from "./Pages/authComponents/Register";
 import ForgotPassword from "./Pages/authComponents/ForgotPassword";
 import ResetPassword from "./Pages/authComponents/ResetPassword";
 import Cart from "./Pages/Cart/Cart.jsx";
-
+import Blog from "./Pages/Blog/Blog";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
               exact
               component={ResetPassword}
             ></Route>
+            <Route path="/blog" exact component={Blog}></Route>
           </Switch>
         </div>{" "}
       </Router>
