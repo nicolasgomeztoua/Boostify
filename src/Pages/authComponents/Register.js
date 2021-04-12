@@ -20,7 +20,7 @@ const Register = ({ history }) => {
     e.preventDefault();
 
     const config = {
-      headers: {
+      header: {
         "Content-Type": "application/json",
       },
     };
