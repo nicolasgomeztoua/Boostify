@@ -2,13 +2,8 @@ import React, { useState, useEffect } from "react";
 import {
   ProductContainer,
   ProductWrap,
-  StepOneContainer,
   StepOneTitle,
   F1,
-  PS,
-  XBX,
-  PC,
-  StepOneIcons,
   Step2Container,
   StepOneSLidersWrap,
   F2,
@@ -31,7 +26,6 @@ import {
   IconOffline,
   TotalContainer,
   TotalTitle,
-  F4,
   TotalMoneyCard,
   TotalMoneyHeader,
   DiscountContainer,
@@ -48,16 +42,6 @@ import bronze from "../Images/Ranked_Tier1_Bronze.jpeg";
 
 import { useDispatchCart } from "../Cart/CartHandler";
 import CountDown from "../../CountDown/CountDown";
-/*  const [psSelected, setPSSelected] = useState(false);
-  const [xboxSelected, setXboxSelected] = useState(false);
-  const PSclick = () => {
-    setPSSelected(!psSelected);
-    setXboxSelected(!xboxSelected);
-  }; */
-// const XboxClick = () => {
-//   setXboxSelected(!xboxSelected);
-//   setPSSelected(!psSelected);
-// };
 
 const RankBoostProduct = () => {
   const [firstTier, setFirstTier] = useState("I");
@@ -66,7 +50,7 @@ const RankBoostProduct = () => {
   const [secondValue, setSecondValue] = useState(2000);
   const [secondRankImg, setSecondRankImg] = useState("");
   const [secondTier, setSecondTier] = useState("");
-  const [Pscolor, setColor] = useState("");
+
   const [invalid, setInvalid] = useState("none");
   const [validPromo, setValidPromo] = useState(false);
   const [activeDuo, setActiveDuo] = useState(false);
@@ -92,16 +76,11 @@ const RankBoostProduct = () => {
     }
   };
 
-  const psCLick = () => {
-    setColor({
-      color: "#003087",
-    });
-  };
   useEffect(() => {
     if (totalMoney < 0) {
       setTotalMoney(0);
     }
-  });
+  }, [totalMoney]);
   useEffect(() => {
     if (isNaN(firstValue)) {
       setFirstValue(4800);
@@ -419,26 +398,9 @@ const RankBoostProduct = () => {
       <ProductContainer>
         <div></div>
         <ProductWrap>
-          <StepOneContainer>
-            <StepOneTitle>
-              <F1></F1> Choose Your Platform
-            </StepOneTitle>
-            <StepOneIcons>
-              <PS onClick={psCLick} style={{ color: Pscolor.color }}></PS>
-              <div className="pcIcon">
-                <p> currently unavailable</p>
-                <XBX></XBX>
-              </div>
-              <div className="pcIcon">
-                <p> currently unavailable</p>
-                <PC></PC>
-              </div>
-            </StepOneIcons>
-          </StepOneContainer>
-
           <Step2Container>
             <StepOneTitle>
-              <F2></F2> Select Ranked Points to Boost
+              <F1></F1> Select Ranked Points to Boost
             </StepOneTitle>
             <StepOneSLidersWrap>
               <InitialRank>
@@ -491,7 +453,7 @@ const RankBoostProduct = () => {
 
           <ExtrasContainer>
             <ExtrasTitle>
-              <F3 />
+              <F2></F2>
               Choose additional services
             </ExtrasTitle>
             <ExtrasOptions>
@@ -536,7 +498,7 @@ const RankBoostProduct = () => {
 
           <TotalContainer>
             <TotalTitle>
-              <F4></F4>Check your total
+              <F3></F3> Check your total
             </TotalTitle>
             <TotalMoneyCard>
               <TotalMoneyHeader>

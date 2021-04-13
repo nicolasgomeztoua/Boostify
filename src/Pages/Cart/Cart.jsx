@@ -32,6 +32,7 @@ const Cart = () => {
   const [PSNemail, setPSN] = useState(null);
   const [PSNPass, setPSNPass] = useState(null);
   const [region, setRegion] = useState(null);
+  const [platform, setPlatform] = useState(null);
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [invalid, setInvalid] = useState("flex");
@@ -123,6 +124,7 @@ const Cart = () => {
           extrasArr,
           items,
           totalPrice,
+          platform,
         },
         config
       );
@@ -178,10 +180,14 @@ const Cart = () => {
     }
   }, []);
 
-  const options = [
+  const optionsRegion = [
     { value: "EU", label: "EU" },
     { value: "NA", label: "NA" },
     { value: "Asia", label: "Asia" },
+  ];
+  const optionsPlatform = [
+    { value: "PS4/PS5", label: "PS4/PS5" },
+    { value: "XBOX", label: "XBOX" },
   ];
   const customStyles = {
     option: (provided, state) => ({
@@ -216,7 +222,7 @@ const Cart = () => {
       </>
     );
   }
-
+  console.log(region);
   return (
     <>
       <Navbar></Navbar>
@@ -299,11 +305,17 @@ const Cart = () => {
                 class="input-field"
                 onChange={(e) => setPSNPass(e.target.value)}
               ></input>
-              <h2 id="order-summary">Select Your region</h2>
+              <h2 id="order-summary">Select Your Region</h2>
               <Select
-                options={options}
+                options={optionsRegion}
                 styles={customStyles}
                 onChange={(value) => setRegion(value.label)}
+              />
+              <h2 id="order-summary">Select Your Platform</h2>
+              <Select
+                options={optionsPlatform}
+                styles={customStyles}
+                onChange={(value) => setPlatform(value.label)}
               />
               <StepTwoWarningContainer
                 style={{

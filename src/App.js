@@ -23,7 +23,7 @@ function App() {
       <Router>
         <div className="app">
           <Switch>
-            <PrivateRoute exact path="/cart" component={Cart}></PrivateRoute>
+            <Route exact path="/cart" component={Cart}></Route>
             <Route path="/" exact component={Home}></Route>
             <Route path="/rank-boosting" exact component={RankBoost}></Route>
             <Route path="/contact-us" exact component={ContactUs}></Route>
