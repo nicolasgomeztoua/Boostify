@@ -1,6 +1,6 @@
 import React from "react";
 
-import pred from "../Images/1.png";
+import pred from "../Images/1.png" alt="Apex Predator";
 import cashback from "../Images/cash-back.jpg";
 import Gamer from "../Images/gamer.jpg";
 import { VpnLock } from "@styled-icons/material-twotone/VpnLock";
