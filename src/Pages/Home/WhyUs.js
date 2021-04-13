@@ -1,8 +1,8 @@
 import React from "react";
 
-import pred from "../Images/1.png" alt="Apex Predator";
-import cashback from "../Images/cash-back.jpg" alt="boosting with money back policy";
-import Gamer from "../Images/gamer.jpg" alt="fast delivery apex boosting";
+import pred from "../Images/1.png";
+import cashback from "../Images/cash-back.jpg";
+import Gamer from "../Images/gamer.jpg";
 import { VpnLock } from "@styled-icons/material-twotone/VpnLock";
 const WhyUs = () => {
   return (
