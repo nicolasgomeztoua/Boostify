@@ -12,6 +12,8 @@ import { ApplePay } from "@styled-icons/fa-brands/ApplePay";
 import Select from "react-select";
 import { GooglePay } from "@styled-icons/fa-brands/GooglePay";
 import { CreditCardAlt } from "@styled-icons/boxicons-solid/CreditCardAlt";
+import { Playstation } from "@styled-icons/fa-brands/Playstation";
+import { Xbox } from "@styled-icons/fa-brands/Xbox";
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
@@ -32,7 +34,8 @@ const Cart = () => {
   const [PSNemail, setPSN] = useState(null);
   const [PSNPass, setPSNPass] = useState(null);
   const [region, setRegion] = useState(null);
-  const [platform, setPlatform] = useState(null);
+  const [platform, setPlatform] = useState("Xbox");
+  const [color, setColor] = useState(undefined);
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [invalid, setInvalid] = useState("flex");
@@ -185,10 +188,7 @@ const Cart = () => {
     { value: "NA", label: "NA" },
     { value: "Asia", label: "Asia" },
   ];
-  const optionsPlatform = [
-    { value: "PS4/PS5", label: "PS4/PS5" },
-    { value: "XBOX", label: "XBOX" },
-  ];
+
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -198,7 +198,12 @@ const Cart = () => {
     }),
   };
   useEffect(() => {
-    if (region === null || PSNPass === null || PSNemail === null) {
+    if (
+      region === null ||
+      PSNPass === null ||
+      PSNemail === null ||
+      platform === null
+    ) {
       setDisabled(true);
       setInvalid("flex");
     } else {
@@ -222,6 +227,14 @@ const Cart = () => {
       </>
     );
   }
+  const playClick = () => {
+    setPlatform("playstation");
+    setColor(true);
+  };
+  const xClick = () => {
+    setPlatform("Xbox");
+    setColor(false);
+  };
   console.log(region);
   return (
     <>
@@ -312,11 +325,26 @@ const Cart = () => {
                 onChange={(value) => setRegion(value.label)}
               />
               <h2 id="order-summary">Select Your Platform</h2>
-              <Select
-                options={optionsPlatform}
-                styles={customStyles}
-                onChange={(value) => setPlatform(value.label)}
-              />
+              <div className="platform-select" style={{}}>
+                <div>
+                  <Playstation
+                    style={{
+                      height: "50px",
+                      color: color ? "#2E6DB4" : "white",
+                    }}
+                    onClick={playClick}
+                  ></Playstation>
+                </div>
+                <div>
+                  <Xbox
+                    style={{
+                      height: "50px",
+                      color: color ? "white" : "#107C10",
+                    }}
+                    onClick={xClick}
+                  ></Xbox>
+                </div>
+              </div>
               <StepTwoWarningContainer
                 style={{
                   display: invalid,
