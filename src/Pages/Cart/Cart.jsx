@@ -34,8 +34,9 @@ const Cart = () => {
   const [PSNemail, setPSN] = useState(null);
   const [PSNPass, setPSNPass] = useState(null);
   const [region, setRegion] = useState(null);
-  const [platform, setPlatform] = useState("Xbox");
-  const [color, setColor] = useState(undefined);
+  const [platform, setPlatform] = useState(null);
+  const [xboxColor, setXboxcolor] = useState("white");
+  const [psColor, setPScolor] = useState("white");
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [invalid, setInvalid] = useState("flex");
@@ -210,7 +211,7 @@ const Cart = () => {
       setDisabled(false);
       setInvalid("none");
     }
-  }, [region, PSNPass, PSNemail]);
+  }, [region, PSNPass, PSNemail, platform]);
 
   if (totalPrice === 0) {
     return (
@@ -229,11 +230,13 @@ const Cart = () => {
   }
   const playClick = () => {
     setPlatform("playstation");
-    setColor(true);
+    setPScolor("#2E6DB4");
+    setXboxcolor("white");
   };
   const xClick = () => {
     setPlatform("Xbox");
-    setColor(false);
+    setXboxcolor("#107C10");
+    setPScolor("white");
   };
   console.log(region);
   return (
@@ -330,7 +333,7 @@ const Cart = () => {
                   <Playstation
                     style={{
                       height: "50px",
-                      color: color ? "#2E6DB4" : "white",
+                      color: psColor,
                     }}
                     onClick={playClick}
                   ></Playstation>
@@ -339,7 +342,7 @@ const Cart = () => {
                   <Xbox
                     style={{
                       height: "50px",
-                      color: color ? "white" : "#107C10",
+                      color: xboxColor,
                     }}
                     onClick={xClick}
                   ></Xbox>
