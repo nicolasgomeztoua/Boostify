@@ -302,9 +302,7 @@ const RankBoostProduct = () => {
     if (secondValue > 9300) {
       setRankMultiplier(10.53908046);
     }
-    if (firstValue >= 7100) {
-      setRankMultiplier(14.53908046);
-    }
+
     if (secondValue > 9300) {
       setSecondTier("I");
     }
