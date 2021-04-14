@@ -298,10 +298,35 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 8600) {
       setSecondTier("II");
+      setRankMultiplier(6.0)
+    }
+    if (secondValue > 8700) {
+      setRankMultiplier(6.4);
+    }
+    if (secondValue > 8800) {
+      setRankMultiplier(6.8);
+    }
+    if (secondValue > 8900) {
+      setRankMultiplier(7.2);
+    }
+    if (secondValue > 9100) {
+      setRankMultiplier(7.3);
+    }
+    if (secondValue > 9200) {
+      setRankMultiplier(7.8);
     }
     if (secondValue > 9300) {
-      setRankMultiplier(10.53908046);
+      setRankMultiplier(8.0);
       setSecondTier("I");
+    }
+    if (secondValue > 9400) {
+      setRankMultiplier(8.5);
+    }
+    if (secondValue > 9500) {
+      setRankMultiplier(9.0);
+    }
+    if (secondValue > 9600) {
+      setRankMultiplier(9.5);
     }
 
     if (secondValue > 9700) {
