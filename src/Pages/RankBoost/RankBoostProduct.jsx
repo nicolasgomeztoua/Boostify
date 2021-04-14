@@ -293,6 +293,12 @@ const RankBoostProduct = () => {
       setSecondTier("III");
       setRankMultiplier(4.974117647);
     }
+    if (secondValue > 8100) {
+      setRankMultiplier(5.3);
+    }
+    if (secondValue > 8300) {
+      setRankMultiplier(5.6);
+    }
     if (secondValue > 8500) {
       setRankMultiplier(5.889130435);
     }
@@ -328,12 +334,30 @@ const RankBoostProduct = () => {
     if (secondValue > 9600) {
       setRankMultiplier(9.5);
     }
-
     if (secondValue > 9700) {
-      setRankMultiplier(11.53908046);
+      setRankMultiplier(9.7);
+    }
+
+    if (secondValue > 9800) {
+      setRankMultiplier(10);
+    }
+    if (secondValue > 9850) {
+      setRankMultiplier(10.3);
+    }
+    if (secondValue > 9900) {
+      setRankMultiplier(10.6);
+    }
+    if (secondValue > 9930) {
+      setRankMultiplier(10.8);
+    }
+    if (secondValue > 9960) {
+      setRankMultiplier(11.1);
+    }
+    if (secondValue > 9980) {
+      setRankMultiplier(11.3);
     }
     if (secondValue >= 10000) {
-      setRankMultiplier(12.53908046);
+      setRankMultiplier(11.53908046);
     }
     if (secondValue >= 12000) {
       setRankMultiplier(13.53908046);
