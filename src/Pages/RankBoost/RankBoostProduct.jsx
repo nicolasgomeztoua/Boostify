@@ -359,13 +359,33 @@ const RankBoostProduct = () => {
     if (secondValue >= 10000) {
       setRankMultiplier(11.53908046);
     }
-    if (secondValue >= 12000) {
-      setRankMultiplier(13.53908046);
+    if (secondValue >= 10500) {
+      setRankMultiplier(11.93908046);
     }
-    if (secondValue >= 13000) {
+    if (secondValue >= 11000) {
       setSecondTier("GOAT");
-      setRankMultiplier(14.53908046);
+      setRankMultiplier(12.43908046);
     }
+    if (secondValue > 11500) {
+      setRankMultiplier(12.9);
+    }
+    if (secondValue > 12000) {
+      setRankMultiplier(13.4);
+    }
+    if (secondValue > 12500) {
+      setRankMultiplier(13.7);
+    }
+    if (secondValue > 13000) {
+      setRankMultiplier(14);
+    }
+    if (secondValue > 13500) {
+      setRankMultiplier(14.5);
+    }
+    if (secondValue > 14000) {
+      setRankMultiplier(15);
+    }
+    
+ 
   }, [secondValue, firstValue]);
 
   useEffect(() => {
