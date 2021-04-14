@@ -309,24 +309,7 @@ const Cart = () => {
           </div>
           <div className="credit-info">
             <div className="credit-info-content">
-              <h2 id="order-summary">{platform} Email</h2>
-              <input
-                type="email"
-                class="input-field"
-                onChange={(e) => setPSN(e.target.value)}
-              ></input>
-              <h2 id="order-summary">{platform} Password</h2>
-              <input
-                type="password"
-                class="input-field"
-                onChange={(e) => setPSNPass(e.target.value)}
-              ></input>
-              <h2 id="order-summary">Select Your Region</h2>
-              <Select
-                options={optionsRegion}
-                styles={customStyles}
-                onChange={(value) => setRegion(value.label)}
-              />
+              {" "}
               <h2 id="order-summary">Select Your Platform</h2>
               <div className="platform-select" style={{}}>
                 <div>
@@ -348,6 +331,24 @@ const Cart = () => {
                   ></Xbox>
                 </div>
               </div>
+              <h2 id="order-summary">{platform} Email</h2>
+              <input
+                type="email"
+                class="input-field"
+                onChange={(e) => setPSN(e.target.value)}
+              ></input>
+              <h2 id="order-summary">{platform} Password</h2>
+              <input
+                type="password"
+                class="input-field"
+                onChange={(e) => setPSNPass(e.target.value)}
+              ></input>
+              <h2 id="order-summary">Select Your Region</h2>
+              <Select
+                options={optionsRegion}
+                styles={customStyles}
+                onChange={(value) => setRegion(value.label)}
+              />
               <StepTwoWarningContainer
                 style={{
                   display: invalid,
@@ -375,7 +376,6 @@ const Cart = () => {
                 If 2-step-auth is enabled on your PSN account make sure to
                 disable it to prevent access problems
               </StepTwoWarningContainer>
-
               <button
                 type="button"
                 id="checkout-button"
