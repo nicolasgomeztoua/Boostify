@@ -1,20 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 
 import pred from "../Images/1.png";
 import cashback from "../Images/cash-back.jpg";
 import Gamer from "../Images/gamer.jpg";
 import { VpnLock } from "@styled-icons/material-twotone/VpnLock";
 const WhyUs = () => {
+  const [our, setOur] = useState(true);
+  const [privacy, setPrivacy] = useState("");
+  const [delivery, setDeilvery] = useState("");
+  const [returns, setReturns] = useState("");
+  const ourClick = () => {
+    setOur(true);
+    setPrivacy("");
+    setDeilvery("");
+    setReturns("");
+  };
+  const privClick = () => {
+    setOur("");
+    setPrivacy(true);
+    setDeilvery("");
+    setReturns("");
+  };
+  const deliveryClick = () => {
+    setOur("");
+    setPrivacy("");
+    setDeilvery(true);
+    setReturns("");
+  };
+  const returnsClick = () => {
+    setOur("");
+    setPrivacy("");
+    setDeilvery("");
+    setReturns(true);
+  };
+
   return (
     <>
       <h1 className="whyUs-title" style={{ padding: "10px" }}>
         <span style={{ color: "turquoise" }}>Why?</span> Boostify
       </h1>
       <div class="tabs">
-        <input type="radio" id="tab1" name="tab-control" checked />
-        <input type="radio" id="tab2" name="tab-control" />
-        <input type="radio" id="tab3" name="tab-control" />
-        <input type="radio" id="tab4" name="tab-control" />
+        <input
+          type="radio"
+          id="tab1"
+          name="tab-control"
+          onClick={ourClick}
+          checked={our}
+        />
+        <input
+          type="radio"
+          id="tab2"
+          name="tab-control"
+          onClick={privClick}
+          checked={privacy}
+        />
+        <input
+          type="radio"
+          id="tab3"
+          name="tab-control"
+          onClick={deliveryClick}
+          checked={delivery}
+        />
+        <input
+          type="radio"
+          id="tab4"
+          name="tab-control"
+          onClick={returnsClick}
+          checked={returns}
+        />
         <ul>
           <li title="Our Boosters">
             <label for="tab1" role="button">
