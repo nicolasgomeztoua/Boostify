@@ -408,6 +408,30 @@ const RankBoostProduct = () => {
     if (secondValue > 17500) {
       setRankMultiplier(17.9304085);
     }
+    if (secondValue > 17800) {
+      setRankMultiplier(18.29374893);
+    }
+    if (secondValue > 18000) {
+      setRankMultiplier(18.68938859);
+    }
+    if (secondValue > 18250) {
+      setRankMultiplier(18.9982384);
+    }
+    if (secondValue > 18500) {
+      setRankMultiplier(19.38478);
+    }
+    if (secondValue > 18700) {
+      setRankMultiplier(19.7439342);
+    }
+    if (secondValue > 19000) {
+      setRankMultiplier(20.38984);
+    }
+    if (secondValue > 19300) {
+      setRankMultiplier(20.69039);
+    }
+    if (secondValue > 19600) {
+      setRankMultiplier(21.00092748);
+    }
     
  
   }, [secondValue, firstValue]);
