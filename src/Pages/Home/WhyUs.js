@@ -155,11 +155,11 @@ const WhyUs = () => {
             <h2>Returns</h2>
             <div className="whyUs-grid">
               <p>
-                We take user satisfaction as our utmost importance. Please fell
+                We take user satisfaction as our utmost importance. Please feel
                 free to contact us about any complaints or inquiries about your
                 order. We are confident in our boosters and have a 30 day
                 Money-Back guaranteed policy for any incompleted orders or
-                negative experiences orders
+                negative experiences.
               </p>
               <img
                 src={cashback}
