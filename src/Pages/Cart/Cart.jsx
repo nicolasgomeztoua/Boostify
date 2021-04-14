@@ -229,7 +229,7 @@ const Cart = () => {
     );
   }
   const playClick = () => {
-    setPlatform("playstation");
+    setPlatform("PlayStation Network");
     setPScolor("#2E6DB4");
     setXboxcolor("white");
   };
@@ -309,13 +309,13 @@ const Cart = () => {
           </div>
           <div className="credit-info">
             <div className="credit-info-content">
-              <h2 id="order-summary">PSN Email</h2>
+              <h2 id="order-summary">{platform} Email</h2>
               <input
                 type="email"
                 class="input-field"
                 onChange={(e) => setPSN(e.target.value)}
               ></input>
-              <h2 id="order-summary">PSN Password</h2>
+              <h2 id="order-summary">{platform} Password</h2>
               <input
                 type="password"
                 class="input-field"
