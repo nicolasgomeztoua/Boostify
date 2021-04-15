@@ -107,7 +107,7 @@ export const Testimonials = () => {
                           {" "}
                           <i> -Anon</i>
                           <br />
-                          <span> Bloodhound main</span>
+                          <span> Loba main</span>
                           <br></br>{" "}
                           <i>
                             <h2 style={{ marginTop: "10px" }}>

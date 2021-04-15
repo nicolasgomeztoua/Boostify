@@ -105,7 +105,11 @@ const Home = () => {
         </div>{" "}
       </Parallax>
       {/* ///////////////////////////////////// */}
-
+      <div className="home-banner">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <div className="Home-intro">
         <h2 id="Home-subtitle" style={{ color: "black", textShadow: "none" }}>
           {" "}
