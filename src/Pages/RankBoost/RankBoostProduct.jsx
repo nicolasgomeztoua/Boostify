@@ -639,7 +639,6 @@ const RankBoostProduct = () => {
               <div class="button_cont" align="center">
                 <button
                   className="example_c"
-                  onClick={handleDiscount}
                   disabled={disabled}
                   style={{ opacity: opacity }}
                 >
