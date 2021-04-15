@@ -357,13 +357,13 @@ const RankBoostProduct = () => {
       setRankMultiplier(11.3);
     }
     if (secondValue >= 10000) {
+      setSecondTier("GOAT");
       setRankMultiplier(11.53908046);
     }
     if (secondValue >= 10500) {
       setRankMultiplier(11.93908046);
     }
     if (secondValue >= 11000) {
-      setSecondTier("GOAT");
       setRankMultiplier(12.43908046);
     }
     if (secondValue > 11500) {
