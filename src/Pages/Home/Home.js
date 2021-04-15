@@ -60,6 +60,7 @@ const Home = () => {
     height: 100px;
     color: turquoise;
   `;
+
   return (
     <div>
       <Helmet>
