@@ -304,7 +304,7 @@ const RankBoostProduct = () => {
     }
     if (secondValue > 8600) {
       setSecondTier("II");
-      setRankMultiplier(6.0)
+      setRankMultiplier(6.0);
     }
     if (secondValue > 8700) {
       setRankMultiplier(6.4);
@@ -432,8 +432,6 @@ const RankBoostProduct = () => {
     if (secondValue > 19600) {
       setRankMultiplier(21.00092748);
     }
-    
- 
   }, [secondValue, firstValue]);
 
   useEffect(() => {
@@ -514,7 +512,6 @@ const RankBoostProduct = () => {
 
   return (
     <>
-      <CountDown></CountDown>
       <ProductContainer>
         <div></div>
         <ProductWrap>
