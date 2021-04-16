@@ -47,7 +47,7 @@ const Stats = () => {
       <div>
         <h4>
           <AnimatedNumber
-            value={23}
+            value={6}
             style={{
               fontSize: 43.96,
             }}
@@ -61,7 +61,7 @@ const Stats = () => {
         <div id="icon-counter">
           <InProgress></InProgress>
         </div>
-        <p>Active Boosters</p>
+        <p>Orders Queued</p>
       </div>
       <div>
         {" "}
