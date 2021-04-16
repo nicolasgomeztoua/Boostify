@@ -6,31 +6,22 @@ import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExcl
 import styled from "styled-components";
 const Stats = () => {
   const Completed = styled(BagCheckFill)`
-    height: 93.96px;
+    height: 50px;
     color: #40e0d0;
     margin-top: 50px;
     margin-bottom: 50px;
-    @media (max-width: 415px) {
-      height: 50px;
-    }
   `;
   const InProgress = styled(UserClock)`
-    height: 93.96px;
+    height: 50px;
     color: #40e0d0;
     margin-top: 50px;
     margin-bottom: 50px;
-    @media (max-width: 415px) {
-      height: 50px;
-    }
   `;
   const TimeLeft = styled(CalendarExclamation)`
-    height: 93.96px;
+    height: 50px;
     color: #40e0d0;
     margin-top: 50px;
     margin-bottom: 50px;
-    @media (max-width: 415px) {
-      height: 50px;
-    }
   `;
   return (
     <div className="home-banner">
@@ -67,7 +58,7 @@ const Stats = () => {
             }
           />
         </h4>
-        <div id="icon-counter" style={{ transform: "scale(1.13)" }}>
+        <div id="icon-counter">
           <InProgress></InProgress>
         </div>
         <p>Active Boosters</p>
@@ -90,7 +81,7 @@ const Stats = () => {
         <div id="icon-counter">
           <TimeLeft></TimeLeft>
         </div>
-        <p>Days in split</p>
+        <p>Remaining split</p>
       </div>
     </div>
   );
