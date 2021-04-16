@@ -21,6 +21,10 @@ import WhoAreWe from "./WhoAreWe";
 import WhatIsBoosting from "./WhatIsBoosting";
 import WhyUs from "./WhyUs";
 import { Helmet } from "react-helmet";
+import AnimatedNumber from "react-animated-number";
+import { BagCheckFill } from "@styled-icons/bootstrap/BagCheckFill";
+import { UserClock } from "@styled-icons/fa-solid/UserClock";
+import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExclamation";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -60,7 +64,33 @@ const Home = () => {
     height: 100px;
     color: turquoise;
   `;
-
+  const Completed = styled(BagCheckFill)`
+    height: 93.96px;
+    color: #40e0d0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @media (max-width: 415px) {
+      height: 50px;
+    }
+  `;
+  const InProgress = styled(UserClock)`
+    height: 93.96px;
+    color: #40e0d0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @media (max-width: 415px) {
+      height: 50px;
+    }
+  `;
+  const TimeLeft = styled(CalendarExclamation)`
+    height: 93.96px;
+    color: #40e0d0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @media (max-width: 415px) {
+      height: 50px;
+    }
+  `;
   return (
     <div>
       <Helmet>
@@ -106,9 +136,64 @@ const Home = () => {
       </Parallax>
       {/* ///////////////////////////////////// */}
       <div className="home-banner">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <h4>
+            <AnimatedNumber
+              value={1168}
+              style={{
+                fontSize: 63.96,
+              }}
+              duration={11500}
+              formatValue={(n) => n.toFixed(0)}
+              frameStyle={(percentage) =>
+                percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
+              }
+            />
+          </h4>
+          <div id="icon-counter">
+            <Completed></Completed>
+          </div>
+          <p>Orders completed</p>
+        </div>
+        <div>
+          <h4>
+            <AnimatedNumber
+              value={23}
+              style={{
+                fontSize: 63.96,
+              }}
+              duration={11500}
+              formatValue={(n) => n.toFixed(0)}
+              frameStyle={(percentage) =>
+                percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
+              }
+            />
+          </h4>
+          <div id="icon-counter">
+            <InProgress></InProgress>
+          </div>
+          <p>Active Boosters</p>
+        </div>
+        <div>
+          {" "}
+          <h4>
+            <AnimatedNumber
+              value={17}
+              style={{
+                fontSize: 63.96,
+              }}
+              duration={11500}
+              formatValue={(n) => n.toFixed(0)}
+              frameStyle={(percentage) =>
+                percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
+              }
+            />{" "}
+          </h4>
+          <div id="icon-counter">
+            <TimeLeft></TimeLeft>
+          </div>
+          <p>Days in split</p>
+        </div>
       </div>
       <div className="Home-intro">
         <h2 id="Home-subtitle" style={{ color: "black", textShadow: "none" }}>
