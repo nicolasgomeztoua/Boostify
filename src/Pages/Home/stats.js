@@ -67,7 +67,7 @@ const Stats = () => {
             }
           />
         </h4>
-        <div id="icon-counter">
+        <div id="icon-counter" style={{ transform: "scale(1.13)" }}>
           <InProgress></InProgress>
         </div>
         <p>Active Boosters</p>
