@@ -92,7 +92,7 @@ const RankBoostProduct = () => {
     }
   }, [secondValue]);
   useEffect(() => {
-    setTotalMoney((totalpoints * rankmultiplier * 0.32) / 100);
+    setTotalMoney((totalpoints * rankmultiplier * 0.42) / 100);
   }, [totalpoints, rankmultiplier, firstValue]);
 
   useEffect(() => {
