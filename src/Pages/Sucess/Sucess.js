@@ -28,7 +28,7 @@ const Sucess = () => {
         </script>
       </Helmet>
       <div className="success-container">
-        <div className="success-card">
+        <div className="sucess-card">
           <div
             style={{
               borderRadius: "200px",
