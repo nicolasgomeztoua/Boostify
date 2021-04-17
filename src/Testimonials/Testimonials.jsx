@@ -23,24 +23,6 @@ import "swiper/components/scrollbar/scrollbar.scss";
 SwiperCore.use([Navigation, Scrollbar, EffectCoverflow]);
 
 export const Testimonials = () => {
-  const [h, sh] = useState(0);
-  const [h1, sh1] = useState(0);
-
-  useEffect(() => {
-    setInterval(() => {
-      const now = new Date().getTime();
-      const countDate = new Date("Apr 15 2021 19:01:01");
-      let gap = countDate - now;
-      let second = 1000;
-      let minute = second * 60;
-      let hour = minute * 60;
-      let day = hour * 24;
-
-      sh(Math.floor((gap % day) / hour) * -1);
-      sh1(Math.floor(((gap % day) / hour) * -1) - 2);
-    }, 1);
-  }, []);
-
   return (
     <Swiper
       grabCursor={true}
@@ -79,7 +61,7 @@ export const Testimonials = () => {
                           <span> Bloodhound main</span>
                           <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>72h+ ago</h2>
+                            <h2 style={{ marginTop: "10px" }}>15/03/2021</h2>
                           </i>
                         </h2>{" "}
                         <img
@@ -110,9 +92,7 @@ export const Testimonials = () => {
                           <span> Loba main</span>
                           <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>
-                              {h1} hours ago
-                            </h2>
+                            <h2 style={{ marginTop: "10px" }}>04/16/2021</h2>
                           </i>
                         </h2>{" "}
                         <img
@@ -147,7 +127,7 @@ export const Testimonials = () => {
                           <span> Revenant main</span>
                           <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>{h} hours ago</h2>
+                            <h2 style={{ marginTop: "10px" }}>29/03/2021</h2>
                           </i>
                         </h2>{" "}
                         <img
@@ -179,7 +159,7 @@ export const Testimonials = () => {
                           <br />
                           <span> Lifeline main</span> <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>72h+ ago</h2>
+                            <h2 style={{ marginTop: "10px" }}>27/03/2021</h2>
                           </i>
                         </h2>
                         <img
@@ -216,7 +196,7 @@ export const Testimonials = () => {
                           <span> Speed Feind</span>
                           <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>72h+ ago</h2>
+                            <h2 style={{ marginTop: "10px" }}>27/01/2021</h2>
                           </i>
                         </h2>
                         <img
@@ -252,7 +232,7 @@ export const Testimonials = () => {
                           <span> Wraith main</span>
                           <br></br>{" "}
                           <i>
-                            <h2 style={{ marginTop: "10px" }}>72h+ ago</h2>
+                            <h2 style={{ marginTop: "10px" }}> 09/03/2021 </h2>
                           </i>
                         </h2>
 

@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AnimatedNumber from "react-animated-number";
 import { BagCheckFill } from "@styled-icons/bootstrap/BagCheckFill";
 import { UserClock } from "@styled-icons/fa-solid/UserClock";
 import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExclamation";
 import styled from "styled-components";
 const Stats = () => {
+  const [d, sd] = useState(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      const now = new Date().getTime();
+      const countDate = new Date("May 04 2021 18:00");
+      let gap = countDate - now;
+      let second = 1000;
+      let minute = second * 60;
+      let hour = minute * 60;
+      let day = hour * 24;
+      sd(Math.floor(gap / day));
+    }, 1000);
+  }, []);
   const Completed = styled(BagCheckFill)`
     height: 50px;
     color: #40e0d0;
@@ -67,7 +81,7 @@ const Stats = () => {
         {" "}
         <h4>
           <AnimatedNumber
-            value={15}
+            value={d}
             style={{
               fontSize: 43.96,
             }}
