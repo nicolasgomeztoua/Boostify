@@ -21,6 +21,7 @@ import WhoAreWe from "./WhoAreWe";
 import WhatIsBoosting from "./WhatIsBoosting";
 import WhyUs from "./WhyUs";
 import { Helmet } from "react-helmet";
+
 import Stats from "./stats";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);

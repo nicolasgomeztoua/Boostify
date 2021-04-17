@@ -16,7 +16,7 @@ import ResetPassword from "./Pages/authComponents/ResetPassword";
 import Cart from "./Pages/Cart/Cart.jsx";
 import Blog from "./Pages/Blog/Blog";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
-
+import Sucess from "./Pages/Sucess/Sucess";
 function App() {
   return (
     <>
@@ -47,6 +47,7 @@ function App() {
               component={ResetPassword}
             ></Route>
             <Route path="/blog" exact component={Blog}></Route>
+            <Route path="/success" exact component={Sucess}></Route>
           </Switch>
         </div>{" "}
       </Router>
