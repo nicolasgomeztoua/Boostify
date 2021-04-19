@@ -17,7 +17,7 @@ const Stats = () => {
       let hour = minute * 60;
       let day = hour * 24;
       sd(Math.floor(gap / day));
-    }, 1000);
+    }, 11000);
   }, []);
   const Completed = styled(BagCheckFill)`
     height: 50px;
@@ -41,16 +41,14 @@ const Stats = () => {
     <div className="home-banner">
       <div>
         <h4>
+          {" "}
           <AnimatedNumber
             value={1173}
             style={{
               fontSize: 43.96,
             }}
-            duration={11500}
+            duration={5000}
             formatValue={(n) => n.toFixed(0)}
-            frameStyle={(percentage) =>
-              percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
-            }
           />
         </h4>
         <div id="icon-counter">
@@ -65,7 +63,7 @@ const Stats = () => {
             style={{
               fontSize: 43.96,
             }}
-            duration={11500}
+            duration={10000}
             formatValue={(n) => n.toFixed(0)}
             frameStyle={(percentage) =>
               percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
@@ -85,7 +83,7 @@ const Stats = () => {
             style={{
               fontSize: 43.96,
             }}
-            duration={11500}
+            duration={10000}
             formatValue={(n) => n.toFixed(0)}
             frameStyle={(percentage) =>
               percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
