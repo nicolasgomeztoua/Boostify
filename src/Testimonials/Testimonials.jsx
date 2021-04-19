@@ -97,7 +97,7 @@ export const Testimonials = () => {
                         </h2>{" "}
                         <img
                           style={{ width: "200px", height: "140px" }}
-                          src={fiveStars}
+                          src={fourStars}
                           alt="review"
                         ></img>
                       </div>
@@ -132,7 +132,7 @@ export const Testimonials = () => {
                         </h2>{" "}
                         <img
                           style={{ width: "200px", height: "140px" }}
-                          src={fourStars}
+                          src={fiveStars}
                           alt="review"
                         ></img>
                       </div>
@@ -164,7 +164,7 @@ export const Testimonials = () => {
                         </h2>
                         <img
                           style={{ width: "200px", height: "140px" }}
-                          src={threestars}
+                          src={fourStars}
                           alt="review"
                         ></img>
                       </div>
