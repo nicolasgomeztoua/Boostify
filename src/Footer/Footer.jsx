@@ -76,6 +76,7 @@ const Footer = ({ footerColor }) => {
             </FooterLinksWrapper>
           </FooterLinksContainer>
           <img src={ssl} alt="ssl secured" style={{ width: "75px" }}></img>
+          <p>SSL SECURED</p>
           <img src={payment} alt="ssl secured" style={{ width: "300px" }}></img>
           <SocialMedia>
             <SocialMediaWrap>
