@@ -42,7 +42,7 @@ const Stats = () => {
       <div>
         <h4>
           <AnimatedNumber
-            value={1169}
+            value={1173}
             style={{
               fontSize: 43.96,
             }}
@@ -61,7 +61,7 @@ const Stats = () => {
       <div>
         <h4>
           <AnimatedNumber
-            value={7}
+            value={3}
             style={{
               fontSize: 43.96,
             }}
