@@ -18,6 +18,7 @@ import Blog from "./Pages/Blog/Blog";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Sucess from "./Pages/Sucess/Sucess";
 import Profile from "./Pages/Profile/Profile";
+import Reviews from "./Pages/Reviews/Reviews";
 function App() {
   return (
     <>
@@ -50,6 +51,7 @@ function App() {
             <Route path="/blog" exact component={Blog}></Route>
             <Route path="/success" exact component={Sucess}></Route>
             <Route path="/profile" exact component={Profile}></Route>
+            <Route path="/reviews" exact component={Reviews}></Route>
           </Switch>
         </div>{" "}
       </Router>
