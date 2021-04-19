@@ -17,6 +17,7 @@ import Cart from "./Pages/Cart/Cart.jsx";
 import Blog from "./Pages/Blog/Blog";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Sucess from "./Pages/Sucess/Sucess";
+import Profile from "./Pages/Profile/Profile";
 function App() {
   return (
     <>
@@ -48,6 +49,7 @@ function App() {
             ></Route>
             <Route path="/blog" exact component={Blog}></Route>
             <Route path="/success" exact component={Sucess}></Route>
+            <Route path="/profile" exact component={Profile}></Route>
           </Switch>
         </div>{" "}
       </Router>
