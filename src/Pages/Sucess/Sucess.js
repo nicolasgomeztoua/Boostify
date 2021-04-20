@@ -12,6 +12,7 @@ const Sucess = () => {
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
+
   window.gtag("event", "purchase", {
     send_to: "AW-388171063/qII5CLeDi4gCELeKjLkB",
     value: totalPrice,
