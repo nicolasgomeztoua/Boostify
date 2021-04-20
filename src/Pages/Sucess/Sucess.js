@@ -14,10 +14,8 @@ const Sucess = () => {
   };
   window.gtag("event", "purchase", {
     send_to: "AW-388171063/qII5CLeDi4gCELeKjLkB",
-    value: totalPrice.toFixed(2),
+    value: totalPrice,
     currency: "USD",
-
-    items: items,
   });
   return (
     <>
