@@ -2,7 +2,10 @@
   text-align: center;
   padding: 40px 0;
   background: #ebf0f5;
+  display: flex;
+  justify-content: center;
 }
+
 .success-title {
   color: #88b04b;
   font-family: "Nunito Sans", "Helvetica Neue", sans-serif;

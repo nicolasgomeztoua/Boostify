@@ -12,21 +12,15 @@ const Sucess = () => {
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
+  window.gtag("event", "purchase", {
+    send_to: "AW-388171063/qII5CLeDi4gCELeKjLkB",
+    value: totalPrice.toFixed(2),
+    currency: "USD",
+
+    items: items,
+  });
   return (
     <>
-      <Helmet>
-        <script>
-          {" "}
-          gtag('event', 'conversion',{" "}
-          {{
-            send_to: "AW-388171063/qII5CLeDi4gCELeKjLkB",
-            value: totalPrice.toFixed(2),
-            currency: "USD",
-            transaction_id: "",
-          }}
-          );{" "}
-        </script>
-      </Helmet>
       <div className="success-container">
         <div className="sucess-card">
           <div
@@ -36,6 +30,8 @@ const Sucess = () => {
               width: "200px",
               background: "#F8FAF5",
               margin: "0 auto",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <i className="checkmark">✓</i>
