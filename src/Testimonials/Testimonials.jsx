@@ -35,9 +35,10 @@ const notify = () =>
     progress: undefined,
   });
 export const Testimonials = (props) => {
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState(0);
   const [name, setName] = useState();
-  const [review, setReview] = useState();
+  const [review, setReview] = useState("");
+  const [main, setMain] = useState();
 
   const reviewHandler = async (e) => {
     e.preventDefault();
@@ -53,7 +54,7 @@ export const Testimonials = (props) => {
     try {
       await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/reviews",
-        { name, review, rating },
+        { name, review, rating, main },
         config
       );
     } catch (error) {
@@ -148,16 +149,28 @@ export const Testimonials = (props) => {
                         </h3>
 
                         <div className="form-group">
-                          <label htmlFor="email" style={{ color: "white" }}>
+                          <label htmlFor="name" style={{ color: "white" }}>
                             Name (optional)
                           </label>
                           <input
                             type="text"
-                            id="email"
+                            id="name"
                             placeholder="Name"
                             tabIndex={1}
                             onChange={(e) => {
                               setName(e.target.value);
+                            }}
+                          />
+                          <label htmlFor="main" style={{ color: "white" }}>
+                            Main Legend:
+                          </label>
+                          <input
+                            type="text"
+                            id="main"
+                            placeholder="Legend"
+                            tabIndex={1}
+                            onChange={(e) => {
+                              setMain(e.target.value);
                             }}
                           />
                         </div>
