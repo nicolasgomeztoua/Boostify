@@ -191,7 +191,7 @@ export const Testimonials = (props) => {
                         </div>
                         <div className="stars-rating">
                           <Rating
-                            precision={0.5}
+                            precision={1}
                             emptyIcon={<StarBorderIcon fontSize="inherit" />}
                             value={rating}
                             name="rating"
