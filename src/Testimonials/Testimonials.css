@@ -101,3 +101,20 @@
 .swiper-button-prev {
   color: turquoise;
 }
+.review-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 530px;
+  min-width: 300px;
+  max-width: 500px;
+}
+.stars-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 30px;
+  background-color: white;
+}

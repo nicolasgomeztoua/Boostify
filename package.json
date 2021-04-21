@@ -4,6 +4,9 @@
   "private": true,
   "description": "",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.2",
     "@testing-library/jest-dom": "^5.11.9",
@@ -24,6 +27,7 @@
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
     "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^7.0.3",
     "sass": "^1.32.8",
     "stripe": "^8.140.0",
     "styled": "^1.0.0",
