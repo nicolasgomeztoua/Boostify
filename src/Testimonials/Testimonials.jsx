@@ -6,6 +6,7 @@ import SwiperCore, {
   Scrollbar,
   EffectCoverflow,
 } from "swiper/core";
+
 import "swiper/swiper.scss";
 import User1 from "../Pages/Images/3.jpg";
 import User2 from "../Pages/Images/4.jpg";
@@ -23,6 +24,7 @@ import "swiper/components/scrollbar/scrollbar.scss";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 SwiperCore.use([Navigation, Scrollbar, EffectCoverflow]);
 const notify = () =>
   toast.success("Your review has been submitted. Thanks!", {
@@ -61,6 +63,23 @@ export const Testimonials = (props) => {
       console.error(error);
     }
   };
+  const options = [
+    { value: "Wraith" },
+    { value: "Bloodhound" },
+    { value: "Horizon" },
+    { value: "Rampart" },
+    { value: "Fuse" },
+    { value: "Octane" },
+    { value: "Wattson" },
+    { value: "Caustic" },
+    { value: "Gibraltar" },
+    { value: "Loba" },
+    { value: "Revenant" },
+    { value: "Pathfinder" },
+    { value: "Lifeline" },
+    { value: "Crypto" },
+    { value: "Mirage" },
+  ];
   return (
     <>
       <ToastContainer
@@ -161,18 +180,38 @@ export const Testimonials = (props) => {
                               setName(e.target.value);
                             }}
                           />
-                          <label htmlFor="main" style={{ color: "white" }}>
-                            Main Legend:
-                          </label>
-                          <input
-                            type="text"
-                            id="main"
-                            placeholder="Legend"
-                            tabIndex={1}
-                            onChange={(e) => {
-                              setMain(e.target.value);
-                            }}
-                          />
+                          <div>
+                            <label
+                              class="select"
+                              for="slct"
+                              htmlFor="name"
+                              style={{ color: "white" }}
+                            >
+                              Select Your Main
+                              <select
+                                id="slct"
+                                required="required"
+                                onChange={(e) => {
+                                  setMain(e.target.value);
+                                }}
+                              >
+                                <option
+                                  value=""
+                                  disabled="disabled"
+                                  selected="selected"
+                                >
+                                  Select A Legend
+                                </option>
+                                {options.map((Items, index) => {
+                                  return (
+                                    <option value={Items.value}>
+                                      {Items.value}
+                                    </option>
+                                  );
+                                })}
+                              </select>
+                            </label>
+                          </div>
                         </div>
                         <div className="form-group">
                           <label htmlFor="text" style={{ color: "white" }}>
