@@ -813,6 +813,7 @@
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
+  height: auto;
 }
 .featured-wrap p {
   padding: 20px;
@@ -826,7 +827,9 @@
   letter-spacing: 2px;
   margin: 0;
 }
-
+#featuredbooster {
+  transform: scale(0.9);
+}
 @media screen and (max-width: 1530px) {
   .featured-wrap {
     grid-template-columns: 1fr;

@@ -10,7 +10,7 @@ const featured = () => {
           borderRadius: "20px",
           color: "white",
           borderColor: "white",
-          marginBottom: "50px",
+          marginBottom: "0px",
         }}
       >
         {" "}
