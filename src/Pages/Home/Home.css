@@ -830,7 +830,7 @@
 #featuredbooster {
   transform: scale(0.9);
 }
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1270px) {
   .featured-wrap {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
