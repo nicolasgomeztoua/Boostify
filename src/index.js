@@ -6,17 +6,7 @@ import { hydrate, render } from "react-dom";
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  hydrate(
-    <CartProvider>
-      <App />
-    </CartProvider>,
-    rootElement
-  );
+  hydrate(<App />, rootElement);
 } else {
-  render(
-    <CartProvider>
-      <App />
-    </CartProvider>,
-    rootElement
-  );
+  render(<App />, rootElement);
 }
