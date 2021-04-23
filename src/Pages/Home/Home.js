@@ -40,7 +40,7 @@ const Home = () => {
     } else {
       sethorizonImg(HorizonMobile);
     }
-  }, [windowInnerWidth]);
+  }, []);
 
   const Verified = styled(VerifiedUser)`
     height: 50px;

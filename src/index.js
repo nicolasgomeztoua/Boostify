@@ -1,12 +1,13 @@
 import React from "react";
-
+import ReactDOM from "react-dom";
 import App from "./App";
 import { CartProvider } from "./Pages/Cart/CartHandler";
-import { hydrate, render } from "react-dom";
 
-const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement);
-} else {
-  render(<App />, rootElement);
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <CartProvider>
+      <App />
+    </CartProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
