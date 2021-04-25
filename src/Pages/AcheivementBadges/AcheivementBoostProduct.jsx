@@ -428,12 +428,17 @@ const AcheivementBoostProduct = () => {
                 onClick={() => {
                   addToCart({
                     title: "Acheivement Boost",
-                    price: acheivementTotalMoney,
+                    price: (
+                      acheivementTotalMoney +
+                      moneyMultiplierDuo +
+                      moneyMultiplierStream +
+                      moneyMultiplierPriority
+                    ).toFixed(2),
                     selectedPopBadges: filteredPopBadges,
                     selectedExtraBadges: filteredExtraBadges,
                     selectedLegend: Object.keys(checkedLegend),
                     icon: TwentyBomb,
-                    badgesExtras: filteredExtras,
+                    badgesExtras: Object.keys(filteredExtras),
                   });
                 }}
                 class="example_d"
