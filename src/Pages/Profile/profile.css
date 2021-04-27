@@ -1,0 +1,143 @@
+:root {
+  --small-green-circle: #78eea6;
+  --main-accent-color: #40e0d0;
+}
+
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  background-color: black;
+}
+
+.container-profile-profile-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  text-align: center;
+}
+
+.profile-card {
+  padding: 1em;
+  border-radius: 0.8em;
+  background-color: #fefefe;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+.profile-card:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--small-green-circle);
+  top: 25px;
+  right: 96px;
+  border: 2px solid white;
+}
+
+.profile-card__image {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.profile-card__info {
+  margin: 1em 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-card__info li {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.profile-card__info__stats {
+  color: var(--main-accent-color);
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+}
+
+.profile-card__info__stats + span {
+  color: #969798;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.profile-card__text h2 {
+  margin-bottom: 0.3em;
+  font-size: 1.4em;
+  color: #40e0d0;
+}
+
+.profile-card__action {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 425px) {
+  .profile-card {
+    padding: 3em;
+  }
+
+  .profile-card:after {
+    top: 50px;
+    right: 160px;
+  }
+
+  .profile-card__info li {
+    padding: 1em;
+  }
+  .profile-card__action__button {
+    padding: 0.9em 1.8em;
+  }
+}
+.profile-background-grid {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 1fr;
+  width: 100vw;
+  margin: 5em;
+}
+.profile-bloodhound {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.profile-mobile-bloodhound {
+  display: none;
+}
+@media screen and (max-width: 660px) {
+  .profile-title {
+    font-size: 45.23px;
+  }
+  .profile-bloodhound {
+    display: none;
+  }
+  .profile-background-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr;
+  }
+  .profile-mobile-bloodhound {
+    display: flex;
+  }
+}
+@media screen and (max-width: 535px) {
+  .profile-title {
+    font-size: 31.99px;
+  }
+}
+.order-details td {
+  color: white;
+}

@@ -69,8 +69,12 @@ const RankBoostProduct = () => {
   const [opacity, setOpacity] = useState(1);
 
   const handleDiscount = () => {
-    if (validPromo === "boostify40") {
-      setTotalMoney(totalMoney / 1.4);
+    if (
+      validPromo === "endofsplit30" &&
+      secondValue >= 10000 &&
+      secondValue <= 10138
+    ) {
+      setTotalMoney(totalMoney / 1.3);
       setDisabled(true);
       setOpacity(0.4);
     }
@@ -513,6 +517,7 @@ const RankBoostProduct = () => {
 
   return (
     <>
+      <CountDown />
       <ProductContainer>
         <div></div>
         <ProductWrap>
@@ -553,7 +558,10 @@ const RankBoostProduct = () => {
                   height="100px"
                   width="300px"
                   value={secondValue}
-                  onChange={(e) => setSecondValue(e.target.value)}
+                  onChange={(e) => {
+                    setSecondValue(e.target.value);
+                    handleDiscount();
+                  }}
                 ></InputTyped>
                 <p style={{ textAlign: "center", fontSize: "45.23px" }}>RP</p>
               </DesiredRankBoost>
@@ -642,6 +650,7 @@ const RankBoostProduct = () => {
                   className="example_c"
                   disabled={disabled}
                   style={{ opacity: opacity }}
+                  onClick={handleDiscount}
                 >
                   {" "}
                   Apply

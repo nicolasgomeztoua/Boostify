@@ -199,7 +199,7 @@ export const Slider = styled.input.attrs({
 `;
 
 export const InputTyped = styled.input.attrs({
-  maxLength: "10",
+  maxLength: "20",
 })`
   display: block;
   margin: 10px auto;
