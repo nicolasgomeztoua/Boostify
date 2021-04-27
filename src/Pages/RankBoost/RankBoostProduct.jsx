@@ -273,36 +273,63 @@ const RankBoostProduct = () => {
     }
     if (secondValue >= 4800) {
       setSecondTier("IV");
+       setRankMultiplier(3.855932203);
+    }
+    if (secondValue > 5000) {
+      setRankMultiplier(4.003828);
+    }
+    if (secondValue > 5200) {
+      setRankMultiplier(4.103828);
     }
     if (secondValue > 5400) {
       setSecondTier("III");
-      setRankMultiplier(3.855932203);
+      setRankMultiplier(4.155932203);
     }
     if (secondValue > 5900) {
-      setRankMultiplier(4.055384615);
+      setRankMultiplier(4.355384615);
     }
     if (secondValue > 6000) {
       setSecondTier("II");
+      setRankMultiplier(4.5);
+    }
+      if (secondValue > 6250) {
+      setRankMultiplier(4.6539294);
+    }
+    if (secondValue > 6350) {
+      setRankMultiplier(4.963828);
     }
     if (secondValue > 6500) {
-      setRankMultiplier(4.2);
+      setRankMultiplier(5.0);
     }
     if (secondValue > 6600) {
       setSecondTier("I");
+      setRankMultiplier(5.0);
+    }
+    if (secondValue > 6750) {
+      setRankMultiplier(5.503828);
+    }
+    if (secondValue > 6900) {
+      setRankMultiplier(5.513828);
+    }
+    if (secondValue > 7050) {
+      setRankMultiplier(5.523828);
+    }
+    if (secondValue > 7150) {
+      setRankMultiplier(5.533828);
     }
     if (secondValue >= 7200) {
       setSecondTier("IV");
-      setRankMultiplier(4.440506329);
+      setRankMultiplier(5.540506329);
     }
     if (secondValue > 7900) {
       setSecondTier("III");
-      setRankMultiplier(4.974117647);
+      setRankMultiplier(5.574117647);
     }
     if (secondValue > 8100) {
-      setRankMultiplier(5.3);
+      setRankMultiplier(5.6);
     }
     if (secondValue > 8300) {
-      setRankMultiplier(5.6);
+      setRankMultiplier(5.7);
     }
     if (secondValue > 8500) {
       setRankMultiplier(5.889130435);
