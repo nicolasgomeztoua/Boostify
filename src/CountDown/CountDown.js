@@ -9,7 +9,7 @@ const CountDown = () => {
   useEffect(() => {
     setInterval(() => {
       const now = new Date().getTime();
-      const countDate = new Date("May 03 2021 18:00");
+      const countDate = new Date("May 04 2021 18:00");
       let gap = countDate - now;
       let second = 1000;
       let minute = second * 60;
