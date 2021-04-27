@@ -52,13 +52,15 @@ export const ProductWrap = styled.div`
     width: 92vw;
   }
   @media (max-width: 454px) {
-    height: 4100px;
-    width: 90vw;
+    height: 3300px;
 
     width: 92vw;
   }
   @media (max-width: 420px) {
-    width: 90vw;
+    width: 92.1vw;
+  }
+  @media (max-width: 360px) {
+    width: 91vw;
   }
 `;
 
