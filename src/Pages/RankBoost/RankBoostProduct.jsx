@@ -75,7 +75,7 @@ const RankBoostProduct = () => {
       secondValue >= 10000 &&
       secondValue <= 10138
     ) {
-      setTotalMoney(totalMoney / 1.3);
+      setTotalMoney(totalMoney - totalMoney * 0.3);
       setDisabled(true);
       setOpacity(0.4);
     }
@@ -137,7 +137,7 @@ const RankBoostProduct = () => {
     }
   }, [secondValue, firstValue]);
   useEffect(() => {
-    if (secondValue > 10137) {
+    if (secondValue > 10137 || secondValue < 10000) {
       setDisabledDiscount("flex");
     } else {
       setDisabledDiscount("none");
