@@ -610,18 +610,6 @@ const RankBoostProduct = () => {
                 ></i>
               </StepTwoWarning>
             </StepTwoWarningContainer>
-            <StepTwoWarningContainer
-              style={{ display: disabledDiscount, marginTop: "10px" }}
-            >
-              If you want to use the discount code make sure to set your desired
-              rp to no more or less than 10000RP
-              <StepTwoWarning>
-                <i
-                  className="fa fa-times"
-                  onClick={() => setDisabledDiscount("none")}
-                ></i>
-              </StepTwoWarning>
-            </StepTwoWarningContainer>
           </Step2Container>
 
           <ExtrasContainer>
@@ -670,6 +658,26 @@ const RankBoostProduct = () => {
           </ExtrasContainer>
 
           <TotalContainer>
+            {" "}
+            <StepTwoWarningContainer
+              style={{
+                display: disabledDiscount,
+
+                height: "auto",
+                width: "80vw",
+                justifySelf: "center",
+                padding: "10px",
+              }}
+            >
+              If you want to use the discount code make sure to set your desired
+              RP to no more or less than 10000RP
+              <StepTwoWarning>
+                <i
+                  className="fa fa-times"
+                  onClick={() => setDisabledDiscount("none")}
+                ></i>
+              </StepTwoWarning>
+            </StepTwoWarningContainer>
             <TotalTitle>
               <F3></F3> Check your total
             </TotalTitle>
