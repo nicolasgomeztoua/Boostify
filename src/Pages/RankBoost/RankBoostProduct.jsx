@@ -67,6 +67,7 @@ const RankBoostProduct = () => {
   const [completionTime, setCompletionTime] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [opacity, setOpacity] = useState(1);
+  const [disabledDiscount, setDisabledDiscount] = useState("none");
 
   const handleDiscount = () => {
     if (
@@ -135,6 +136,13 @@ const RankBoostProduct = () => {
       setInvalid("flex");
     }
   }, [secondValue, firstValue]);
+  useEffect(() => {
+    if (secondValue > 10137) {
+      setDisabledDiscount("flex");
+    } else {
+      setDisabledDiscount("none");
+    }
+  }, [secondValue]);
   useEffect(() => {
     if (Number(secondValue) > Number(firstValue)) {
       setInvalid("none");
@@ -273,7 +281,7 @@ const RankBoostProduct = () => {
     }
     if (secondValue >= 4800) {
       setSecondTier("IV");
-       setRankMultiplier(3.855932203);
+      setRankMultiplier(3.855932203);
     }
     if (secondValue > 5000) {
       setRankMultiplier(4.003828);
@@ -292,7 +300,7 @@ const RankBoostProduct = () => {
       setSecondTier("II");
       setRankMultiplier(4.5);
     }
-      if (secondValue > 6250) {
+    if (secondValue > 6250) {
       setRankMultiplier(4.6539294);
     }
     if (secondValue > 6350) {
@@ -599,6 +607,18 @@ const RankBoostProduct = () => {
                 <i
                   className="fa fa-times"
                   onClick={() => setInvalid("none")}
+                ></i>
+              </StepTwoWarning>
+            </StepTwoWarningContainer>
+            <StepTwoWarningContainer
+              style={{ display: disabledDiscount, marginTop: "10px" }}
+            >
+              If you want to use the discount code make sure to set your desired
+              rp to no more or less than 10000RP
+              <StepTwoWarning>
+                <i
+                  className="fa fa-times"
+                  onClick={() => setDisabledDiscount("none")}
                 ></i>
               </StepTwoWarning>
             </StepTwoWarningContainer>
