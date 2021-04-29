@@ -35,7 +35,7 @@ const AcheivementBadges = () => {
         </title>
         <meta
           name="description"
-          content=" Apex badge boosting; Boost apex damage badges for as least as 12.5$. Our team of boosters will help you get any badge you desire in Apex Legends for any Legend including: 20 Bomb badge and 4k badge and many more.
+          content=" Apex badge boosting; Boost apex damage badges for as least as 12.5$. Our team of boosters will help you get any badge you desire in Apex Legends for any Legend including: 20 Bomb badge and 4k badge and many more."
         />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
