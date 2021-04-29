@@ -53,7 +53,7 @@ const Contact = ({ history }) => {
         </title>
         <meta
           name="description"
-          content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
+          content="Boostify has a dedicated team in place to reply to any of your concerns about our Apex Legends Boosting Services 24/7. We have over 1200 completed orders and a very high rating review score."
         />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
