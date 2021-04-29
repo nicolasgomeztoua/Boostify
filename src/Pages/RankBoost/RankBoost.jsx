@@ -32,11 +32,11 @@ const RankBoost = () => {
       {" "}
       <Helmet>
         <title>
-          Boostify | Cheap Apex Legends Boosting Services Playstation
+          Boostify | Apex Legends Rank Boosting
         </title>
         <meta
           name="description"
-          content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
+          content="Our top quality apex rank boost services will get you to any rank you desire in Apex Legends Ranked League including: Apex Predator, Apex Master and Apex Diamond. Break new grounds with our rank boost services"
         />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
