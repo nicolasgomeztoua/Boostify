@@ -49,7 +49,7 @@ const Contact = ({ history }) => {
       {" "}
       <Helmet>
         <title>
-          Boostify | Cheap Apex Legends Boosting Services Playstation
+          Boostify | Contact us about any doubts you may have regarding our Apex Legends Boosting Services.
         </title>
         <meta
           name="description"
