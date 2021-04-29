@@ -31,11 +31,11 @@ const AcheivementBadges = () => {
       {" "}
       <Helmet>
         <title>
-          Boostify | Cheap Apex Legends Boosting Services Playstation
+          Boostify | Apex Legends Badge boosting
         </title>
         <meta
           name="description"
-          content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
+          content=" Apex badge boosting; Boost apex damage badges for as least as 12.5$. Our team of boosters will help you get any badge you desire in Apex Legends for any Legend including: 20 Bomb badge and 4k badge and many more.
         />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
