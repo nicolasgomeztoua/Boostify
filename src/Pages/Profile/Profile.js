@@ -7,6 +7,8 @@ import backgroundImage from "../Images/profilebackground.jpg";
 import ProfileCard from "./ProfileCard";
 import OrderTracker from "./OrderTracker";
 import Footer from "../../Footer/Footer";
+import { Helmet } from "react-helmet";
+
 const Profile = ({ history }) => {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
@@ -37,15 +39,19 @@ const Profile = ({ history }) => {
   }, [history]);
   return (
     <div>
+      {" "}
+      <Helmet>
+        <title>
+          Boostify | Cheap Apex Legends Boosting Services Playstation
+        </title>
+        <meta
+          name="description"
+          content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
+        />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
       <Navbar></Navbar>
       <div className="profile-page-container">
-        <h2
-          className="whoAreWe-title profile-title"
-          style={{ borderRadius: "50px", color: "white" }}
-        >
-          {" "}
-          Welcome To Your Profile Page {username}{" "}
-        </h2>{" "}
         <div className="profile-background-grid">
           <div
             className="profile-bloodhound"
@@ -63,9 +69,8 @@ const Profile = ({ history }) => {
             style={{ backgroundImage: `url(${backgroundImage})` }}
           ></div>
         </div>
-        <OrderTracker></OrderTracker>
+        <OrderTracker orderImg={userImg}></OrderTracker>
       </div>
-
       <Footer footerColor="turquoise"></Footer>
     </div>
   );

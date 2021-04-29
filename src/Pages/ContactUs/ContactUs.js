@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../authComponents/AuthComponents.css";
 import Navbar from "../../Navbar/Navbar";
-
+import { Helmet } from "react-helmet";
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
@@ -46,6 +46,17 @@ const Contact = ({ history }) => {
   console.log("hello".length);
   return (
     <>
+      {" "}
+      <Helmet>
+        <title>
+          Boostify | Cheap Apex Legends Boosting Services Playstation
+        </title>
+        <meta
+          name="description"
+          content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
+        />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
       <Navbar></Navbar>
       <StepTwoWarningContainer
         style={{ display: invalid, alignSelf: "flex-start" }}
@@ -59,7 +70,6 @@ const Contact = ({ history }) => {
           ></i>
         </StepTwoWarning>
       </StepTwoWarningContainer>
-
       <StepTwoWarningContainer
         style={{
           display: valid,
