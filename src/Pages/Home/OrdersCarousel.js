@@ -3,13 +3,14 @@ import SwiperCore, {
   Navigation,
   Scrollbar,
   EffectCoverflow,
+  Autoplay,
 } from "swiper/core";
 
 import "swiper/swiper.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import { orders } from "./OrdersData";
 
-SwiperCore.use([Navigation, Scrollbar, EffectCoverflow]);
+SwiperCore.use([Navigation, Scrollbar, EffectCoverflow, Autoplay]);
 const OrdersCarousel = () => {
   return (
     <div className="OrdersCarousel-container">
@@ -20,6 +21,10 @@ const OrdersCarousel = () => {
         slidesPerView="auto"
         scrollbar={{ draggable: true }}
         loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -42,7 +47,7 @@ const OrdersCarousel = () => {
                   style={{
                     display: "flex",
                     justifyContent: "center",
-                    padding: "10px",
+                    padding: "5px",
                     minWidth: "300px",
                   }}
                 >
