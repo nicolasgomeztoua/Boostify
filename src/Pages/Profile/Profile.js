@@ -13,6 +13,8 @@ const Profile = ({ history }) => {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
 
+  const [orders, setOrders] = useState([]);
+
   useEffect(() => {
     const fetchPrivateDate = async () => {
       const config = {
@@ -28,6 +30,8 @@ const Profile = ({ history }) => {
           config
         );
         setUsername(data.username);
+
+        setOrders(data.orders);
       } catch (error) {
         localStorage.removeItem("authToken");
         setError("You are not authorized please login");
@@ -37,6 +41,8 @@ const Profile = ({ history }) => {
 
     fetchPrivateDate();
   }, [history]);
+
+  console.log(orders);
   return (
     <div>
       {" "}
@@ -56,9 +62,7 @@ const Profile = ({ history }) => {
           <div
             className="profile-bloodhound"
             style={{ backgroundImage: `url(${backgroundImage})` }}
-          >
-            a
-          </div>
+          ></div>
           <ProfileCard userImg={userImg} username={username}></ProfileCard>
           <div
             className="profile-bloodhound"
@@ -69,7 +73,7 @@ const Profile = ({ history }) => {
             style={{ backgroundImage: `url(${backgroundImage})` }}
           ></div>
         </div>
-        <OrderTracker orderImg={userImg}></OrderTracker>
+        <OrderTracker orderImg={userImg} orderObj={orders}></OrderTracker>
       </div>
       <Footer footerColor="turquoise"></Footer>
     </div>

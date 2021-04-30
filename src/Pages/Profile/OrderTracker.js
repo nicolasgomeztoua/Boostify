@@ -1,85 +1,9 @@
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import pred from "../Images/1.png";
-const OrderTracker = ({ orderImg }) => {
-  const mockOrder = [
-    {
-      _id: {
-        $oid: "607895b1141d2100157f0691",
-      },
-      titles: ["Acheivement Boost"],
-      prices: [50],
-      selectedLegend: ["Wraith"],
-      selectedPopBadges: ["20 Bomb"],
-      selectedExtraBadges: [],
-      firstValue: [null],
-      secondValue: [null],
-      extrasArr: [[null]],
-      PSNemail: "dafinnesekid25@gmail.com",
-      PSNPass: "Mendez1014",
-      region: "NA",
-      rankedImg: [],
-      dateCreated: {
-        $date: "2021-04-15T19:17:22.450Z",
-      },
-      id: "29709aac",
-      platform: "PlayStation Network",
-      __v: 0,
-    },
-    {
-      _id: {
-        $oid: "607895b1141d2100157f0691",
-      },
-      titles: ["Acheivement Boost"],
-      prices: [50],
-      selectedLegend: ["Wraith"],
-      selectedPopBadges: ["20 Bomb"],
-      selectedExtraBadges: [],
-      firstValue: [null],
-      secondValue: [null],
-      extrasArr: [[null]],
-      PSNemail: "dafinnesekid25@gmail.com",
-      PSNPass: "Mendez1014",
-      region: "NA",
-      rankedImg: [],
-      dateCreated: {
-        $date: "2021-04-15T19:17:22.450Z",
-      },
-      id: "29709aac",
-      platform: "PlayStation Network",
-      __v: 0,
-    },
-    {
-      _id: {
-        $oid: "6089febd8537a00015d10049",
-      },
-      titles: ["Rank Boost"],
-      prices: [531.6],
-      selectedLegend: [null],
-      selectedPopBadges: [null],
-      selectedExtraBadges: [null],
-      firstValue: [4708],
-      secondValue: [10766],
-      extrasArr: [
-        ["DuoQueue", true],
-        ["Offline", false],
-        ["Stream", false],
-        ["priority", false],
-      ],
-      badgesExtras: [null],
-      rankedImg: ["/static/media/Ranked_Tier6_Master.a31359db.png"],
-      PSNemail: "nicolasnourgt@gmail.com",
-      PSNPass: "05072001",
-      region: "EU",
-      dateCreated: {
-        $date: "2021-04-29T00:32:52.382Z",
-      },
-      id: "8cf27230",
-      platform: "PlayStation Network",
-      __v: 0,
-    },
-  ];
-  const percentage = 25;
+const OrderTracker = ({ orderObj }) => {
+  const Orders = orderObj;
+
   return (
     <>
       <h2
@@ -91,7 +15,7 @@ const OrderTracker = ({ orderImg }) => {
       </h2>{" "}
       <div className="table">
         <h2 className="heading">Order Tracking</h2>
-        {mockOrder.map((order, index) => {
+        {Orders.map((order, index) => {
           return (
             <div className="block">
               <p className="order-title">
@@ -118,7 +42,7 @@ const OrderTracker = ({ orderImg }) => {
                 <div className="rank-circle-container">
                   <div className="rank-circle-wrap">
                     <CircularProgressbarWithChildren
-                      value={percentage}
+                      value={order.progress}
                       style={{ width: 60, marginBottom: 5 }}
                       styles={{
                         // Customize the root svg element
@@ -148,7 +72,7 @@ const OrderTracker = ({ orderImg }) => {
                         justifyContent: "center",
                       }}
                     >
-                      <strong>{percentage}%</strong>
+                      <strong>{order.progress}%</strong>
                     </div>
                   </div>
                 </div>

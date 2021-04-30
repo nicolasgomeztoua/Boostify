@@ -7,7 +7,7 @@ const ProfileCard = ({ userImg, username }) => {
           <div className="profile-card__text">
             <h2>{username}</h2>
           </div>
-          <ul className="profile-card__info">
+          {/*   <ul className="profile-card__info">
             <li>
               <span className="profile-card__info__stats">172</span>
               <span>posts</span>
@@ -20,7 +20,7 @@ const ProfileCard = ({ userImg, username }) => {
               <span className="profile-card__info__stats">20</span>
               <span>following</span>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </main>
     </div>
