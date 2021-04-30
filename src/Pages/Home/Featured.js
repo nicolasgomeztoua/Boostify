@@ -25,7 +25,7 @@ const featured = () => {
         <p className="desc">
           {" "}
           One of our Day 1 boosters. Top Tier Apex Legends veteran and OG. More
-          than 4000 Hours of playtime with over 1300 wins. Apex Predator every
+          than 4000 Hours of playtime with over 4000 total wins. Apex Predator every
           season, every split. FPS experience for a decade. Trusted with First
           Priority orders. The Best of The Best!
         </p>
