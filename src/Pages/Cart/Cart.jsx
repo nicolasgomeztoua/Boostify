@@ -23,7 +23,7 @@ import { Helmet } from "react-helmet";
 const stripePromise = loadStripe(
   "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
 );
-const Cart = () => {
+const Cart = ({ history }) => {
   const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
   const [prices, setPrices] = useState([0]);
@@ -44,6 +44,7 @@ const Cart = () => {
   const [extrasArr, setExtrasArr] = useState([]);
   const [badgesExtras, setBadgesExtras] = useState([]);
   const [rankedImg, setRankedImg] = useState([]);
+  const [userId, setUserId] = useState(null);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -104,7 +105,7 @@ const Cart = () => {
       })
     );
   }, [items]);
-  console.log(rankedImg);
+
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
@@ -114,6 +115,29 @@ const Cart = () => {
     }
   });
 
+  useEffect(() => {
+    const fetchPrivateDate = async () => {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      };
+
+      try {
+        const { data } = await axios.get(
+          "https://secret-cove-64633.herokuapp.com/api/private",
+          config
+        );
+        setUserId(data.user_id);
+      } catch (error) {
+        setUserId(undefined);
+      }
+    };
+
+    fetchPrivateDate();
+  }, [history]);
+  console.log(userId);
   const potentialOrder = (e) => {
     const config = {
       headers: {
@@ -144,6 +168,7 @@ const Cart = () => {
           platform,
           badgesExtras,
           rankedImg,
+          userId,
         },
         config
       );

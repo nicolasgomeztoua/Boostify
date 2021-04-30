@@ -29,6 +29,7 @@ const OrdersCarousel = () => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
+        style={{ height: "360px" }}
       >
         {orders.map((order, index) => {
           return (
@@ -39,7 +40,7 @@ const OrdersCarousel = () => {
                   display: "flex",
                   justifyContent: "center",
                   padding: "10px",
-                  minWidth: "300px",
+                  minWidth: "315px",
                 }}
               >
                 <div
@@ -48,7 +49,8 @@ const OrdersCarousel = () => {
                     display: "flex",
                     justifyContent: "center",
                     padding: "5px",
-                    minWidth: "300px",
+                    minWidth: "315px",
+                    height: "315px",
                   }}
                 >
                   {" "}
