@@ -68,7 +68,7 @@ const Home = () => {
     <div>
       <Helmet>
         <title>
-          Boostify | Cheap Apex Legends Boosting Services Playstation
+          Boostify | Cheap Apex Legends Boosting Services | Season 9: Legacy
         </title>
         <meta
           name="description"
