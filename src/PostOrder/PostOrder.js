@@ -49,7 +49,9 @@ const PostOrder = () => {
                 {" "}
                 Check your order details thouroughly in the confirmation email
                 sent to your PSN email. <br />
-                *Please check spam due to automated sending*
+                <strong className="strong-desc">
+                  <i>*Please check spam due to automated sending*</i>
+                </strong>
               </p>
             </div>
             <div className="post-order-card-stats">
@@ -72,7 +74,10 @@ const PostOrder = () => {
               <h2>Booster Assignment</h2>
               <p>
                 Within 24h of purchase your booster will be assigned. And
-                complete your order in those next 48h.
+                complete your order in those next &nbsp;
+                <strong className="strong-desc">
+                  <i>48h.</i>
+                </strong>
                 <br></br>
               </p>
             </div>
@@ -97,7 +102,9 @@ const PostOrder = () => {
               <p>
                 Track the progress of orders you've made with Boostify. Live
                 Booster chat coming soon! <br></br>
-                *Profile page only available to boostify users*
+                <strong className="strong-desc">
+                  <i> *Profile page only available to boostify users*</i>
+                </strong>
               </p>
             </div>
             <div className="post-order-card-stats">
@@ -122,7 +129,9 @@ const PostOrder = () => {
                 Upon completion you will receive an order completion email to
                 your login email or PSN/XBOX email.
                 <br />
-                Enjoy your boost!
+                <strong className="strong-desc">
+                  <i> Enjoy your boost!</i>
+                </strong>
               </p>
             </div>
             <div className="post-order-card-stats">
