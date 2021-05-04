@@ -270,7 +270,7 @@ const Cart = ({ history }) => {
         {" "}
         <Helmet>
           <title>
-            Boostify | Cheap Apex Legends Boosting Services Playstation
+            Boostify | My Apex Legends Boosting Cart
           </title>
           <meta
             name="description"
