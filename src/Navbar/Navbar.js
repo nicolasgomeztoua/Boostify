@@ -91,6 +91,11 @@ const Navbar = () => {
               Home
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>
+              Profile
+            </Link>{" "}
+          </li>
           <li
             className="nav-item"
             onMouseEnter={onMouseEnter}
@@ -129,8 +134,9 @@ const Navbar = () => {
           >
             <p id="logout" className="nav-links">
               Logout <LogOut style={{ height: "27px" }}></LogOut>
-            </p>
+            </p>{" "}
           </li>
+
           <div className="nav-item">
             <Button className="nav-links" display={displayButton} />
           </div>

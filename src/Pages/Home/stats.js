@@ -66,7 +66,7 @@ const Stats = () => {
       <div>
         <h4>
           <AnimatedNumber
-            value={walzyEditThis}
+            value={walzyEditThis.ordersQueued}
             style={{
               fontSize: 43.96,
             }}
