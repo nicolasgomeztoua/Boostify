@@ -34,7 +34,7 @@ const PostOrder = () => {
     <>
       {" "}
       <h1 className="whoAreWe-title">What happens after you order?</h1>
-      <div>
+      <div className="post-order-wrap">
         <div className="post-order-container">
           <div className="post-order-card">
             <div className="post-order-card-image"></div>
@@ -104,7 +104,7 @@ const PostOrder = () => {
               <div className="stat"></div>
               <div className="stat border">
                 <div className="value">{walzyEditThis.ordersQueued}</div>
-                <div className="type">current orders</div>
+                <div className="type">Current Orders</div>
               </div>
               <div className="stat"></div>
             </div>
@@ -119,7 +119,8 @@ const PostOrder = () => {
               </span>
               <h2>Enjoy!</h2>
               <p>
-                Upon completion you will receive an order completion email.
+                Upon completion you will receive an order completion email to
+                your login email or PSN/XBOX email.
                 <br />
                 Enjoy your boost!
               </p>
@@ -130,7 +131,7 @@ const PostOrder = () => {
                 <div className="value">
                   {(walzyEditThis.ordersCompleted / 2).toFixed(0)}
                 </div>
-                <div className="type">returning customers</div>
+                <div className="type">Returning Customers</div>
               </div>
               <div className="stat"></div>
             </div>

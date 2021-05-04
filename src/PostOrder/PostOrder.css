@@ -83,8 +83,7 @@
 }
 .post-order-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
 }
 #step3 {
   background: url("../Pages/Images/orderTrack.png");
@@ -92,12 +91,12 @@
   background-position: center center;
 }
 #step2 {
-  background: url("../Pages/Images/boosterLobby.jpeg");
+  background: url("../Pages/Images/emailBoostify.jpeg");
   background-size: cover;
   background-position: center center;
 }
 #step4 {
-  background: url("../Pages/Images/emailBoostify.jpeg");
+  background: url("../Pages/Images/boosterLobby.jpeg");
   background-size: cover;
   background-position: center center;
 }
@@ -112,5 +111,16 @@
   }
   .post-order-card {
     margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 915px) {
+  .post-order-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .post-order-wrap {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
