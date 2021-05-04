@@ -86,8 +86,31 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
-#step2 {
+#step3 {
   background: url("../Pages/Images/orderTrack.png");
   background-size: cover;
   background-position: center center;
+}
+#step2 {
+  background: url("../Pages/Images/boosterLobby.jpeg");
+  background-size: cover;
+  background-position: center center;
+}
+#step4 {
+  background: url("../Pages/Images/emailBoostify.jpeg");
+  background-size: cover;
+  background-position: center center;
+}
+@media screen and (max-width: 460px) {
+  .post-order-card,
+  .post-order-card-stats,
+  .post-order-card-image,
+  .post-order-card-text {
+    width: 300px;
+    margin: 1px;
+    margin-top: 20px;
+  }
+  .post-order-card {
+    margin-bottom: 25px;
+  }
 }
