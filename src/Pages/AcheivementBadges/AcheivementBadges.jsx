@@ -7,6 +7,7 @@ import Footer from "../../Footer/Footer.jsx";
 import Navbar from "../../Navbar/Navbar";
 import ProdMenu from "../../ProdMenu/ProdMenu";
 import AcheivementBoostProduct from "./AcheivementBoostProduct";
+import PostOrder from "../../PostOrder/PostOrder";
 import { Helmet } from "react-helmet";
 const AcheivementBadges = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
@@ -57,6 +58,7 @@ const AcheivementBadges = () => {
       </Parallax>
       <ProdMenu></ProdMenu>
       <AcheivementBoostProduct></AcheivementBoostProduct>
+      <PostOrder></PostOrder>
       <Footer footerColor="#e43403"></Footer>
     </>
   );
