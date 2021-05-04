@@ -14,6 +14,7 @@ import { GooglePay } from "@styled-icons/fa-brands/GooglePay";
 import { CreditCardAlt } from "@styled-icons/boxicons-solid/CreditCardAlt";
 import { Playstation } from "@styled-icons/fa-brands/Playstation";
 import { Xbox } from "@styled-icons/fa-brands/Xbox";
+import PostOrder from "../../PostOrder/PostOrder";
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
@@ -23,6 +24,7 @@ import { Helmet } from "react-helmet";
 const stripePromise = loadStripe(
   "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
 );
+
 const Cart = ({ history }) => {
   const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
@@ -269,9 +271,7 @@ const Cart = ({ history }) => {
       <>
         {" "}
         <Helmet>
-          <title>
-            Boostify | My Apex Legends Boosting Cart
-          </title>
+          <title>Boostify | My Apex Legends Boosting Cart</title>
           <meta
             name="description"
             content="Get boosted by our professionals for a cheap price and achieve higher Ranks in Apex Legends. Our professionals consist of only All-seasons Apex predators. Veterans. 24/7 Live Chat Support. Cheap. Get boosted by the best. Same Day Deliver Ranked boost and Badge boost."
@@ -451,6 +451,7 @@ const Cart = ({ history }) => {
           </div>
         </div>
       </div>
+      <PostOrder></PostOrder>
       <Footer footerColor="turquoise"></Footer>
     </>
   );
