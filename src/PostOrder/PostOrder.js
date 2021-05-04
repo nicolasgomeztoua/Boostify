@@ -73,6 +73,31 @@ const PostOrder = () => {
             </div>
           </div>
         </div>
+
+        <div className="post-order-container">
+          <div className="post-order-card">
+            <div className="post-order-card-image" id="step2"></div>
+            <div className="post-order-card-text">
+              <span className="date">
+                <Step2></Step2>
+              </span>
+              <h2>Check Your Profile Page</h2>
+              <p>
+                Track the progress of orders you've made with Boostify. Live
+                Booster chat coming soon! <br></br>
+                *Profile page only available to boostify users*
+              </p>
+            </div>
+            <div className="post-order-card-stats">
+              <div className="stat"></div>
+              <div className="stat border">
+                <div className="value">{walzyEditThis.ordersQueued}</div>
+                <div className="type">current orders</div>
+              </div>
+              <div className="stat"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
