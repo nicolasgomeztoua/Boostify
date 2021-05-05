@@ -53,7 +53,9 @@ const Cart = ({ history }) => {
     (total, b) => Number(total) + Number(b.price),
     0
   );
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     setTitles(
       items.map((element) => {

@@ -1,4 +1,4 @@
-const ProfileCard = ({ userImg, username }) => {
+const ProfileCard = ({ userImg, username, orderObj }) => {
   return (
     <div>
       <main className="container-profile-profile-card">
@@ -7,11 +7,15 @@ const ProfileCard = ({ userImg, username }) => {
           <div className="profile-card__text">
             <h2>{username}</h2>
           </div>
-          {/*   <ul className="profile-card__info">
+          <ul className="profile-card__info">
             <li>
-              <span className="profile-card__info__stats">172</span>
-              <span>posts</span>
+              <span className="profile-card__info__stats">
+                {orderObj.length}
+              </span>
+              <span>{orderObj.length > 1 ? "Orders" : "Order"}</span>
             </li>
+          </ul>
+          {/*<ul>
             <li>
               <span className="profile-card__info__stats">47</span>
               <span>followers</span>

@@ -5,6 +5,28 @@ import { Link } from "react-router-dom";
 const OrderTracker = ({ orderObj }) => {
   const Orders = orderObj;
 
+  if (Orders.length === 0) {
+    return (
+      <>
+        <h2
+          className="whoAreWe-title profile-title"
+          style={{ borderRadius: "50px", color: "white", marginBottom: "10px" }}
+        >
+          Track your orders with the All-Father's sight{" "}
+        </h2>
+        <div className="table">
+          <h2 className="heading">Order Tracking</h2>
+          <div className="block">
+            <h2 className="order-title">
+              {" "}
+              No orders made on this boostify account.
+            </h2>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <h2
@@ -16,6 +38,7 @@ const OrderTracker = ({ orderObj }) => {
       </h2>{" "}
       <div className="table">
         <h2 className="heading">Order Tracking</h2>
+
         {Orders.map((order, index) => {
           return (
             <div className="block">
@@ -81,14 +104,6 @@ const OrderTracker = ({ orderObj }) => {
             </div>
           );
         })}
-
-        <Link to="/rank-boosting">
-          {" "}
-          <button className="btn">
-            <p className="order-title"> book your order now</p>
-            <span className="fa fa-cart-plus" aria-hidden="true"></span>
-          </button>
-        </Link>
       </div>
     </>
   );

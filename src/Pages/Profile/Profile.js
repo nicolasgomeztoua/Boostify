@@ -8,6 +8,7 @@ import ProfileCard from "./ProfileCard";
 import OrderTracker from "./OrderTracker";
 import Footer from "../../Footer/Footer";
 import { Helmet } from "react-helmet";
+import MissingOrder from "./MissingOrder";
 
 const Profile = ({ history }) => {
   const [error, setError] = useState("");
@@ -63,7 +64,11 @@ const Profile = ({ history }) => {
             className="profile-bloodhound"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           ></div>
-          <ProfileCard userImg={userImg} username={username}></ProfileCard>
+          <ProfileCard
+            userImg={userImg}
+            username={username}
+            orderObj={orders}
+          ></ProfileCard>
           <div
             className="profile-bloodhound"
             style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -74,6 +79,7 @@ const Profile = ({ history }) => {
           ></div>
         </div>
         <OrderTracker orderImg={userImg} orderObj={orders}></OrderTracker>
+        <MissingOrder></MissingOrder>
       </div>
       <Footer footerColor="turquoise"></Footer>
     </div>
