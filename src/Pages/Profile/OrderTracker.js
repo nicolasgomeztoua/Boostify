@@ -1,6 +1,7 @@
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import pred from "../Images/1.png";
+import { Link } from "react-router-dom";
 const OrderTracker = ({ orderObj }) => {
   const Orders = orderObj;
 
@@ -81,10 +82,13 @@ const OrderTracker = ({ orderObj }) => {
           );
         })}
 
-        <button className="btn">
-          <p className="order-title"> book your order now</p>
-          <span className="fa fa-cart-plus" aria-hidden="true"></span>
-        </button>
+        <Link to="/rank-boosting">
+          {" "}
+          <button className="btn">
+            <p className="order-title"> book your order now</p>
+            <span className="fa fa-cart-plus" aria-hidden="true"></span>
+          </button>
+        </Link>
       </div>
     </>
   );
