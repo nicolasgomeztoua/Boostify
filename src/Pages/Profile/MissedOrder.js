@@ -1,23 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 const MissedOrder = ({ userId }) => {
   const [orderId, setOrderId] = useState();
-  const [message, setMessage] = useState(
-    "Checking for new orders. Reloading..."
-  );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const success = () =>
-    toast.success(message, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    toast.success(
+      "Sucess! your order has been linked to your account. Refreshing...",
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   const failure = () => {
-    toast.error(message, {
+    toast.error("Sorry! we were not able to find an order with that Id", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -40,11 +43,16 @@ const MissedOrder = ({ userId }) => {
         { orderId, userId },
         config
       );
-      success();
 
+      if (fetch.data.data === null) {
+        failure();
+      }
+      if (fetch.data.data !== null) {
+        success();
+      }
       setTimeout(() => {
         window.location.reload();
-      }, 4000);
+      }, 5100);
     } catch (error) {
       failure();
     }
