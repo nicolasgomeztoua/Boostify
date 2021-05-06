@@ -8,13 +8,16 @@ import ProfileCard from "./ProfileCard";
 import OrderTracker from "./OrderTracker";
 import Footer from "../../Footer/Footer";
 import { Helmet } from "react-helmet";
-import MissingOrder from "./MissingOrder";
 
+import "./Input.css";
+import MissedOrder from "./MissedOrder";
 const Profile = ({ history }) => {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
-
+  const [orderId, setOrderId] = useState();
+  const [orderError, setOrderError] = useState("");
   const [orders, setOrders] = useState([]);
+  const [userId, setUserId] = useState([]);
 
   useEffect(() => {
     const fetchPrivateDate = async () => {
@@ -31,7 +34,7 @@ const Profile = ({ history }) => {
           config
         );
         setUsername(data.username);
-
+        setUserId(data.user_id);
         setOrders(data.orders);
       } catch (error) {
         localStorage.removeItem("authToken");
@@ -41,9 +44,8 @@ const Profile = ({ history }) => {
     };
 
     fetchPrivateDate();
-  }, [history]);
-
-  console.log(orders);
+  }, []);
+  console.log(userId);
   return (
     <div>
       {" "}
@@ -79,8 +81,9 @@ const Profile = ({ history }) => {
           ></div>
         </div>
         <OrderTracker orderImg={userImg} orderObj={orders}></OrderTracker>
-        <MissingOrder></MissingOrder>
+        <MissedOrder userId={userId}></MissedOrder>
       </div>
+      {/*          */}
       <Footer footerColor="turquoise"></Footer>
     </div>
   );

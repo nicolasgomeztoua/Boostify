@@ -47,6 +47,7 @@ const Cart = ({ history }) => {
   const [badgesExtras, setBadgesExtras] = useState([]);
   const [rankedImg, setRankedImg] = useState([]);
   const [userId, setUserId] = useState(null);
+
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -141,7 +142,7 @@ const Cart = ({ history }) => {
 
     fetchPrivateDate();
   }, [history]);
-  console.log(userId);
+
   const potentialOrder = (e) => {
     const config = {
       headers: {

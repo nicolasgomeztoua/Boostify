@@ -18,7 +18,9 @@ const AcheivementBadges = () => {
   window.addEventListener("resize", reportWindowSize);
 
   const [fuseyImg, setfuseyImg] = useState(Fusey);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     if (windowInnerWidth >= 1279) {
       setfuseyImg(Fusey);
