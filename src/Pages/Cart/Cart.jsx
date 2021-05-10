@@ -20,7 +20,7 @@ import {
   StepTwoWarning,
 } from "../RankBoost/RankedBoostProductElements";
 import { Helmet } from "react-helmet";
-
+import PaypalCheckout from "./PaypalCheckout";
 const stripePromise = loadStripe(
   "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
 );
@@ -47,13 +47,14 @@ const Cart = ({ history }) => {
   const [badgesExtras, setBadgesExtras] = useState([]);
   const [rankedImg, setRankedImg] = useState([]);
   const [userId, setUserId] = useState(null);
-
+  const [checkout, setCheckout] = useState(false);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
     (total, b) => Number(total) + Number(b.price),
     0
   );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -295,7 +296,7 @@ const Cart = ({ history }) => {
   }
 
   return (
-    <>
+    <div>
       <Navbar></Navbar>
       <div className="container-cart">
         <div className="window">
@@ -434,29 +435,56 @@ const Cart = ({ history }) => {
                 If 2-step-auth is enabled on your PSN account make sure to
                 disable it to prevent access problems
               </StepTwoWarningContainer>
-              <button
-                type="button"
-                id="checkout-button"
-                role="link"
-                onClick={handleClick}
-                className="pay-btn"
-                disabled={disabled}
-              >
-                Checkout with Stripe
-              </button>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <Stripe style={{ height: "50px" }}></Stripe>
-                <ApplePay style={{ height: "50px" }}></ApplePay>
-                <GooglePay style={{ height: "50px" }}></GooglePay>
-                <CreditCardAlt style={{ height: "50px" }}></CreditCardAlt>
+              <div className="checkout-buttons-icons">
+                <button
+                  type="button"
+                  id="checkout-button"
+                  role="link"
+                  onClick={handleClick}
+                  className="pay-btn"
+                  disabled={disabled}
+                >
+                  Checkout with Stripe
+                </button>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    paddingTop: "10px",
+                  }}
+                >
+                  {checkout ? (
+                    <PaypalCheckout
+                      titles={titles[0]}
+                      totalPrice={totalPrice}
+                      potentialOrder={potentialOrder}
+                    ></PaypalCheckout>
+                  ) : (
+                    <button
+                      onClick={() => setCheckout(true)}
+                      className="pay-btn"
+                      style={{ backgroundColor: "#00457C" }}
+                    >
+                      Checkout with Paypal
+                    </button>
+                  )}
+                </div>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Stripe style={{ height: "50px" }}></Stripe>
+                  <ApplePay style={{ height: "50px" }}></ApplePay>
+                  <GooglePay style={{ height: "50px" }}></GooglePay>
+                  <CreditCardAlt style={{ height: "50px" }}></CreditCardAlt>
+                </div>
               </div>
-            </div>
+            </div>{" "}
           </div>
         </div>
       </div>
       <PostOrder></PostOrder>
       <Footer footerColor="turquoise"></Footer>
-    </>
+    </div>
   );
 };
 

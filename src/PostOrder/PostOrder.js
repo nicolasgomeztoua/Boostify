@@ -31,7 +31,7 @@ const PostOrder = () => {
   let randomNumber = Math.floor(Math.random() * 10) + 10;
   console.log(randomNumber);
   return (
-    <>
+    <div className="post-order">
       {" "}
       <h1 className="whoAreWe-title">What happens after you order?</h1>
       <div className="post-order-wrap">
@@ -147,7 +147,7 @@ const PostOrder = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
