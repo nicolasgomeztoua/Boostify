@@ -163,6 +163,7 @@ export const DesiredRankBoost = styled.div`
 export const Slider = styled.input.attrs({
   type: "range",
   name: "points",
+  step: "25",
   min: "0",
   max: "20000",
 })`
