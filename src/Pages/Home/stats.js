@@ -6,8 +6,8 @@ import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExcl
 import styled from "styled-components";
 
 export const walzyEditThis = {
-  ordersCompleted: 1190,
-  ordersQueued: 6,
+  ordersCompleted: 1192,
+  ordersQueued: 5,
 };
 
 const Stats = () => {
