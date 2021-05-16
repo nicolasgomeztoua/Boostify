@@ -444,7 +444,7 @@ const Cart = ({ history }) => {
                   className="pay-btn"
                   disabled={disabled}
                 >
-                  Checkout with Stripe
+                  Checkout with Card
                 </button>
                 <div
                   style={{
