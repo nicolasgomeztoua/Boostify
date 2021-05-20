@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 export const walzyEditThis = {
   ordersCompleted: 1196,
-  ordersQueued: 8,
+  ordersQueued: 9,
 };
 
 const Stats = () => {
