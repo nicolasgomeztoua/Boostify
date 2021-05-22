@@ -26,7 +26,7 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
           const order = await actions.order.capture;
 
           setTimeout(() => {
-            history.push("/sucess");
+            history.push("/success");
           });
         },
         onError: (err) => {
