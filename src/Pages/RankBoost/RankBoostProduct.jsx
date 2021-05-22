@@ -662,7 +662,6 @@ const RankBoostProduct = () => {
 
           <TotalContainer>
             {" "}
-           
             <TotalTitle>
               <F3></F3> Check your total
             </TotalTitle>
@@ -690,7 +689,6 @@ const RankBoostProduct = () => {
                   className="example_c"
                   disabled={disabled}
                   style={{ opacity: opacity }}
-                  onClick={handleDiscount}
                 >
                   {" "}
                   Apply

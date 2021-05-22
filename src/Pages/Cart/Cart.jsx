@@ -461,6 +461,7 @@ const Cart = ({ history }) => {
                     ></PaypalCheckout>
                   ) : (
                     <button
+                      disabled={disabled}
                       onClick={() => setCheckout(true)}
                       className="pay-btn"
                       style={{ backgroundColor: "#00457C" }}
