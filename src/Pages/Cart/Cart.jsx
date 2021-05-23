@@ -446,7 +446,7 @@ const Cart = ({ history }) => {
                 >
                   Checkout with Card
                 </button>
-                <div
+                {/*                 <div
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -469,7 +469,7 @@ const Cart = ({ history }) => {
                       Checkout with Paypal
                     </button>
                   )}
-                </div>
+                </div> */}
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
