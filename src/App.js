@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import loadable from "@loadable/component";
 
 //routing
 import PrivateRoute from "./Pages/authComponents/PrivateRoute";
 ///////////////////////////////////////////////////////////////
-import ContactUs from "./Pages/ContactUs/ContactUs";
-import RankBoost from "./Pages/RankBoost/RankBoost";
-import AcheivementBadges from "./Pages/AcheivementBadges/AcheivementBadges.jsx";
+
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/authComponents/Login";
 import Register from "./Pages/authComponents/Register";
@@ -19,6 +18,11 @@ import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Sucess from "./Pages/Sucess/Sucess";
 import Profile from "./Pages/Profile/Profile";
 import KillBoost from "./Pages/KillsBoost/KillBoost";
+const ContactUs = loadable(() => import("./Pages/ContactUs/ContactUs"));
+const AcheivementBadges = loadable(() =>
+  import("./Pages/AcheivementBadges/AcheivementBadges.jsx")
+);
+const RankBoost = loadable(() => import("./Pages/RankBoost/RankBoost"));
 function App() {
   return (
     <>
