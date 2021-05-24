@@ -9,6 +9,7 @@ import SwiperCore, {
 import "swiper/swiper.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import { orders } from "./OrdersData";
+import Img from "react-cool-img";
 
 SwiperCore.use([Navigation, Scrollbar, EffectCoverflow, Autoplay]);
 const OrdersCarousel = () => {
@@ -54,11 +55,11 @@ const OrdersCarousel = () => {
                   }}
                 >
                   {" "}
-                  <img
+                  <Img
                     src={order}
                     alt="completed order"
                     className="orderimg"
-                  ></img>{" "}
+                  ></Img>{" "}
                 </div>
               </div>
             </SwiperSlide>

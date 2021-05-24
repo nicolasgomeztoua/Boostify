@@ -9,6 +9,7 @@ import ProdMenu from "../../ProdMenu/ProdMenu";
 import Navbar from "../../Navbar/Navbar";
 import { Helmet } from "react-helmet";
 import PostOrder from "../../PostOrder/PostOrder";
+import Hero from "../../Hero.js/Hero";
 const RankBoost = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -39,22 +40,11 @@ const RankBoost = () => {
         <meta name="theme-color" content="#008f68" />
       </Helmet>
       <Navbar></Navbar>
-      <Parallax
-        strength={-200}
-        bgImage={fuseyImg}
-        bgImageAlt=""
-        bgImageStyle={{
-          paddingTop: "100px",
-
-          backgroundAttachment: "none",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="Services-Header">
-          <h1 id="Rank-boost-title">Apex Legends Rank Boosting</h1>
-          <h2 id="Rank-boost-subtitle"> Pred boosting guaranteed.</h2>
-        </div>
-      </Parallax>
+      <Hero
+        img={fuseyImg}
+        title={"Apex Legends Rank Boosting"}
+        subtitle={"Pred boosting guaranteed."}
+      />
       <ProdMenu></ProdMenu>
       <RankBoostProduct />
       <PostOrder></PostOrder>
