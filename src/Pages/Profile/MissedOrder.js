@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { RightArrowAlt } from "@styled-icons/boxicons-regular/RightArrowAlt";
 const MissedOrder = ({ userId }) => {
   const [orderId, setOrderId] = useState();
   useEffect(() => {
@@ -101,7 +102,7 @@ const MissedOrder = ({ userId }) => {
             className="missing-order-btn"
             onClick={submitOrderId}
           >
-            <i class="fas fa-long-arrow-alt-right"></i>
+            <RightArrowAlt style={{ height: "50px" }}></RightArrowAlt>
           </button>
         </div>
       </div>

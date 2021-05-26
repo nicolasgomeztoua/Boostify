@@ -23,10 +23,11 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
         },
         onApprove: async (data, actions) => {
           potentialOrder();
-          const order = await actions.order.capture;
-
-          setTimeout(() => {
-            history.push("/success");
+          return actions.order.capture().then(function (details) {
+            alert("Transaction completed by " + details.payer.name.given_name);
+            setTimeout(() => {
+              history.push("/success");
+            });
           });
         },
         onError: (err) => {
@@ -34,7 +35,7 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
         },
       })
       .render(paypal.current);
-  }, []);
+  }, [history, potentialOrder, titles, totalPrice]);
   return (
     <div>
       <div ref={paypal}> </div>
