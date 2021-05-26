@@ -63,7 +63,10 @@ const Home = () => {
     height: 100px;
     color: turquoise;
   `;
-
+  const clearCart = () => {
+    localStorage.removeItem("cart");
+  };
+  clearCart();
   return (
     <div>
       <Helmet>

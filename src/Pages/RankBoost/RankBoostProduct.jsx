@@ -345,7 +345,7 @@ const RankBoostProduct = () => {
   }, [activeDuo, activeOffline, activePriority, activeStream]);
   useEffect(() => {
     const prices = [
-      1.25,
+      0.1,
       1.25,
       1.25,
       1.25,
