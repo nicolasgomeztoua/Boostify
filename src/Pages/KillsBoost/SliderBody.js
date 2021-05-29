@@ -32,10 +32,10 @@ const Bar = styled(Slider).attrs({
   name: "points",
   step: "10",
   min: "0",
-  max: "300",
+  max: "1000",
 })`
   background: ${(props) =>
-    `linear-gradient(to right, #6d00ae 0%, #ba58f5 ${props.value / 3}%, #fff ${
+    `linear-gradient(to right, #6d00ae 0%, #ba58f5 ${props.value / 10}%, #fff ${
       props.value / 10
     }%, #fff 100%);`};
   margin: 1rem;

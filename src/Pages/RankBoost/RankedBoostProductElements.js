@@ -133,15 +133,15 @@ export const InitialRank = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-right: 10px;
-  height: 700px;
+
+  height: auto;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;
-
+    margin-bottom: 50px;
     max-width: 80vw;
     justify-self: center;
     margin-right: 0px;
-    height: 700px;
   }
 `;
 export const DesiredRankBoost = styled.div`
@@ -150,7 +150,7 @@ export const DesiredRankBoost = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  height: 700px;
+  height: auto;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;
@@ -158,7 +158,6 @@ export const DesiredRankBoost = styled.div`
     max-width: 80vw;
     justify-self: center;
     margin-left: 0px;
-    height: 700px;
   }
 `;
 export const Slider = styled.input.attrs({
