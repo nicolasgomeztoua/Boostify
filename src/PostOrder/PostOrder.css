@@ -127,8 +127,3 @@
 .strong-desc {
   color: black;
 }
-@media screen and (max-width: 600px) {
-  .post-order {
-    margin-top: 160vh;
-  }
-}
