@@ -44,6 +44,7 @@ export const ProductWrap = styled.div`
   }
   @media (max-width: 811px) {
     width: 92vw;
+    height: 3300px;
   }
   @media (max-width: 580px) {
     width: 92vw;
@@ -132,7 +133,7 @@ export const InitialRank = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-right: 10px;
-  height: auto;
+  height: 700px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;
@@ -149,7 +150,7 @@ export const DesiredRankBoost = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  height: auto;
+  height: 700px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;

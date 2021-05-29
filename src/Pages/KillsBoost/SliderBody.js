@@ -36,7 +36,7 @@ const Bar = styled(Slider).attrs({
 })`
   background: ${(props) =>
     `linear-gradient(to right, #6d00ae 0%, #ba58f5 ${props.value / 3}%, #fff ${
-      props.value / 3
+      props.value / 10
     }%, #fff 100%);`};
   margin: 1rem;
   ::-webkit-slider-thumb {
