@@ -132,7 +132,7 @@ export const InitialRank = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-right: 10px;
-  height: 700px;
+  height: auto;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;
@@ -149,7 +149,7 @@ export const DesiredRankBoost = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  height: 700px;
+  height: auto;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 810px) {
     width: 100%;
@@ -332,7 +332,7 @@ export const ExtraCheckBox = styled.input.attrs({
   transition: 0.5s;
 
   &:checked {
-    background: #e43403;
+    background: ${(props) => (props.color ? props.color : "#e43403")};
   }
   &:before {
     content: "";

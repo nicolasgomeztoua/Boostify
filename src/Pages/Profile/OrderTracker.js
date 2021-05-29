@@ -40,6 +40,60 @@ const OrderTracker = ({ orderObj }) => {
         <h2 className="heading">Order Tracking</h2>
 
         {Orders.map((order, index) => {
+          console.log(order.titles);
+          if (order.titles[0] === "Kills Boost") {
+            return (
+              <div className="block">
+                <p className="order-title">
+                  {order.titles}
+                  <span className="price">${order.prices}/</span>{" "}
+                  <span className="" style={{ marginLeft: "50px" }}></span>
+                  <ul className="options">
+                    <li>{order.kills} Kills</li>
+                  </ul>
+                  <div className="rank-circle-container">
+                    <div className="rank-circle-wrap">
+                      <CircularProgressbarWithChildren
+                        value={order.progress}
+                        style={{ width: 60, marginBottom: 5 }}
+                        styles={{
+                          // Customize the root svg element
+                          root: {},
+                          path: {
+                            // Path color
+                            stroke: `rgba(64,224,208)`,
+                          },
+                        }}
+                      >
+                        {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                        <img
+                          style={{ width: 90, marginBottom: 5 }}
+                          src={
+                            order.rankedImg.length === 0
+                              ? pred
+                              : order.rankedImg
+                          }
+                          alt="doge"
+                        />
+                        {console.log(order.rankedImg)}
+                      </CircularProgressbarWithChildren>{" "}
+                      <div
+                        style={{
+                          fontSize: "22.3px",
+                          marginTop: 15,
+                          paddingBottom: "15px",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <strong>{order.progress}%</strong>
+                      </div>
+                    </div>
+                  </div>
+                </p>{" "}
+              </div>
+            );
+          }
           return (
             <div className="block">
               <p className="order-title">

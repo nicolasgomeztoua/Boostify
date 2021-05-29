@@ -48,6 +48,7 @@ const Cart = ({ history }) => {
   const [rankedImg, setRankedImg] = useState([]);
   const [userId, setUserId] = useState(null);
   const [checkout, setCheckout] = useState(false);
+  const [kills, setKills] = useState([]);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -110,8 +111,13 @@ const Cart = ({ history }) => {
         return element.icon;
       })
     );
+    setKills(
+      items.flatMap((element) => {
+        return element.kills;
+      })
+    );
   }, [items]);
-
+  console.log(prices);
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
@@ -144,7 +150,7 @@ const Cart = ({ history }) => {
     fetchPrivateDate();
   }, [history]);
 
-  const potentialOrder = (e) => {
+  const potentialOrder = async (e) => {
     const config = {
       headers: {
         "Access-Control-Allow-Origin":
@@ -154,7 +160,7 @@ const Cart = ({ history }) => {
     };
 
     try {
-      const { data } = axios.post(
+      const { data } = await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         {
           titles,
@@ -175,6 +181,7 @@ const Cart = ({ history }) => {
           badgesExtras,
           rankedImg,
           userId,
+          kills,
         },
         config
       );
@@ -305,6 +312,49 @@ const Cart = ({ history }) => {
               <h2 id="order-summary">Order Summary</h2>
               <div className="line"></div>{" "}
               {items.map((element, index) => {
+                if (element.kills) {
+                  return (
+                    <table className="order-table">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <img
+                              src={element.icon}
+                              className="full-width"
+                              alt="product"
+                            ></img>
+                          </td>
+                          <td>
+                            <br /> <span className="thin">{element.title}</span>
+                            <br />
+                            <span className="thin small">
+                              Kills: {element.kills}
+                              <br />
+                              <span className="thin small">
+                                {element.filteredExtras}
+                                <br />
+                              </span>
+                              <br />
+                              <CircleWithCross
+                                style={{
+                                  height: "20px",
+                                  color: "#e43043",
+                                  zIndex: "10",
+                                }}
+                                onClick={() => handleRemove(index)}
+                              ></CircleWithCross>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div className="price">${element.price}</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  );
+                }
                 return (
                   <table className="order-table">
                     <tbody>
@@ -343,7 +393,7 @@ const Cart = ({ history }) => {
                                 color: "#e43043",
                                 zIndex: "10",
                               }}
-                              onClick={handleRemove}
+                              onClick={() => handleRemove(index)}
                             ></CircleWithCross>
                           </span>
                         </td>
