@@ -5,6 +5,7 @@ import Hero from "../../Hero.js/Hero";
 import valk from "../Images/apexvalk.webp";
 import { Helmet } from "react-helmet";
 import SliderBody from "./SliderBody";
+import Legends from "./Legends";
 const KillBoost = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const KillBoost = () => {
         subtitle="Strength in numbers"
       ></Hero>
       <SliderBody></SliderBody>
+
       <Footer footerColor="#6D00AE"></Footer>
     </div>
   );
