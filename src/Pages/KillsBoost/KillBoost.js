@@ -6,6 +6,7 @@ import valk from "../Images/apexvalk.webp";
 import { Helmet } from "react-helmet";
 import SliderBody from "./SliderBody";
 import Legends from "./Legends";
+import ProdMenu from "../../ProdMenu/ProdMenu";
 const KillBoost = () => {
   return (
     <div>
@@ -23,8 +24,8 @@ const KillBoost = () => {
         title="Apex Legends Kills boost"
         subtitle="Strength in numbers"
       ></Hero>
+      <ProdMenu border="#6d00af"></ProdMenu>
       <SliderBody></SliderBody>
-
       <Footer footerColor="#6D00AE"></Footer>
     </div>
   );
