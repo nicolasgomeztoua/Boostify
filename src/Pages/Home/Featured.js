@@ -24,7 +24,7 @@ const featured = () => {
         ></Img>{" "}
         <p className="desc">
           {" "}
-          One of our Day 1 booster. Top Tier Apex Legends veteran and OG. More
+          One of our Day 1 boosters. Top Tier Apex Legends veteran and OG. More
           than 5000 Hours of playtime with over 6000 total wins and 60k kills total. Apex Predator
           every season, every split. FPS experience for a decade. Trusted with
           Predator orders.
