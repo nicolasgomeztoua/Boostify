@@ -42,7 +42,7 @@ import Bangalore from "../Images/Bangalore.jpg";
 import Caustic from "../Images/Caustic.jpg";
 import Fuse from "../Images/Fuse.jpg";
 import Valk from "../Images/valk.png";
-import Seer from "../Images/Seer(1).jpg;
+import Seer from "../Images/Seer(1).jpg";
 export const PopularBadgesObj = [
   {
     name: "20 Bomb",
