@@ -19,6 +19,8 @@ import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import Sucess from "./Pages/Sucess/Sucess";
 import Profile from "./Pages/Profile/Profile";
 import KillBoost from "./Pages/KillsBoost/KillBoost";
+import Redirect from "./Pages/SpecialSignUp/Redirect";
+import SpecialSignUp from "./Pages/SpecialSignUp/SignUp";
 function App() {
   return (
     <>
@@ -58,6 +60,8 @@ function App() {
             ></Route>
             <Route path="/blog" exact component={Blog}></Route>
             <Route path="/success" exact component={Sucess}></Route>
+            <Route path="/redirect" exact component={Redirect}></Route>
+            <Route path="/SpecialSignUp" exact component={SpecialSignUp}></Route>
             <PrivateRoute>
               <Route path="/profile" exact component={Profile}></Route>
             </PrivateRoute>

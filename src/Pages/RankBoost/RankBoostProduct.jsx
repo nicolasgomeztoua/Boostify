@@ -419,7 +419,7 @@ const RankBoostProduct = () => {
                   value={secondValue}
                   onChange={(e) => {
                     setSecondValue(e.target.value);
-                    handleDiscount();
+                   
                   }}
                 ></InputTyped>
                 <p style={{ textAlign: "center", fontSize: "45.23px" }}>RP</p>

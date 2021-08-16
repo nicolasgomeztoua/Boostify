@@ -5,10 +5,10 @@ import "./AuthComponents.css";
 import Navbar from "../../Navbar/Navbar";
 import { Helmet } from "react-helmet";
 
-import {
+/* import {
   StepTwoWarningContainer,
   StepTwoWarning,
-} from "../RankBoost/RankedBoostProductElements";
+} from "../RankBoost/RankedBoostProductElements"; */
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
