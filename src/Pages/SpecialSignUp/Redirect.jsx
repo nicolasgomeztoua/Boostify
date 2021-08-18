@@ -9,7 +9,7 @@ useLayoutEffect(() => {
     }
   }, [history]);
     setTimeout(() => {
-    if(window.location.href.indexOf("gclid=") > -1 /* && refferer==="https://www.google.com/" */){ history.push("/SpecialSignUp" + window.location.search)}
+    if(window.location.href.indexOf("gclid=") > -1 && refferer==="https://www.google.com/"){ history.push("/SpecialSignUp" + window.location.search)}
     else{history.push("/rank-boosting")}
     },3000)
     return (
