@@ -1,10 +1,8 @@
 import { useLayoutEffect } from "react";
 import "./CSS/Redirect.css"
 const Redirect = ({ history}) => {
-    
-const refferer = document.refferer
     setTimeout(() => {
-    if(window.location.href.indexOf("gclid=") > -1){ history.push("/SpecialSignUp" + window.location.search)}
+    if(window.location.search.indexOf("gclid=") > -1){ history.push("/SpecialSignUp" + window.location.search)}
     else{history.push("/rank-boosting")}
     },3000)
     return (
