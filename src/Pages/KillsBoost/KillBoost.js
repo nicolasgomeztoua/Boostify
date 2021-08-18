@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 import Hero from "../../Hero.js/Hero";
-import valk from "../Images/apexvalk.webp";
+import valk from "../Images/apexvalk.jpg";
 import { Helmet } from "react-helmet";
 import SliderBody from "./SliderBody";
-import Legends from "./Legends";
+
 import ProdMenu from "../../ProdMenu/ProdMenu";
 const KillBoost = () => {
   return (

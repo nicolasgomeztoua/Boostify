@@ -3,13 +3,8 @@ import "./CSS/Redirect.css"
 const Redirect = ({ history}) => {
     
 const refferer = document.refferer
-useLayoutEffect(() => {
-    if (localStorage.getItem("authToken")) {
-      history.push("/rank-boosting");
-    }
-  }, [history]);
     setTimeout(() => {
-    if(window.location.href.indexOf("gclid=") > -1 && refferer==="https://www.google.com/"){ history.push("/SpecialSignUp" + window.location.search)}
+    if(window.location.href.indexOf("gclid=") > -1){ history.push("/SpecialSignUp" + window.location.search)}
     else{history.push("/rank-boosting")}
     },3000)
     return (
