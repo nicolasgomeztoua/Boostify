@@ -3,6 +3,7 @@ import "./CSS/Redirect.css"
 const Redirect = ({ history}) => {
     setTimeout(() => {
     let url = window.location.href
+    alert(url.indexOf("gclid=")>-1)
     if(url.indexOf("gclid=")>-1){ history.push("/SpecialSignUp" + window.location.search)}
     else{history.push("/rank-boosting")}
     },3000)
