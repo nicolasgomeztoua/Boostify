@@ -146,3 +146,26 @@ html {
 .hidden{
     display: none !important;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.animation{
+    background: linear-gradient(-45deg, #ee7752, #40E0D0, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+.text-shadow-black{
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black,
+    -0.07em -0.07em black, -0.07em 0.07em black, 0.07em -0.07em black,
+    0.07em 0.07em black;
+}

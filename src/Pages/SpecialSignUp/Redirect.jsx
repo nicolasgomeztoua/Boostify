@@ -1,11 +1,16 @@
+import { useLayoutEffect } from "react";
 import "./CSS/Redirect.css"
 const Redirect = ({ history}) => {
     
 const refferer = document.refferer
-
+useLayoutEffect(() => {
+    if (localStorage.getItem("authToken")) {
+      history.push("/rank-boosting");
+    }
+  }, [history]);
     setTimeout(() => {
     if(window.location.href.indexOf("gclid=") > -1 /* && refferer==="https://www.google.com/" */){ history.push("/SpecialSignUp" + window.location.search)}
-    else{window.location.replace("/")}
+    else{history.push("/rank-boosting")}
     },3000)
     return (
         <div className="container-redirect">

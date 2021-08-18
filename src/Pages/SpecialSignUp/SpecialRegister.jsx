@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const SpecialRegister = ({ history, display}) => {
+const SpecialRegister = ({history,display}) => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -31,22 +31,22 @@ const SpecialRegister = ({ history, display}) => {
       try {
         const { data } = await axios.post(
           "https://secret-cove-64633.herokuapp.com/api/auth/register",
-          { username, email, password, special },
+          {username, email, password, special},
           config
         );
         localStorage.setItem("authToken", data.token);
         history.push("/login");
-      } catch (err) {
-        setError(err.response.data.error);
+      } catch (error) {
+        setError(error.response.data.error)
         setTimeout(() => {
           setError("");
         }, 5000);
       }
     };
     return (
-        <div className="register-screen" style={{display:display}}>
-        <form onSubmit={registerHandler} className="register-screen__form">
-          <h3 className="register-screen__title">Register</h3>
+        <div className="register-screen " style={{display:display}}>
+        <form onSubmit={registerHandler} className="register-screen__form animation">
+          <h3 className="register-screen__title text-shadow-black" style={{color:'white'}}>Register Today <br/> For A Free 4k/20 Bomb With Your Next Rank Boost Order</h3>
           {error && <span className="error-message">{error}</span>}
           <div className="form-group">
             <label htmlFor="name">Username:</label>
@@ -97,10 +97,6 @@ const SpecialRegister = ({ history, display}) => {
           <button type="submit" className="form-btn form-btn-primary">
             Register
           </button>
-
-          <span className="register-screen__subtext">
-            Already have an account? <Link to="/login">Login</Link>
-          </span>
         </form>
       </div>
     )
