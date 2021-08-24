@@ -10,7 +10,7 @@ const SignUp = ({ history }) => {
 
     const Container = styled.div`
 @media(orientation: landscape){background-image:url(${desktopBackg}); display:grid;
-grid-template-columns: 1fr 1fr;}
+grid-template-columns: 1fr 1fr;background-size:contain}
 @media(orientation: portrait){background-image:url(${mobileBackg});}
 height:100vh;
 background-repeat: no-repeat;
@@ -55,6 +55,7 @@ color: #fff;
     text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black,
     -0.07em -0.07em black, -0.07em 0.07em black, 0.07em -0.07em black,
     0.07em 0.07em black;
+    padding:10px;
 `
     const Button = styled.button`
     font-size: .9rem;
