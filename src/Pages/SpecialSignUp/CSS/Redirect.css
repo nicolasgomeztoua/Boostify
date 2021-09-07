@@ -200,7 +200,7 @@ html {
 @media screen and (orientation: portrait) {
     .content{
     width: 90vw;
-    min-height: 110%;
+    
     margin-top: 0;  
    } 
 }
