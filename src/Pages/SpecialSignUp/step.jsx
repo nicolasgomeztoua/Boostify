@@ -1,8 +1,9 @@
 import { Button, StepContainer } from "./signupstyles";
+import smoothscroll from "smoothscroll-polyfill";
 const Step = ({ icon, textfile, containerRef, step }) => {
   const Icon = icon;
   const iconStyles = { height: "100px" };
-
+  smoothscroll.polyfill();
   function scrollToRight() {
     containerRef.current.scrollTo({
       left: step * window.innerWidth,
