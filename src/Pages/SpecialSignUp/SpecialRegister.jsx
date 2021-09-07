@@ -35,7 +35,7 @@ const SpecialRegister = ({history,display}) => {
           config
         );
         localStorage.setItem("authToken", data.token);
-        history.push("/login");
+        history.push("/thank_you");
       } catch (error) {
         setError(error.response.data.error)
         setTimeout(() => {

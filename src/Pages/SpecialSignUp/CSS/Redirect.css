@@ -164,8 +164,68 @@ html {
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
 }
-.text-shadow-black{
-    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black,
-    -0.07em -0.07em black, -0.07em 0.07em black, 0.07em -0.07em black,
-    0.07em 0.07em black;
+.cards{
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+
+    
+  }
+  .cards h2.header{
+    font-size: 40px;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .services{
+    display: flex;
+    align-items: center;
+    width:50%;
+    height:70%;
+  }
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    transition: all .3s ease;
+    text-align: center;
+   
+ 
+  }
+@media screen and (orientation: portrait) {
+    .content{
+    width: 90vw;
+    min-height: 110%;
+    margin-top: 0;  
+   } 
 }
+  .content .fab{
+    font-size: 70px;
+    margin: 16px 0;
+  }
+  .content > *{
+    flex: 1 1 100%;
+  }
+
+  .content h2{
+    font-size: 30px;
+    margin: 16px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .content p{
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  @media (max-width: 900px) {
+    .services{
+      display: flex;
+      flex-direction: column;
+    }
+  }

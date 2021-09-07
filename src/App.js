@@ -21,6 +21,7 @@ import Profile from "./Pages/Profile/Profile";
 import KillBoost from "./Pages/KillsBoost/KillBoost";
 import Redirect from "./Pages/SpecialSignUp/Redirect";
 import SpecialSignUp from "./Pages/SpecialSignUp/SignUp";
+import Typ from "./Pages/SpecialSignUp/typ";
 function App() {
   return (
     <>
@@ -62,6 +63,7 @@ function App() {
             <Route path="/success" exact component={Sucess}></Route>
             <Route path="/redirect" exact component={Redirect}></Route>
             <Route path="/SpecialSignUp" exact component={SpecialSignUp}></Route>
+            <Route path="/thank_you" exact component={Typ}></Route>
             <PrivateRoute>
               <Route path="/profile" exact component={Profile}></Route>
             </PrivateRoute>
