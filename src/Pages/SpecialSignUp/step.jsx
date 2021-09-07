@@ -1,6 +1,7 @@
 import { Button, StepContainer } from "./signupstyles";
 import smoothscroll from "smoothscroll-polyfill";
-const Step = ({ icon, textfile, containerRef, step }) => {
+
+const Step = ({ icon, textfile, containerRef, step, pusher, date }) => {
   const Icon = icon;
   const iconStyles = { height: "100px" };
   smoothscroll.polyfill();
@@ -9,7 +10,6 @@ const Step = ({ icon, textfile, containerRef, step }) => {
       left: step * window.innerWidth,
       behavior: "smooth",
     });
-    console.log(containerRef.current);
   }
 
   return (
@@ -18,13 +18,13 @@ const Step = ({ icon, textfile, containerRef, step }) => {
         <div class="content content-1">
           <Icon style={iconStyles}></Icon>
           <h2>{textfile.title}</h2>
-          {textfile.time === true ? "" : ""}
+          <h2> {textfile.time ? "48H from sign up" : ""}</h2>
           <p>{textfile.body}</p>
           <Button
             background={"black"}
             color={"white"}
             border={"none"}
-            onClick={scrollToRight}
+            onClick={pusher ? pusher : scrollToRight}
           >
             {textfile.button}
           </Button>

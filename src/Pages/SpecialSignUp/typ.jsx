@@ -7,8 +7,11 @@ import { useRef } from "react";
 import { Offer } from "@styled-icons/boxicons-solid/Offer";
 import { Timer } from "@styled-icons/boxicons-regular/Timer";
 
-const Typ = () => {
+const Typ = ({ history }) => {
   const containerRef = useRef(TypContainer);
+  const pusher = () => {
+    history.push("./rank-boosting");
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -36,6 +39,7 @@ const Typ = () => {
           containerRef={containerRef}
           icon={Timer}
           step={4}
+          pusher={pusher}
         ></Step>
       </TypContainer>
     </>

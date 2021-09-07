@@ -44,7 +44,7 @@ const Profile = ({ history }) => {
     };
 
     fetchPrivateDate();
-  }, []);
+  }, [history]);
   console.log(userId);
   return (
     <div>

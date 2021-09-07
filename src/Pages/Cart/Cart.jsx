@@ -95,7 +95,7 @@ const Cart = ({ history }) => {
         return element.selectedLegend;
       })
     );
-    setDatecreated(new Date().toDateString());
+    setDatecreated(new Date().toString());
     setExtrasArr(
       items.flatMap((element) => {
         return element.extrasArr;

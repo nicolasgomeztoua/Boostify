@@ -83,7 +83,7 @@
   font-size: 1.8rem;
   line-height: 2.4rem;
   vertical-align: middle;
-  width: 70vw;
+  width: 70%;
 }
 .webflow-style-input input::-webkit-input-placeholder {
   color: #7881a1;
