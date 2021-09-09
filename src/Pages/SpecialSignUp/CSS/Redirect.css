@@ -184,7 +184,7 @@ html {
     width:50%;
     height:70%;
   }
-  .content{
+  .content-typ{
     display: flex;
     flex-wrap: wrap;
     flex: 1;
@@ -198,27 +198,27 @@ html {
  
   }
 @media screen and (orientation: portrait) {
-    .content{
+    .content-typ{
     width: 90vw;
     
     margin-top: 0;  
    } 
 }
-  .content .fab{
+  .content-typ .fab{
     font-size: 70px;
     margin: 16px 0;
   }
-  .content > *{
+  .content-typ > *{
     flex: 1 1 100%;
   }
 
-  .content h2{
+  .content-typ h2{
     font-size: 30px;
     margin: 16px 0;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  .content p{
+  .content-typ p{
     font-size: 17px;
     font-family: 'Poppins',sans-serif;
   }

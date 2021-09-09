@@ -14,7 +14,7 @@ const Step = ({ icon, textfile, containerRef, step, pusher, d, h, m, s }) => {
   return (
     <StepContainer>
       <div class="services">
-        <div class="content content-1">
+        <div class="content-typ content-1">
           <Icon style={iconStyles}></Icon>
           <h2>{textfile.title}</h2>
           <h2> {textfile.time === true ? d + h + m + s : ""}</h2>
