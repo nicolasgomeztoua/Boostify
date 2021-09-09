@@ -7,9 +7,10 @@ const SpecialRegister = ({ history, display }) => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
   const special = true;
-  let dateCreated = new Date();
-  dateCreated.setDate(dateCreated.getDate() + 2);
+  let dateFormated = new Date().getTime() + (86400000 * 2);
+  let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", options);
   const registerHandler = async (e) => {
     e.preventDefault();
 
@@ -43,6 +44,7 @@ const SpecialRegister = ({ history, display }) => {
       }, 5000);
     }
   };
+  console.log(dateCreated)
   return (
     <div className="register-screen " style={{ display: display }}>
       <form

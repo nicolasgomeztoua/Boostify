@@ -6,12 +6,59 @@ import { TypContainer } from "./signupstyles";
 import { useRef } from "react";
 import { Offer } from "@styled-icons/boxicons-solid/Offer";
 import { Timer } from "@styled-icons/boxicons-regular/Timer";
+import { useEffect, useState,} from "react"
+import axios from "axios";
 
 const Typ = ({ history }) => {
-  const containerRef = useRef(TypContainer);
+  const containerRef = useRef(TypContainer);  
   const pusher = () => {
     history.push("./rank-boosting");
   };
+  const [d, sd] = useState(0);
+  const [h, sh] = useState(0);
+  const [m, sm] = useState(0);
+  const [s, ss] = useState(0);
+
+
+   useEffect( async() => {
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      };
+      try {
+        const { data } = await axios.get(
+          "https://secret-cove-64633.herokuapp.com/api/private",
+          config
+        );
+        sessionStorage.setItem("dateCreated", data.dateCreated);
+      } catch (error) {
+        localStorage.removeItem("authToken");
+        history.push("/login");
+      }
+
+  }, [])
+
+
+   useEffect(() => {
+    setInterval(() => {    
+      const countDate = new Date(sessionStorage.getItem("dateCreated"));
+      const now = new Date().getTime();      
+      let gap = countDate - now;
+      let second = 1000;
+      let minute = second * 60;
+      let hour = minute * 60;
+      let day = hour * 24;
+
+      sd(Math.floor(gap / day));
+      sh(Math.floor((gap % day) / hour));
+      sm(Math.floor((gap % hour) / minute));
+      ss(Math.floor((gap % minute) / second));
+
+    }, 1000);
+  }, [])  
   return (
     <>
       <Navbar></Navbar>
@@ -40,6 +87,10 @@ const Typ = ({ history }) => {
           icon={Timer}
           step={4}
           pusher={pusher}
+          d={isNaN(d) ? "Expired" : d + ":" }
+          h={isNaN(d) ? "" : h + ":"}
+          m={isNaN(d) ? "" : m + ":"}
+          s={isNaN(d) ? "" : s}
         ></Step>
       </TypContainer>
     </>

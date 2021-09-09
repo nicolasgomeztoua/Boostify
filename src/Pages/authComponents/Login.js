@@ -17,7 +17,7 @@ const Login = ({ history }) => {
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push("/");
+      history.goBack()
     } else {
       setInvalid("flex");
     }
@@ -41,7 +41,7 @@ const Login = ({ history }) => {
 
       localStorage.setItem("authToken", data.token);
 
-      history.push("/cart");
+      history.goBack()
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
