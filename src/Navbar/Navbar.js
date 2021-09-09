@@ -57,21 +57,12 @@ const Navbar = () => {
   useEffect(() => {
     if (loggedIn === true) {
       setDisplayCheckBox("flex");
-    }
-    if (loggedIn === false) {
-      setDisplayCheckBox("none");
-    }
-    console.log(loggedIn);
-  }, [loggedIn]);
-
-  useEffect(() => {
-    if (loggedIn === true) {
       setDisplayButton("none");
     }
     if (loggedIn === false) {
+      setDisplayCheckBox("none");
       setDisplayButton("flex");
     }
-    console.log(loggedIn);
   }, [loggedIn]);
 
   const fadeIn = keyframes`
