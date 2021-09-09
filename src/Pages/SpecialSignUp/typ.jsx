@@ -10,7 +10,7 @@ import { useEffect, useState,} from "react"
 import axios from "axios";
 
 const Typ = ({ history }) => {
-  const containerRef = useRef(TypContainer);  
+  const containerRef = useRef(TypContainer);
   const pusher = () => {
     history.push("./rank-boosting");
   };
