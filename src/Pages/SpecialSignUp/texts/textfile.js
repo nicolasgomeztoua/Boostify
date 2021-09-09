@@ -21,7 +21,7 @@ export const secondStep = {
 export const finalStep = {
   title: "This offer Expires in:",
   body:
-    "By clicking on the button below, you will be directed to our rank boost page where your could save up to $100 in ypur favorite badges!",
+    "By clicking on the button below, you will be directed to our rank boost page where your could save up to $100 on your favorite badges!",
   time: true,
   button: "Take Me There!",
 };
