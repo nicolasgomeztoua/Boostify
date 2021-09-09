@@ -80,11 +80,9 @@ const Navbar = () => {
   `;
   const CrossMenu = styled(Cross)`
     ${NavMenu}
-    animation: ${fadeIn} 1s ease-in;
   `;
   const BurgerMenu = styled(Bars)`
   ${NavMenu}
-   animation: ${fadeIn} 1s ease-in;
   `;
   return (
     <>
