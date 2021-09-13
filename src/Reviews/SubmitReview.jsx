@@ -6,11 +6,12 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./CSS/Testimonials.css";
+import { useHistory } from "react-router-dom";
 
 const SubmitReview = () => {
 
-
-const notify = () =>
+const history = useHistory()
+const notify = () =>{
   toast.success("Your review has been submitted. Thanks!", {
     position: "top-center",
     autoClose: 5000,
@@ -19,12 +20,17 @@ const notify = () =>
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-  });
+  })
+  setTimeout(() => {
+  history.go(0)
+  }, 5000);
+  
+}
     const [rating, setRating] = useState(0);
     const [name, setName] = useState();
     const [review, setReview] = useState("");
     const [main, setMain] = useState();
-
+    
     const dateFormat = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
     let dateFormated = new Date().getTime()
     let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", dateFormat);
