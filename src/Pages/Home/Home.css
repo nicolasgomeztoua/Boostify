@@ -860,19 +860,18 @@
 .OrdersCarousel-container {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  margin: 200px;
+  margin: 20px;
   margin-left: 50px;
   margin-right: 50px;
   justify-content: center;
 }
 .OrdersCarousel-title {
-  font-size: 63.96px;
+  font-size: 43.96px;
   border-bottom: 5px solid turquoise;
   border-radius: 7px;
   color: black;
   opacity: 1;
   text-align: center;
-  padding: 2rem;
 }
 .orderimg {
   height: 100%;

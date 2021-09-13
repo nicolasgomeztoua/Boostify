@@ -14,8 +14,6 @@ import MissedOrder from "./MissedOrder";
 const Profile = ({ history }) => {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
-  const [orderId, setOrderId] = useState();
-  const [orderError, setOrderError] = useState("");
   const [orders, setOrders] = useState([]);
   const [userId, setUserId] = useState([]);
 

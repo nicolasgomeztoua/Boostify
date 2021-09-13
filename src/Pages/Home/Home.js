@@ -13,7 +13,6 @@ import { Parallax } from "react-parallax";
 import Horizon from "../Images/Horizon.webp";
 import HorizonMobile from "../Images/Horizon2.jpg";
 import Bloodhound from "../Images/FAQ.png";
-import Testimonials from "../../Testimonials/Testimonials";
 import { World } from "@styled-icons/boxicons-regular/World";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
@@ -24,6 +23,7 @@ import Featured from "./Featured";
 import { Helmet } from "react-helmet";
 
 import Stats from "./stats";
+import Reviews from "../../Reviews/Reviews";
 const Home = () => {
   const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
 
@@ -225,17 +225,7 @@ const Home = () => {
       <WhatIsBoosting></WhatIsBoosting>
       <WhyUs></WhyUs>
       <OrdersCarousel></OrdersCarousel>
-      <div>
-        <h2 className="Testimonials-intro">
-          {" "}
-          <span id="our-users">Our Users fully trust us worldwide</span>
-          <br />
-          <Worldwide />
-          <br></br>
-          <span id="our-word">But don't take our word for it</span>
-        </h2>
-      </div>
-      <Testimonials />
+      <Reviews></Reviews>
       <Footer footerColor="turquoise"></Footer>
     </div>
   );
