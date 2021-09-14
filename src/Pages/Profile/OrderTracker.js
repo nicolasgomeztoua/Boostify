@@ -1,7 +1,6 @@
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import pred from "../Images/1.png";
-import { Link } from "react-router-dom";
 const OrderTracker = ({ orderObj }) => {
   const Orders = orderObj;
 

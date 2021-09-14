@@ -24,7 +24,7 @@ const Contact = ({ history }) => {
     };
 
     try {
-      const { data } = await axios.post(
+       await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/supportTickets",
         { email, supportTicket },
         config

@@ -41,7 +41,6 @@ import silver from "../Images/Ranked_Tier2_Silver.png";
 import bronze from "../Images/Ranked_Tier1_Bronze.jpeg";
 
 import { useDispatchCart } from "../Cart/CartHandler";
-import CountDown from "../../CountDown/CountDown";
 
 const RankBoostProduct = () => {
   const [firstTier, setFirstTier] = useState("I");
@@ -52,7 +51,7 @@ const RankBoostProduct = () => {
   const [secondTier, setSecondTier] = useState("");
 
   const [invalid, setInvalid] = useState("none");
-  const [validPromo, setValidPromo] = useState(false);
+  /* const [validPromo, setValidPromo] = useState(false); */
   const [activeDuo, setActiveDuo] = useState(false);
   const [activeStream, setActiveStream] = useState(false);
   const [activePriority, setPriority] = useState(false);
@@ -64,11 +63,11 @@ const RankBoostProduct = () => {
   const [moneyMultiplierStream, setMoneyMultiplierStream] = useState(0);
   const [moneyMultiplierPriority, setMoneyMultipliePriority] = useState(0);
   const [completionTime, setCompletionTime] = useState("");
-  const [disabled, setDisabled] = useState(false);
-  const [opacity, setOpacity] = useState(1);
-  const [disabledDiscount, setDisabledDiscount] = useState("none");
+/*   const [disabled, setDisabled] = useState(false);
+  const [opacity, setOpacity] = useState(1); */
+  /* const [disabledDiscount, setDisabledDiscount] = useState("none"); */
 
-  const handleDiscount = () => {
+/*   const handleDiscount = () => {
     if (
       validPromo === "endofsplit30" &&
       secondValue >= 10000 &&
@@ -78,7 +77,7 @@ const RankBoostProduct = () => {
       setDisabled(true);
       setOpacity(0.4);
     }
-  };
+  }; */
 
   useEffect(() => {
     if (totalMoney < 0) {
@@ -129,13 +128,13 @@ const RankBoostProduct = () => {
     }
   }, [secondValue, firstValue]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (secondValue > 10137 || secondValue < 10000) {
       setDisabledDiscount("flex");
     } else {
       setDisabledDiscount("none");
     }
-  }, [secondValue]);
+  }, [secondValue]); */
   useEffect(() => {
     if (Number(secondValue) > Number(firstValue)) {
       setInvalid("none");
@@ -502,14 +501,14 @@ const RankBoostProduct = () => {
                 height="50px"
                 width="250px"
                 onChange={(e) => {
-                  setValidPromo(e.target.value.toLowerCase());
+                  // setValidPromo(e.target.value.toLowerCase());
                 }}
               ></InputTyped>
               <div class="button_cont" align="center">
                 <button
                   className="example_c"
-                  disabled={disabled}
-                  style={{ opacity: opacity }}
+                  disabled={true}
+                  style={{ opacity: 0.4 }}
                 >
                   {" "}
                   Apply

@@ -13,13 +13,13 @@ const Login = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [invalid, setInvalid] = useState("none");
+  // const [invalid, setInvalid] = useState("none");
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
       history.goBack()
     } else {
-      setInvalid("flex");
+      // setInvalid("flex");
     }
   }, [history]);
 

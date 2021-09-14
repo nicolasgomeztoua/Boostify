@@ -6,7 +6,7 @@ import { TypContainer } from "./signupstyles";
 import { useRef } from "react";
 import { Offer } from "@styled-icons/boxicons-solid/Offer";
 import { Timer } from "@styled-icons/boxicons-regular/Timer";
-import { useEffect, useState,} from "react"
+import { useEffect, useState, } from "react"
 import axios from "axios";
 
 const Typ = ({ history }) => {
@@ -20,7 +20,9 @@ const Typ = ({ history }) => {
   const [s, ss] = useState(0);
 
 
-   useEffect( async() => {
+  useEffect(() => {
+
+    const fetchData = async () => {
 
       const config = {
         headers: {
@@ -39,13 +41,17 @@ const Typ = ({ history }) => {
         history.push("/login");
       }
 
-  }, [])
+
+    };
+
+    fetchData();
+  }, [history]);
 
 
-   useEffect(() => {
-    setInterval(() => {    
+  useEffect(() => {
+    setInterval(() => {
       const countDate = new Date(sessionStorage.getItem("dateCreated"));
-      const now = new Date().getTime();      
+      const now = new Date().getTime();
       let gap = countDate - now;
       let second = 1000;
       let minute = second * 60;
@@ -58,7 +64,7 @@ const Typ = ({ history }) => {
       ss(Math.floor((gap % minute) / second));
 
     }, 1000);
-  }, [])  
+  }, [])
   return (
     <>
       <Navbar></Navbar>
@@ -87,7 +93,7 @@ const Typ = ({ history }) => {
           icon={Timer}
           step={4}
           pusher={pusher}
-          d={isNaN(d) ? "Expired" : d + ":" }
+          d={isNaN(d) ? "Expired" : d + ":"}
           h={isNaN(d) ? "" : h + ":"}
           m={isNaN(d) ? "" : m + ":"}
           s={isNaN(d) ? "" : s}

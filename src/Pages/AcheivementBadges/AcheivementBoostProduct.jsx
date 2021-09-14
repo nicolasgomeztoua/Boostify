@@ -15,14 +15,12 @@ import {
   TotalMoney,
   InputTyped,
   Searchbar,
-  totalBadgesContainer,
   StepTwoWarningContainer,
   StepTwoWarning,
 } from "./BadgesElements";
 
 import {
   ExtrasTitle,
-  F3,
   ExtrasContainer,
   ExtrasOptions,
   ExtraIconButtonWrap,

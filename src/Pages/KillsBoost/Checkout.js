@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import {
   TotalContainer,
   TotalTitle,
@@ -26,7 +26,7 @@ const Checkout = ({
   const addToCart = (item) => {
     dispatch({ type: "ADD", item });
   };
-  const [validPromo, setValidPromo] = useState();
+  // const [validPromo, setValidPromo] = useState();
   const disabled = false;
   const opacity = 1;
   const TotalContainerK = styled(TotalContainer)`
@@ -56,7 +56,7 @@ const Checkout = ({
             height="50px"
             width="250px"
             onChange={(e) => {
-              setValidPromo(e.target.value.toLowerCase());
+              // setValidPromo(e.target.value.toLowerCase());
             }}
           ></InputTyped>
           <div class="button_cont" align="center">

@@ -12,7 +12,6 @@ import { Helmet } from "react-helmet";
 import "./Input.css";
 import MissedOrder from "./MissedOrder";
 const Profile = ({ history }) => {
-  const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [orders, setOrders] = useState([]);
   const [userId, setUserId] = useState([]);
@@ -36,7 +35,7 @@ const Profile = ({ history }) => {
         setOrders(data.orders);
       } catch (error) {
         localStorage.removeItem("authToken");
-        setError("You are not authorized please login");
+        
         history.push("/login");
       }
     };

@@ -41,8 +41,8 @@ span{
     text-transform: uppercase;
 }
 `
-    useEffect(
-        async () => {
+    useEffect(() => {
+        const fetchData = async () => {
             const config = {
                 headers: {
                     "Content-Type": "application/json",
@@ -60,7 +60,10 @@ span{
                 console.log(error);
             }
 
-        }, [])
+        };
+
+        fetchData();
+      }, []);
 
     return (<>
         

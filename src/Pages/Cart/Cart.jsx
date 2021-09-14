@@ -26,7 +26,6 @@ const stripePromise = loadStripe(
 );
 
 const Cart = ({ history }) => {
-  const [message, setMessage] = useState("");
   const [titles, setTitles] = useState([""]);
   const [prices, setPrices] = useState([0]);
   const [selectedPopBadges, setSelectedPopBadges] = useState([""]);
@@ -160,7 +159,7 @@ const Cart = ({ history }) => {
     };
 
     try {
-      const { data } = await axios.post(
+        await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         {
           titles,
@@ -221,21 +220,6 @@ const Cart = ({ history }) => {
       // using `result.error.message`.
     }
   };
-  useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-
-    const query = new URLSearchParams(window.location.search);
-
-    if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
-    }
-
-    if (query.get("canceled")) {
-      setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
-      );
-    }
-  }, []);
 
   const optionsRegion = [
     { value: "EU", label: "EU" },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Fusey from "../Images/fusy.jpg";
 import FuseyMobile from "../Images/fusyMobile.jpg";
-import { Parallax } from "react-parallax";
+
 import "./RankBoost.css";
 import Footer from "../../Footer/Footer.jsx";
 import RankBoostProduct from "./RankBoostProduct";

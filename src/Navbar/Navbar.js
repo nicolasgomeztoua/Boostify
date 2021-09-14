@@ -12,7 +12,7 @@ import logo from "../Pages/Images/168412866_475515483641089_5330192756740066819_
 import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
 import { Bars } from "@styled-icons/fa-solid/Bars";
 import { Cross } from "@styled-icons/icomoon/Cross";
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
 const Navbar = () => {
   let history = useHistory();
   const cartItems = useCart();
@@ -65,15 +65,6 @@ const Navbar = () => {
     }
   }, [loggedIn]);
 
-  const fadeIn = keyframes`
-  0%{
-    opacity: 0;
-    transform:translate(-15px)
-  }
-  100% {
-    opacity: 1;
-  }
-`;
   const NavMenu = css`
     color: white;
     height: 30px;

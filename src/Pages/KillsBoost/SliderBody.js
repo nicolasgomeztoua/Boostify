@@ -9,7 +9,6 @@ import {
   Slider,
   InputTyped,
 } from "../RankBoost/RankedBoostProductElements";
-import Extras from "./Extras";
 import Legends from "./Legends";
 const Outline = styled.div`
   border: 10px solid #6d00ae;

@@ -8,7 +8,7 @@ const Hero = ({ img, title, subtitle }) => {
       bgImageAlt=""
       bgImageStyle={{
         paddingTop: "100px",
-
+        width: "100vw",
         backgroundAttachment: "none",
         backgroundSize: "cover",
       }}

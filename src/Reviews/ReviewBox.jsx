@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { Rating } from '@material-ui/lab';
 import User from "../Pages/Images/user.png"
-import { useState } from 'react'
 
 const ReviewBox = ({name, rating, dateCreated, review}) => {
     const TestimonialBoxContainer = styled.div`
@@ -81,7 +80,7 @@ const ReviewBox = ({name, rating, dateCreated, review}) => {
 
                     <Profile>
                         <ProfileImage>
-                            <img src={User}></img>
+                            <img src={User} alt="User"></img>
                         </ProfileImage>
 
                         <UserName>

@@ -13,7 +13,6 @@ import { Parallax } from "react-parallax";
 import Horizon from "../Images/Horizon.webp";
 import HorizonMobile from "../Images/Horizon2.jpg";
 import Bloodhound from "../Images/FAQ.png";
-import { World } from "@styled-icons/boxicons-regular/World";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import WhoAreWe from "./WhoAreWe";
@@ -59,10 +58,10 @@ const Home = () => {
     height: 40px;
     color: turquoise;
   `;
-  const Worldwide = styled(World)`
+/*   const Worldwide = styled(World)`
     height: 100px;
     color: turquoise;
-  `;
+  `; */
   const clearCart = () => {
     localStorage.removeItem("cart");
   };

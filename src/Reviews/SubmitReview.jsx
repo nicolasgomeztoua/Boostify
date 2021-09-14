@@ -10,73 +10,76 @@ import { useHistory } from "react-router-dom";
 
 const SubmitReview = () => {
 
-const history = useHistory()
-const notify = () =>{
-  toast.success("Your review has been submitted. Thanks!", {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  })
-  setTimeout(() => {
-  history.go(0)
-  }, 5000);
-  
-}
-    const [rating, setRating] = useState(0);
-    const [name, setName] = useState();
-    const [review, setReview] = useState("");
-    const [main, setMain] = useState();
-    
-    const dateFormat = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-    let dateFormated = new Date().getTime()
-    let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", dateFormat);
+  const history = useHistory()
+  const notify = () => {
+    toast.success("Your review has been submitted. Thanks!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+    setTimeout(() => {
+      history.go(0)
+    }, 5000);
 
-    const reviewHandler = async (e) => {
-        e.preventDefault();
-    
-        const config = {
-          header: {
-            "Access-Control-Allow-Origin":
-              "https://secret-cove-64633.herokuapp.com/api/auth/reviews",
-            "Content-Type": "application/json",
-          },
-        };
-    
-        try {
-          await axios.post(
-            "https://secret-cove-64633.herokuapp.com/api/auth/reviews",
-            { name, review, rating, main, dateCreated},
-            config
-          );
-        } catch (error) {
-          console.error(error);
-        }
-      };
+  }
+  const [rating, setRating] = useState(0);
+  const [name, setName] = useState();
+  const [review, setReview] = useState("");
+  const [main, setMain] = useState();
 
-      const options = [
-        { value: "Wraith" },
-        { value: "Bloodhound" },
-        { value: "Horizon" },
-        { value: "Rampart" },
-        { value: "Fuse" },
-        { value: "Octane" },
-        { value: "Wattson" },
-        { value: "Caustic" },
-        { value: "Gibraltar" },
-        { value: "Loba" },
-        { value: "Revenant" },
-        { value: "Pathfinder" },
-        { value: "Lifeline" },
-        { value: "Crypto" },
-        { value: "Mirage" },
-      ];
-    return (
-      <>
-            <ToastContainer
+  const dateFormat = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+  let dateFormated = new Date().getTime()
+  let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", dateFormat);
+
+  const reviewHandler = async (e) => {
+    e.preventDefault();
+
+    const config = {
+      header: {
+        "Access-Control-Allow-Origin":
+          "https://secret-cove-64633.herokuapp.com/api/auth/reviews",
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      await axios.post(
+        "https://secret-cove-64633.herokuapp.com/api/auth/reviews",
+        { name, review, rating, main, dateCreated },
+        config
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const options = [
+    { value: "Wraith" },
+    { value: "Bloodhound" },
+    { value: "Horizon" },
+    { value: "Rampart" },
+    { value: "Fuse" },
+    { value: "Octane" },
+    { value: "Wattson" },
+    { value: "Caustic" },
+    { value: "Gibraltar" },
+    { value: "Loba" },
+    { value: "Revenant" },
+    { value: "Pathfinder" },
+    { value: "Lifeline" },
+    { value: "Crypto" },
+    { value: "Mirage" },
+    { value: "Valk" },
+    { value: "Seer" },
+
+  ];
+  return (
+    <>
+      <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -87,7 +90,7 @@ const notify = () =>{
         draggable
         pauseOnHover
       />
-        <div className="review-container">
+      <div className="review-container">
         <form
           onSubmit={reviewHandler}
           className="login-screen__form"
@@ -190,8 +193,8 @@ const notify = () =>{
           </button>
         </form>
       </div>
-      </>
-    )
+    </>
+  )
 }
 
 export default SubmitReview
