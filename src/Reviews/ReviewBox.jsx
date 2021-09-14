@@ -11,7 +11,7 @@ const ReviewBox = ({name, rating, dateCreated, review}) => {
     width:100%;
     `
     const TestimonialBox = styled.div`
-    width:500px;
+    width:90vw;
     box-shadow: 2px 2px 30px;
     padding: 20px;
     margin:15px;
