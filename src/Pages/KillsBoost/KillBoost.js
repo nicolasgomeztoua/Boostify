@@ -3,11 +3,31 @@ import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 import Hero from "../../Hero.js/Hero";
 import valk from "../Images/apexvalk.jpg";
+import valkMobile from "../Images/valkmobile.jpg";
 import { Helmet } from "react-helmet";
 import SliderBody from "./SliderBody";
+import {useState, useEffect} from "react"
 
 import ProdMenu from "../../ProdMenu/ProdMenu";
 const KillBoost = () => {
+
+  const [windowInnerWidth, setwindowInnerWidth] = useState(window.innerWidth);
+
+  const reportWindowSize = () => {
+    setwindowInnerWidth(window.innerWidth);
+  };
+  window.addEventListener("resize", reportWindowSize);
+
+  const [valkImg, setvalkImg] = useState(valk);
+
+  useEffect(() => {
+    if (windowInnerWidth >= 1279) {
+      setvalkImg(valk);
+    } else {
+      setvalkImg(valkMobile);
+    }
+  }, [windowInnerWidth]);
+
   return (
     <div>
       <Helmet>
@@ -20,7 +40,7 @@ const KillBoost = () => {
       </Helmet>
       <Navbar></Navbar>
       <Hero
-        img={valk}
+        img={valkImg}
         title="Apex Legends Kills boost"
         subtitle="Strength in numbers"
       ></Hero>

@@ -21,6 +21,7 @@ import {
 } from "../RankBoost/RankedBoostProductElements";
 import { Helmet } from "react-helmet";
 import PaypalCheckout from "./PaypalCheckout";
+
 const stripePromise = loadStripe(
   "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
 );
@@ -288,6 +289,10 @@ const Cart = ({ history }) => {
 
   return (
     <div>
+      <Helmet>
+
+      <script src="https://www.paypal.com/sdk/js?client-id=Ab-OAlTFVTL8hU1GN30jAoe1XL4K5g9iqA-UxWwbnq6GTne9XBwjmGBJCWjiTb3-d9jahO9Anc1NeSm3&disable-funding=credit,card"></script>
+      </Helmet>
       <Navbar></Navbar>
       <div className="container-cart">
         <div className="window">

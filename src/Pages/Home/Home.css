@@ -817,7 +817,7 @@
   height: auto;
 }
 .featured-wrap p {
-  padding: 20px;
+  padding: 25px;
   text-align: center;
   font-size: 38.23px;
   color: white;
@@ -829,16 +829,21 @@
   margin: 0;
 }
 #featuredbooster {
-  transform: scale(0.9);
+  height: 500px;
 }
 @media screen and (max-width: 1270px) {
   .featured-wrap {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 300px 1fr;
   }
   #featuredbooster {
     margin: auto;
   }
+}
+@media screen and (orientation: portrait) {
+
+  #featuredbooster {height:auto}
+  
 }
 @media screen and (max-width: 940px) {
   #featuredbooster {

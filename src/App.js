@@ -28,14 +28,6 @@ function App() {
     <>
       <Router>
         <div className="app">
-          <Route
-            path="/"
-            render={({ location }) => {
-              window.gtag("config", "AW-388171063", {
-                page_path: location.pathname + location.search,
-              });
-            }}
-          />
           <Switch>
             <Route exact path="/cart" component={Cart}></Route>
             <Route path="/" exact component={Home}></Route>
