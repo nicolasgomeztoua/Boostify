@@ -5,13 +5,11 @@ const Hero = ({ img, title, subtitle }) => {
     <Parallax
       strength={-200}
       bgImage={img}
-      bgImageAlt=""
+      bgImageAlt={title}
       bgImageStyle={{
-        paddingTop: "100px",
-        width: "200vw",
-        backgroundAttachment: "none",
-        backgroundSize: "cover",
+        marginTop:"100px"
       }}
+      
     >
       <div className="Services-Header">
         <h1 id="Rank-boost-title">{title}</h1>

@@ -1,31 +1,31 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-
+ import React, { lazy, Suspense } from "react";
+ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+ import "./App.css";
+ import  Redirect from "./Pages/SpecialSignUp/Redirect"
 //routing
-import PrivateRoute from "./Pages/authComponents/PrivateRoute";
+ const PrivateRoute = lazy(() => import( "./Pages/authComponents/PrivateRoute"));
 ///////////////////////////////////////////////////////////////
-import ContactUs from "./Pages/ContactUs/ContactUs";
-import RankBoost from "./Pages/RankBoost/RankBoost";
-import AcheivementBadges from "./Pages/AcheivementBadges/AcheivementBadges.jsx";
-import Home from "./Pages/Home/Home";
-import Login from "./Pages/authComponents/Login";
-import Register from "./Pages/authComponents/Register";
-import ForgotPassword from "./Pages/authComponents/ForgotPassword";
-import ResetPassword from "./Pages/authComponents/ResetPassword";
-import Cart from "./Pages/Cart/Cart.jsx";
-import Blog from "./Pages/Blog/Blog";
-import ComingSoon from "./Pages/ComingSoon/ComingSoon";
-import Sucess from "./Pages/Sucess/Sucess";
-import Profile from "./Pages/Profile/Profile";
-import KillBoost from "./Pages/KillsBoost/KillBoost";
-import Redirect from "./Pages/SpecialSignUp/Redirect";
-import SpecialSignUp from "./Pages/SpecialSignUp/SignUp";
-import Typ from "./Pages/SpecialSignUp/typ";
+ const ContactUs = lazy(() => import( "./Pages/ContactUs/ContactUs"));
+ const RankBoost = lazy(() => import( "./Pages/RankBoost/RankBoost"));
+ const AcheivementBadges = lazy(() => import( "./Pages/AcheivementBadges/AcheivementBadges.jsx"));
+ const Home = lazy(() => import( "./Pages/Home/Home"));
+ const Login = lazy(() => import( "./Pages/authComponents/Login"));
+ const Register = lazy(() => import( "./Pages/authComponents/Register"));
+ const ForgotPassword = lazy(() => import( "./Pages/authComponents/ForgotPassword"));
+ const ResetPassword = lazy(() => import( "./Pages/authComponents/ResetPassword"));
+ const Cart = lazy(() => import( "./Pages/Cart/Cart.jsx"));
+ const Blog = lazy(() => import( "./Pages/Blog/Blog"));
+ const ComingSoon = lazy(() => import( "./Pages/ComingSoon/ComingSoon"));
+ const Sucess = lazy(() => import( "./Pages/Sucess/Sucess"));
+ const Profile = lazy(() => import( "./Pages/Profile/Profile"));
+ const KillBoost = lazy(() => import( "./Pages/KillsBoost/KillBoost"));
+
+ const SpecialSignUp = lazy(() => import( "./Pages/SpecialSignUp/SignUp"));
+ const Typ = lazy(() => import( "./Pages/SpecialSignUp/typ"));
 
 function App() {
   return (
-    <>
+    <Suspense fallback={Redirect}>
       <Router>
         <div className="app">
           <Switch>
@@ -64,7 +64,7 @@ function App() {
           </Switch>
         </div>{" "}
       </Router>
-    </>
+    </Suspense>
   );
 }
 

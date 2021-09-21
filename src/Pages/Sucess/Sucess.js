@@ -1,7 +1,5 @@
 import React from "react";
 import "./Sucess.css";
-
-import { Helmet } from "react-helmet";
 import { useCart } from "../Cart/CartHandler";
 
 const Sucess = ({ history }) => {
@@ -15,7 +13,6 @@ const Sucess = ({ history }) => {
   };
   return (
     <>
-      <Helmet></Helmet>
       <div className="success-container">
         <div className="sucess-card">
           <div
