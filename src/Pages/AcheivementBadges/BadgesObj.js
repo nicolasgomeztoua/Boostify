@@ -284,5 +284,9 @@ export const LegendsObj = [
   {
     name: "Seer",
     icon: Seer,
+  },
+  {
+    name: "Ash",
+    icon: Ash
   }
 ];
