@@ -43,6 +43,7 @@ import Caustic from "../Images/Caustic.jpg";
 import Fuse from "../Images/Fuse.jpg";
 import Valk from "../Images/valk.png";
 import Seer from "../Images/Seer(1).jpg";
+import Ash from "../Images/Ash.png";
 export const PopularBadgesObj = [
   {
     name: "20 Bomb",
