@@ -49,13 +49,13 @@ export const PopularBadgesObj = [
     name: "20 Bomb",
     icon: TwentyBomb,
     key: "TwentyBombKey",
-    price: 100 / 2,
+    price: 25,
   },
   {
     name: "4k Dmg",
     icon: FourKDmg,
     key: "FourKDmgKey",
-    price: 100 / 2,
+    price: 25,
   },
   {
     name: "10 / 10 / 10",
