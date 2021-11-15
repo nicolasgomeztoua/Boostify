@@ -32,10 +32,13 @@
   list-style: none;
   text-align: center;
   width: 70vw;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 2rem;
+ 
 }
-
+ @media screen and (orientation: portrait){
+    .nav-menu { justify-content: flex-start;}
+  }
 .nav-item {
   display: flex;
   align-items: center;

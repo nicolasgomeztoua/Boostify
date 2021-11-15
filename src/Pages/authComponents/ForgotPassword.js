@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./AuthComponents.css";
+import "./AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

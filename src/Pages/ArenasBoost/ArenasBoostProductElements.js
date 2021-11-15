@@ -12,14 +12,13 @@ import { CreativeCommonsZero } from "@styled-icons/fa-brands/CreativeCommonsZero
 export const ProductContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
-
+  margin: 0 auto;
   width: auto;
   height: 100%;
   margin-bottom: 50px;
   margin-top: 50px;
   border: 10px solid #f25a59;
-  margin-right: 100px;
-  margin-left: 100px;
+  
 
   border-radius: 100px;
   @media (max-width: 1030px) {
@@ -36,7 +35,7 @@ export const ProductWrap = styled.div`
   grid-template-rows: auto;
   background-color: #fdfef9;
   height: auto;
-  width:auto;
+  width:91.5vw;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 1381px) {
     padding: 5px;
@@ -107,6 +106,12 @@ export const StepOneSLidersWrap = styled.div`
     grid-template-rows: 1fr 1fr;
     height: 1600px;
   }
+`;
+export const PlacementWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
 `;
 export const F2 = styled(Filter2)`
   height: 75px;
@@ -200,7 +205,7 @@ export const InputTyped = styled.input.attrs({
   height: ${(props) => props.height};
   border: 4px solid #f25a59;
   border-radius: 50px;
-  padding-left: 30px;
+  text-align: center;
   margin-top: 30px;
   width: ${(props) => props.width};
   background: repeating-linear-gradient(
@@ -380,10 +385,6 @@ export const TotalContainer = styled.div`
   grid-template-rows: 1fr;
   align-items: flex-start;
   height: auto;
-
-  @media (max-width: 420px) {
-    height: 400px;
-  }
 `;
 export const TotalTitle = styled.h1`
   display: flex;
@@ -505,3 +506,4 @@ export const TotalMoney = styled.div`
   overflow-wrap: break-word;
   text-align: center;
 `;
+

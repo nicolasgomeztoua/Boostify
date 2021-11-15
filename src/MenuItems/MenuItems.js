@@ -29,4 +29,11 @@ export const MenuItems = [
     cName: "dropdown-link",
     cNameIcon: "Menu-badges",
   },
+  {
+    icon: AcheivementBadges,
+    title: "Achievement Badges",
+    path: "/acheivement-badges",
+    cName: "dropdown-link",
+    cNameIcon: "Menu-badges",
+  },
 ];

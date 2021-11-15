@@ -37,7 +37,7 @@
     "styled": "^1.0.0",
     "styled-components": "^5.2.3",
     "styled-icons": "^10.28.0",
-    "swiper": "^6.6.2",
+    "swiper": "^6.8.4",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

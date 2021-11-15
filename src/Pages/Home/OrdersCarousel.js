@@ -10,7 +10,7 @@ import "swiper/swiper.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import { orders } from "./OrdersData";
 import Img from "react-cool-img";
-
+import styles from "../../Reviews/CSS/Testimonials.module.css";
 SwiperCore.use([Navigation, Scrollbar, EffectCoverflow, Autoplay]);
 const OrdersCarousel = () => {
   return (
@@ -36,7 +36,7 @@ const OrdersCarousel = () => {
           return (
             <SwiperSlide>
               <div
-                className="swiper-slide"
+                className={styles["swiper_slide"]}
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -45,7 +45,7 @@ const OrdersCarousel = () => {
                 }}
               >
                 <div
-                  className="card"
+                  className={styles["card"]}
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -58,7 +58,7 @@ const OrdersCarousel = () => {
                   <Img
                     src={order}
                     alt="completed order"
-                    className="orderimg"
+                    className={styles["orderimg"]}
                   ></Img>{" "}
                 </div>
               </div>
