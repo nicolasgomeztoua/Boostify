@@ -17,7 +17,7 @@ export const ProductContainer = styled.div`
   height: 100%;
   margin-bottom: 50px;
   margin-top: 50px;
-  border: 10px solid #e43403;
+  border: 10px solid #f25a59;
   
 
   border-radius: 100px;
@@ -70,7 +70,7 @@ export const StepOneTitle = styled.h3`
 
 export const F0 = styled(CreativeCommonsZero)`
   height: 125px;
-  color: #e43403;
+  color: #f25a59;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -80,7 +80,7 @@ export const F0 = styled(CreativeCommonsZero)`
 
 export const F1 = styled(Filter1)`
   height: 75px;
-  color: #e43403;
+  color: #f25a59;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -115,7 +115,7 @@ export const PlacementWrap = styled.div`
 `;
 export const F2 = styled(Filter2)`
   height: 75px;
-  color: #e43403;
+  color: #f25a59;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -169,7 +169,7 @@ export const Slider = styled.input.attrs({
   width: 300px;
   border-radius: 40px;
   background: ${(props) =>
-    `linear-gradient(to right, #e43403 0%, #e43403 ${
+    `linear-gradient(to right, #F25A59 0%, #F25A59 ${
       props.value / props.divider
     }%, #fff ${props.value / props.divider}%, #fff 100%);`};
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
@@ -178,7 +178,7 @@ export const Slider = styled.input.attrs({
     -webkit-appearance: none;
     width: 24px;
     height: 24px;
-    background-image: radial-gradient(circle, #e43403 40%, #e43403 45%);
+    background-image: radial-gradient(circle, #f25a59 40%, #f25a59 45%);
     border-radius: 50%;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 1);
   }
@@ -187,7 +187,7 @@ export const Slider = styled.input.attrs({
     width: 24px;
     height: 24px;
     -moz-appearance: none;
-    background-image: radial-gradient(circle, #f7f7fc 40%, #e43403 45%);
+    background-image: radial-gradient(circle, #f7f7fc 40%, #f25a59 45%);
     border-radius: 50%;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.5);
   }
@@ -203,7 +203,7 @@ export const InputTyped = styled.input.attrs({
   margin: 10px auto;
   color: black;
   height: ${(props) => props.height};
-  border: 4px solid #e43403;
+  border: 4px solid #f25a59;
   border-radius: 50px;
   text-align: center;
   margin-top: 30px;
@@ -230,7 +230,7 @@ export const InputTyped = styled.input.attrs({
 `;
 export const F3 = styled(Filter3)`
   height: 75px;
-  color: #e43403;
+  color: #f25a59;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -327,7 +327,7 @@ export const ExtraCheckBox = styled.input.attrs({
   transition: 0.5s;
 
   &:checked {
-    background: ${(props) => (props.color ? props.color : "#e43403")};
+    background: ${(props) => (props.color ? props.color : "#F25A59")};
   }
   &:before {
     content: "";
@@ -358,26 +358,26 @@ export const IconDescWrapper = styled.div`
 export const IconOffline = styled(EyeSlash)`
   height: 55px;
   width: 80px;
-  color: #e43403;
+  color: #f25a59;
   margin-bottom: 3px;
 `;
 export const IconDuo = styled(People)`
   height: 55px;
   width: 80px;
-  color: #e43403;
+  color: #f25a59;
   margin-bottom: 3px;
 `;
 export const IconStream = styled(LiveTv)`
   height: 55px;
   width: 80px;
-  color: #e43403;
+  color: #f25a59;
   margin-bottom: 3px;
 `;
 
 export const IconSpeed = styled(Speed)`
   height: 55px;
   width: 80px;
-  color: #e43403;
+  color: #f25a59;
   margin-bottom: 3px;
 `;
 export const TotalContainer = styled.div`
@@ -411,7 +411,7 @@ export const TotalTitle = styled.h1`
 `;
 export const F4 = styled(Filter4)`
   height: 75px;
-  color: #e43403;
+  color: #f25a59;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;

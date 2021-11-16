@@ -10,6 +10,8 @@
   display: flex;
   background: white;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown-menu li {
@@ -57,13 +59,16 @@
   -webkit-box-shadow: none;
   background-color: turquoise;
 }
-.Icon-Title-container img {
-}
+
 #Menu-badges {
+  padding: 0px;
+}
+#Menu-Arenas {
   padding: 0px;
 }
 .MenuItemTitle {
   font-size: 22.62px;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 811px) {
   .Icon-Title-container {

@@ -2,12 +2,38 @@ import React from "react";
 import { MenuItems } from "../MenuItems/MenuItems";
 import { Link } from "react-router-dom";
 import "../Dropdown/Dropdown.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Navigation,
+  Scrollbar,
+  EffectCoverflow,
+  Autoplay,
+} from "swiper/core";
+import "swiper/swiper.scss";
+import "swiper/components/scrollbar/scrollbar.scss";
+SwiperCore.use([Navigation, Scrollbar, EffectCoverflow, Autoplay]);
 const ProdMenu = ({ border }) => {
   return (
-    <>
-      <ul id="prodMenu" style={{ borderBottom: border }}>
+    <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        scrollbar={{ draggable: true }}
+        loop={true}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction:false,
+          pauseOnMouseEnter: true
+        }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        style={{margin:"20px"}}>
+      <ul id="prodMenu" style={{ borderBottom: border, }}>
         {MenuItems.map((item, index) => {
           return (
+             <SwiperSlide style={{ marginBottom: "30px", marginTop:"30px" }}>
             <li key={index} className="MenuItemsWrapper">
               <Link className={item.cName} to={item.path}>
                 <div className="Icon-Title-container">
@@ -21,10 +47,11 @@ const ProdMenu = ({ border }) => {
                 </div>
               </Link>
             </li>
+            </SwiperSlide>
           );
         })}
       </ul>
-    </>
+    </Swiper>
   );
 };
 

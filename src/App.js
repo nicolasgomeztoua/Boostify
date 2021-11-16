@@ -19,7 +19,7 @@
  const Sucess = lazy(() => import( "./Pages/Sucess/Sucess"));
  const Profile = lazy(() => import( "./Pages/Profile/Profile"));
  const KillBoost = lazy(() => import( "./Pages/KillsBoost/KillBoost"));
-
+ const ArenasBoost = lazy(() => import( "./Pages/ArenasBoost/Arenas"));
  const SpecialSignUp = lazy(() => import( "./Pages/SpecialSignUp/SignUp"));
  const Typ = lazy(() => import( "./Pages/SpecialSignUp/typ"));
 
@@ -57,6 +57,7 @@ function App() {
             <Route path="/redirect" exact component={Redirect}></Route>
             <Route path="/SpecialSignUp" exact component={SpecialSignUp}></Route>
             <Route path="/thank_you" exact component={Typ}></Route>
+            <Route path="/Arenas-Boost" exact component={ArenasBoost}></Route>
             
             <PrivateRoute>
               <Route path="/profile" exact component={Profile}></Route>
