@@ -21,14 +21,16 @@ const ProdMenu = ({ border }) => {
         scrollbar={{ draggable: true }}
         loop={true}
         autoplay={{
-          delay: 2500,
-          disableOnInteraction: true,
+          delay: 1000,
+          disableOnInteraction:false,
+          pauseOnMouseEnter: true
         }}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
-        }}>
-      <ul id="prodMenu" style={{ borderBottom: border }}>
+        }}
+        style={{margin:"20px"}}>
+      <ul id="prodMenu" style={{ borderBottom: border, }}>
         {MenuItems.map((item, index) => {
           return (
              <SwiperSlide style={{ marginBottom: "30px", marginTop:"30px" }}>

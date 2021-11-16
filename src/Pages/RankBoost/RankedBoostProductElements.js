@@ -12,14 +12,13 @@ import { CreativeCommonsZero } from "@styled-icons/fa-brands/CreativeCommonsZero
 export const ProductContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
-
+  margin: 0 auto;
   width: auto;
   height: 100%;
   margin-bottom: 50px;
   margin-top: 50px;
-  border: 10px solid #f25a59;
-  margin-right: 100px;
-  margin-left: 100px;
+  border: 10px solid #e43403;
+  
 
   border-radius: 100px;
   @media (max-width: 1030px) {
@@ -36,7 +35,7 @@ export const ProductWrap = styled.div`
   grid-template-rows: auto;
   background-color: #fdfef9;
   height: auto;
-  width:auto;
+  width:91.5vw;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 1381px) {
     padding: 5px;
@@ -71,7 +70,7 @@ export const StepOneTitle = styled.h3`
 
 export const F0 = styled(CreativeCommonsZero)`
   height: 125px;
-  color: #f25a59;
+  color: #e43403;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -81,7 +80,7 @@ export const F0 = styled(CreativeCommonsZero)`
 
 export const F1 = styled(Filter1)`
   height: 75px;
-  color: #f25a59;
+  color: #e43403;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -108,9 +107,15 @@ export const StepOneSLidersWrap = styled.div`
     height: 1600px;
   }
 `;
+export const PlacementWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+`;
 export const F2 = styled(Filter2)`
   height: 75px;
-  color: #f25a59;
+  color: #e43403;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -164,7 +169,7 @@ export const Slider = styled.input.attrs({
   width: 300px;
   border-radius: 40px;
   background: ${(props) =>
-    `linear-gradient(to right, #F25A59 0%, #F25A59 ${
+    `linear-gradient(to right, #e43403 0%, #e43403 ${
       props.value / props.divider
     }%, #fff ${props.value / props.divider}%, #fff 100%);`};
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
@@ -173,7 +178,7 @@ export const Slider = styled.input.attrs({
     -webkit-appearance: none;
     width: 24px;
     height: 24px;
-    background-image: radial-gradient(circle, #f25a59 40%, #f25a59 45%);
+    background-image: radial-gradient(circle, #e43403 40%, #e43403 45%);
     border-radius: 50%;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 1);
   }
@@ -182,7 +187,7 @@ export const Slider = styled.input.attrs({
     width: 24px;
     height: 24px;
     -moz-appearance: none;
-    background-image: radial-gradient(circle, #f7f7fc 40%, #f25a59 45%);
+    background-image: radial-gradient(circle, #f7f7fc 40%, #e43403 45%);
     border-radius: 50%;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.5);
   }
@@ -198,9 +203,9 @@ export const InputTyped = styled.input.attrs({
   margin: 10px auto;
   color: black;
   height: ${(props) => props.height};
-  border: 4px solid #f25a59;
+  border: 4px solid #e43403;
   border-radius: 50px;
-  padding-left: 30px;
+  text-align: center;
   margin-top: 30px;
   width: ${(props) => props.width};
   background: repeating-linear-gradient(
@@ -225,7 +230,7 @@ export const InputTyped = styled.input.attrs({
 `;
 export const F3 = styled(Filter3)`
   height: 75px;
-  color: #f25a59;
+  color: #e43403;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -322,7 +327,7 @@ export const ExtraCheckBox = styled.input.attrs({
   transition: 0.5s;
 
   &:checked {
-    background: ${(props) => (props.color ? props.color : "#F25A59")};
+    background: ${(props) => (props.color ? props.color : "#e43403")};
   }
   &:before {
     content: "";
@@ -353,26 +358,26 @@ export const IconDescWrapper = styled.div`
 export const IconOffline = styled(EyeSlash)`
   height: 55px;
   width: 80px;
-  color: #f25a59;
+  color: #e43403;
   margin-bottom: 3px;
 `;
 export const IconDuo = styled(People)`
   height: 55px;
   width: 80px;
-  color: #f25a59;
+  color: #e43403;
   margin-bottom: 3px;
 `;
 export const IconStream = styled(LiveTv)`
   height: 55px;
   width: 80px;
-  color: #f25a59;
+  color: #e43403;
   margin-bottom: 3px;
 `;
 
 export const IconSpeed = styled(Speed)`
   height: 55px;
   width: 80px;
-  color: #f25a59;
+  color: #e43403;
   margin-bottom: 3px;
 `;
 export const TotalContainer = styled.div`
@@ -380,10 +385,6 @@ export const TotalContainer = styled.div`
   grid-template-rows: 1fr;
   align-items: flex-start;
   height: auto;
-
-  @media (max-width: 420px) {
-    height: 400px;
-  }
 `;
 export const TotalTitle = styled.h1`
   display: flex;
@@ -410,7 +411,7 @@ export const TotalTitle = styled.h1`
 `;
 export const F4 = styled(Filter4)`
   height: 75px;
-  color: #f25a59;
+  color: #e43403;
   margin-right: 15px;
   @media (max-width: 410px) {
     margin-right: 0px;
@@ -505,3 +506,4 @@ export const TotalMoney = styled.div`
   overflow-wrap: break-word;
   text-align: center;
 `;
+
