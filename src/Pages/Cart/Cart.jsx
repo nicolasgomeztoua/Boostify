@@ -13,6 +13,7 @@ import Select from "react-select";
 import { GooglePay } from "@styled-icons/fa-brands/GooglePay";
 import { CreditCardAlt } from "@styled-icons/boxicons-solid/CreditCardAlt";
 import { Playstation } from "@styled-icons/fa-brands/Playstation";
+import {Desktop} from "@styled-icons/fa-solid/Desktop";
 import { Xbox } from "@styled-icons/fa-brands/Xbox";
 import PostOrder from "../../PostOrder/PostOrder";
 import {
@@ -40,6 +41,7 @@ const Cart = ({ history }) => {
   const [platform, setPlatform] = useState(null);
   const [xboxColor, setXboxcolor] = useState("white");
   const [psColor, setPScolor] = useState("white");
+  const [pcColor, setPcColor] = useState("white")
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [invalid, setInvalid] = useState("flex");
@@ -226,6 +228,7 @@ const Cart = ({ history }) => {
     { value: "EU", label: "EU" },
     { value: "NA", label: "NA" },
     { value: "Asia", label: "Asia" },
+    {value: "Oceania", label: "Oceania"}
   ];
 
   const customStyles = {
@@ -255,11 +258,19 @@ const Cart = ({ history }) => {
     setPlatform("PlayStation Network");
     setPScolor("#2E6DB4");
     setXboxcolor("white");
+    setPcColor("white")
   };
   const xClick = () => {
     setPlatform("Xbox");
     setXboxcolor("#107C10");
     setPScolor("white");
+    setPcColor("white")
+  };
+    const PcClick = () => {
+    setPlatform("Origin/Steam");
+    setPcColor("#ff0000");
+    setPScolor("white");
+    setXboxcolor("white");
   };
 
   if (totalPrice === 0) {
@@ -422,6 +433,15 @@ const Cart = ({ history }) => {
                     }}
                     onClick={playClick}
                   ></Playstation>
+                </div>
+                   <div>
+                  <Desktop
+                    style={{
+                      height: "50px",
+                      color: pcColor,
+                    }}
+                    onClick={PcClick}
+                  ></Desktop>
                 </div>
                 <div>
                   <Xbox
