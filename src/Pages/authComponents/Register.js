@@ -115,7 +115,7 @@ const Register = ({ history }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className={auth["form-btn form-btn-primary"]}>
+          <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
             Register
           </button>
 

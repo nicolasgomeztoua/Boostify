@@ -101,7 +101,7 @@ const Login = ({ history }) => {
               tabIndex={2}
             />
           </div>
-          <button type="submit" className={auth["form-btn form-btn-primary"]}>
+          <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
             Login
           </button>
 

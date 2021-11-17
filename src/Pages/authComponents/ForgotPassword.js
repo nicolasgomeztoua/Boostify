@@ -59,7 +59,7 @@ const ForgotPassword = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="submit" className= {auth["form-btn form-btn-primary"]}>
+          <button type="submit" className= {`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
             Send Email
           </button>
         </form>
