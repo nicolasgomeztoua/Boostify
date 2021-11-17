@@ -246,6 +246,7 @@ export const StepTwoWarningContainer = styled.div`
   align-items: center;
   background-color: #f44336; /* Red */
   color: white;
+  max-width:88vw;
 `;
 export const StepTwoWarning = styled.span`
   margin-left: auto;
