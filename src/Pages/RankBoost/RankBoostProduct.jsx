@@ -387,6 +387,9 @@ const RankBoostProduct = () => {
                 <Slider
                   value={firstValue}
                   onChange={(e) => setFirstValue(e.target.value)}
+                  step="25"
+                  max="19900"
+                  divider="200"
                 ></Slider>
                 <InputTyped
                   fontSize="80px"
@@ -405,6 +408,9 @@ const RankBoostProduct = () => {
                 <Slider
                   value={secondValue}
                   onChange={(e) => setSecondValue(e.target.value)}
+                  step="25"
+                  max="20000"
+                  divider="200"
                 ></Slider>
                 <InputTyped
                   fontSize="80px"
