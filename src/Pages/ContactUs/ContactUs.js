@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../authComponents/AuthComponents.css";
+import "../authComponents/AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 import { Helmet } from "react-helmet";
 import {

@@ -51,6 +51,7 @@ const Cart = ({ history }) => {
   const [userId, setUserId] = useState(null);
   const [checkout, setCheckout] = useState(false);
   const [kills, setKills] = useState([]);
+  const [placementMatches, setPlacementMatches] = useState(0)
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -118,6 +119,11 @@ const Cart = ({ history }) => {
         return element.kills;
       })
     );
+    setPlacementMatches(
+      items.flatMap((element) => {
+        return element.placementMatches;
+      })
+    );
   }, [items]);
   console.log(prices);
   const handleRemove = (index) => {
@@ -162,7 +168,7 @@ const Cart = ({ history }) => {
     };
 
     try {
-        await axios.post(
+      await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         {
           titles,
@@ -184,6 +190,7 @@ const Cart = ({ history }) => {
           rankedImg,
           userId,
           kills,
+          placementMatches
         },
         config
       );
@@ -301,8 +308,7 @@ const Cart = ({ history }) => {
   return (
     <div>
       <Helmet>
-
-      <script src="https://www.paypal.com/sdk/js?client-id=Ab-OAlTFVTL8hU1GN30jAoe1XL4K5g9iqA-UxWwbnq6GTne9XBwjmGBJCWjiTb3-d9jahO9Anc1NeSm3&disable-funding=credit,card"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=Ab-OAlTFVTL8hU1GN30jAoe1XL4K5g9iqA-UxWwbnq6GTne9XBwjmGBJCWjiTb3-d9jahO9Anc1NeSm3&disable-funding=credit,card"></script>
       </Helmet>
       <Navbar></Navbar>
       <div className="container-cart">
@@ -384,7 +390,15 @@ const Cart = ({ history }) => {
                               {element.selectedExtraBadges}
                               <br />
                             </span>
-
+                            {element.placementMatches ? (
+                              <span className="thin small">
+                                
+                                {"Placement Matches: " + element.placementMatches}
+                                <br />
+                              </span>
+                            ) : (
+                              <br />
+                            )}
                             <span className="thin small">
                               {element.filteredExtras ||
                                 `${element.badgesExtras}`}

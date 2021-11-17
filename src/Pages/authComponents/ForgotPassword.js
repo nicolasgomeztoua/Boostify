@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./AuthComponents.css";
+import auth from "./AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -36,16 +36,16 @@ const ForgotPassword = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="forgotpassword-screen">
+      <div className= {auth["forgotpassword-screen"]}>
         <form
           onSubmit={forgotPasswordHandler}
-          className="forgotpassword-screen__form"
+          className= {auth["forgotpassword-screen__form"]}
         >
-          <h3 className="forgotpassword-screen__title">Forgot Password</h3>
-          {error && <span className="error-message">{error}</span>}
-          {success && <span className="success-message">{success}</span>}
-          <div className="form-group">
-            <p className="forgotpassword-screen__subtext">
+          <h3 className= {auth["forgotpassword-screen__title"]}>Forgot Password</h3>
+          {error && <span className= {auth["error-message"]}>{error}</span>}
+          {success && <span className= {auth["success-message"]}>{success}</span>}
+          <div className= {auth["form-group"]}>
+            <p className= {auth["forgotpassword-screen__subtext"]}>
               Please enter the email address you registered your account with.
               We will send you reset password confirmation to this email
             </p>
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="submit" className="form-btn form-btn-primary">
+          <button type="submit" className= {`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
             Send Email
           </button>
         </form>

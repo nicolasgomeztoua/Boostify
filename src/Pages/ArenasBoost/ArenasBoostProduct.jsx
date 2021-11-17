@@ -3,6 +3,7 @@ import {
   ProductContainer,
   ProductWrap,
   StepOneTitle,
+  F0,
   F1,
   Step2Container,
   StepOneSLidersWrap,
@@ -30,15 +31,18 @@ import {
   DiscountContainer,
   TotalMoney,
   StepTwoWarningContainer,
-} from "./RankedBoostProductElements";
+  PlacementWrap,
+ 
+} from "./ArenasBoostProductElements";
 
 import { Link } from "react-router-dom";
-import masters from "../Images/Ranked_Tier6_Master.png";
-import diamond from "../Images/Ranked_Tier5_Diamond.png";
-import plat from "../Images/Ranked_Tier4_Platinum.png";
-import gold from "../Images/Ranked_Tier3_Gold.png";
-import silver from "../Images/Ranked_Tier2_Silver.png";
-import bronze from "../Images/Ranked_Tier1_Bronze.jpeg";
+import masters from "../Images/ArenaMaster.jpg";
+import diamond from "../Images/ArenaDiamond.jpg";
+import plat from "../Images/ArenaPlat.jpg";
+import gold from "../Images/ArenaGold.jpg";
+import silver from "../Images/ArenaSilver.jpg";
+import bronze from "../Images/ArenaBronze.jpg";
+import placementImg from "../Images/Placement.png"
 
 import { useDispatchCart } from "../Cart/CartHandler";
 
@@ -57,17 +61,18 @@ const RankBoostProduct = () => {
   const [activePriority, setPriority] = useState(false);
   const [activeOffline, setActiveOffline] = useState(false);
   const [filteredExtras, setFilteredExtras] = useState("");
-
+  const [placementMatches, setPlacementMatches] = useState(0)
   const [totalMoney, setTotalMoney] = useState(0);
   const [moneyMultiplierDuo, setMoneyMultiplierDuo] = useState(0);
   const [moneyMultiplierStream, setMoneyMultiplierStream] = useState(0);
   const [moneyMultiplierPriority, setMoneyMultipliePriority] = useState(0);
   const [completionTime, setCompletionTime] = useState("");
-/*   const [disabled, setDisabled] = useState(false);
+  const [placement, setPlacement] = useState(false);
+  /*   const [disabled, setDisabled] = useState(false);
   const [opacity, setOpacity] = useState(1); */
   /* const [disabledDiscount, setDisabledDiscount] = useState("none"); */
 
-/*   const handleDiscount = () => {
+  /*   const handleDiscount = () => {
     if (
       validPromo === "endofsplit30" &&
       secondValue >= 10000 &&
@@ -78,7 +83,7 @@ const RankBoostProduct = () => {
       setOpacity(0.4);
     }
   }; */
-
+const PlacementPrice = 5;
   useEffect(() => {
     if (totalMoney < 0) {
       setTotalMoney(0);
@@ -125,10 +130,12 @@ const RankBoostProduct = () => {
   useEffect(() => {
     if (Number(secondValue) < Number(firstValue)) {
       setInvalid("flex");
-    }else{ setInvalid("none");}
+    } else {
+      setInvalid("none");
+    }
   }, [secondValue, firstValue]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     if (secondValue > 10137 || secondValue < 10000) {
       setDisabledDiscount("flex");
     } else {
@@ -153,68 +160,68 @@ const RankBoostProduct = () => {
       setFirstTier("IV");
       setFirstRankImg(bronze);
     }
-    if (firstValue >= 300) {
+    if (firstValue >= 400) {
       setFirstTier("III");
     }
-    if (firstValue >= 600) {
+    if (firstValue >= 800) {
       setFirstTier("II");
     }
-    if (firstValue >= 900) {
+    if (firstValue >= 1200) {
       setFirstTier("I");
     }
-    if (firstValue >= 1200) {
+    if (firstValue >= 1600) {
       setFirstTier("IV");
       setFirstRankImg(silver);
     }
-    if (firstValue >= 1600) {
+    if (firstValue >= 2000) {
       setFirstTier("III");
     }
-    if (firstValue >= 2000) {
+    if (firstValue >= 2400) {
       setFirstTier("II");
     }
-    if (firstValue >= 2400) {
+    if (firstValue >= 2800) {
       setFirstTier("I");
     }
-    if (firstValue >= 2800) {
+    if (firstValue >= 3200) {
       setFirstTier("IV");
       setFirstRankImg(gold);
     }
-    if (firstValue >= 3300) {
+    if (firstValue >= 3600) {
       setFirstTier("III");
     }
-    if (firstValue >= 3800) {
+    if (firstValue >= 4000) {
       setFirstTier("II");
     }
-    if (firstValue >= 4300) {
+    if (firstValue >= 4400) {
       setFirstTier("I");
     }
     if (firstValue >= 4800) {
       setFirstTier("IV");
       setFirstRankImg(plat);
     }
-    if (firstValue >= 5400) {
+    if (firstValue >= 5200) {
       setFirstTier("III");
     }
-    if (firstValue >= 6000) {
+    if (firstValue >= 5600) {
       setFirstTier("II");
     }
-    if (firstValue >= 6600) {
+    if (firstValue >= 6000) {
       setFirstTier("I");
     }
-    if (firstValue >= 7200) {
+    if (firstValue >= 6400) {
       setFirstTier("IV");
       setFirstRankImg(diamond);
     }
-    if (firstValue >= 7900) {
+    if (firstValue >= 6800) {
       setFirstTier("III");
     }
-    if (firstValue >= 8600) {
+    if (firstValue >= 7200) {
       setFirstTier("II");
     }
-    if (firstValue >= 9300) {
+    if (firstValue >= 7600) {
       setFirstTier("I");
     }
-    if (firstValue >= 10000) {
+    if (firstValue >= 8000) {
       setFirstTier("GOAT");
       setFirstRankImg(masters);
     }
@@ -225,42 +232,42 @@ const RankBoostProduct = () => {
       setSecondTier("IV");
       setSecondRankImg(bronze);
     }
-    if (secondValue > 300) {
+    if (secondValue > 400) {
       setSecondTier("III");
     }
-    if (secondValue > 600) {
+    if (secondValue > 800) {
       setSecondTier("II");
     }
-    if (secondValue > 900) {
+    if (secondValue > 1200) {
       setSecondTier("I");
     }
-    if (secondValue >= 1200) {
+    if (secondValue >= 1600) {
       setSecondTier("IV");
       setSecondRankImg(silver);
     }
 
-    if (secondValue > 1600) {
+    if (secondValue > 2000) {
       setSecondTier("III");
     }
-    if (secondValue > 2000) {
+    if (secondValue > 2400) {
       setSecondTier("II");
     }
-    if (secondValue > 2400) {
+    if (secondValue > 2800) {
       setSecondTier("I");
     }
 
-    if (secondValue >= 2800) {
+    if (secondValue >= 3200) {
       setSecondTier("IV");
       setSecondRankImg(gold);
     }
-    if (secondValue > 3300) {
+    if (secondValue > 3600) {
       setSecondTier("III");
     }
-    if (secondValue > 3800) {
+    if (secondValue > 4000) {
       setSecondTier("II");
     }
 
-    if (secondValue > 4300) {
+    if (secondValue > 4400) {
       setSecondTier("I");
     }
 
@@ -269,36 +276,33 @@ const RankBoostProduct = () => {
       setSecondRankImg(plat);
     }
 
-    if (secondValue > 5400) {
+    if (secondValue > 5200) {
       setSecondTier("III");
     }
-    if (secondValue > 5900) {
-    }
-    if (secondValue > 6000) {
+    if (secondValue > 5600) {
       setSecondTier("II");
     }
-
-    if (secondValue > 6600) {
+    if (secondValue > 6000) {
       setSecondTier("I");
     }
 
-    if (secondValue >= 7200) {
+    if (secondValue > 6400) {
       setSecondTier("IV");
       setSecondRankImg(diamond);
     }
-    if (secondValue > 7900) {
+
+    if (secondValue >= 6800) {
       setSecondTier("III");
     }
-
-    if (secondValue > 8600) {
+    if (secondValue > 7200) {
       setSecondTier("II");
     }
 
-    if (secondValue > 9300) {
+    if (secondValue > 7600) {
       setSecondTier("I");
     }
 
-    if (secondValue >= 10000) {
+    if (secondValue > 8000) {
       setSecondTier("GOAT");
       setSecondRankImg(masters);
     }
@@ -338,28 +342,211 @@ const RankBoostProduct = () => {
     );
   }, [activeDuo, activeOffline, activePriority, activeStream]);
   useEffect(() => {
+    if(placementMatches>0){
+      setTotalMoney(placementMatches * PlacementPrice)
+      return
+    }
     const prices = [
-      0.1, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25,
-      1.875, 1.875, 1.875, 1.875, 1.875, 1.875, 1.875, 1.875, 1.875, 1.875,
-      1.875, 1.875, 1.875, 1.875, 1.875, 1.875, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
-      2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
-      3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125,
-      3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125, 3.125,
-      3.125, 3.125, 3.125, 3.125, 4.64285714286, 4.64285714286, 4.64285714286,
-      4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286,
-      4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286,
-      4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286,
-      4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286,
-      4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286, 4.64285714286,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5, 10.5,
-      10.5, 10.5, 10.5, 10.5,
+      0.1,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      3.75,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      7.5,
+      7.5,
+      7.5,
+      7.5,
+      10,
+      10,
+      10,
+      10,
+      12.5,
+      12.5,
+      12.5,
+      12.5,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
     ];
     const rankMultiplierArray = prices.splice(
       (firstValue / 100) | 0,
@@ -368,7 +555,8 @@ const RankBoostProduct = () => {
     const summedMultiplier = rankMultiplierArray.reduce((a, b) => a + b, 0);
     console.log(rankMultiplierArray);
     setTotalMoney(summedMultiplier);
-  }, [firstValue, secondValue]);
+  }, [firstValue, secondValue, placementMatches]);
+
   return (
     <>
       <ProductContainer>
@@ -376,55 +564,106 @@ const RankBoostProduct = () => {
         <ProductWrap>
           <Step2Container>
             <StepOneTitle>
-              <F1></F1> Select Ranked Points to Boost
+              Need your placement matches? <br /> Flip the switch.
             </StepOneTitle>
-            <StepOneSLidersWrap>
-              <InitialRank>
-                <h2 id="current-rank">Set your current RP</h2>
-                <img src={firstRankImg} className="rank" alt="rank"></img>
 
-                <p id="tier">{firstTier}</p>
-                <Slider
-                  value={firstValue}
-                  onChange={(e) => setFirstValue(e.target.value)}
-                  step="25"
-                  max="19900"
-                  divider="200"
-                ></Slider>
-                <InputTyped
-                  fontSize="80px"
-                  height="100px"
-                  width="300px"
-                  value={firstValue}
-                  onChange={(e) => setFirstValue(e.target.value)}
-                ></InputTyped>
-                <p style={{ textAlign: "center", fontSize: "45.23px" }}>RP</p>
-              </InitialRank>
-              <DesiredRankBoost>
-                {" "}
-                <h2 id="current-rank">Set your desired RP</h2>
-                <img src={secondRankImg} className="rank" alt="rank"></img>
-                <p id="tier">{secondTier}</p>
-                <Slider
-                  value={secondValue}
-                  onChange={(e) => setSecondValue(e.target.value)}
-                  step="25"
-                  max="20000"
-                  divider="200"
-                ></Slider>
-                <InputTyped
-                  fontSize="80px"
-                  height="100px"
-                  width="300px"
-                  value={secondValue}
-                  onChange={(e) => {
-                    setSecondValue(e.target.value);
-                   
-                  }}
-                ></InputTyped>
-                <p style={{ textAlign: "center", fontSize: "45.23px" }}>RP</p>
-              </DesiredRankBoost>
-            </StepOneSLidersWrap>
+            <IconDescWrapper
+              style={{
+                marginTop: "30px",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <div></div>
+              <ExtraCheckBox onClick={() => { setPlacement(!placement); setFirstValue(0); setSecondValue(0); setPlacementMatches(0)}} />
+              <div></div>
+              <p className="ExtraDesc"> Placement </p>
+            </IconDescWrapper>
+
+            {placement ? (
+              <>
+                <PlacementWrap>
+                  <InitialRank>
+                    <h2 id="current-rank">Set The Matches To Boost</h2>
+                    <img src={placementImg} className="rank" alt="rank" style={{width:"auto", margin:"none"}}></img>
+                    <Slider
+                      value={placementMatches}
+                      onChange={(e) => {setPlacementMatches(e.target.value);}}
+                      max="10"
+                      step="1"
+                      divider="0.10"
+                    ></Slider>
+                    <InputTyped
+                      fontSize="80px"
+                      height="100px"
+                      width="300px"
+                      value={placementMatches}
+                      onChange={(e) => setPlacementMatches(e.target.value)}
+                    ></InputTyped>
+                    <p style={{ textAlign: "center", fontSize: "45.23px" }}>
+                      Matches
+                    </p>
+                  </InitialRank>
+                </PlacementWrap>
+              </>
+            ) : (
+              <>
+                <StepOneTitle>
+                  <F1></F1> Select Ranked Points to Boost
+                </StepOneTitle>
+                <StepOneSLidersWrap>
+                  <InitialRank>
+                    <h2 id="current-rank">Set your current AP</h2>
+                    <img src={firstRankImg} className="rank" alt="rank"></img>
+
+                    <p id="tier">{firstTier}</p>
+                    <Slider
+                      value={firstValue}
+                      onChange={(e) => setFirstValue(e.target.value)}
+                      step="25"
+                      max="19900"
+                      divider="200"
+                    ></Slider>
+                    <InputTyped
+                      fontSize="80px"
+                      height="100px"
+                      width="300px"
+                      value={firstValue}
+                      onChange={(e) => setFirstValue(e.target.value)}
+                    ></InputTyped>
+                    <p style={{ textAlign: "center", fontSize: "45.23px" }}>
+                      AP
+                    </p>
+                  </InitialRank>
+                  <DesiredRankBoost>
+                    {" "}
+                    <h2 id="current-rank">Set your desired AP</h2>
+                    <img src={secondRankImg} className="rank" alt="rank"></img>
+                    <p id="tier">{secondTier}</p>
+                    <Slider
+                      value={secondValue}
+                      onChange={(e) => setSecondValue(e.target.value)}
+                      step="25"
+                      max="20000"
+                      divider="200"
+                    ></Slider>
+                    <InputTyped
+                      fontSize="80px"
+                      height="100px"
+                      width="300px"
+                      value={secondValue}
+                      onChange={(e) => {
+                        setSecondValue(e.target.value);
+                      }}
+                    ></InputTyped>
+                    <p style={{ textAlign: "center", fontSize: "45.23px" }}>
+                      AP
+                    </p>
+                  </DesiredRankBoost>
+                </StepOneSLidersWrap>
+              </>
+            )}
             <StepTwoWarningContainer style={{ display: invalid }}>
               Desired Rank May Not be Less Than Current Rank
               <StepTwoWarning>
@@ -533,7 +772,7 @@ const RankBoostProduct = () => {
                   <button
                     onClick={() =>
                       addToCart({
-                        title: "Rank Boost",
+                        title: "Arenas Boost",
                         price: Number(
                           totalMoney +
                             moneyMultiplierDuo +
@@ -545,10 +784,11 @@ const RankBoostProduct = () => {
                         icon: secondRankImg,
                         extrasArr: Object.entries(extrasArr),
                         filteredExtras: Object.keys(filteredExtras),
+                        placementMatches: placementMatches
+
                       })
                     }
                     class="example_d"
-                    href="add-website-here"
                     target="_blank"
                     rel="nofollow noopener"
                   >

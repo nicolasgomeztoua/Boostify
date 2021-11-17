@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./AuthComponents.css";
+import auth from "./AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 import { Helmet } from "react-helmet";
 
@@ -64,11 +64,11 @@ const Login = ({ history }) => {
         <meta name="theme-color" content="#008f68" />
       </Helmet>
       <Navbar></Navbar>
-      <div className="login-screen">
-        <form onSubmit={loginHandler} className="login-screen__form">
-          <h3 className="login-screen__title">Login</h3>
-          {error && <span className="error-message">{error}</span>}
-          <div className="form-group">
+      <div className={auth["login-screen"]}>
+        <form onSubmit={loginHandler} className={auth["login-screen__form"]}>
+          <h3 className={auth["login-screen__title"]}>Login</h3>
+          {error && <span className={auth["error-message"]}>{error}</span>}
+          <div className={auth["form-group"]}>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -80,12 +80,12 @@ const Login = ({ history }) => {
               tabIndex={1}
             />
           </div>
-          <div className="form-group">
+          <div className={auth["form-group"]}>
             <label htmlFor="password">
               Password:
               <Link
                 to="/forgotpassword"
-                className="login-screen__forgotpassword"
+                className={auth["login-screen__forgotpassword"]}
               >
                 Forgot Password?
               </Link>
@@ -101,11 +101,11 @@ const Login = ({ history }) => {
               tabIndex={2}
             />
           </div>
-          <button type="submit" className="form-btn form-btn-primary">
+          <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
             Login
           </button>
 
-          <span className="login-screen__subtext">
+          <span className={auth["login-screen__subtext"]}>
             Don't have an account? <Link to="/register">Register</Link>
           </span>
         </form>

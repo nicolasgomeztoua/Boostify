@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-import "./AuthComponents.css";
+import auth from "./AuthComponents.module.css";
 
 const ResetPassword = ({ history, match }) => {
   const [password, setPassword] = useState("");
@@ -46,19 +46,18 @@ const ResetPassword = ({ history, match }) => {
   };
 
   return (
-    <div className="resetpassword-screen">
+    <div className={auth["resetpassword-screen"]}>
       <form
         onSubmit={resetPasswordHandler}
-        className="resetpassword-screen__form"
-      >
-        <h3 className="resetpassword-screen__title">Forgot Password</h3>
-        {error && <span className="error-message">{error} </span>}
+        className={auth["resetpassword-screen__form"]}>
+        <h3 className={auth["resetpassword-screen__title"]}>Forgot Password</h3>
+        {error && <span className={auth["error-message"]}>{error} </span>}
         {success && (
-          <span className="success-message">
+          <span className={auth["success-message"]}>
             {success} <a href="https://www.boostify.es">Login</a>
           </span>
         )}
-        <div className="form-group">
+        <div className={auth["form-group"]}>
           <label htmlFor="password">New Password:</label>
           <input
             type="password"
@@ -70,7 +69,7 @@ const ResetPassword = ({ history, match }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className={auth["form-group"]}>
           <label htmlFor="confirmpassword">Confirm New Password:</label>
           <input
             type="password"
@@ -82,7 +81,7 @@ const ResetPassword = ({ history, match }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="form-btn form-btn-primary">
+        <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
           Reset Password
         </button>
       </form>
