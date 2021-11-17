@@ -8,7 +8,7 @@ import ProfileCard from "./ProfileCard";
 import OrderTracker from "./OrderTracker";
 import Footer from "../../Footer/Footer";
 import { Helmet } from "react-helmet";
-
+import "../Home/Home.css"
 import "./Input.css";
 import MissedOrder from "./MissedOrder";
 const Profile = ({ history }) => {
