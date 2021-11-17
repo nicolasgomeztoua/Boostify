@@ -1,4 +1,5 @@
 import "./PostOrder.css";
+import "../Pages/Home/Home.css"
 import OrderConfirmation from "../Pages/Images/orderconfirmation.png";
 import { Filter1 } from "@styled-icons/material-twotone/Filter1";
 import { Filter2 } from "@styled-icons/material-twotone/Filter2";
