@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./AuthComponents.module.css";
+import auth from "./AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 const Checkout = ({ history }) => {
   const [error, setError] = useState("");
@@ -34,7 +34,7 @@ const Checkout = ({ history }) => {
   return error ? (
     <>
       <Navbar></Navbar>
-      <span className="error-message">{error}</span>
+      <span className={auth["error-message"]}>{error}</span>
     </>
   ) : (
     <>

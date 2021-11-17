@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./AuthComponents.module.css";
+import auth from "./AuthComponents.module.css";
 import Navbar from "../../Navbar/Navbar";
 import { Helmet } from "react-helmet";
 
@@ -65,11 +65,11 @@ const Register = ({ history }) => {
         <meta name="theme-color" content="#008f68" />
       </Helmet>
       <Navbar></Navbar>
-      <div className="register-screen">
-        <form onSubmit={registerHandler} className="register-screen__form">
-          <h3 className="register-screen__title">Register</h3>
-          {error && <span className="error-message">{error}</span>}
-          <div className="form-group">
+      <div className={auth["register-screen"]}>
+        <form onSubmit={registerHandler} className={auth["register-screen__form"]}>
+          <h3 className={auth["register-screen__title"]}>Register</h3>
+          {error && <span className={auth["error-message"]}>{error}</span>}
+          <div className={auth["form-group"]}>
             <label htmlFor="name">Username:</label>
             <input
               type="text"
@@ -80,7 +80,7 @@ const Register = ({ history }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className={auth["form-group"]}>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -91,7 +91,7 @@ const Register = ({ history }) => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className={auth["form-group"]}>
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -103,7 +103,7 @@ const Register = ({ history }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className={auth["form-group"]}>
             <label htmlFor="confirmpassword">Confirm Password:</label>
             <input
               type="password"
@@ -115,11 +115,11 @@ const Register = ({ history }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="form-btn form-btn-primary">
+          <button type="submit" className={auth["form-btn form-btn-primary"]}>
             Register
           </button>
 
-          <span className="register-screen__subtext">
+          <span className={auth["register-screen__subtext"]}>
             Already have an account? <Link to="/login">Login</Link>
           </span>
         </form>
