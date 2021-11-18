@@ -3,7 +3,6 @@ import {
   ProductContainer,
   ProductWrap,
   StepOneTitle,
-  F0,
   F1,
   Step2Container,
   StepOneSLidersWrap,

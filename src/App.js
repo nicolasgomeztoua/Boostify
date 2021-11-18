@@ -1,7 +1,25 @@
- import React, { lazy, Suspense } from "react";
+ import React, { lazy, Suspense, useEffect } from "react";
  import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
  import "./App.css";
  import  Redirect from "./Pages/SpecialSignUp/Redirect"
+ import TagManager from 'react-gtm-module'
+ import tawkTo from "tawkto-react";
+
+ //GTM
+const tagManagerArgs = {
+    gtmId: 'GTM-NXPK262'
+}
+
+TagManager.initialize(tagManagerArgs)
+//END GTM
+
+//TAWK
+const tawkToPropertyId = '6073390df7ce1827093946a1'
+
+const tawkToKey = '1f311dno9'
+
+
+
 //routing
  const PrivateRoute = lazy(() => import( "./Pages/authComponents/PrivateRoute"));
 ///////////////////////////////////////////////////////////////
@@ -22,8 +40,12 @@
  const ArenasBoost = lazy(() => import( "./Pages/ArenasBoost/Arenas"));
  const SpecialSignUp = lazy(() => import( "./Pages/SpecialSignUp/SignUp"));
  const Typ = lazy(() => import( "./Pages/SpecialSignUp/typ"));
+ 
 
 function App() {
+  useEffect(() => {
+    tawkTo(tawkToPropertyId, tawkToKey)
+}, [])
   return (
     <Suspense fallback={Redirect}>
       <Router>
