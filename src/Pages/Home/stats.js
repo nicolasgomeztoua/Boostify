@@ -61,7 +61,7 @@ const Stats = () => {
         <div id="icon-counter">
           <Completed></Completed>
         </div>
-        <p>Orders completed</p>
+        <p>Orders Completed</p>
       </div>
       <div>
         <h4>
