@@ -125,7 +125,6 @@ const Cart = ({ history }) => {
       })
     );
   }, [items]);
-  console.log(prices);
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
@@ -162,14 +161,14 @@ const Cart = ({ history }) => {
     const config = {
       headers: {
         "Access-Control-Allow-Origin":
-          "http://localhost:5000/api/auth/createorder",
+          "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         "Content-Type": "application/json",
       },
     };
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/createorder",
+        "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
         {
           titles,
           prices,
@@ -198,12 +197,11 @@ const Cart = ({ history }) => {
       console.log(error);
     }
   };
-  const handleClick = async (event) => {
-    potentialOrder();
-    const stripe = await stripePromise;
 
+  const handleClick = async (event) => {
+    const stripe = await stripePromise;
     const response = await fetch(
-      "http://localhost:5000/create-checkout-session",
+      "https://secret-cove-64633.herokuapp.com/create-checkout-session",
       {
         method: "POST",
 
@@ -211,10 +209,35 @@ const Cart = ({ history }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          items: [{ id: "xl-tshirt" }, { price: totalPrice * 100 }, items],
+          items: [{ id: titles }, { price: totalPrice * 100 }],
+          orderDetails:{
+          titles:JSON.stringify(titles),
+          prices: JSON.stringify(prices),
+          selectedLegend:JSON.stringify(selectedLegend),
+          selectedPopBadges:JSON.stringify(selectedPopBadges),
+          selectedExtraBadges:JSON.stringify(selectedExtraBadges),
+          firstValue:JSON.stringify(firstValue),
+          secondValue:JSON.stringify(secondValue),
+          PSNemail:JSON.stringify(PSNemail),
+          PSNPass:JSON.stringify(PSNPass),
+          region:JSON.stringify(region),
+          dateCreated:JSON.stringify(dateCreated),
+          extrasArr:JSON.stringify(extrasArr),
+          items:JSON.stringify(items),
+          totalPrice:JSON.stringify(totalPrice),
+          platform:JSON.stringify(platform),
+          badgesExtras:JSON.stringify(badgesExtras),
+          rankedImg:JSON.stringify(rankedImg),
+          userId:JSON.stringify(userId),
+          kills:JSON.stringify(kills),
+          placementMatches:JSON.stringify(placementMatches),
+
+          }
+          
         }),
       }
     );
+    
 
     const session = await response.json();
 
@@ -553,7 +576,7 @@ const Cart = ({ history }) => {
                   <Stripe style={{ height: "50px" }}></Stripe>
                   <ApplePay style={{ height: "50px" }}></ApplePay>
                   <GooglePay style={{ height: "50px" }}></GooglePay>
-                  <CreditCardAlt style={{ height: "50px" }}></CreditCardAlt>
+                  <CreditCardAlt style={{ height: "50px" }} onClick={potentialOrder}></CreditCardAlt>
                 </div>
               </div>
             </div>{" "}

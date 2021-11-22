@@ -1,13 +1,8 @@
 import React from "react";
 import "./Sucess.css";
-import { useCart } from "../Cart/CartHandler";
 
 const Sucess = ({ history }) => {
-  const items = useCart();
-  const totalPrice = items.reduce(
-    (total, b) => Number(total) + Number(b.price),
-    0
-  );
+
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
