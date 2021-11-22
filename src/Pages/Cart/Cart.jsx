@@ -24,7 +24,7 @@ import { Helmet } from "react-helmet";
 import PaypalCheckout from "./PaypalCheckout";
 
 const stripePromise = loadStripe(
-  "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
+  "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
 );
 
 const Cart = ({ history }) => {
@@ -162,14 +162,14 @@ const Cart = ({ history }) => {
     const config = {
       headers: {
         "Access-Control-Allow-Origin":
-          "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
+          "http://localhost:5000/api/auth/createorder",
         "Content-Type": "application/json",
       },
     };
 
     try {
       await axios.post(
-        "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
+        "http://localhost:5000/api/auth/createorder",
         {
           titles,
           prices,
@@ -203,7 +203,7 @@ const Cart = ({ history }) => {
     const stripe = await stripePromise;
 
     const response = await fetch(
-      "https://secret-cove-64633.herokuapp.com/create-checkout-session",
+      "http://localhost:5000/create-checkout-session",
       {
         method: "POST",
 
@@ -211,7 +211,7 @@ const Cart = ({ history }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          items: [{ id: "xl-tshirt" }, { price: totalPrice * 100 }],
+          items: [{ id: "xl-tshirt" }, { price: totalPrice * 100 }, items],
         }),
       }
     );
