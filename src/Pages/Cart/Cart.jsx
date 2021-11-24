@@ -24,7 +24,7 @@ import { Helmet } from "react-helmet";
 import PaypalCheckout from "./PaypalCheckout";
 
 const stripePromise = loadStripe(
-  "pk_test_51IXQz3BkRphF41hC4Pd2kBMQzZhdpc3xUdpWnsIVYNbqH7HZ2T7or2e6CYwwRbfsrHL9eo5gXg1k13vuUfvCI6UE00z6Mj1bLk"
+  "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
 );
 
 const Cart = ({ history }) => {
