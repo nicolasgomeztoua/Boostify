@@ -2,7 +2,6 @@ import React from "react";
 import "./Sucess.css";
 
 const Sucess = ({ history }) => {
-
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
