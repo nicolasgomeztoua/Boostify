@@ -9,6 +9,7 @@ import {
 } from "../AcheivementBadges/BadgesElements";
 import { LegendsObj } from "../AcheivementBadges/BadgesObj";
 import Extras from "./Extras";
+import "../AcheivementBadges/Acheivementbadges.css"
 const Legends = ({ price, kills }) => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");
   const [checkedLegend, setLegend] = useState("");

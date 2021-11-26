@@ -197,9 +197,9 @@ const Cart = ({ history }) => {
       console.log(error);
     }
   };
-
   const handleClick = async (event) => {
     const stripe = await stripePromise;
+    
     const response = await fetch(
       "https://secret-cove-64633.herokuapp.com/create-checkout-session",
       {
@@ -208,6 +208,7 @@ const Cart = ({ history }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        
         body: JSON.stringify({
           items: [{ id: titles }, { price: totalPrice * 100 }],
           orderDetails:{
