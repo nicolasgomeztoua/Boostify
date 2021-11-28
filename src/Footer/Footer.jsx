@@ -26,30 +26,30 @@ const Footer = ({ footerColor }) => {
             <FooterLinksWrapper>
               <FooterLinkItems>
                 <FooterLinksTitles>Services</FooterLinksTitles>
-                <FooterLink to="/kills-boosting">Kills Boost</FooterLink>
-                <FooterLink to="/rank-boosting">Rank Boost</FooterLink>
-                <FooterLink to="/acheivement-badges">
+                <FooterLink to={"/kills-boosting"}>Kills Boost</FooterLink>
+                <FooterLink to={"/rank-boosting"}>Rank Boost</FooterLink>
+                <FooterLink to={"/acheivement-badges"}>
                   Acheivment Badges
                 </FooterLink>
-                <FooterLink to="/wins-boosting">Wins Boost</FooterLink>
+                <FooterLink to={"/wins-boosting"}>Wins Boost</FooterLink>
               </FooterLinkItems>
 
               <FooterLinkItems>
                 <FooterLinksTitles>Explore</FooterLinksTitles>
-                <FooterLink to="/">Home</FooterLink>
-                <FooterLink to="/register">Sign Up</FooterLink>
-                <FooterLink to="/login">Log-in</FooterLink>
-                <FooterLink to="/profile">Profile</FooterLink>
+                <FooterLink to={"/"}>Home</FooterLink>
+                <FooterLink to={"/register"}>Sign Up</FooterLink>
+                <FooterLink to={"/login"}>Log-in</FooterLink>
+                <FooterLink to={"/profile"}>Profile</FooterLink>
               </FooterLinkItems>
             </FooterLinksWrapper>
 
             <FooterLinksWrapper>
               <FooterLinkItems>
                 <FooterLinksTitles>Contact Us</FooterLinksTitles>
-                <FooterLink to="/contact-us">USA</FooterLink>
-                <FooterLink to="/contact-us">EU</FooterLink>
-                <FooterLink to="/contact-us">Asia</FooterLink>
-                <FooterLink to="/contact-us">World-Wide</FooterLink>
+                <FooterLink to={"/contact-us"}>USA</FooterLink>
+                <FooterLink to={"/contact-us"}>EU</FooterLink>
+                <FooterLink to={"/contact-us"}>Asia</FooterLink>
+                <FooterLink to={"/contact-us"}>World-Wide</FooterLink>
               </FooterLinkItems>
 
               <FooterLinkItems>

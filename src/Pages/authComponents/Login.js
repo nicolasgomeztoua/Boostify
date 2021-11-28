@@ -84,7 +84,7 @@ const Login = ({ history }) => {
             <label htmlFor="password">
               Password:
               <Link
-                to="/forgotpassword"
+                to={"/forgotpassword"}
                 className={auth["login-screen__forgotpassword"]}
               >
                 Forgot Password?
@@ -106,7 +106,7 @@ const Login = ({ history }) => {
           </button>
 
           <span className={auth["login-screen__subtext"]}>
-            Don't have an account? <Link to="/register">Register</Link>
+            Don't have an account? <Link to={"/register"+ window.location.search}>Register</Link>
           </span>
         </form>
       </div>

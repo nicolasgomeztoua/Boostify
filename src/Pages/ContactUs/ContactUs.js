@@ -128,7 +128,7 @@ const Contact = ({ history }) => {
           </button>
 
           <span className="login-screen__subtext">
-            Don't have an account? <Link to="/register">Register</Link>
+            Don't have an account? <Link to={"/register"+ window.location.search}>Register</Link>
           </span>
         </form>
       </div>

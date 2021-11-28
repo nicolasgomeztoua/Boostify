@@ -197,9 +197,11 @@ const Cart = ({ history }) => {
       console.log(error);
     }
   };
+  
   const handleClick = async (event) => {
     const stripe = await stripePromise;
-    
+    let obj = {...items[0]}
+      Object.keys(obj).forEach(function (key) { obj[key] = JSON.stringify(obj[key]); });
     const response = await fetch(
       "https://secret-cove-64633.herokuapp.com/create-checkout-session",
       {
@@ -211,29 +213,7 @@ const Cart = ({ history }) => {
         
         body: JSON.stringify({
           items: [{ id: titles }, { price: totalPrice * 100 }],
-          orderDetails:{
-          titles:JSON.stringify(titles),
-          prices: JSON.stringify(prices),
-          selectedLegend:JSON.stringify(selectedLegend),
-          selectedPopBadges:JSON.stringify(selectedPopBadges),
-          selectedExtraBadges:JSON.stringify(selectedExtraBadges),
-          firstValue:JSON.stringify(firstValue),
-          secondValue:JSON.stringify(secondValue),
-          PSNemail:JSON.stringify(PSNemail),
-          PSNPass:JSON.stringify(PSNPass),
-          region:JSON.stringify(region),
-          dateCreated:JSON.stringify(dateCreated),
-          extrasArr:JSON.stringify(extrasArr),
-          items:JSON.stringify(items),
-          totalPrice:JSON.stringify(totalPrice),
-          platform:JSON.stringify(platform),
-          badgesExtras:JSON.stringify(badgesExtras),
-          rankedImg:JSON.stringify(rankedImg),
-          userId:JSON.stringify(userId),
-          kills:JSON.stringify(kills),
-          placementMatches:JSON.stringify(placementMatches),
-
-          }
+          orderDetails:obj,
           
         }),
       }
@@ -319,7 +299,7 @@ const Cart = ({ history }) => {
         <Navbar></Navbar>
         <div className="failed-cart-contaier">
           <h1 id="empty">Your cart is empty </h1>
-          <Link to="/">
+          <Link to={"/"+ window.location.search}>
             {" "}
             <button className="example_d"> Go Back Home?</button>
           </Link>
