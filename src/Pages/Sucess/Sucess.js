@@ -12,17 +12,19 @@ const totalPrice = items.reduce(
   (total, b) => Number(total) + Number(b.price),
   0
 );
+const tagManagerArgs = {
+  dataLayer: {
+      Event: 'Purchase',
+      PurchaseAmount: totalPrice
+  },
+  dataLayerName: 'PageDataLayer'
+}
   const token = findGetParameter("hash");
   if (token) {
     const decoded = jwt.verify(token, "hashSecret");
     console.log(decoded);
     if (decoded.sucess) {
-      TagManager.datalayer({
-        dataLayer: {
-          event: "Purchase",
-          PurchaseAmount:totalPrice,
-        },
-      });
+      TagManager.dataLayer(tagManagerArgs)
     }
   }  
   const clearCart = () => {
