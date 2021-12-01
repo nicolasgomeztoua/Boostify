@@ -50,7 +50,7 @@ const Navbar = () => {
 
   const logoutHandler = () => {
     localStorage.removeItem("authToken");
-    history.push("/login");
+    history.push("/login" + window.location.search);
     setLoggedIn(false);
   };
 

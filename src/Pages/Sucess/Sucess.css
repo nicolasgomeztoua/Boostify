@@ -1,9 +1,10 @@
-.sucess-container {
+.success-container {
   text-align: center;
   padding: 40px 0;
   background: #ebf0f5;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .success-title {

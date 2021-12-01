@@ -3,8 +3,8 @@ import "./CSS/Redirect.css"
 const Redirect = ({ history}) => {
     setTimeout(() => {
     let url = window.location.href
-    if(url.indexOf("gclid=")>-1){ history.push("/SpecialSignUp" + window.window.location.search)}
-    else{history.push("/rank-boosting")}
+    if(url.indexOf("gclid=")>-1){ history.push("/SpecialSignUp" + window.location.search)}
+    else{history.push("/rank-boosting" + window.location.search)}
     },3000)
     return (
         <div className="container-redirect">

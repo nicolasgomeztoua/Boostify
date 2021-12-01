@@ -40,7 +40,6 @@ const OrderTracker = ({ orderObj }) => {
         <h2 className="heading">Order Tracking</h2>
 
         {Orders.map((order, index) => {
-          console.log(order.titles);
           if (order.titles[0] === "Kills Boost") {
             return (
               <div className="block">
@@ -75,7 +74,6 @@ const OrderTracker = ({ orderObj }) => {
                           }
                           alt="doge"
                         />
-                        {console.log(order.rankedImg)}
                       </CircularProgressbarWithChildren>{" "}
                       <div
                         style={{
@@ -139,7 +137,6 @@ const OrderTracker = ({ orderObj }) => {
                         }
                         alt="doge"
                       />
-                      {console.log(order.rankedImg)}
                     </CircularProgressbarWithChildren>{" "}
                     <div
                       style={{

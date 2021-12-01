@@ -366,7 +366,6 @@ const RankBoostProduct = () => {
       secondValue / 100 - ((firstValue / 100) | 0)
     );
     const summedMultiplier = rankMultiplierArray.reduce((a, b) => a + b, 0);
-    console.log(rankMultiplierArray);
     setTotalMoney(summedMultiplier);
   }, [firstValue, secondValue]);
   return (

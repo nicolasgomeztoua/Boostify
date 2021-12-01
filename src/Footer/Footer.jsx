@@ -17,7 +17,6 @@ import {
 import ssl from "../Pages/Images/ssls.png";
 import payment from "../Pages/Images/payment-methods.png";
 const Footer = ({ footerColor }) => {
-  console.log(footerColor);
   return (
     <>
       <FooterContainer footercolor={footerColor}>

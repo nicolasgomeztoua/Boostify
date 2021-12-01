@@ -1,7 +1,30 @@
 import React from "react";
 import "./Sucess.css";
+import "../RankBoost/RankBoost.css";
+import { Link } from "react-router-dom";
+import findGetParameter from "../../utils/getParameter";
+import TagManager from "react-gtm-module";
+const jwt = require("jsonwebtoken");
 
 const Sucess = ({ history }) => {
+const items = JSON.parse(localStorage.getItem("cart"))
+const totalPrice = items.reduce(
+  (total, b) => Number(total) + Number(b.price),
+  0
+);
+  const token = findGetParameter("hash");
+  if (token) {
+    const decoded = jwt.verify(token, "hashSecret");
+    console.log(decoded);
+    if (decoded.sucess) {
+      TagManager.datalayer({
+        dataLayer: {
+          event: "Purchase",
+          PurchaseAmount:totalPrice,
+        },
+      });
+    }
+  }  
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
@@ -27,12 +50,12 @@ const Sucess = ({ history }) => {
             We received your purchase request;
             <br /> we'll be in touch shortly!
             <br />{" "}
-            <a href="https://www.boostify.es/">
+            <Link to="/">
               <button className="example_d" onClick={clearCart}>
                 {" "}
                 Clear cart and go home
               </button>
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -14,7 +14,7 @@ const Register = ({ history }) => {
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push("/login");
+      history.push("/login" + window.location.search);
     }
   }, [history]);
 
@@ -43,7 +43,7 @@ const Register = ({ history }) => {
         config
       );
       localStorage.setItem("authToken", data.token);
-      history.push("/login");
+      history.push("/login" + window.location.search);
     } catch (err) {
       setError(error.response.data.error);
       setTimeout(() => {

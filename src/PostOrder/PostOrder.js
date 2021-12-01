@@ -7,7 +7,6 @@ import { Filter3 } from "@styled-icons/material-twotone/Filter3";
 import { Filter4 } from "@styled-icons/material-twotone/Filter4";
 import styled from "styled-components";
 import { walzyEditThis } from "../Pages/Home/stats";
-console.log(OrderConfirmation);
 const PostOrder = () => {
   const Step1 = styled(Filter1)`
     height: 50px;
@@ -30,7 +29,6 @@ const PostOrder = () => {
     margin: 10px;
   `;
   let randomNumber = Math.floor(Math.random() * 10) + 10;
-  console.log(randomNumber);
   return (
     <div className="post-order">
       {" "}
