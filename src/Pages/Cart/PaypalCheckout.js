@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import TagManager from "react-gtm-module";
 import { useHistory } from "react-router-dom";
 const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
   history = useHistory();
@@ -22,10 +23,17 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
         },
         onApprove: async (data, actions) => {
           potentialOrder();
+          const tagManagerArgs = {
+            dataLayer: {
+              event: "Purchase",
+              PurchaseAmount: totalPrice,
+            },
+          };
+          TagManager.dataLayer(tagManagerArgs);
           return actions.order.capture().then(function (details) {
             alert("Transaction completed by " + details.payer.name.given_name);
             setTimeout(() => {
-              history.push("/success" + window.location.search);
+              history.push("/success" + "?paypal=true")
             });
           });
         },
