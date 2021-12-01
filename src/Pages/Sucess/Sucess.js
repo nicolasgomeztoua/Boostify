@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Sucess.css";
 import "../RankBoost/RankBoost.css";
 import { Link } from "react-router-dom";
@@ -7,26 +7,33 @@ import TagManager from "react-gtm-module";
 const jwt = require("jsonwebtoken");
 
 const Sucess = ({ history }) => {
-const items = JSON.parse(localStorage.getItem("cart"))
-const totalPrice = items.reduce(
-  (total, b) => Number(total) + Number(b.price),
-  0
-);
-const tagManagerArgs = {
-  dataLayer: {
-      Event: 'Purchase',
-      PurchaseAmount: totalPrice
-  },
-  dataLayerName: 'PageDataLayer'
-}
-  const token = findGetParameter("hash");
-  if (token) {
-    const decoded = jwt.verify(token, "hashSecret");
-    console.log(decoded);
-    if (decoded.sucess) {
-      TagManager.dataLayer(tagManagerArgs)
+  const items = JSON.parse(localStorage.getItem("cart"));
+
+  useEffect(() => {
+    try {
+      const token = findGetParameter("hash");
+      if (token) {
+        const totalPrice = items.reduce(
+          (total, b) => Number(total) + Number(b.price),
+          0
+        );
+
+        const tagManagerArgs = {
+          dataLayer: {
+            event: "Purchase",
+            PurchaseAmount: totalPrice,
+          },
+        };
+        TagManager.dataLayer(tagManagerArgs);
+        jwt.verify(token, "hashSecret");
+      } else {
+        throw "no token";
+      }
+    } catch (err) {
+      history.push("/" + window.location.search);
     }
-  }  
+  }, []);
+
   const clearCart = () => {
     localStorage.removeItem("cart");
   };
