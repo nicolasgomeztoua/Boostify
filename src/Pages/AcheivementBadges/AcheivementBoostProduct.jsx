@@ -351,7 +351,7 @@ const AcheivementBoostProduct = () => {
               <IconStream />
               <ExtraCheckBox onClick={() => setActiveStream(!activeStream)} />
               <p className="ExtraDesc">On Stream</p>
-              <p className="ExtraDesc"> +75%</p>
+              <p className="ExtraDesc"> +75% </p>
             </IconDescWrapper>
           </ExtraIconButtonWrap>
           <ExtraIconButtonWrap>
