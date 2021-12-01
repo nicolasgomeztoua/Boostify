@@ -90,17 +90,6 @@ const AcheivementBoostProduct = () => {
     });
   };
 
-  useEffect(() => {
-    console.log("checkedPopBadges: ", checkedPopBadges);
-  }, [checkedPopBadges]);
-
-  useEffect(() => {
-    console.log("checkedExtraBages: ", checkedExtraBadges);
-  }, [checkedExtraBadges]);
-  useEffect(() => {
-    console.log("CheckedLegend: ", checkedLegend);
-  }, [checkedLegend]);
-
   let filteredPopBadges = Object.keys(checkedPopBadges).filter(function (x) {
     return checkedPopBadges[x] !== false;
   });
@@ -174,7 +163,7 @@ const AcheivementBoostProduct = () => {
 
   useEffect(() => {
     if (activeStream) {
-      setMoneyMultiplierStream(acheivementTotalMoney * 0.15);
+      setMoneyMultiplierStream(acheivementTotalMoney * 0.75);
     }
     if (!activeStream) {
       setMoneyMultiplierStream(0);
@@ -216,7 +205,6 @@ const AcheivementBoostProduct = () => {
         type="checkbox"
         id="scales"
         name="scales"
-        onChange={(e) => console.log(e.target.value)}
       ></input>
       <BadgesContainer>
         <BadgesWrap>
@@ -363,7 +351,7 @@ const AcheivementBoostProduct = () => {
               <IconStream />
               <ExtraCheckBox onClick={() => setActiveStream(!activeStream)} />
               <p className="ExtraDesc">On Stream</p>
-              <p className="ExtraDesc"> +15%</p>
+              <p className="ExtraDesc"> +75% </p>
             </IconDescWrapper>
           </ExtraIconButtonWrap>
           <ExtraIconButtonWrap>
@@ -433,7 +421,7 @@ const AcheivementBoostProduct = () => {
           </TotalMoney>
 
           <div class="button_cont" align="center">
-            <Link to="./cart">
+            <Link to={"./cart"+ window.location.search }>
               <button
                 onClick={() => {
                   addToCart({

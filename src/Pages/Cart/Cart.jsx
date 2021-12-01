@@ -13,7 +13,7 @@ import Select from "react-select";
 import { GooglePay } from "@styled-icons/fa-brands/GooglePay";
 import { CreditCardAlt } from "@styled-icons/boxicons-solid/CreditCardAlt";
 import { Playstation } from "@styled-icons/fa-brands/Playstation";
-import {Desktop} from "@styled-icons/fa-solid/Desktop";
+import { Desktop } from "@styled-icons/fa-solid/Desktop";
 import { Xbox } from "@styled-icons/fa-brands/Xbox";
 import PostOrder from "../../PostOrder/PostOrder";
 import {
@@ -22,6 +22,7 @@ import {
 } from "../RankBoost/RankedBoostProductElements";
 import { Helmet } from "react-helmet";
 import PaypalCheckout from "./PaypalCheckout";
+import findGetParameter from "../../utils/getParameter";
 
 const stripePromise = loadStripe(
   "pk_live_51IXQz3BkRphF41hCtaUrdCUc0go2z7L5xnLyR8c0ygNfJtrZAODJ54e8MHGtBYmxU9PLo3b6cUmZnhIkTIggSek700L5X7dWou"
@@ -41,7 +42,7 @@ const Cart = ({ history }) => {
   const [platform, setPlatform] = useState(null);
   const [xboxColor, setXboxcolor] = useState("white");
   const [psColor, setPScolor] = useState("white");
-  const [pcColor, setPcColor] = useState("white")
+  const [pcColor, setPcColor] = useState("white");
   const [dateCreated, setDatecreated] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [invalid, setInvalid] = useState("flex");
@@ -51,7 +52,7 @@ const Cart = ({ history }) => {
   const [userId, setUserId] = useState(null);
   const [checkout, setCheckout] = useState(false);
   const [kills, setKills] = useState([]);
-  const [placementMatches, setPlacementMatches] = useState(0)
+  const [placementMatches, setPlacementMatches] = useState(0);
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
@@ -189,7 +190,7 @@ const Cart = ({ history }) => {
           rankedImg,
           userId,
           kills,
-          placementMatches
+          placementMatches,
         },
         config
       );
@@ -197,9 +198,14 @@ const Cart = ({ history }) => {
       console.log(error);
     }
   };
+
   const handleClick = async (event) => {
     const stripe = await stripePromise;
-    
+    let obj = { ...items[0] };
+    Object.keys(obj).forEach(function (key) {
+      obj[key] = JSON.stringify(obj[key]);
+    });
+    obj.gclid = findGetParameter("gclid");
     const response = await fetch(
       "https://secret-cove-64633.herokuapp.com/create-checkout-session",
       {
@@ -208,37 +214,13 @@ const Cart = ({ history }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        
+
         body: JSON.stringify({
           items: [{ id: titles }, { price: totalPrice * 100 }],
-          orderDetails:{
-          titles:JSON.stringify(titles),
-          prices: JSON.stringify(prices),
-          selectedLegend:JSON.stringify(selectedLegend),
-          selectedPopBadges:JSON.stringify(selectedPopBadges),
-          selectedExtraBadges:JSON.stringify(selectedExtraBadges),
-          firstValue:JSON.stringify(firstValue),
-          secondValue:JSON.stringify(secondValue),
-          PSNemail:JSON.stringify(PSNemail),
-          PSNPass:JSON.stringify(PSNPass),
-          region:JSON.stringify(region),
-          dateCreated:JSON.stringify(dateCreated),
-          extrasArr:JSON.stringify(extrasArr),
-          items:JSON.stringify(items),
-          totalPrice:JSON.stringify(totalPrice),
-          platform:JSON.stringify(platform),
-          badgesExtras:JSON.stringify(badgesExtras),
-          rankedImg:JSON.stringify(rankedImg),
-          userId:JSON.stringify(userId),
-          kills:JSON.stringify(kills),
-          placementMatches:JSON.stringify(placementMatches),
-
-          }
-          
+          orderDetails: obj,
         }),
       }
     );
-    
 
     const session = await response.json();
 
@@ -259,7 +241,7 @@ const Cart = ({ history }) => {
     { value: "EU", label: "EU" },
     { value: "NA", label: "NA" },
     { value: "Asia", label: "Asia" },
-    {value: "Oceania", label: "Oceania"}
+    { value: "Oceania", label: "Oceania" },
   ];
 
   const customStyles = {
@@ -289,15 +271,15 @@ const Cart = ({ history }) => {
     setPlatform("PlayStation Network");
     setPScolor("#2E6DB4");
     setXboxcolor("white");
-    setPcColor("white")
+    setPcColor("white");
   };
   const xClick = () => {
     setPlatform("Xbox");
     setXboxcolor("#107C10");
     setPScolor("white");
-    setPcColor("white")
+    setPcColor("white");
   };
-    const PcClick = () => {
+  const PcClick = () => {
     setPlatform("Origin/Steam");
     setPcColor("#ff0000");
     setPScolor("white");
@@ -319,7 +301,7 @@ const Cart = ({ history }) => {
         <Navbar></Navbar>
         <div className="failed-cart-contaier">
           <h1 id="empty">Your cart is empty </h1>
-          <Link to="/">
+          <Link to={"/" + window.location.search}>
             {" "}
             <button className="example_d"> Go Back Home?</button>
           </Link>
@@ -416,8 +398,8 @@ const Cart = ({ history }) => {
                             </span>
                             {element.placementMatches ? (
                               <span className="thin small">
-                                
-                                {"Placement Matches: " + element.placementMatches}
+                                {"Placement Matches: " +
+                                  element.placementMatches}
                                 <br />
                               </span>
                             ) : (
@@ -472,7 +454,7 @@ const Cart = ({ history }) => {
                     onClick={playClick}
                   ></Playstation>
                 </div>
-                   <div>
+                <div>
                   <Desktop
                     style={{
                       height: "50px",
@@ -577,7 +559,10 @@ const Cart = ({ history }) => {
                   <Stripe style={{ height: "50px" }}></Stripe>
                   <ApplePay style={{ height: "50px" }}></ApplePay>
                   <GooglePay style={{ height: "50px" }}></GooglePay>
-                  <CreditCardAlt style={{ height: "50px" }} onClick={potentialOrder}></CreditCardAlt>
+                  <CreditCardAlt
+                    style={{ height: "50px" }}
+                    onClick={potentialOrder}
+                  ></CreditCardAlt>
                 </div>
               </div>
             </div>{" "}

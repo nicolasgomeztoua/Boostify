@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
   history = useHistory();
   const paypal = useRef();
-  console.log(titles, totalPrice);
   useEffect(() => {
     window.paypal
       .Buttons({
@@ -26,7 +25,7 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
           return actions.order.capture().then(function (details) {
             alert("Transaction completed by " + details.payer.name.given_name);
             setTimeout(() => {
-              history.push("/success");
+              history.push("/success" + window.location.search);
             });
           });
         },

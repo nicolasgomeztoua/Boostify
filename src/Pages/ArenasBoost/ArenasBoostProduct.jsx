@@ -552,7 +552,6 @@ const PlacementPrice = 5;
       secondValue / 100 - ((firstValue / 100) | 0)
     );
     const summedMultiplier = rankMultiplierArray.reduce((a, b) => a + b, 0);
-    console.log(rankMultiplierArray);
     setTotalMoney(summedMultiplier);
   }, [firstValue, secondValue, placementMatches]);
 
@@ -767,7 +766,7 @@ const PlacementPrice = 5;
               </TotalMoney>
 
               <div class="button_cont" align="center">
-                <Link to="./cart">
+                <Link to={"./cart"+ window.location.search}>
                   <button
                     onClick={() =>
                       addToCart({

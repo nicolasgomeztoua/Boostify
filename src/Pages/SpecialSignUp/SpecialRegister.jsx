@@ -36,7 +36,7 @@ const SpecialRegister = ({ history, display }) => {
         config
       );
       localStorage.setItem("authToken", data.token);
-      history.push("/thank_you");
+      history.push("/thank_you" + window.location.search);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -44,7 +44,6 @@ const SpecialRegister = ({ history, display }) => {
       }, 5000);
     }
   };
-  console.log(dateCreated)
   return (
     <div className="register-screen " style={{ display: display }}>
       <form
