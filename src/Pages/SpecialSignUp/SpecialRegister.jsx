@@ -55,7 +55,7 @@ const SpecialRegister = ({ history, display }) => {
       >
         <h3
           className={`${auth["register-screen__title"]} ${auth["text-shadow-black"]}`}
-          style={{ color: "white" }}
+          style={{ color: "black" }}
         >
           Register Today <br /> For A Free 4k/20 Bomb With Your Next Rank Boost
           Order
