@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+ import auth from "../authComponents/AuthComponents.module.css";
+ import "./CSS/Redirect.css"
 
 const SpecialRegister = ({ history, display }) => {
   const [username, setUsername] = useState("");
@@ -9,6 +11,7 @@ const SpecialRegister = ({ history, display }) => {
   const [error, setError] = useState("");
   const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
   const special = true;
+ 
   let dateFormated = new Date().getTime() + (86400000 * 2);
   let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", options);
   const registerHandler = async (e) => {
@@ -36,7 +39,7 @@ const SpecialRegister = ({ history, display }) => {
         config
       );
       localStorage.setItem("authToken", data.token);
-      history.push("/thank_you");
+      history.push("/thank_you" + window.location.search);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -44,22 +47,21 @@ const SpecialRegister = ({ history, display }) => {
       }, 5000);
     }
   };
-  console.log(dateCreated)
   return (
-    <div className="register-screen " style={{ display: display }}>
+    <div className={auth["register-screen"]} style={{ display: display }}>
       <form
         onSubmit={registerHandler}
-        className="register-screen__form animation"
+        className={`${auth["register-screen__form"]}  ${auth["animation"]}`}
       >
         <h3
-          className="register-screen__title text-shadow-black"
-          style={{ color: "white" }}
+          className={`${auth["register-screen__title"]} ${auth["text-shadow-black"]}`}
+          style={{ color: "black" }}
         >
           Register Today <br /> For A Free 4k/20 Bomb With Your Next Rank Boost
           Order
         </h3>
-        {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
+        {error && <span className={auth["error-message"]}>{error}</span>}
+        <div className={auth["form-group"]}>
           <label htmlFor="name">Username:</label>
           <input
             type="text"
@@ -70,7 +72,7 @@ const SpecialRegister = ({ history, display }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className={auth["form-group"]}>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -81,7 +83,7 @@ const SpecialRegister = ({ history, display }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className={auth["form-group"]}>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -93,7 +95,7 @@ const SpecialRegister = ({ history, display }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className={auth["form-group"]}>
           <label htmlFor="confirmpassword">Confirm Password:</label>
           <input
             type="password"
@@ -105,7 +107,7 @@ const SpecialRegister = ({ history, display }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="form-btn form-btn-primary">
+        <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
           Register
         </button>
       </form>

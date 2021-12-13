@@ -50,7 +50,7 @@ const Navbar = () => {
 
   const logoutHandler = () => {
     localStorage.removeItem("authToken");
-    history.push("/login");
+    history.push("/login" + window.location.search);
     setLoggedIn(false);
   };
 
@@ -78,7 +78,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to={"/"+ window.location.search } className="navbar-logo" onClick={closeMobileMenu}>
           <img
             src={logo}
             alt="logo"
@@ -92,12 +92,12 @@ const Navbar = () => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <Link to={"/"+ window.location.search } className="nav-links" onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>
+            <Link to={"/profile"+ window.location.search } className="nav-links" onClick={closeMobileMenu}>
               Profile
             </Link>{" "}
           </li>
@@ -107,7 +107,7 @@ const Navbar = () => {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to="/rank-boosting"
+              to={"/rank-boosting"}
               className="nav-links"
               onClick={closeMobileMenu}
             >
@@ -118,7 +118,7 @@ const Navbar = () => {
 
           <li className="nav-item">
             <Link
-              to="/contact-us"
+              to={"/contact-us"}
               className="nav-links"
               onClick={closeMobileMenu}
             >
@@ -147,7 +147,7 @@ const Navbar = () => {
           </div>
 
           <li className="nav-item">
-            <Link to="/cart" style={{ textDecoration: "none" }}>
+            <Link to={"/cart"+ window.location.search } style={{ textDecoration: "none" }}>
               <ShoppingCart id="cart-icon"></ShoppingCart>{" "}
               <span id="cart-icon-number">{cartItems.length}</span>
             </Link>

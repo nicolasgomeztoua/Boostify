@@ -95,7 +95,7 @@ const Home = () => {
 
             <div>
               <Link
-                to="/rank-boosting"
+                to={"/rank-boosting" + window.location.search}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <button class="btn1">

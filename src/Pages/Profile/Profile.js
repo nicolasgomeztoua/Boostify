@@ -36,13 +36,12 @@ const Profile = ({ history }) => {
       } catch (error) {
         localStorage.removeItem("authToken");
         
-        history.push("/login");
+        history.push("/login" + window.location.search);
       }
     };
 
     fetchPrivateDate();
   }, [history]);
-  console.log(userId);
   return (
     <div>
       {" "}

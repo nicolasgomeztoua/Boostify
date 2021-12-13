@@ -7,7 +7,7 @@ const Checkout = ({ history }) => {
 
   useEffect(() => {
     if (!localStorage.getItem("authToken")) {
-      history.push("/");
+      history.push("/" + window.location.search);
     }
     const fetchPrivateData = async () => {
       const config = {

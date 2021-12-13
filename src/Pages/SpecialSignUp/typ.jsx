@@ -12,7 +12,7 @@ import axios from "axios";
 const Typ = ({ history }) => {
   const containerRef = useRef(TypContainer);
   const pusher = () => {
-    history.push("./rank-boosting");
+    history.push("./rank-boosting" + window.location.search);
   };
   const [d, sd] = useState(0);
   const [h, sh] = useState(0);
@@ -38,7 +38,7 @@ const Typ = ({ history }) => {
         sessionStorage.setItem("dateCreated", data.dateCreated);
       } catch (error) {
         localStorage.removeItem("authToken");
-        history.push("/login");
+        history.push("/login" + window.location.search);
       }
 
 

@@ -31,7 +31,7 @@ const Contact = ({ history }) => {
       );
       setValid("flex");
       setTimeout(() => {
-        history.push("/");
+        history.push("/" + window.location.search);
       }, 3000);
     } catch (error) {}
   };
@@ -42,8 +42,6 @@ const Contact = ({ history }) => {
       setInvalid("none");
     }
   }, [email.length, supportTicket.length]);
-
-  console.log("hello".length);
   return (
     <>
       {" "}
@@ -128,7 +126,7 @@ const Contact = ({ history }) => {
           </button>
 
           <span className="login-screen__subtext">
-            Don't have an account? <Link to="/register">Register</Link>
+            Don't have an account? <Link to={"/register"+ window.location.search}>Register</Link>
           </span>
         </form>
       </div>
