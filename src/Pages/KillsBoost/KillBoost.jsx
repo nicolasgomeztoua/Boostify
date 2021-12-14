@@ -7,6 +7,8 @@ import valkMobile from "../Images/valkmobile.jpg";
 import { Helmet } from "react-helmet";
 import SliderBody from "./SliderBody";
 import {useState, useEffect} from "react"
+import ".././RankBoost/RankBoost.css";
+
 
 import ProdMenu from "../../ProdMenu/ProdMenu";
 const KillBoost = () => {
