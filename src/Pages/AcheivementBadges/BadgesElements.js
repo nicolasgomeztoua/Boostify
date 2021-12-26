@@ -85,9 +85,10 @@ export const TextIconCheckBox = styled.div`
   flex-direction: column;
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "#3f3f3f"};
-  border-radius: 100px;
+  border-radius: 100%;
   height: 320px;
   width: 320px;
+  
   @media (max-width: 530px) {
     padding: 0.1rem;
     width: 250px;
@@ -271,10 +272,11 @@ export const Searchbar = styled.input.attrs({
 })`
   box-sizing: border-box;
   font-size: 2rem;
-  padding: 0.5rem;
+  padding: 1rem;
   display: block;
   margin: 2rem auto;
-  width: 80vw;
+  width: 50vw;
+  border-radius:50px;
 `;
 export const totalBadgesContainer = styled.div`
   display: flex;

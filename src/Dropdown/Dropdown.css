@@ -57,7 +57,8 @@
 }
 .Icon-Title-container:hover img {
   -webkit-box-shadow: none;
-  background-color: turquoise;
+  box-shadow: none;
+ 
 }
 
 #Menu-badges {
