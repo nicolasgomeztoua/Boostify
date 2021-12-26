@@ -59,7 +59,7 @@ const Checkout = ({
               // setValidPromo(e.target.value.toLowerCase());
             }}
           ></InputTyped>
-          <div class="button_cont" align="center">
+          <div className="button_cont" align="center">
             <button
               className="example_c k"
               disabled={disabled}
@@ -82,7 +82,7 @@ const Checkout = ({
             </span>
           </TotalMoney>
 
-          <div class="button_cont" align="center">
+          <div className="button_cont" align="center">
             <Link to={"./cart"+ window.location.search}>
               <button
                 onClick={() =>
@@ -101,7 +101,7 @@ const Checkout = ({
                     filteredExtras: Object.keys(filteredExtras),
                   })
                 }
-                class="example_d"
+                className="example_d"
                 href="add-website-here"
                 target="_blank"
                 rel="nofollow noopener"

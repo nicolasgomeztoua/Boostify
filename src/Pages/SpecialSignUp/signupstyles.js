@@ -116,7 +116,7 @@ align-items: center;
 `
 export const StepContainer = styled.div`
 min-width: 100vw;
-min-height: calc(100vh - 80px);
+min-height: calc(120vh - 80px);
 display: flex;
 justify-content: center;
 align-items: center;

@@ -7,21 +7,20 @@ import TagManager from "react-gtm-module";
 const jwt = require("jsonwebtoken");
 
 const Sucess = ({ history }) => {
-  const items = JSON.parse(localStorage.getItem("cart"));
-  const paypal = findGetParameter("paypal");
- const totalPrice = items.reduce(
-          (total, b) => Number(total) + Number(b.price),
-          0
-        );
   useEffect(() => {
-    if(paypal){
-    return
+    const items = JSON.parse(localStorage.getItem("cart"));
+    const paypal = findGetParameter("paypal");
+    const totalPrice = items.reduce(
+      (total, b) => Number(total) + Number(b.price),
+      0
+    );
+    if (paypal) {
+      return;
     }
     try {
       const token = findGetParameter("hash");
       if (token) {
         jwt.verify(token, "hashSecret");
-       
 
         const tagManagerArgs = {
           dataLayer: {
@@ -30,14 +29,13 @@ const Sucess = ({ history }) => {
           },
         };
         TagManager.dataLayer(tagManagerArgs);
-        
       } else {
         throw "no token";
       }
     } catch (err) {
       history.push("/" + window.location.search);
     }
-  }, []);
+  }, [history]);
 
   const clearCart = () => {
     localStorage.removeItem("cart");

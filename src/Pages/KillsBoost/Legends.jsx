@@ -58,7 +58,7 @@ const Legends = ({ price, kills }) => {
               ></img>
               <BadgeDesc>{Items.name}</BadgeDesc>
               <label
-                class="check"
+                className="check"
                 key={Items.key}
                 style={{ backgroundColor: "black" }}
               >
@@ -70,7 +70,7 @@ const Legends = ({ price, kills }) => {
                   onChange={handleChangeLegends}
                 />
 
-                <div class="box" style={{ backgroundColor: "black" }}></div>
+                <div className="box" style={{ backgroundColor: "black" }}></div>
               </label>
             </TextIconCheckBox>
           );

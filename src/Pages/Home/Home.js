@@ -98,10 +98,10 @@ const Home = () => {
                 to={"/rank-boosting" + window.location.search}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <button class="btn1">
-                  <span class="btn1__inner">
-                    <span class="btn1__slide"></span>
-                    <span class="btn1__content">Boost with us today</span>
+                <button className="btn1">
+                  <span className="btn1__inner">
+                    <span className="btn1__slide"></span>
+                    <span className="btn1__content">Boost with us today</span>
                   </span>
                 </button>
               </Link>
