@@ -1,8 +1,6 @@
-import { useState } from "react";
 import styled from "styled-components";
 
-const PackDesc = ({ initialImg, finalImg, setMain }) => {
- 
+const PackDesc = ({ initialImg, main }) => {
 
   const Container = styled.div`
     position: relative;
@@ -39,7 +37,7 @@ const PackDesc = ({ initialImg, finalImg, setMain }) => {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 20px;
+    flex-direction: column;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
@@ -66,18 +64,18 @@ const PackDesc = ({ initialImg, finalImg, setMain }) => {
     text-decoration: none;
     text-transform: uppercase;
     vertical-align: middle;
-   
-    &&:hover {
+
+    &:hover {
       background-color: #2ee59d;
       box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
       color: #fff;
-      transform: translateY(-7px); 
-      transition: all 0.3s ease 0s;
+      transform: translateY(-7px);
+      transition: all 0.2s ease 0s;
     }
   `;
   const Card = styled.div`
     position: relative;
-    width: 320px;
+    width: 300px;
     height: 450px;
     background: #232323;
     border-radius: 20px;
@@ -154,10 +152,10 @@ const PackDesc = ({ initialImg, finalImg, setMain }) => {
   `;
 
   const Image = styled.img`
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-100%, -50%);
+    transform: translate(-50%, -50%);
     width: 170px;
     height: auto;
   `;
@@ -171,26 +169,29 @@ const PackDesc = ({ initialImg, finalImg, setMain }) => {
   const Subtitle = styled.h3`
     color: white;
     font-weight: 300;
-    font-size: 14px;
+    font-size: ${ (props) => props.fontSize ? props.fontSize : '14px' };
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 70px;
+    margin-top: ${ (props) => props.marginTop ? props.marginTop : '70px' };
   `;
-console.log(setMain)
+
   return (
     <Container>
       <Card firstColor="4de6e0" secondColor="9c64ca">
         <ImgBox>
-          <Image src={initialImg} alt="Plat 4 to masters"></Image>
+          <Image src={initialImg} alt="Plat 4 to masters"></Image>{" "}
+         
         </ImgBox>
 
         <ContentBox>
-          <Title>Plat 4 to masters</Title>
+          <Title>Plat iv to masters</Title>
 
           <SelectedLegend>
-            <Subtitle>Size :</Subtitle>
+            <Subtitle fontSize="21px">209.99$</Subtitle>
+            <Subtitle marginTop='10px'>Legend : {main}</Subtitle>
           </SelectedLegend>
-          <Button background={"black"} color={"white"} border={"none"} onClick={() => setMain("main")}>
+
+          <Button background={"black"} color={"white"} border={"none"}>
             Buy Now
           </Button>
         </ContentBox>
