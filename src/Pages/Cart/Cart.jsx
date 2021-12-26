@@ -476,13 +476,13 @@ const Cart = ({ history }) => {
               <h2 id="order-summary">{platform} Email</h2>
               <input
                 type="email"
-                class="input-field"
+                className="input-field"
                 onChange={(e) => setPSN(e.target.value)}
               ></input>
               <h2 id="order-summary">{platform} Password</h2>
               <input
                 type="password"
-                class="input-field"
+                className="input-field"
                 onChange={(e) => setPSNPass(e.target.value)}
               ></input>
               <h2 id="order-summary">Select Your Region</h2>

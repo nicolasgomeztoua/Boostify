@@ -742,7 +742,7 @@ const PlacementPrice = 5;
                   // setValidPromo(e.target.value.toLowerCase());
                 }}
               ></InputTyped>
-              <div class="button_cont" align="center">
+              <div className="button_cont" align="center">
                 <button
                   className="example_c"
                   disabled={true}
@@ -765,7 +765,7 @@ const PlacementPrice = 5;
                 </span>
               </TotalMoney>
 
-              <div class="button_cont" align="center">
+              <div className="button_cont" align="center">
                 <Link to={"./cart"+ window.location.search}>
                   <button
                     onClick={() =>
@@ -786,7 +786,7 @@ const PlacementPrice = 5;
 
                       })
                     }
-                    class="example_d"
+                    className="example_d"
                     target="_blank"
                     rel="nofollow noopener"
                   >

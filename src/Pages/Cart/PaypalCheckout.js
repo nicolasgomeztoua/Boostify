@@ -33,7 +33,7 @@ const Paypal = ({ titles, totalPrice, potentialOrder, history }) => {
           return actions.order.capture().then(function (details) {
             alert("Transaction completed by " + details.payer.name.given_name);
             setTimeout(() => {
-              history.push("/success" + "?paypal=true")
+              history.push("/success?paypal=true")
             });
           });
         },

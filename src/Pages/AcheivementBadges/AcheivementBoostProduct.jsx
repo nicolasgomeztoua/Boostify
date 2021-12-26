@@ -226,7 +226,7 @@ const AcheivementBoostProduct = () => {
                   ></img>
                   <BadgeDesc>{Items.name}</BadgeDesc>
                   <BadgeDesc>{Items.price}$</BadgeDesc>
-                  <label class="check" key={Items.key}>
+                  <label className="check" key={Items.key}>
                     <input
                       type="checkbox"
                       className="inputCheck"
@@ -235,7 +235,7 @@ const AcheivementBoostProduct = () => {
                       onChange={handleChangePop}
                     />
 
-                    <div class="box"></div>
+                    <div className="box"></div>
                   </label>
                 </TextIconCheckBox>
               );
@@ -267,7 +267,7 @@ const AcheivementBoostProduct = () => {
                     ></img>
                     <BadgeDesc>{Items.name}</BadgeDesc>
                     <BadgeDesc>{Items.price}$</BadgeDesc>
-                    <label class="check" key={Items.key}>
+                    <label className="check" key={Items.key}>
                       <input
                         type="checkbox"
                         className="inputCheck"
@@ -276,7 +276,7 @@ const AcheivementBoostProduct = () => {
                         onChange={handleChangeExtra}
                       />
 
-                      <div class="box"></div>
+                      <div className="box"></div>
                     </label>
                   </TextIconCheckBox>
                 );
@@ -307,7 +307,7 @@ const AcheivementBoostProduct = () => {
                   ></img>
                   <BadgeDesc>{Items.name}</BadgeDesc>
                   <label
-                    class="check"
+                    className="check"
                     key={Items.key}
                     style={{ backgroundColor: "black" }}
                   >
@@ -319,7 +319,7 @@ const AcheivementBoostProduct = () => {
                       onChange={handleChangeLegends}
                     />
 
-                    <div class="box" style={{ backgroundColor: "black" }}></div>
+                    <div className="box" style={{ backgroundColor: "black" }}></div>
                   </label>
                 </TextIconCheckBox>
               );
@@ -399,7 +399,7 @@ const AcheivementBoostProduct = () => {
             height="50px"
             width="250px"
           ></InputTyped>
-          <div class="button_cont" align="center">
+          <div className="button_cont" align="center">
             <button
               className="example_c"
               style={{ opacity: "0.4" }}
@@ -420,7 +420,7 @@ const AcheivementBoostProduct = () => {
             {"$"}
           </TotalMoney>
 
-          <div class="button_cont" align="center">
+          <div className="button_cont" align="center">
             <Link to={"./cart"+ window.location.search }>
               <button
                 onClick={() => {
@@ -439,7 +439,7 @@ const AcheivementBoostProduct = () => {
                     badgesExtras: Object.keys(filteredExtras),
                   });
                 }}
-                class="example_d"
+                className="example_d"
                 href="add-website-here"
                 target="_blank"
                 rel="nofollow noopener"
