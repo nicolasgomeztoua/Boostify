@@ -1,5 +1,5 @@
 const findGetParameter = (parameterName) => {
-  var result = null,
+  var result = "null",
     tmp = [];
   window.location.search
     .substr(1)
