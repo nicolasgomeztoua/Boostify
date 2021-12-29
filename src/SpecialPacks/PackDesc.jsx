@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
-const PackDesc = ({ initialImg, main }) => {
-
+const PackDesc = ({ initialImg, checkedLegend }) => {
   const Container = styled.div`
     position: relative;
-    margin-top: 40px;
   `;
   const ImgBox = styled.div`
     position: relative;
@@ -146,7 +144,6 @@ const PackDesc = ({ initialImg, main }) => {
       button {
         opacity: 1;
         transform: translateY(0px);
-        transition-delay: 0.7s;
       }
     }
   `;
@@ -165,22 +162,22 @@ const PackDesc = ({ initialImg, main }) => {
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
+    font-size:25px !important;
   `;
   const Subtitle = styled.h3`
     color: white;
     font-weight: 300;
-    font-size: ${ (props) => props.fontSize ? props.fontSize : '14px' };
+    font-size: ${(props) => (props.fontSize ? props.fontSize : "14px")};
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: ${ (props) => props.marginTop ? props.marginTop : '70px' };
+    margin-top: ${(props) => (props.marginTop ? props.marginTop : "70px")};
   `;
-
+  let displayLegend = Object.keys(checkedLegend)[0];
   return (
     <Container>
       <Card firstColor="4de6e0" secondColor="9c64ca">
         <ImgBox>
           <Image src={initialImg} alt="Plat 4 to masters"></Image>{" "}
-         
         </ImgBox>
 
         <ContentBox>
@@ -188,7 +185,7 @@ const PackDesc = ({ initialImg, main }) => {
 
           <SelectedLegend>
             <Subtitle fontSize="21px">209.99$</Subtitle>
-            <Subtitle marginTop='10px'>Legend : {main}</Subtitle>
+            <Subtitle marginTop="10px">Legend : {displayLegend}</Subtitle>
           </SelectedLegend>
 
           <Button background={"black"} color={"white"} border={"none"}>
