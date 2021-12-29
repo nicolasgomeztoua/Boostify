@@ -8,11 +8,10 @@ import { Offer } from "@styled-icons/boxicons-solid/Offer";
 import { Timer } from "@styled-icons/boxicons-regular/Timer";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Specialpacks from "../../SpecialPacks/Specialpacks";
 const Typ = ({ history }) => {
   const containerRef = useRef(TypContainer);
   const pusher = () => {
-    history.push("./rank-boosting" + window.location.search);
+    history.push("./SpecialPacks" + window.location.search);
   };
   const [d, sd] = useState(0);
   const [h, sh] = useState(0);
@@ -92,7 +91,6 @@ const Typ = ({ history }) => {
           m={isNaN(d) ? "" : m + ":"}
           s={isNaN(d) ? "" : s}
         ></Step>
-        <Specialpacks/>
       </TypContainer>
     </>
   );
