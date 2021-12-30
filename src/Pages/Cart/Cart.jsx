@@ -134,6 +134,28 @@ const Cart = ({ history }) => {
       handleRemove(index);
     }
   });
+  const payload = {
+          titles,
+          prices,
+          selectedLegend,
+          selectedPopBadges,
+          selectedExtraBadges,
+          firstValue,
+          secondValue,
+          PSNemail,
+          PSNPass,
+          region,
+          dateCreated,
+          extrasArr,
+          items,
+          totalPrice,
+          platform,
+          badgesExtras,
+          rankedImg,
+          userId,
+          kills,
+          placementMatches,
+        }
 
   useEffect(() => {
     const fetchPrivateDate = async () => {
@@ -170,38 +192,18 @@ const Cart = ({ history }) => {
     try {
       await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
-        {
-          titles,
-          prices,
-          selectedLegend,
-          selectedPopBadges,
-          selectedExtraBadges,
-          firstValue,
-          secondValue,
-          PSNemail,
-          PSNPass,
-          region,
-          dateCreated,
-          extrasArr,
-          items,
-          totalPrice,
-          platform,
-          badgesExtras,
-          rankedImg,
-          userId,
-          kills,
-          placementMatches,
-        },
+         payload,
         config
       );
     } catch (error) {
       console.log(error);
     }
   };
+   
 
   const handleClick = async (event) => {
     const stripe = await stripePromise;
-    let obj = { ...items[0] };
+    let obj = payload;
     Object.keys(obj).forEach(function (key) {
       obj[key] = JSON.stringify(obj[key]);
     });
