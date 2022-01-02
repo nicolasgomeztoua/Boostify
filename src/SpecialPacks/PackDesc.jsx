@@ -1,6 +1,10 @@
 import styled from "styled-components";
-
+import { useDispatchCart } from "../Pages/Cart/CartHandler";
+import {useState} from "react"
+import {useHistory} from "react-router-dom"
 const PackDesc = ({ initialImg, checkedLegend }) => {
+  const [valid, setValid] = useState(false)
+  const history = useHistory()
   const Container = styled.div`
     position: relative;
   `;
@@ -41,6 +45,7 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
     visibility: hidden;
   `;
   const Button = styled.button`
+  
     font-size: 0.9rem;
     background-color: ${(props) =>
       props.background ? props.background : "#fff"};
@@ -53,11 +58,11 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
     height: auto;
     line-height: 2.5em;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 140px;
     min-height: 30px;
     min-width: 74.0740740741%;
     padding: 0.25rem 0.5rem;
-    position: relative;
+    position: absolute;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -162,7 +167,7 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
-    font-size:25px !important;
+    font-size: 25px !important;
   `;
   const Subtitle = styled.h3`
     color: white;
@@ -173,6 +178,22 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
     margin-top: ${(props) => (props.marginTop ? props.marginTop : "70px")};
   `;
   let displayLegend = Object.keys(checkedLegend)[0];
+  const dispatch = useDispatchCart();
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
+  
+  const addPackToCart = () => {
+    addToCart({
+      title: "Special Rank Boost",
+      price: (5).toFixed(2),
+      selectedLegend: displayLegend,
+      icon: initialImg,
+    });
+    history.push("/cart" + window.location.search)
+  };
+
+
   return (
     <Container>
       <Card firstColor="4de6e0" secondColor="9c64ca">
@@ -188,7 +209,7 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
             <Subtitle marginTop="10px">Legend : {displayLegend}</Subtitle>
           </SelectedLegend>
 
-          <Button background={"black"} color={"white"} border={"none"}>
+          <Button background={"black"} color={"white"} border={"none"} onClick={addPackToCart}>
             Buy Now
           </Button>
         </ContentBox>
