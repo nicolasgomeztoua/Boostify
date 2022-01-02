@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useDispatchCart } from "../Pages/Cart/CartHandler";
 import {useState} from "react"
 import {useHistory} from "react-router-dom"
-const PackDesc = ({ initialImg, checkedLegend }) => {
+const PackDesc = ({ initialImg, checkedLegend, firstColor }) => {
   const [valid, setValid] = useState(false)
   const history = useHistory()
   const Container = styled.div`
@@ -116,7 +116,7 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
       width: 100%;
       height: 100%;
       background: ${(props) =>
-        `linear-gradient(90deg, #${props.firstColor} 0%, #${props.secondColor} 120%)`};
+        `linear-gradient(90deg, #${firstColor} 0%, #${props.secondColor} 120%)`};
       clip-path: circle(150px at 80% 20%);
       transition: 0.5s ease-in-out;
     }
@@ -196,7 +196,7 @@ const PackDesc = ({ initialImg, checkedLegend }) => {
 
   return (
     <Container>
-      <Card firstColor="4de6e0" secondColor="9c64ca">
+      <Card  secondColor="9c64ca">
         <ImgBox>
           <Image src={initialImg} alt="Plat 4 to masters"></Image>{" "}
         </ImgBox>

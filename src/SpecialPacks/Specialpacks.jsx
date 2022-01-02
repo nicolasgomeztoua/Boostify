@@ -4,7 +4,7 @@ import { Discount } from "@styled-icons/boxicons-solid/Discount";
 import LegendsSelector from "../LegendsSelector/LegendsSelector";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-
+import { IndiPackDetails } from "./texts/texts";
 const Specialpacks = () => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");
   const [checkedLegend, setLegend] = useState("");
@@ -16,7 +16,8 @@ const Specialpacks = () => {
     justify-content: center;
     align-items: center;
   `;
-
+  let plat = IndiPackDetails.Plat;
+  let diamond = IndiPackDetails.Diamond;
   return (
     <>
       <Navbar></Navbar>
@@ -34,7 +35,18 @@ const Specialpacks = () => {
               searchFieldLegends={searchFieldLegends}
               checkedLegend={checkedLegend}
             ></LegendsSelector>
-            <IndiPack title="Plat To Masters!" checkedLegend={checkedLegend}></IndiPack>
+            <IndiPack
+              title={plat.title}
+              checkedLegend={checkedLegend}
+              firstColor={plat.firstColor}
+              secondColor={plat.secondColor}
+            ></IndiPack>
+            <IndiPack
+              title={diamond.title}
+              checkedLegend={checkedLegend}
+              firstColor={diamond.firstColor}
+              secondColor={diamond.secondColor}
+            ></IndiPack>
           </div>
         </div>
       </PackageContainer>

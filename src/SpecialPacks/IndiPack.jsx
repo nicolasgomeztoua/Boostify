@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import Plat from "../Pages/Images/Ranked_Tier4_Platinum.png";
-import Masters from "../Pages/Images/Ranked_Tier6_Master.png";
 import PackDesc from "./PackDesc";
 
-const IndiPack = ({ title, checkedLegend }) => {
+
+const IndiPack = ({ title, checkedLegend, firstColor, secondColor }) => {
   const SpecialPackTitle = styled.h1`
     font-size: calc(3vw + 20px);
     background: rgb(151, 228, 226);
     padding: 5px;
     background: ${(props) =>
-      `linear-gradient(90deg, #${props.firstColor} 0%, #${props.secondColor} 80%)`};
+      `linear-gradient(90deg, #${firstColor} 0%, #${secondColor} 80%)`};
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -24,7 +24,7 @@ const IndiPack = ({ title, checkedLegend }) => {
 
   const SelectionGrid = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     flex-direction: row;
     margin-top: 100px;
@@ -38,9 +38,10 @@ const IndiPack = ({ title, checkedLegend }) => {
 
       
       <SelectionGrid>
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} />
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} />
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} />
+        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
+        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
+        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
+        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
       </SelectionGrid>
     </ProductWrapper>
   );
