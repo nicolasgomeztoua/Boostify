@@ -13,6 +13,16 @@ import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
 import { Bars } from "@styled-icons/fa-solid/Bars";
 import { Cross } from "@styled-icons/icomoon/Cross";
 import styled, { css } from "styled-components";
+const NavMenu = css`
+  color: white;
+  height: 30px;
+`;
+const CrossMenu = styled(Cross)`
+  ${NavMenu}
+`;
+const BurgerMenu = styled(Bars)`
+  ${NavMenu}
+`;
 const Navbar = () => {
   let history = useHistory();
   const cartItems = useCart();
@@ -65,20 +75,14 @@ const Navbar = () => {
     }
   }, [loggedIn]);
 
-  const NavMenu = css`
-    color: white;
-    height: 30px;
-  `;
-  const CrossMenu = styled(Cross)`
-    ${NavMenu}
-  `;
-  const BurgerMenu = styled(Bars)`
-  ${NavMenu}
-  `;
   return (
     <>
       <nav className="navbar">
-        <Link to={"/"+ window.location.search } className="navbar-logo" onClick={closeMobileMenu}>
+        <Link
+          to={"/" + window.location.search}
+          className="navbar-logo"
+          onClick={closeMobileMenu}
+        >
           <img
             src={logo}
             alt="logo"
@@ -92,12 +96,20 @@ const Navbar = () => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to={"/"+ window.location.search } className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to={"/" + window.location.search}
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={"/profile"+ window.location.search } className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to={"/profile" + window.location.search}
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Profile
             </Link>{" "}
           </li>
@@ -147,7 +159,10 @@ const Navbar = () => {
           </div>
 
           <li className="nav-item">
-            <Link to={"/cart"+ window.location.search } style={{ textDecoration: "none" }}>
+            <Link
+              to={"/cart" + window.location.search}
+              style={{ textDecoration: "none" }}
+            >
               <ShoppingCart id="cart-icon"></ShoppingCart>{" "}
               <span id="cart-icon-number">{cartItems.length}</span>
             </Link>

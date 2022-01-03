@@ -1,20 +1,18 @@
 import styled from "styled-components";
-import Plat from "../Pages/Images/Ranked_Tier4_Platinum.png";
 import PackDesc from "./PackDesc";
-
-
-const IndiPack = ({ title, checkedLegend, firstColor, secondColor }) => {
+import { PackDescDetails } from "./texts/texts";
   const SpecialPackTitle = styled.h1`
-    font-size: calc(3vw + 20px);
+    font-size: calc(3vw + 25px);
     background: rgb(151, 228, 226);
     padding: 5px;
     background: ${(props) =>
-      `linear-gradient(90deg, #${firstColor} 0%, #${secondColor} 80%)`};
+      `linear-gradient(90deg, #${props.firstColor} 0%, #${props.secondColor} 80%)`};
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: 3px solid #97e4e2;
     border-radius: 20px;
+    margin-top: 10px;
   `;
   const ProductWrapper = styled.div`
     display: flex;
@@ -24,24 +22,38 @@ const IndiPack = ({ title, checkedLegend, firstColor, secondColor }) => {
 
   const SelectionGrid = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 10px;
+    @media screen and (orientation: portrait){
+      grid-template-columns:1fr;
+    }
   `;
+const IndiPack = ({ title, checkedLegend, firstColor, secondColor }) => {
+
 
   return (
     <ProductWrapper>
-      <SpecialPackTitle firstColor="4de6e0" secondColor="9c64ca">
-        {title}
-      </SpecialPackTitle>
+      <SpecialPackTitle firstColor={firstColor} secondColor={secondColor}>{title}</SpecialPackTitle>
 
-      
       <SelectionGrid>
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
-        <PackDesc initialImg={Plat} checkedLegend={checkedLegend} firstColor={firstColor}/>
+        {PackDescDetails.map((texts, index) => {
+          return (
+            <PackDesc
+              initialImg={texts.img}
+              checkedLegend={checkedLegend}
+              firstColor={firstColor}
+              key={texts.title}
+              title={texts.title}
+              price={texts.price}
+              firstValue={texts.firstValue}
+              secondValue={texts.secondValue}
+              img={texts.img}
+              
+            />
+          );
+        })}
       </SelectionGrid>
     </ProductWrapper>
   );

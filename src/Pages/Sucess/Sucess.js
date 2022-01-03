@@ -30,7 +30,7 @@ const Sucess = ({ history }) => {
         };
         TagManager.dataLayer(tagManagerArgs);
       } else {
-        throw "no token";
+        throw Error();
       }
     } catch (err) {
       history.push("/" + window.location.search);

@@ -1,9 +1,7 @@
 import styled from "styled-components"
 import { Rating } from '@material-ui/lab';
 import User from "../Pages/Images/user.png"
-
-const ReviewBox = ({name, rating, dateCreated, review}) => {
-    const TestimonialBoxContainer = styled.div`
+ const TestimonialBoxContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +70,8 @@ const ReviewBox = ({name, rating, dateCreated, review}) => {
     }
     `
 
+const ReviewBox = ({name, rating, dateCreated, review}) => {
+   
     return (
         <TestimonialBoxContainer>
             <TestimonialBox>

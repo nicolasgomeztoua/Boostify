@@ -3,11 +3,6 @@ import styled from 'styled-components'
 import ReviewBox from './ReviewBox'
 import axios from 'axios'
 import SubmitReview from './SubmitReview'
-
-const Reviews = () => {
-
-    const [reviews, setReviews] = useState([])
-
     const Testimonials = styled.section` 
 display:flex;
 justify-content: center;
@@ -41,6 +36,11 @@ span{
     text-transform: uppercase;
 }
 `
+const Reviews = () => {
+
+    const [reviews, setReviews] = useState([])
+
+
     useEffect(() => {
         const fetchData = async () => {
             const config = {

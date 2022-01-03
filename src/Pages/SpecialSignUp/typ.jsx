@@ -1,5 +1,5 @@
 import Step from "./step";
-import { ThankYou, firstStep, secondStep, finalStep } from "./texts/textfile";
+import { ThankYou, firstStep, finalStep } from "./texts/textfile";
 import { CheckmarkCircle } from "@styled-icons/evaicons-solid/CheckmarkCircle";
 import Navbar from "../../Navbar/Navbar";
 import { TypContainer } from "./signupstyles";

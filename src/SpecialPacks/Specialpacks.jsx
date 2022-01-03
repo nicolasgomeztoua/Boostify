@@ -4,20 +4,20 @@ import { Discount } from "@styled-icons/boxicons-solid/Discount";
 import LegendsSelector from "../LegendsSelector/LegendsSelector";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-import { IndiPackDetails } from "./texts/texts";
-const Specialpacks = () => {
-  const [searchFieldLegends, setSearchFieldLegends] = useState("");
-  const [checkedLegend, setLegend] = useState("");
-
-  const PackageContainer = styled.div`
+import { IndiPackDetails } from "./texts/texts";  
+const PackageContainer = styled.div`
     min-width: 100vw;
     min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
   `;
-  let plat = IndiPackDetails.Plat;
-  let diamond = IndiPackDetails.Diamond;
+const Specialpacks = () => {
+  const [searchFieldLegends, setSearchFieldLegends] = useState("");
+  const [checkedLegend, setLegend] = useState({Wraith: true});
+console.log(checkedLegend);
+
   return (
     <>
       <Navbar></Navbar>
@@ -35,18 +35,17 @@ const Specialpacks = () => {
               searchFieldLegends={searchFieldLegends}
               checkedLegend={checkedLegend}
             ></LegendsSelector>
-            <IndiPack
-              title={plat.title}
+            {IndiPackDetails.map((texts, index) => {
+              return (
+             <IndiPack
+              title={texts.title}
               checkedLegend={checkedLegend}
-              firstColor={plat.firstColor}
-              secondColor={plat.secondColor}
+              firstColor={texts.firstColor}
+              secondColor={texts.secondColor}
+              key={texts.title}
             ></IndiPack>
-            <IndiPack
-              title={diamond.title}
-              checkedLegend={checkedLegend}
-              firstColor={diamond.firstColor}
-              secondColor={diamond.secondColor}
-            ></IndiPack>
+              )
+            })}
           </div>
         </div>
       </PackageContainer>
