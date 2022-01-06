@@ -59,7 +59,7 @@ const NoThanksTitle = styled.h2`
 `;
 const Specialpacks = () => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");
-  const [checkedLegend, setLegend] = useState({ Wraith: true });
+  const [checkedLegend, setLegend] = useState();
 
   return (
     <>
