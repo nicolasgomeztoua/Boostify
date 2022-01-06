@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useDispatchCart } from "../Pages/Cart/CartHandler";
 import { useHistory } from "react-router-dom";
+import freeBadges from "../Pages/Images/SpecialPackBadges.png"
 const Container = styled.div`
   position: relative;
   margin-top: 20px;
@@ -164,10 +165,10 @@ const Image = styled.img`
   `;
   const ImageFree = styled.img`
     position: absolute;
-    top: 55%;
-    left: 50%;
+    top: 12%;
+    left: 18%;
     transform: translate(-50%, -50%);
-    width: 200px;
+    width: 100px;
     height: auto;
     border-radius: 100%;
   `;
@@ -205,6 +206,7 @@ const PackDesc = ({ checkedLegend, firstColor, title, price, firstValue, secondV
       icon: img,
       firstValue:firstValue,
       secondValue: secondValue,
+      badgesExtras: "",
     });
     history.push("/cart" + window.location.search);
   };
@@ -212,7 +214,7 @@ const PackDesc = ({ checkedLegend, firstColor, title, price, firstValue, secondV
   return (
     <Container>
       <Card firstColor={firstColor} secondColor="9c64ca">
-        <ImageFree src=""></ImageFree>
+        <ImageFree src={freeBadges}></ImageFree>
         <ImgBox>
           <Image src={img} alt="Plat 4 to masters"></Image>{" "}
         </ImgBox>

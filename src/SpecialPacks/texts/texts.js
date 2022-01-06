@@ -1,5 +1,5 @@
 import platPack from "../../Pages/Images/SpecialPackPlat.png"
-
+import diamondPack from "../../Pages/Images/SpecialPackDiamond.png"
 
 export const Legends = [
   { value: "Wraith", label: "Wraith" },
@@ -64,5 +64,12 @@ export const PackDescDetails = [
     firstValue: 6600,
     secondValue: 10000,
     img:platPack
+  },
+  {
+    title: "Diamod IV To Masters",
+    price: 130,
+    firstValue: 7200,
+    secondValue: 10000,
+    img:diamondPack,
   },
 ];
