@@ -81,7 +81,7 @@ const Footer = ({ footerColor }) => {
           <SocialMedia>
             <SocialMediaWrap>
               <SocialLogo>
-                <i class="fab fa-firstdraft" />
+                <i className="fab fa-firstdraft" />
               </SocialLogo>
               <WebsiteRights>
                 Boostify © {new Date().getFullYear()}. All rights reserved.

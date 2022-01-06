@@ -39,7 +39,7 @@ const WhyUs = () => {
       <h1 className="whyUs-title" style={{ padding: "10px" }}>
         <span style={{ color: "turquoise" }}>Why?</span> Boostify
       </h1>
-      <div class="tabs">
+      <div className="tabs">
         <input
           type="radio"
           id="tab1"
@@ -71,21 +71,21 @@ const WhyUs = () => {
         <ul>
           <li title="Our Boosters">
             <label for="tab1" role="button">
-              <i class="fas fa-users" style={{ padding: "10px" }}></i>
+              <i className="fas fa-users" style={{ padding: "10px" }}></i>
               <br />
               <span>Our Boosters</span>
             </label>
           </li>
           <li title="Privacy">
             <label for="tab2" role="button">
-              <i class="fas fa-user-secret" style={{ padding: "10px" }}></i>
+              <i className="fas fa-user-secret" style={{ padding: "10px" }}></i>
               <br />
               <span>Privacy</span>
             </label>
           </li>
           <li title="Delivery">
             <label for="tab3" role="button">
-              <i class="fas fa-bolt" style={{ padding: "10px" }}></i>
+              <i className="fas fa-bolt" style={{ padding: "10px" }}></i>
               <br />
               <span>Delivery</span>
             </label>
@@ -101,10 +101,10 @@ const WhyUs = () => {
           </li>
         </ul>
 
-        <div class="slider">
-          <div class="indicator"></div>
+        <div className="slider">
+          <div className="indicator"></div>
         </div>
-        <div class="content">
+        <div className="content">
           <section className="whyUs-element">
             <h2>A true connection with our boosters</h2>
             <div className="whyUs-grid">

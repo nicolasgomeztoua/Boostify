@@ -1,8 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { LegendsObj } from "../AcheivementBadges/BadgesObj";
-import Extras from "./Extras";
-import "../AcheivementBadges/Acheivementbadges.css"
+
+import { LegendsObj } from "../Pages/AcheivementBadges/BadgesObj";
+import "../Pages/AcheivementBadges/Acheivementbadges.css";
 
 const BadgeDesc = styled.p`
   display: flex;
@@ -94,18 +93,24 @@ const BadgesSectionTitle = styled.h3`
 `;
   const LegendSelectionContainer = styled(BadgesSelectionContainers)`
     margin-bottom: 0;
+    border: 1px solid #000;
   `;
   const LegendsTitle = styled(BadgesSectionTitle)`
-    border-color: #6d00ae;
+    border-color: #000;
     color: black;
   `;
   const Search = styled(Searchbar)`
-    border: 2px solid #6d00ae;
-    outline-color: #6d00ae;
+    border: 2px solid #000;
+    outline-color: #000;
   `;
-const Legends = ({ price, kills }) => {
-  const [searchFieldLegends, setSearchFieldLegends] = useState("");
-  const [checkedLegend, setLegend] = useState("");
+
+  
+const Legends = ({
+  setSearchFieldLegends,
+  setLegend,
+  searchFieldLegends,
+  checkedLegend,
+}) => {
   const handleChangeLegends = (e) => {
     setLegend({
       [e.target.name]: e.target.checked,
@@ -115,10 +120,11 @@ const Legends = ({ price, kills }) => {
 
   return (
     <>
-      <LegendsTitle>Legends</LegendsTitle>
+      <LegendsTitle>Select a Legend</LegendsTitle>
       <Search
         onChange={(e) => setSearchFieldLegends(e.target.value)}
         value={searchFieldLegends}
+        autoFocus
       ></Search>
       <LegendSelectionContainer>
         {LegendsObj.filter((items) => {
@@ -127,7 +133,7 @@ const Legends = ({ price, kills }) => {
             .includes(searchFieldLegends.toLowerCase());
         }).map((Items, index) => {
           return (
-            <TextIconCheckBox backgroundColor="white">
+            <TextIconCheckBox backgroundColor="white" key={index}>
               <img
                 src={Items.icon}
                 alt="badge"
@@ -159,11 +165,7 @@ const Legends = ({ price, kills }) => {
           );
         })}
       </LegendSelectionContainer>
-      <Extras price={price} kills={kills} legend={checkedLegend}>
-        {" "}
-      </Extras>
     </>
   );
 };
-
 export default Legends;

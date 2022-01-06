@@ -1,18 +1,17 @@
 import Step from "./step";
-import { ThankYou, firstStep, secondStep, finalStep } from "./texts/textfile";
+import { ThankYou, firstStep, finalStep } from "./texts/textfile";
 import { CheckmarkCircle } from "@styled-icons/evaicons-solid/CheckmarkCircle";
 import Navbar from "../../Navbar/Navbar";
 import { TypContainer } from "./signupstyles";
 import { useRef } from "react";
 import { Offer } from "@styled-icons/boxicons-solid/Offer";
 import { Timer } from "@styled-icons/boxicons-regular/Timer";
-import { useEffect, useState, } from "react"
+import { useEffect, useState } from "react";
 import axios from "axios";
-
 const Typ = ({ history }) => {
   const containerRef = useRef(TypContainer);
   const pusher = () => {
-    history.push("./rank-boosting" + window.location.search);
+    history.push("./SpecialPacks" + window.location.search);
   };
   const [d, sd] = useState(0);
   const [h, sh] = useState(0);
@@ -21,9 +20,7 @@ const Typ = ({ history }) => {
 
 
   useEffect(() => {
-
     const fetchData = async () => {
-
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -40,13 +37,10 @@ const Typ = ({ history }) => {
         localStorage.removeItem("authToken");
         history.push("/login" + window.location.search);
       }
-
-
     };
 
     fetchData();
   }, [history]);
-
 
   useEffect(() => {
     setInterval(() => {
@@ -62,9 +56,8 @@ const Typ = ({ history }) => {
       sh(Math.floor((gap % day) / hour));
       sm(Math.floor((gap % hour) / minute));
       ss(Math.floor((gap % minute) / second));
-
     }, 1000);
-  }, [])
+  }, []);
   return (
     <>
       <Navbar></Navbar>
@@ -81,12 +74,12 @@ const Typ = ({ history }) => {
           icon={Offer}
           step={2}
         ></Step>
-        <Step
+{/*         <Step
           textfile={secondStep}
           containerRef={containerRef}
           icon={Offer}
           step={3}
-        ></Step>
+        ></Step> */}
         <Step
           textfile={finalStep}
           containerRef={containerRef}

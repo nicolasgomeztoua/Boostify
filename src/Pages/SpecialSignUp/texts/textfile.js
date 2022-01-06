@@ -13,17 +13,17 @@ export const firstStep = {
   button: "Tell Me More!",
 };
 
-export const secondStep = {
+/* export const secondStep = {
   title: "Our second offer is for a free 4k Damage Badge and 20 bomb badge!",
   body:
     "To be eligible for this great offer, purchase $200+ worth of rank boost and get your free badges on ANY legend of your choice!",
     time: false,
   button: "Tell me more!",
-};
+}; */
 export const finalStep = {
   title: "This offer Expires in:",
   body:
-    "By clicking on the button below, you will be directed to our rank boost page where your could save up to $100 on your favorite badges!",
+    "By clicking on the button below, you will be offered rank boost packages where you could save up to $100 on your favorite badges!",
   time: true,
   button: "Take Me There!",
 };

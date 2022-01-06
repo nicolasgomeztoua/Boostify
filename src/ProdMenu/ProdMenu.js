@@ -35,7 +35,7 @@ const ProdMenu = ({ border }) => {
           return (
              <SwiperSlide style={{ marginBottom: "30px", marginTop:"30px" }}>
             <li key={index} className="MenuItemsWrapper">
-              <Link className={item.cName} to={item.path + window.location.search}>
+              <Link  to={item.path + window.location.search} className={item.cName}>
                 <div className="Icon-Title-container">
                   <p className="MenuItemTitle">{item.title}</p>
                   <img

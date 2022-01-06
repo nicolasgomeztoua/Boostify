@@ -40,7 +40,7 @@ const tawkToKey = '1f311dno9'
  const ArenasBoost = lazy(() => import( "./Pages/ArenasBoost/Arenas"));
  const SpecialSignUp = lazy(() => import( "./Pages/SpecialSignUp/SignUp"));
  const Typ = lazy(() => import( "./Pages/SpecialSignUp/typ"));
- 
+ const Specialpacks = lazy(() => import( "./SpecialPacks/Specialpacks"));
 
 function App() {
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
       <Router>
         <div className="app">
           <Switch>
-            <Route exact path="/cart" component={Cart}></Route>
+            <Route path="/cart" component={Cart}></Route>
             <Route path="/" exact component={Home}></Route>
             <Route path="/rank-boosting" exact component={RankBoost}></Route>
             <Route path="/contact-us" exact component={ContactUs}></Route>
@@ -79,6 +79,7 @@ function App() {
             <Route path="/redirect" exact component={Redirect}></Route>
             <Route path="/SpecialSignUp" exact component={SpecialSignUp}></Route>
             <Route path="/thank_you" exact component={Typ}></Route>
+            <Route path="/SpecialPacks" exact component={Specialpacks}></Route>
             <Route path="/Arenas-Boost" exact component={ArenasBoost}></Route>
             
             <PrivateRoute>
