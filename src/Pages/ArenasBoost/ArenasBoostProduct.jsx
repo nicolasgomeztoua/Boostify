@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import masters from "../Images/ArenaMaster.jpg";
-import diamond from "../Images/ArenaDiamond.jpg";
-import plat from "../Images/ArenaPlat.jpg";
-import gold from "../Images/ArenaGold.jpg";
-import silver from "../Images/ArenaSilver.jpg";
-import bronze from "../Images/ArenaBronze.jpg";
+import masters from "../Images/ArenaMaster.png";
+import diamond from "../Images/ArenaDiamond.png";
+import plat from "../Images/ArenaPlat.png";
+import gold from "../Images/ArenaGold.png";
+import silver from "../Images/ArenaSilver.png";
+import bronze from "../Images/ArenaBronze.png";
 import placementImg from "../Images/Placement.png"
 
 import { useDispatchCart } from "../Cart/CartHandler";
@@ -30,8 +30,6 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   margin-bottom: 50px;
   margin-top: 50px;
   border: 10px solid #f25a59;
-  
-
   border-radius: 100px;
   @media (max-width: 1030px) {
     grid-template-columns: 0fr 1fr 0fr;
