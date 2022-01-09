@@ -53,7 +53,7 @@ function App() {
   let cookies = useCookies();
   const notify = useCallback(() => {
     toast.success(
-      "Click here for a free 4k & 20Kill badge with your next rank boost order",
+      "Click here for a free 4k & 20Kill badge with your next rank boost to masters order",
       {
         position: "top-right",
 
