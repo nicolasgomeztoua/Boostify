@@ -6,9 +6,9 @@ export const ThankYou = {
   button: "Show Me!",
 };
 export const firstStep = {
-  title: "Our first offer is for a free 4k Damage Badge!",
+  title: "Get free 4k and 20 kill badge!",
   body:
-    "Purchase $100+ worth of rank boost and get a free 4K Badge on ANY legend of your choice!",
+    "Purchase $100+ worth of rank boost and get a free 4K and 20 kill badge on ANY legend of your choice!",
     time: false,
   button: "Tell Me More!",
 };

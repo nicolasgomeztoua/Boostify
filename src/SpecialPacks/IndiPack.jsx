@@ -42,8 +42,6 @@ const IndiPack = ({ title, checkedLegend, firstColor, secondColor, index }) => {
       setPackArray(PackDescDetails.slice(4));
     }
   }, [index]);
-
-  console.log(PackDescDetails);
   return (
     <ProductWrapper>
       <SpecialPackTitle firstColor={firstColor} secondColor={secondColor}>
