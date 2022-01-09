@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
- import auth from "../authComponents/AuthComponents.module.css";
- import "./CSS/Redirect.css"
+import auth from "../authComponents/AuthComponents.module.css";
+import "./CSS/Redirect.css";
+import { useCookies } from "react-cookie";
 
 const SpecialRegister = ({ history, display }) => {
   const [username, setUsername] = useState("");
@@ -9,10 +10,23 @@ const SpecialRegister = ({ history, display }) => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+  const setCookie = useCookies(["user"]);
+
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
   const special = true;
- 
-  let dateFormated = new Date().getTime() + (86400000 * 2);
+  function handleCookie() {
+    setCookie[1]("Special", "true", {
+      path: "/",
+      maxAge: (86400000 * 2) / 1000,
+    });
+  }
+  let dateFormated = new Date().getTime() + 86400000 * 2;
   let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", options);
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -40,6 +54,7 @@ const SpecialRegister = ({ history, display }) => {
       );
       localStorage.setItem("authToken", data.token);
       history.push("/thank_you" + window.location.search);
+      handleCookie();
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -47,6 +62,9 @@ const SpecialRegister = ({ history, display }) => {
       }, 5000);
     }
   };
+
+
+
   return (
     <div className={auth["register-screen"]} style={{ display: display }}>
       <form
@@ -107,7 +125,10 @@ const SpecialRegister = ({ history, display }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}>
+        <button
+          type="submit"
+          className={`${auth["form-btn"]} ${auth["form-btn-primary"]}`}
+        >
           Register
         </button>
       </form>

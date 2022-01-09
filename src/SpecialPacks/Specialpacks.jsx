@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import { IndiPackDetails } from "./texts/texts";
 import { Link } from "react-router-dom";
+
 const PackageContainer = styled.div`
   min-width: 100vw;
   min-height: calc(100vh - 80px);
@@ -55,7 +56,7 @@ const NoThanksContainer = styled.div`
 const NoThanksTitle = styled.h2`
   border-bottom: 5px solid black;
   border-radius: 10px;
-  padding-bottom:10px;
+  padding-bottom: 10px;
 `;
 const Specialpacks = () => {
   const [searchFieldLegends, setSearchFieldLegends] = useState("");

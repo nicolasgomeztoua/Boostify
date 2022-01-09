@@ -6,6 +6,8 @@ import TagManager from "react-gtm-module";
 import tawkTo from "tawkto-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCallback } from "react";
+import { useCookies } from "react-cookie";
 //GTM
 const tagManagerArgs = {
   gtmId: "GTM-NXPK262",
@@ -18,7 +20,6 @@ TagManager.initialize(tagManagerArgs);
 const tawkToPropertyId = "6073390df7ce1827093946a1";
 
 const tawkToKey = "1f311dno9";
-
 //routing
 const PrivateRoute = lazy(() => import("./Pages/authComponents/PrivateRoute"));
 ///////////////////////////////////////////////////////////////
@@ -46,20 +47,35 @@ const ArenasBoost = lazy(() => import("./Pages/ArenasBoost/Arenas"));
 const SpecialSignUp = lazy(() => import("./Pages/SpecialSignUp/SignUp"));
 const Typ = lazy(() => import("./Pages/SpecialSignUp/typ"));
 const Specialpacks = lazy(() => import("./SpecialPacks/Specialpacks"));
-const notify = () => toast("Wow so easy!");
+
 function App() {
-  useEffect(() => {
-    tawkTo(tawkToPropertyId, tawkToKey);
+  
+  let cookies = useCookies();
+  const notify = useCallback(() => {
+    toast.success(
+      "Click here for a free 4k & 20Kill badge with your next rank boost order",
+      {
+        position: "top-right",
+
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        onClick: () => {
+          window.location.pathname = "/SpecialPacks";
+        },
+      }
+    );
   }, []);
-  toast.info('🦄 Wow so easy!', {
-    position: "top-right",
-    autoClose: 1e+44,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    });
+  useEffect(() => {
+    if (cookies[0].Special && window.location.pathname !== "/SpecialPacks") {
+      notify();
+    }
+
+    tawkTo(tawkToPropertyId, tawkToKey);
+  }, [notify, cookies]);
+
   return (
     <>
       <Suspense fallback={Redirect}>
@@ -110,18 +126,19 @@ function App() {
               </PrivateRoute>
             </Switch>
           </div>{" "}
+          <ToastContainer
+            position="top-right"
+            autoClose={60000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            style={{ marginTop: "10vh" }}
+            draggable
+            pauseOnHover
+          />
         </Router>
       </Suspense>
-      <ToastContainer
-        position="top-right"
-        autoClose={1e44}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        draggable
-        pauseOnHover
-      />
     </>
   );
 }
