@@ -11,7 +11,7 @@ import axios from "axios";
 const Typ = ({ history }) => {
   const containerRef = useRef(TypContainer);
   const pusher = () => {
-    history.push("./SpecialPacks" + window.location.search);
+    window.location.pathname = "/SpecialPacks"
   };
   const [d, sd] = useState(0);
   const [h, sh] = useState(0);
