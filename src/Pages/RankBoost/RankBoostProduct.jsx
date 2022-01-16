@@ -550,6 +550,7 @@ const RankBoostProduct = () => {
                     href="add-website-here"
                     target="_blank"
                     rel="nofollow noopener"
+                      id="addToCart"
                   >
                     Add to cart
                   </button>

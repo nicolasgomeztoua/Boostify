@@ -15,7 +15,7 @@ SwiperCore.use([Navigation, Scrollbar, EffectCoverflow, Autoplay]);
 const OrdersCarousel = () => {
   return (
     <div className="OrdersCarousel-container">
-      <h3 className="OrdersCarousel-title"> Recently Delivered Orders </h3>
+      <h3 className="OrdersCarousel-title" id="recentlyDeliveredOrders"> Recently Delivered Orders </h3>
       <Swiper
         grabCursor={true}
         centeredSlides={true}
@@ -42,6 +42,7 @@ const OrdersCarousel = () => {
                   justifyContent: "center",
                   padding: "10px",
                   minWidth: "315px",
+                  
                 }}
               >
                 <div
@@ -50,7 +51,7 @@ const OrdersCarousel = () => {
                     display: "flex",
                     justifyContent: "center",
                     padding: "5px",
-                    minWidth: "315px",
+                    minWidth: "315px",maxWidth:"315px",
                     height: "315px",
                   }}
                 >

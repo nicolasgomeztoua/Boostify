@@ -74,7 +74,7 @@ const Reviews = () => {
                 <span>Reviews</span>
                 <h1>Clients Say</h1>
             </TestimonialsHeader>
-            <div style={{display: "flex", flexDirection:"column-reverse"}}>
+            <div style={{display: "flex", flexDirection:"column-reverse"}} id="reviews">
             {reviews.map((review, index) => {
                return( <ReviewBox name={review.name} main={review.main} rating={review.rating} review={review.review} dateCreated={review.dateCreated}></ReviewBox>)
             })}

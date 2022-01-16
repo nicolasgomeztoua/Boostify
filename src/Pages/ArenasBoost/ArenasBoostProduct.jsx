@@ -7,7 +7,7 @@ import plat from "../Images/ArenaPlat.png";
 import gold from "../Images/ArenaGold.png";
 import silver from "../Images/ArenaSilver.png";
 import bronze from "../Images/ArenaBronze.png";
-import placementImg from "../Images/Placement.png"
+import placementImg from "../Images/Placement.png";
 
 import { useDispatchCart } from "../Cart/CartHandler";
 import styled from "styled-components";
@@ -21,7 +21,7 @@ import { LiveTv } from "@styled-icons/material-twotone/LiveTv";
 import { Speed } from "@styled-icons/material-twotone/Speed";
 import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
 /* import { CreativeCommonsZero } from "@styled-icons/fa-brands/CreativeCommonsZero"; */
- const ProductContainer = styled.div`
+const ProductContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   margin: 0 auto;
@@ -39,22 +39,20 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     height: 0%;
   }
 `;
- const ProductWrap = styled.div`
+const ProductWrap = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto;
   background-color: #fdfef9;
   height: auto;
-  width:91.5vw;
+  width: 91.5vw;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   @media (max-width: 1381px) {
     padding: 5px;
   }
-
-  
 `;
 
- const StepOneTitle = styled.h3`
+const StepOneTitle = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +86,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `; */
 
- const F1 = styled(Filter1)`
+const F1 = styled(Filter1)`
   height: 75px;
   color: #f25a59;
   margin-right: 15px;
@@ -98,7 +96,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const Step2Container = styled.div`
+const Step2Container = styled.div`
   display: grid;
 
   grid-template-rows: 1fr;
@@ -108,7 +106,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     justify-content: flex-start;
   }
 `;
- const StepOneSLidersWrap = styled.div`
+const StepOneSLidersWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   @media (max-width: 810px) {
@@ -117,13 +115,13 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     height: 1600px;
   }
 `;
- const PlacementWrap = styled.div`
+const PlacementWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: max-content;
 `;
- const F2 = styled(Filter2)`
+const F2 = styled(Filter2)`
   height: 75px;
   color: #f25a59;
   margin-right: 15px;
@@ -132,7 +130,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     margin-left: 15px;
   }
 `;
- const InitialRank = styled.div`
+const InitialRank = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -149,7 +147,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     margin-right: 0px;
   }
 `;
- const DesiredRankBoost = styled.div`
+const DesiredRankBoost = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -165,12 +163,11 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     margin-left: 0px;
   }
 `;
- const Slider = styled.input.attrs({
+const Slider = styled.input.attrs({
   type: "range",
   name: "points",
 
   min: "0",
-
 })`
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -206,7 +203,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const InputTyped = styled.input.attrs({
+const InputTyped = styled.input.attrs({
   maxLength: "20",
 })`
   display: block;
@@ -238,7 +235,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     font-size: 50px;
   }
 `;
- const F3 = styled(Filter3)`
+const F3 = styled(Filter3)`
   height: 75px;
   color: #f25a59;
   margin-right: 15px;
@@ -248,7 +245,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const StepTwoWarningContainer = styled.div`
+const StepTwoWarningContainer = styled.div`
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -257,7 +254,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   background-color: #f44336; /* Red */
   color: white;
 `;
- const StepTwoWarning = styled.span`
+const StepTwoWarning = styled.span`
   margin-left: auto;
 
   color: white;
@@ -272,11 +269,11 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const ExtrasContainer = styled.div`
+const ExtrasContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
 `;
- const ExtrasTitle = styled.h1`
+const ExtrasTitle = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -299,7 +296,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     font-size: 31.23px;
   }
 `;
- const ExtrasOptions = styled.div`
+const ExtrasOptions = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: flex-end;
@@ -314,14 +311,14 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const ExtraIconButtonWrap = styled.div`
+const ExtraIconButtonWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   height: 120px;
 `;
- const ExtraCheckBox = styled.input.attrs({
+const ExtraCheckBox = styled.input.attrs({
   type: "checkbox",
   name: "extra",
 })`
@@ -358,45 +355,45 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const IconDescWrapper = styled.div`
+const IconDescWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
 `;
- const IconOffline = styled(EyeSlash)`
+const IconOffline = styled(EyeSlash)`
   height: 55px;
   width: 80px;
   color: #f25a59;
   margin-bottom: 3px;
 `;
- const IconDuo = styled(People)`
+const IconDuo = styled(People)`
   height: 55px;
   width: 80px;
   color: #f25a59;
   margin-bottom: 3px;
 `;
- const IconStream = styled(LiveTv)`
+const IconStream = styled(LiveTv)`
   height: 55px;
   width: 80px;
   color: #f25a59;
   margin-bottom: 3px;
 `;
 
- const IconSpeed = styled(Speed)`
+const IconSpeed = styled(Speed)`
   height: 55px;
   width: 80px;
   color: #f25a59;
   margin-bottom: 3px;
 `;
- const TotalContainer = styled.div`
+const TotalContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr;
   align-items: flex-start;
   height: auto;
 `;
- const TotalTitle = styled.h1`
+const TotalTitle = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -428,7 +425,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     margin-left: 15px;
   }
 `; */
- const TotalMoneyCard = styled.div`
+const TotalMoneyCard = styled.div`
   display: grid;
   grid-template-rows: 1fr 0.2fr 0.2fr 0.2fr 0.4fr;
   box-sizing: border-box;
@@ -456,7 +453,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const TotalMoneyHeader = styled.h1`
+const TotalMoneyHeader = styled.h1`
   background-color: rgb(236, 236, 236);
   border-bottom-color: rgb(221, 221, 221);
   border-bottom-style: solid;
@@ -481,7 +478,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
     width: 80vw;
   }
 `;
- const DiscountContainer = styled.div`
+const DiscountContainer = styled.div`
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   display: flex;
@@ -502,7 +499,7 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   }
 `;
 
- const TotalMoney = styled.div`
+const TotalMoney = styled.div`
   align-items: flex-start;
   box-sizing: border-box;
   color: rgb(44, 44, 44);
@@ -516,8 +513,6 @@ import { EyeSlash } from "@styled-icons/bootstrap/EyeSlash";
   overflow-wrap: break-word;
   text-align: center;
 `;
-
-
 
 const RankBoostProduct = () => {
   const [firstTier, setFirstTier] = useState("I");
@@ -534,7 +529,7 @@ const RankBoostProduct = () => {
   const [activePriority, setPriority] = useState(false);
   const [activeOffline, setActiveOffline] = useState(false);
   const [filteredExtras, setFilteredExtras] = useState("");
-  const [placementMatches, setPlacementMatches] = useState(0)
+  const [placementMatches, setPlacementMatches] = useState(0);
   const [totalMoney, setTotalMoney] = useState(0);
   const [moneyMultiplierDuo, setMoneyMultiplierDuo] = useState(0);
   const [moneyMultiplierStream, setMoneyMultiplierStream] = useState(0);
@@ -556,7 +551,7 @@ const RankBoostProduct = () => {
       setOpacity(0.4);
     }
   }; */
-const PlacementPrice = 5;
+  const PlacementPrice = 5;
   useEffect(() => {
     if (totalMoney < 0) {
       setTotalMoney(0);
@@ -815,9 +810,9 @@ const PlacementPrice = 5;
     );
   }, [activeDuo, activeOffline, activePriority, activeStream]);
   useEffect(() => {
-    if(placementMatches>0){
-      setTotalMoney(placementMatches * PlacementPrice)
-      return
+    if (placementMatches > 0) {
+      setTotalMoney(placementMatches * PlacementPrice);
+      return;
     }
     const prices = [
       0.1,
@@ -1048,7 +1043,14 @@ const PlacementPrice = 5;
               }}
             >
               <div></div>
-              <ExtraCheckBox onClick={() => { setPlacement(!placement); setFirstValue(0); setSecondValue(0); setPlacementMatches(0)}} />
+              <ExtraCheckBox
+                onClick={() => {
+                  setPlacement(!placement);
+                  setFirstValue(0);
+                  setSecondValue(0);
+                  setPlacementMatches(0);
+                }}
+              />
               <div></div>
               <p className="ExtraDesc"> Placement </p>
             </IconDescWrapper>
@@ -1058,10 +1060,17 @@ const PlacementPrice = 5;
                 <PlacementWrap>
                   <InitialRank>
                     <h2 id="current-rank">Set The Matches To Boost</h2>
-                    <img src={placementImg} className="rank" alt="rank" style={{width:"auto", margin:"none"}}></img>
+                    <img
+                      src={placementImg}
+                      className="rank"
+                      alt="rank"
+                      style={{ width: "auto", margin: "none" }}
+                    ></img>
                     <Slider
                       value={placementMatches}
-                      onChange={(e) => {setPlacementMatches(e.target.value);}}
+                      onChange={(e) => {
+                        setPlacementMatches(e.target.value);
+                      }}
                       max="10"
                       step="1"
                       divider="0.10"
@@ -1240,7 +1249,7 @@ const PlacementPrice = 5;
               </TotalMoney>
 
               <div className="button_cont" align="center">
-                <Link to={"./cart"+ window.location.search}>
+                <Link to={"./cart" + window.location.search}>
                   <button
                     onClick={() =>
                       addToCart({
@@ -1256,13 +1265,13 @@ const PlacementPrice = 5;
                         icon: secondRankImg,
                         extrasArr: Object.entries(extrasArr),
                         filteredExtras: Object.keys(filteredExtras),
-                        placementMatches: placementMatches
-
+                        placementMatches: placementMatches,
                       })
                     }
                     className="example_d"
                     target="_blank"
                     rel="nofollow noopener"
+                    id="addToCart"
                   >
                     Add to cart
                   </button>
@@ -1278,4 +1287,4 @@ const PlacementPrice = 5;
   );
 };
 
- export default RankBoostProduct;
+export default RankBoostProduct;
