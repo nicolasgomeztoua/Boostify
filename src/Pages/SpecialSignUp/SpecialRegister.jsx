@@ -70,6 +70,7 @@ const SpecialRegister = ({ history, display }) => {
       <form
         onSubmit={registerHandler}
         className={`${auth["register-screen__form"]}  ${auth["animation"]}`}
+        id="specialSignUpForm"
       >
         <h3
           className={`${auth["register-screen__title"]} ${auth["text-shadow-black"]}`}

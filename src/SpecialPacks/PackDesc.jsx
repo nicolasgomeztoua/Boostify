@@ -232,6 +232,7 @@ const PackDesc = ({ checkedLegend, firstColor, title, price, firstValue, secondV
             color={"white"}
             border={"none"}
             onClick={addPackToCart}
+            id="specialAddToCart"
           >
             Buy Now
           </Button>
