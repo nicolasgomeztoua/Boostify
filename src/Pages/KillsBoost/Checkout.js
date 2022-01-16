@@ -1,4 +1,3 @@
-
 import {
   TotalContainer,
   TotalTitle,
@@ -83,7 +82,7 @@ const Checkout = ({
           </TotalMoney>
 
           <div className="button_cont" align="center">
-            <Link to={"./cart"+ window.location.search}>
+            <Link to={"./cart" + window.location.search}>
               <button
                 onClick={() =>
                   addToCart({
@@ -105,6 +104,7 @@ const Checkout = ({
                 href="add-website-here"
                 target="_blank"
                 rel="nofollow noopener"
+                id="addToCart"
               >
                 Add to cart
               </button>

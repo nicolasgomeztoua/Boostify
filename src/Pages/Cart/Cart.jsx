@@ -16,6 +16,7 @@ import { Playstation } from "@styled-icons/fa-brands/Playstation";
 import { Desktop } from "@styled-icons/fa-solid/Desktop";
 import { Xbox } from "@styled-icons/fa-brands/Xbox";
 import PostOrder from "../../PostOrder/PostOrder";
+import TagManager from "react-gtm-module";
 import {
   StepTwoWarningContainer,
   StepTwoWarning,
@@ -62,7 +63,14 @@ const Cart = ({ history }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    const tagManagerArgs = {
+      dataLayer: {
+        ItemsCart: items,
+        totalPrice: totalPrice,
+      },
+    };
+    TagManager.dataLayer(tagManagerArgs);
+  }, [items, totalPrice]);
   useEffect(() => {
     setTitles(
       items.map((element) => {
@@ -135,27 +143,27 @@ const Cart = ({ history }) => {
     }
   });
   const payload = {
-          titles,
-          prices,
-          selectedLegend,
-          selectedPopBadges,
-          selectedExtraBadges,
-          firstValue,
-          secondValue,
-          PSNemail,
-          PSNPass,
-          region,
-          dateCreated,
-          extrasArr,
-          items,
-          totalPrice,
-          platform,
-          badgesExtras,
-          rankedImg,
-          userId,
-          kills,
-          placementMatches,
-        }
+    titles,
+    prices,
+    selectedLegend,
+    selectedPopBadges,
+    selectedExtraBadges,
+    firstValue,
+    secondValue,
+    PSNemail,
+    PSNPass,
+    region,
+    dateCreated,
+    extrasArr,
+    items,
+    totalPrice,
+    platform,
+    badgesExtras,
+    rankedImg,
+    userId,
+    kills,
+    placementMatches,
+  };
 
   useEffect(() => {
     const fetchPrivateDate = async () => {
@@ -192,14 +200,13 @@ const Cart = ({ history }) => {
     try {
       await axios.post(
         "https://secret-cove-64633.herokuapp.com/api/auth/createorder",
-         payload,
+        payload,
         config
       );
     } catch (error) {
       console.log(error);
     }
   };
-   
 
   const handleClick = async (event) => {
     const stripe = await stripePromise;

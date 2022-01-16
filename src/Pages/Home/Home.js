@@ -63,10 +63,7 @@ const Home = () => {
     height: 100px;
     color: turquoise;
   `; */
-  const clearCart = () => {
-    localStorage.removeItem("cart");
-  };
-  clearCart();
+  
   return (
     <div>
       <Helmet>
@@ -99,10 +96,10 @@ const Home = () => {
                 to={"/rank-boosting" + window.location.search}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <button className="btn1">
-                  <span className="btn1__inner">
-                    <span className="btn1__slide"></span>
-                    <span className="btn1__content">Boost with us today</span>
+                <button className="btn1" id="CTA">
+                  <span className="btn1__inner" id="CTA">
+                    <span className="btn1__slide" id="CTA"></span>
+                    <span className="btn1__content" id="CTA">Boost with us today</span>
                   </span>
                 </button>
               </Link>
@@ -113,7 +110,7 @@ const Home = () => {
       {/* ///////////////////////////////////// */}
       <Stats></Stats>
       <Featured></Featured>
-      <div className="Home-intro">
+      <div className="Home-intro" id="lookingToBoost">
         <h2 id="Home-subtitle" style={{ color: "black", textShadow: "none" }}>
           {" "}
           Looking to boost your account to the next echelon?{" "}
