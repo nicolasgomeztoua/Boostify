@@ -7,35 +7,39 @@ import TagManager from "react-gtm-module";
 const jwt = require("jsonwebtoken");
 
 const Sucess = ({ history }) => {
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("cart"));
-    const paypal = findGetParameter("paypal");
-    const totalPrice = items.reduce(
-      (total, b) => Number(total) + Number(b.price),
-      0
-    );
-    if (paypal) {
-      return;
-    }
-    try {
-      const token = findGetParameter("hash");
-      if (token) {
-        jwt.verify(token, "hashSecret");
+  const items = JSON.parse(localStorage.getItem("cart"));
+  const paypal = findGetParameter("paypal");
+  const token = findGetParameter("hash");
+  const totalPrice = items.reduce(
+    (total, b) => Number(total) + Number(b.price),
+    0
+  );
+  if (paypal !== "null") {
+    const tagManagerArgs = {
+      dataLayer: {
+        success: true,
+        PurchaseAmount: totalPrice,
+      },
+    };
+    TagManager.dataLayer(tagManagerArgs);
+  }
+  console.log(paypal)
 
-        const tagManagerArgs = {
-          dataLayer: {
-            event: "Purchase",
-            PurchaseAmount: totalPrice,
-          },
-        };
-        TagManager.dataLayer(tagManagerArgs);
-      } else {
-        throw Error();
-      }
+  if (token !== "null") {
+    try {
+      jwt.verify(token, "hashSecret");
+
+      const tagManagerArgs = {
+        dataLayer: {
+          success: true,
+          PurchaseAmount: totalPrice,
+        },
+      };
+      TagManager.dataLayer(tagManagerArgs);
     } catch (err) {
       history.push("/" + window.location.search);
     }
-  }, [history]);
+  }
 
   const clearCart = () => {
     localStorage.removeItem("cart");
