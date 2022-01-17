@@ -3,6 +3,7 @@ import axios from "axios";
 import auth from "../authComponents/AuthComponents.module.css";
 import "./CSS/Redirect.css";
 import { useCookies } from "react-cookie";
+import TagManager from "react-gtm-module";
 
 const SpecialRegister = ({ history, display }) => {
   const [username, setUsername] = useState("");
@@ -28,12 +29,19 @@ const SpecialRegister = ({ history, display }) => {
   }
   let dateFormated = new Date().getTime() + 86400000 * 2;
   let dateCreated = new Date(dateFormated).toLocaleDateString("en-UK", options);
+
   const registerHandler = async (e) => {
     e.preventDefault();
 
     const config = {
       header: {
         "Content-Type": "application/json",
+      },
+    };
+    const tagManagerArgs = {
+      dataLayer: {
+        registered: true,
+        UserId: email,
       },
     };
 
@@ -47,14 +55,16 @@ const SpecialRegister = ({ history, display }) => {
     }
 
     try {
-      const { data } = await axios.post(
-        "https://secret-cove-64633.herokuapp.com/api/auth/register",
-        { username, email, password, special, dateCreated },
-        config
-      );
+      const { data } = await axios
+        .post(
+          "https://secret-cove-64633.herokuapp.com/api/auth/register",
+          { username, email, password, special, dateCreated },
+          config
+        )
+      TagManager.dataLayer(tagManagerArgs);
       localStorage.setItem("authToken", data.token);
-      history.push("/thank_you" + window.location.search);
       handleCookie();
+      history.push("/thank_you" + window.location.search);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -62,8 +72,6 @@ const SpecialRegister = ({ history, display }) => {
       }, 5000);
     }
   };
-
-
 
   return (
     <div className={auth["register-screen"]} style={{ display: display }}>
