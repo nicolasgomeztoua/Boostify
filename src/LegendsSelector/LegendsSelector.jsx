@@ -118,6 +118,7 @@ const Legends = ({
   };
 
 
+  let ReversedObj = [...LegendsObj].reverse()
   return (
     <>
       <LegendsTitle>Select a Legend</LegendsTitle>
@@ -127,7 +128,7 @@ const Legends = ({
         autoFocus
       ></Search>
       <LegendSelectionContainer>
-        {LegendsObj.filter((items) => {
+        {ReversedObj.filter((items) => {
           return items.name
             .toLowerCase()
             .includes(searchFieldLegends.toLowerCase());

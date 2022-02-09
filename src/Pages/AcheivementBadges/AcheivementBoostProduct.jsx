@@ -345,7 +345,7 @@ const AcheivementBoostProduct = () => {
   const [filteredExtras, setFilteredExtras] = useState("");
   const [disabledButtonText, setDisabledButton] = useState("");
   const [disabledState, setDisabledState] = useState("");
-
+  let ReversedObj = [...LegendsObj].reverse()
   const dispatch = useDispatchCart();
   const addToCart = (item) => {
     dispatch({ type: "ADD", item });
@@ -567,7 +567,8 @@ const AcheivementBoostProduct = () => {
             onChange={(e) => setSearchFieldLegends(e.target.value)}
           ></Searchbar>
           <BadgesSelectionContainers>
-            {LegendsObj.filter((items) => {
+            
+            {ReversedObj.filter((items) => {
               return items.name
                 .toLowerCase()
                 .includes(searchFieldLegends.toLowerCase());

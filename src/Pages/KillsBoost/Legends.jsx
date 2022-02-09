@@ -112,7 +112,7 @@ const Legends = ({ price, kills }) => {
     });
   };
 
-
+  let ReversedObj = [...LegendsObj].reverse()
   return (
     <>
       <LegendsTitle>Legends</LegendsTitle>
@@ -121,7 +121,7 @@ const Legends = ({ price, kills }) => {
         value={searchFieldLegends}
       ></Search>
       <LegendSelectionContainer>
-        {LegendsObj.filter((items) => {
+        {ReversedObj.filter((items) => {
           return items.name
             .toLowerCase()
             .includes(searchFieldLegends.toLowerCase());
