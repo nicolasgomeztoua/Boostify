@@ -106,7 +106,7 @@ const RankBoostProduct = () => {
 
   useEffect(() => {
     if (activePriority) {
-      setMoneyMultipliePriority(totalMoney * 0.25);
+      setMoneyMultipliePriority(totalMoney * 0.50);
     }
     if (!activePriority) {
       setMoneyMultipliePriority(0);
@@ -115,7 +115,7 @@ const RankBoostProduct = () => {
 
   useEffect(() => {
     if (activeStream) {
-      setMoneyMultiplierStream(totalMoney * 0.15);
+      setMoneyMultiplierStream(totalMoney * 0.25);
     }
     if (!activeStream) {
       setMoneyMultiplierStream(0);

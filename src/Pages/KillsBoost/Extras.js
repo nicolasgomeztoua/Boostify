@@ -50,7 +50,7 @@ const Extras = ({ price, kills, legend }) => {
 
   useEffect(() => {
     if (activePriority) {
-      setMoneyMultipliePriority(price * 0.25);
+      setMoneyMultipliePriority(price * 0.50);
     }
     if (!activePriority) {
       setMoneyMultipliePriority(0);
@@ -59,7 +59,7 @@ const Extras = ({ price, kills, legend }) => {
 
   useEffect(() => {
     if (activeStream) {
-      setMoneyMultiplierStream(price * 0.15);
+      setMoneyMultiplierStream(price * 0.25);
     }
     if (!activeStream) {
       setMoneyMultiplierStream(0);

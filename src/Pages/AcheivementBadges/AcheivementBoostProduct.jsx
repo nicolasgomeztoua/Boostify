@@ -443,7 +443,7 @@ const AcheivementBoostProduct = () => {
 
   useEffect(() => {
     if (activePriority) {
-      setMoneyMultipliePriority(acheivementTotalMoney * 0.25);
+      setMoneyMultipliePriority(acheivementTotalMoney * 0.50);
     }
     if (!activePriority) {
       setMoneyMultipliePriority(0);
@@ -452,7 +452,7 @@ const AcheivementBoostProduct = () => {
 
   useEffect(() => {
     if (activeStream) {
-      setMoneyMultiplierStream(acheivementTotalMoney * 0.75);
+      setMoneyMultiplierStream(acheivementTotalMoney * 0.25);
     }
     if (!activeStream) {
       setMoneyMultiplierStream(0);
