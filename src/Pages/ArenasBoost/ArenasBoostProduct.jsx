@@ -1187,7 +1187,7 @@ const RankBoostProduct = () => {
                     onClick={() => setActiveStream(!activeStream)}
                   />
                   <p className="ExtraDesc">On Stream</p>
-                  <p className="ExtraDesc"> +15%</p>
+                  <p className="ExtraDesc"> +25%</p>
                 </IconDescWrapper>
               </ExtraIconButtonWrap>
               <ExtraIconButtonWrap>
@@ -1195,7 +1195,7 @@ const RankBoostProduct = () => {
                   <IconSpeed></IconSpeed>
                   <ExtraCheckBox onClick={() => setPriority(!activePriority)} />
                   <p className="ExtraDesc">Boost-Priority</p>
-                  <p className="ExtraDesc"> +25%</p>
+                  <p className="ExtraDesc"> +50%</p>
                 </IconDescWrapper>
               </ExtraIconButtonWrap>
             </ExtrasOptions>
