@@ -6,8 +6,8 @@ import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExcl
 import styled from "styled-components";
 
 export const walzyEditThis = {
-  ordersCompleted: 1303,
-  ordersQueued: 4,
+  ordersCompleted: 1321,
+  ordersQueued: 8,
 };
  const Completed = styled(BagCheckFill)`
     height: 50px;
@@ -34,7 +34,7 @@ const Stats = () => {
   useEffect(() => {
     setInterval(() => {
       const now = new Date().getTime();
-      const countDate = new Date("feb 8 2022 18:00");
+      const countDate = new Date("mar 22 2022 18:00");
       let gap = countDate - now;
       let second = 1000;
       let minute = second * 60;
