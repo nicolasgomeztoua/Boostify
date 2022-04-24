@@ -6,8 +6,8 @@ import { CalendarExclamation } from "@styled-icons/boxicons-regular/CalendarExcl
 import styled from "styled-components";
 
 export const walzyEditThis = {
-  ordersCompleted: 1321,
-  ordersQueued: 8,
+  ordersCompleted: 1338,
+  ordersQueued: 3,
 };
  const Completed = styled(BagCheckFill)`
     height: 50px;
