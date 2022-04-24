@@ -34,7 +34,7 @@ const Stats = () => {
   useEffect(() => {
     setInterval(() => {
       const now = new Date().getTime();
-      const countDate = new Date("may 3 2022 18:00");
+      const countDate = new Date("apr 5 2022 18:00");
       let gap = countDate - now;
       let second = 1000;
       let minute = second * 60;
